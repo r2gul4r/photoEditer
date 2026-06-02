@@ -11,9 +11,31 @@ def as_float_rgb(rgb: np.ndarray) -> np.ndarray:
     return np.clip(arr, 0.0, 1.0)
 
 
+def quantize_to_uint8(values: np.ndarray) -> np.ndarray:
+    clipped = np.clip(np.asarray(values, dtype=np.float32), 0.0, 1.0)
+    return np.rint(clipped * 255.0).astype(np.uint8)
+
+
 def histogram_256(values: np.ndarray) -> list[int]:
-    counts, _ = np.histogram(np.clip(values, 0.0, 1.0), bins=256, range=(0.0, 1.0))
+    quantized = quantize_to_uint8(values).reshape(-1)
+    counts = np.bincount(quantized, minlength=256)
     return counts.astype(int).tolist()
+
+
+def histogram_channel(values: np.ndarray) -> dict[str, float | int | list[int]]:
+    quantized = quantize_to_uint8(values).reshape(-1)
+    counts = np.bincount(quantized, minlength=256).astype(int)
+    total = int(quantized.size)
+    black = int(counts[0])
+    white = int(counts[255])
+    return {
+        "bins": counts.tolist(),
+        "max_count": int(counts.max()) if total else 0,
+        "clip_black": black,
+        "clip_white": white,
+        "clip_black_ratio": float(black / total) if total else 0.0,
+        "clip_white_ratio": float(white / total) if total else 0.0,
+    }
 
 
 def percentile_stats(values: np.ndarray) -> dict[str, float | list[int]]:
@@ -42,4 +64,39 @@ def saturation_from_rgb(rgb: np.ndarray) -> np.ndarray:
     min_channel = np.min(arr, axis=-1)
     chroma = max_channel - min_channel
     return np.where(max_channel <= 1e-6, 0.0, chroma / max_channel)
+
+
+def display_histogram_from_rgb(rgb: np.ndarray) -> dict[str, object]:
+    arr = as_float_rgb(rgb)
+    luma = luma_from_rgb(arr)
+    r = arr[..., 0]
+    g = arr[..., 1]
+    b = arr[..., 2]
+
+    channels = {
+        "luma": histogram_channel(luma),
+        "r": histogram_channel(r),
+        "g": histogram_channel(g),
+        "b": histogram_channel(b),
+    }
+
+    r_u8 = quantize_to_uint8(r)
+    g_u8 = quantize_to_uint8(g)
+    b_u8 = quantize_to_uint8(b)
+    total = int(arr.shape[0] * arr.shape[1]) if arr.ndim >= 2 else int(arr.size // 3)
+    shadow_clip = int(np.count_nonzero((r_u8 == 0) | (g_u8 == 0) | (b_u8 == 0)))
+    highlight_clip = int(np.count_nonzero((r_u8 == 255) | (g_u8 == 255) | (b_u8 == 255)))
+
+    return {
+        "bin_count": 256,
+        "range_min": 0,
+        "range_max": 255,
+        "total_pixels": total,
+        "max_count": max(int(channel["max_count"]) for channel in channels.values()),
+        "shadow_clip": shadow_clip,
+        "highlight_clip": highlight_clip,
+        "shadow_clip_ratio": float(shadow_clip / total) if total else 0.0,
+        "highlight_clip_ratio": float(highlight_clip / total) if total else 0.0,
+        "channels": channels,
+    }
 

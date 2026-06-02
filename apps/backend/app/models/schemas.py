@@ -38,6 +38,28 @@ class SaturationStats(BaseModel):
     histogram_256: list[int]
 
 
+class HistogramChannel(BaseModel):
+    bins: list[int]
+    max_count: int
+    clip_black: int
+    clip_white: int
+    clip_black_ratio: float
+    clip_white_ratio: float
+
+
+class DisplayHistogram(BaseModel):
+    bin_count: int
+    range_min: int
+    range_max: int
+    total_pixels: int
+    max_count: int
+    shadow_clip: int
+    highlight_clip: int
+    shadow_clip_ratio: float
+    highlight_clip_ratio: float
+    channels: dict[Literal["luma", "r", "g", "b"], HistogramChannel]
+
+
 class RiskFlags(BaseModel):
     highlight_clipping: bool
     shadow_crushing: bool
@@ -53,6 +75,7 @@ class ImageAnalysis(BaseModel):
     luma: LumaStats
     rgb: RgbStats
     saturation: SaturationStats
+    display_histogram: DisplayHistogram
     risk_flags: RiskFlags
 
 

@@ -2,7 +2,14 @@ import numpy as np
 from PIL import Image
 
 from app.models.schemas import ImageAnalysis, LumaStats, RgbStats, RiskFlags, SaturationStats
-from app.utils.histograms import as_float_rgb, histogram_256, luma_from_rgb, percentile_stats, saturation_from_rgb
+from app.utils.histograms import (
+    as_float_rgb,
+    display_histogram_from_rgb,
+    histogram_256,
+    luma_from_rgb,
+    percentile_stats,
+    saturation_from_rgb,
+)
 
 
 def analyze_rgb_array(rgb: np.ndarray) -> ImageAnalysis:
@@ -51,6 +58,7 @@ def analyze_rgb_array(rgb: np.ndarray) -> ImageAnalysis:
             p95=float(saturation_p95),
             histogram_256=histogram_256(saturation),
         ),
+        display_histogram=display_histogram_from_rgb(arr),
         risk_flags=risk_flags,
     )
 

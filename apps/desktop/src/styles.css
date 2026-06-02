@@ -433,7 +433,88 @@ textarea:focus {
 
 .histogram {
   display: grid;
-  gap: 8px;
+  gap: 6px;
+}
+
+.histogram-frame {
+  position: relative;
+  height: 164px;
+  border: 1px solid #252a31;
+  border-radius: 6px;
+  background: #090b0e;
+  overflow: hidden;
+}
+
+.histogram-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  shape-rendering: crispEdges;
+}
+
+.histogram-midline {
+  stroke: rgba(231, 234, 238, 0.14);
+  stroke-width: 1;
+}
+
+.histogram-line {
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  mix-blend-mode: screen;
+}
+
+.histogram-line.luma {
+  stroke: rgba(231, 234, 238, 0.5);
+}
+
+.histogram-line.red {
+  stroke: rgba(248, 113, 113, 0.58);
+}
+
+.histogram-line.green {
+  stroke: rgba(52, 211, 153, 0.58);
+}
+
+.histogram-line.blue {
+  stroke: rgba(96, 165, 250, 0.58);
+}
+
+.clip-indicator {
+  position: absolute;
+  top: 7px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #3a414c;
+}
+
+.clip-indicator.shadow {
+  left: 8px;
+}
+
+.clip-indicator.highlight {
+  right: 8px;
+}
+
+.clip-indicator.active.shadow {
+  border-bottom-color: #60a5fa;
+}
+
+.clip-indicator.active.highlight {
+  border-bottom-color: #f87171;
+}
+
+.histogram-scale {
+  display: flex;
+  justify-content: space-between;
+  color: #697282;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.histogram-metrics {
+  align-items: center;
 }
 
 .metadata table {

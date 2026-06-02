@@ -39,6 +39,33 @@ export type SaturationStats = {
   histogram_256: number[];
 };
 
+export type HistogramChannel = {
+  bins: number[];
+  max_count: number;
+  clip_black: number;
+  clip_white: number;
+  clip_black_ratio: number;
+  clip_white_ratio: number;
+};
+
+export type DisplayHistogram = {
+  bin_count: number;
+  range_min: number;
+  range_max: number;
+  total_pixels: number;
+  max_count: number;
+  shadow_clip: number;
+  highlight_clip: number;
+  shadow_clip_ratio: number;
+  highlight_clip_ratio: number;
+  channels: {
+    luma: HistogramChannel;
+    r: HistogramChannel;
+    g: HistogramChannel;
+    b: HistogramChannel;
+  };
+};
+
 export type RiskFlags = {
   highlight_clipping: boolean;
   shadow_crushing: boolean;
@@ -54,6 +81,7 @@ export type ImageAnalysis = {
   luma: LumaStats;
   rgb: RgbStats;
   saturation: SaturationStats;
+  display_histogram: DisplayHistogram;
   risk_flags: RiskFlags;
 };
 
