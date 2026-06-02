@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
@@ -64,6 +64,7 @@ class AnalyzeImageResponse(BaseModel):
     height: int
     metadata: ImageMetadata
     analysis: ImageAnalysis
+    raw_analysis: dict[str, Any] | None = None
 
 
 class HslAdjustment(BaseModel):
@@ -147,3 +148,9 @@ class ExportPresetRequest(BaseModel):
     style_prompt: str | None = None
     candidate: CorrectionCandidate
 
+
+class ExportRenderedImageRequest(BaseModel):
+    image_id: str
+    candidate_id: str
+    adjustments: CorrectionAdjustments
+    format: Literal["jpeg", "png"] = "jpeg"

@@ -3,12 +3,14 @@
 ## v0.1
 
 - Local image upload
-- JPEG/PNG/TIFF support
+- RAW-first import scaffold
+- JPEG/PNG/TIFF fallback import support
 - Histogram analysis
 - Metadata extraction
 - Rule-based style interpretation
 - Candidate generation
 - Preview rendering
+- JPEG/PNG rendered export
 - JSON preset export
 
 ## v0.2
@@ -40,4 +42,3 @@
 - Custom style presets
 - LUT export
 - XMP export investigation
-

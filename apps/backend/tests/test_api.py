@@ -66,3 +66,15 @@ def test_api_analyze_recommend_preview_and_export_flow() -> None:
     assert export.status_code == 200
     assert export.json()["candidate"]["id"] == "natural"
 
+    rendered_export = client.post(
+        "/api/export/rendered-image",
+        json={
+            "image_id": analyzed["image_id"],
+            "candidate_id": candidate["id"],
+            "adjustments": candidate["adjustments"],
+            "format": "jpeg",
+        },
+    )
+    assert rendered_export.status_code == 200
+    assert rendered_export.headers["content-type"] == "image/jpeg"
+    assert rendered_export.content.startswith(b"\xff\xd8")

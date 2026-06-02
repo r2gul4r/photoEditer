@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+from PIL import Image
 
 
 def analyze_raw(path: Path) -> dict[str, Any]:
@@ -36,3 +37,20 @@ def analyze_raw(path: Path) -> dict[str, Any]:
             "error": f"RAW analysis failed: {exc}",
         }
 
+
+def render_raw_to_rgb(path: Path) -> Image.Image:
+    try:
+        import rawpy  # type: ignore
+    except ImportError as exc:
+        raise RuntimeError("rawpy is not installed. Install tonepilot-backend[raw] to enable RAW import.") from exc
+
+    try:
+        with rawpy.imread(str(path)) as raw:
+            rgb = raw.postprocess(
+                use_camera_wb=True,
+                output_bps=8,
+                no_auto_bright=False,
+            )
+        return Image.fromarray(rgb).convert("RGB")
+    except Exception as exc:
+        raise RuntimeError(f"RAW render failed: {exc}") from exc

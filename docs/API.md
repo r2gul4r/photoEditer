@@ -51,3 +51,17 @@ Returns:
 
 Returns selected correction values as downloadable JSON.
 
+## POST /api/export/rendered-image
+
+Exports the selected correction result as JPEG or PNG.
+
+```json
+{
+  "image_id": "uuid",
+  "candidate_id": "natural",
+  "adjustments": {},
+  "format": "jpeg"
+}
+```
+
+Returns a downloadable image file. Supported formats: `jpeg`, `png`.

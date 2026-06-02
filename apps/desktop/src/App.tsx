@@ -1,7 +1,14 @@
-import { Download, FolderOpen, Loader2, Settings, Sparkles } from "lucide-react";
+import { Download, FileJson, FolderOpen, Loader2, Settings, Sparkles } from "lucide-react";
 import { useRef } from "react";
 
-import { absoluteApiUrl, analyzeImage, downloadPreset, recommend, renderPreview } from "./api/client";
+import {
+  absoluteApiUrl,
+  analyzeImage,
+  downloadPreset,
+  downloadRenderedImage,
+  recommend,
+  renderPreview,
+} from "./api/client";
 import { AdjustmentsPanel } from "./components/AdjustmentsPanel";
 import { BeforeAfterView } from "./components/BeforeAfterView";
 import { CandidateCard } from "./components/CandidateCard";
@@ -52,14 +59,25 @@ function App() {
     }
   }
 
-  async function handleExport() {
+  async function handlePresetExport() {
     if (!imageId || !state.selectedCandidate) return;
     dispatch({ type: "start", label: "JSON 내보내기 중" });
     try {
       await downloadPreset(imageId, state.stylePrompt, state.selectedCandidate);
       dispatch({ type: "idle" });
     } catch (error) {
-      dispatch({ type: "error", error: error instanceof Error ? error.message : "내보내기 실패" });
+      dispatch({ type: "error", error: error instanceof Error ? error.message : "JSON 내보내기 실패" });
+    }
+  }
+
+  async function handleImageExport() {
+    if (!imageId || !state.selectedCandidate) return;
+    dispatch({ type: "start", label: "보정 이미지 내보내기 중" });
+    try {
+      await downloadRenderedImage(imageId, state.selectedCandidate, "jpeg");
+      dispatch({ type: "idle" });
+    } catch (error) {
+      dispatch({ type: "error", error: error instanceof Error ? error.message : "보정 이미지 내보내기 실패" });
     }
   }
 
@@ -70,7 +88,7 @@ function App() {
           <span className="brand-mark">TP</span>
           <div>
             <strong>TonePilot Local</strong>
-            <small>로컬 사진 보정 추천</small>
+            <small>RAW 우선 로컬 사진 보정 추천</small>
           </div>
         </div>
         <div className="topbar-actions">
@@ -78,7 +96,7 @@ function App() {
             ref={topFileInputRef}
             className="hidden-file-input"
             type="file"
-            accept="image/jpeg,image/png,image/tiff,.tif,.tiff"
+            accept="image/jpeg,image/png,image/tiff,.tif,.tiff,.dng,.arw,.cr2,.cr3,.nef,.orf,.raf,.rw2"
             onChange={(event) => {
               const file = event.target.files?.[0];
               if (file) void handleFile(file);
@@ -89,8 +107,12 @@ function App() {
             <FolderOpen size={16} aria-hidden="true" />
             사진 열기
           </button>
-          <button className="button" type="button" disabled={!state.selectedCandidate || busy} onClick={handleExport}>
+          <button className="button" type="button" disabled={!state.selectedCandidate || busy} onClick={handleImageExport}>
             <Download size={16} aria-hidden="true" />
+            이미지 내보내기
+          </button>
+          <button className="button" type="button" disabled={!state.selectedCandidate || busy} onClick={handlePresetExport}>
+            <FileJson size={16} aria-hidden="true" />
             JSON 내보내기
           </button>
           <button className="icon-button" type="button" title="설정">
@@ -165,17 +187,23 @@ function App() {
           </section>
 
           <section className="panel">
-            <div className="panel-title"><span>보정값</span></div>
+            <div className="panel-title">
+              <span>보정값</span>
+            </div>
             <AdjustmentsPanel adjustments={state.selectedCandidate?.adjustments ?? null} />
           </section>
 
           <section className="panel">
-            <div className="panel-title"><span>히스토그램</span></div>
+            <div className="panel-title">
+              <span>히스토그램</span>
+            </div>
             <HistogramChart analysis={state.analysis?.analysis ?? null} />
           </section>
 
           <section className="panel">
-            <div className="panel-title"><span>메타데이터</span></div>
+            <div className="panel-title">
+              <span>메타데이터</span>
+            </div>
             <MetadataPanel analysis={state.analysis} />
           </section>
         </aside>

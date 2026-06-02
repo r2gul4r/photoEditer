@@ -2,39 +2,41 @@
 
 [Read in English](README.md)
 
-photoEditer, 또는 TonePilot Local은 Codex로 만든 로컬 사진 보정 추천 도구야. AI 생성 사진이 아니라, 네가 직접 찍은 진짜 사진을 분석하는 데 초점을 둔다.
+photoEditer, 또는 TonePilot Local은 Codex로 만든 RAW 우선 로컬 사진 보정 추천 도구야. AI 생성 사진이 아니라, 네가 직접 찍은 진짜 사진을 분석하는 데 초점을 둔다.
 
-사진을 불러오면 기술적인 부족한 점을 찾아 피드백하고, 원하는 분위기 키워드를 해석해서 실제 미리보기와 함께 보정값을 추천한다.
+원래 의도한 흐름은 Lightroom에 가깝다. 가능하면 RAW 파일을 원본 기준으로 삼고, 원본 촬영 데이터를 분석해서 기술적인 부족한 점을 피드백한 뒤, 원하는 분위기 키워드에 맞춰 보정값과 미리보기를 제안하고 JPEG/PNG 결과물로 내보낸다.
 
 핵심 흐름:
 
 ```text
-사진 -> 이미지 분석 -> 스타일 목표 -> 히스토그램 기반 후보 -> 미리보기 -> 피드백
+RAW 사진 -> 이미지 분석 -> 스타일 목표 -> 히스토그램 기반 후보 -> 미리보기 -> JPEG/PNG export
 ```
 
 ## 무엇을 하나
 
-- 로컬 JPEG, PNG, TIFF 이미지 불러오기
+- `rawpy`가 설치된 환경에서 RAW 파일 불러오기
+- JPEG, PNG, TIFF는 보조 import/fallback 포맷으로 지원
 - 가능한 메타데이터 추출
 - luma, RGB, saturation 히스토그램 계산
 - 하이라이트 클리핑, 암부 뭉개짐, 낮은 대비, 과채도, 컬러 캐스트 위험 감지
 - 한국어/영어 스타일 프롬프트 해석
 - Natural, Style, Bold 3개 보정 후보 생성
 - 로컬에서 실제 preview 렌더링
+- 보정 결과물을 JPEG/PNG로 export
 - 선택한 보정값 JSON export
 
 ## 무엇은 아직 안 하나
 
 - 클라우드 AI 사진 편집기가 아님
 - 애니메이션풍 합성 이미지 생성 도구가 아님
-- Lightroom이나 전문 컬러 그레이딩 도구를 완전히 대체하지 않음
+- 아직 Lightroom을 완전히 대체하지는 않지만, RAW 원본에서 결과물로 가는 비슷한 흐름을 지향함
 - 계정, 결제, 클라우드 API가 필요 없음
 
 ## 기술 스택
 
 - Frontend: Vite, React, TypeScript, Tailwind CSS, Recharts
 - Backend: Python, FastAPI, Pydantic, NumPy, Pillow
-- Optional: rawpy, exifread, OpenCV
+- Optional: RAW import용 rawpy, exifread, OpenCV
 - Workspace: pnpm monorepo
 
 ## 로컬 설치
@@ -58,6 +60,12 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -e ".[dev]"
 python -m uvicorn app.main:app --reload --port 8765
+```
+
+RAW 지원까지 설치하려면:
+
+```powershell
+pip install -e ".[dev,raw]"
 ```
 
 ## 프론트엔드 실행
@@ -89,12 +97,13 @@ pytest
 - `POST /api/preview`: 선택한 보정값으로 preview 렌더링
 - `GET /api/previews/{filename}`: 생성된 preview 제공
 - `POST /api/export/preset-json`: 선택한 보정값 JSON export
+- `POST /api/export/rendered-image`: 보정 결과물을 JPEG/PNG로 export
 
 자세한 내용은 [docs/API.md](docs/API.md)를 참고.
 
 ## 이미지 분석 방식
 
-백엔드는 이미지를 RGB float `[0, 1]` 데이터로 변환한 뒤 luma, RGB 채널, HSV saturation 통계를 계산한다. 퍼센타일, 256-bin 히스토그램, 그리고 보정에서 자주 문제가 되는 위험 플래그를 함께 반환한다.
+RAW 파일은 optional `rawpy`로 읽어서 RAW 센서 데이터와 렌더링 가능한 RGB 작업 이미지를 만든다. black level, white level, mean, p99, RAW histogram 같은 RAW 전용 통계를 잡고, 그 다음 JPEG/PNG/TIFF와 동일하게 RGB/luma/saturation 분석을 수행한다.
 
 ## 추천 방식
 
@@ -103,9 +112,9 @@ MVP는 룰 기반 스타일 해석을 사용한다. 예를 들어 `시원한 일
 ## 현재 제한
 
 - preview 렌더링은 근사치이며 Lightroom과 동일하지 않음
-- RAW 지원은 scaffold 단계이며 optional `rawpy`에 의존
+- RAW 지원은 optional `rawpy`에 의존하며 아직 초기 파이프라인
 - CLIP, aesthetic scoring, segmentation, ONNX 모델 연동은 향후 모듈
-- export는 현재 JSON만 지원하고 XMP/LUT는 아직 없음
+- export는 현재 JPEG/PNG 결과물과 JSON 보정값을 지원하고 XMP/LUT는 아직 없음
 
 ## 로드맵
 

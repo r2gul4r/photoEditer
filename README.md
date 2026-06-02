@@ -4,39 +4,41 @@
 
 # photoEditer
 
-photoEditer, also known as TonePilot Local, is a local photo correction recommendation tool built with Codex. It is designed for real photos you took, not AI-generated images.
+photoEditer, also known as TonePilot Local, is a RAW-first local photo correction recommendation tool built with Codex. It is designed for real photos you took, not AI-generated images.
 
-The app analyzes an imported photo, finds technical weaknesses, gives objective feedback, interprets your desired mood, and recommends correction values with an actual before/after preview.
+The intended workflow is Lightroom-like: start from a RAW file whenever possible, analyze the original capture, find technical weaknesses, give objective feedback, interpret your desired mood, recommend correction values, preview the result, then export the corrected image as JPEG or PNG.
 
 Core flow:
 
 ```text
-Photo -> image analysis -> style target -> histogram-aware candidates -> preview -> feedback
+RAW photo -> image analysis -> style target -> histogram-aware candidates -> preview -> JPEG/PNG export
 ```
 
 ## What It Does
 
-- Imports local JPEG, PNG, and TIFF images
+- Imports RAW files when `rawpy` is available
+- Supports JPEG, PNG, and TIFF as fallback/import convenience formats
 - Extracts available metadata
 - Calculates luma, RGB, and saturation histograms
 - Detects risks such as highlight clipping, crushed shadows, low contrast, over-saturation, and color cast
 - Interprets Korean or English style prompts
 - Generates three correction candidates: Natural, Style, and Bold
 - Renders preview images locally
+- Exports rendered correction results as JPEG or PNG
 - Exports selected correction values as JSON
 
 ## What It Is Not
 
 - It is not a cloud AI photo editor
 - It does not generate anime or synthetic images
-- It does not replace Lightroom or professional color grading tools yet
+- It is not a full Lightroom replacement yet, but it is designed around a similar RAW-to-output workflow
 - It does not require accounts, payments, or cloud APIs
 
 ## Tech Stack
 
 - Frontend: Vite, React, TypeScript, Tailwind CSS, Recharts
 - Backend: Python, FastAPI, Pydantic, NumPy, Pillow
-- Optional: rawpy, exifread, OpenCV
+- Optional: rawpy for RAW import, exifread, OpenCV
 - Workspace: pnpm monorepo
 
 ## Local Setup
@@ -60,6 +62,12 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -e ".[dev]"
 python -m uvicorn app.main:app --reload --port 8765
+```
+
+Install optional RAW support with:
+
+```powershell
+pip install -e ".[dev,raw]"
 ```
 
 ## Run Frontend
@@ -91,12 +99,13 @@ pytest
 - `POST /api/preview`: render a preview from selected adjustments
 - `GET /api/previews/{filename}`: serve generated previews
 - `POST /api/export/preset-json`: export selected correction values as JSON
+- `POST /api/export/rendered-image`: export the corrected result as JPEG or PNG
 
 See [docs/API.md](docs/API.md) for details.
 
 ## How Image Analysis Works
 
-The backend converts each image to RGB float data in `[0, 1]`, then calculates luma, RGB channel, and HSV saturation statistics. It reports percentiles, 256-bin histograms, and simple risk flags for common correction problems.
+For RAW files, the backend uses optional `rawpy` to read RAW sensor data and produce a renderable RGB working image. It keeps RAW-specific stats such as black level, white level, mean, p99, and histogram data, then runs the same RGB/luma/saturation analysis used for JPEG, PNG, and TIFF imports.
 
 ## How Recommendations Work
 
@@ -105,11 +114,10 @@ The MVP uses rule-based style interpretation. For example, a prompt such as `시
 ## Current Limitations
 
 - Preview rendering is approximate and does not match Lightroom exactly
-- RAW support is scaffolded and depends on optional `rawpy`
+- RAW support depends on optional `rawpy` and is still an early pipeline
 - CLIP, aesthetic scoring, segmentation, and ONNX model integrations are future modules only
-- Export currently supports JSON, not XMP or LUT
+- Export currently supports rendered JPEG/PNG and correction JSON, not XMP or LUT
 
 ## Roadmap
 
 See [docs/ROADMAP.md](docs/ROADMAP.md).
-

@@ -25,7 +25,10 @@ export function MetadataPanel({ analysis }: Props) {
     <div className="metadata">
       <div className="metric-row">
         <span>{analysis.width} x {analysis.height}</span>
-        <span>{analysis.file_type.toUpperCase()}</span>
+        <span>
+          {analysis.file_type.toUpperCase()}
+          {analysis.raw_analysis ? " / RAW 분석" : ""}
+        </span>
       </div>
       <table>
         <tbody>
@@ -40,4 +43,3 @@ export function MetadataPanel({ analysis }: Props) {
     </div>
   );
 }
-

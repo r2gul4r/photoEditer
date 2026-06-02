@@ -65,6 +65,7 @@ export type AnalyzeImageResponse = {
   height: number;
   metadata: ImageMetadata;
   analysis: ImageAnalysis;
+  raw_analysis?: Record<string, unknown> | null;
 };
 
 export type StyleInterpretation = {
@@ -83,4 +84,3 @@ export type RecommendResponse = {
 export type PreviewResponse = {
   preview_url: string;
 };
-

@@ -32,13 +32,13 @@ export function ImageDropzone({ onFile, busy }: Props) {
         id="tonepilot-file-input"
         ref={inputRef}
         type="file"
-        accept="image/jpeg,image/png,image/tiff,.tif,.tiff"
+        accept="image/jpeg,image/png,image/tiff,.tif,.tiff,.dng,.arw,.cr2,.cr3,.nef,.orf,.raf,.rw2"
         onChange={(event) => pickFile(event.target.files?.[0])}
       />
       <ImagePlus size={32} aria-hidden="true" />
       <div>
         <strong>사진 열기</strong>
-        <span>JPEG, PNG, TIFF</span>
+        <span>RAW 우선, JPEG/PNG/TIFF 지원</span>
       </div>
       <button className="button primary" type="button" disabled={busy} onClick={() => inputRef.current?.click()}>
         <Upload size={16} aria-hidden="true" />
@@ -47,4 +47,3 @@ export function ImageDropzone({ onFile, busy }: Props) {
     </section>
   );
 }
-

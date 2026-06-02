@@ -75,3 +75,29 @@ export async function downloadPreset(
   URL.revokeObjectURL(url);
 }
 
+export async function downloadRenderedImage(
+  imageId: string,
+  candidate: CorrectionCandidate,
+  format: "jpeg" | "png" = "jpeg",
+): Promise<void> {
+  const response = await fetch(`${API_BASE}/api/export/rendered-image`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      image_id: imageId,
+      candidate_id: candidate.id,
+      adjustments: candidate.adjustments,
+      format,
+    }),
+  });
+  if (!response.ok) {
+    throw new Error(`${response.status} ${response.statusText}`);
+  }
+  const blob = await response.blob();
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = `tonepilot-${candidate.id}.${format === "jpeg" ? "jpg" : "png"}`;
+  anchor.click();
+  URL.revokeObjectURL(url);
+}

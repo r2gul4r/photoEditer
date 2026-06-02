@@ -4,6 +4,7 @@ from app.models.schemas import AnalyzeImageResponse
 from app.services.image_analysis import analyze_image
 from app.services.image_store import image_store
 from app.services.metadata import read_metadata
+from app.services.raw_analysis import analyze_raw, render_raw_to_rgb
 from app.utils.image_io import SUPPORTED_EXTENSIONS, infer_file_type, load_rgb_image
 
 router = APIRouter(prefix="/api/images", tags=["images"])
@@ -12,7 +13,7 @@ router = APIRouter(prefix="/api/images", tags=["images"])
 @router.post("/analyze", response_model=AnalyzeImageResponse)
 async def analyze_upload(file: UploadFile = File(...)) -> AnalyzeImageResponse:
     file_type = infer_file_type(file.filename or "upload")
-    if file_type not in set(SUPPORTED_EXTENSIONS.values()):
+    if file_type not in {*SUPPORTED_EXTENSIONS.values(), "raw"}:
         raise HTTPException(status_code=415, detail=f"Unsupported file type for MVP: {file_type}")
 
     content = await file.read()
@@ -20,8 +21,17 @@ async def analyze_upload(file: UploadFile = File(...)) -> AnalyzeImageResponse:
         raise HTTPException(status_code=400, detail="Uploaded file is empty")
 
     record = image_store.save_upload(file.filename or "upload", content)
+    raw_result = None
     try:
-        image = load_rgb_image(record.original_path)
+        if record.file_type == "raw":
+            raw_result = analyze_raw(record.original_path)
+            if not raw_result.get("ok"):
+                raise HTTPException(status_code=422, detail=str(raw_result.get("error", "RAW analysis failed")))
+            image = render_raw_to_rgb(record.original_path)
+        else:
+            image = load_rgb_image(record.original_path)
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(status_code=400, detail=f"Cannot read image: {exc}") from exc
 
@@ -33,7 +43,7 @@ async def analyze_upload(file: UploadFile = File(...)) -> AnalyzeImageResponse:
         height=image.height,
         metadata=read_metadata(record.original_path),
         analysis=analyze_image(image),
+        raw_analysis=raw_result,
     )
     image_store.set_response(record.image_id, response)
     return response
-

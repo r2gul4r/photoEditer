@@ -1,5 +1,19 @@
 # TonePilot Local Product Spec
 
+## RAW-First Product Direction
+
+TonePilot Local should be treated as a RAW-first local photo correction recommendation app.
+
+JPEG, PNG, and TIFF are supported import formats, but the primary product flow is:
+
+```text
+RAW capture -> technical analysis -> weakness feedback -> mood/style interpretation -> correction candidates -> preview -> JPEG/PNG export
+```
+
+The product should feel closer to a lightweight Lightroom-like local editor with AI-assisted analysis and recommendation, not a generative image tool.
+
+The MVP may use a rendered RGB working image from RAW via `rawpy`, but the architecture should preserve RAW-specific analysis hooks such as black level, white level, channel statistics, and RAW histograms for future deeper correction logic.
+
 ## 목표
 
 로컬 데스크톱 앱에서 사진을 분석하고, 사용자가 입력한 한국어/영어 스타일 키워드를 룰 기반 스타일 타깃으로 해석한 뒤, 히스토그램과 위험 플래그를 고려한 보정 후보를 추천한다.
@@ -51,4 +65,3 @@ Keyword -> style target -> histogram-aware candidates -> actual preview -> objec
 - 선택 후보를 실제 preview로 렌더링한다.
 - 선택 보정값을 JSON으로 export할 수 있다.
 - 핵심 백엔드 로직 테스트가 있다.
-
