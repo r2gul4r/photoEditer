@@ -4,6 +4,7 @@ Thumbs.db
 node_modules/
 dist/
 .vite/
+tonepilot-local/
 
 .venv/
 __pycache__/
