@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+
+node_modules/
+dist/
+.vite/
+
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+
+apps/backend/.tonepilot-data/
+apps/backend/.coverage
