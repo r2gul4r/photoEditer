@@ -1,6 +1,6 @@
 # photoEditer
 
-[Read in English](README.en.md)
+[Read in English](README.md)
 
 photoEditer, 또는 TonePilot Local은 Codex로 만든 로컬 사진 보정 추천 도구야. AI 생성 사진이 아니라, 네가 직접 찍은 진짜 사진을 분석하는 데 초점을 둔다.
 
@@ -110,4 +110,3 @@ MVP는 룰 기반 스타일 해석을 사용한다. 예를 들어 `시원한 일
 ## 로드맵
 
 [docs/ROADMAP.md](docs/ROADMAP.md)를 참고.
-
