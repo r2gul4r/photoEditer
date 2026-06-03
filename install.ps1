@@ -180,9 +180,22 @@ function Register-PhotoCommand {
   Invoke-Checked "npm link" {
     Push-Location $InstallDir
     try {
-      & npm link
+      $npmCommand = Get-Command "npm.cmd" -ErrorAction SilentlyContinue
+      if (-not $npmCommand) {
+        $npmCommand = Get-Command "npm" -ErrorAction SilentlyContinue
+      }
+      if (-not $npmCommand) {
+        throw "npm is not available after Node.js installation."
+      }
+
+      & $npmCommand.Source link
       if ($LASTEXITCODE -ne 0) {
         throw "npm link failed."
+      }
+
+      $photoPs1 = Join-Path $env:APPDATA "npm\photo.ps1"
+      if (Test-Path $photoPs1) {
+        Remove-Item -LiteralPath $photoPs1 -Force
       }
     } finally {
       Pop-Location

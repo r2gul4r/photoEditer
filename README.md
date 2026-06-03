@@ -58,17 +58,31 @@ This command automatically:
 - downloads the photoEditer ZIP from GitHub
 - extracts it to `~/TonePilot/photoEditer`
 - registers the global `photo` command
-- runs `photo install`
+- installs project dependencies automatically
 
-After install, open PowerShell from any folder:
+You do not need to type `photo install` yourself during first install. After install, open PowerShell from any folder:
 
 ```powershell
 photo dev
 ```
 
-Open `http://127.0.0.1:5173/` after it starts. Codex is optional; without it, the app runs in local Rules mode.
+`photo dev` prints the local URL and opens the browser automatically. If it does not open, visit `http://127.0.0.1:5173/` manually. Codex is optional; without it, the app runs in local Rules mode.
 
-Developers who already cloned the repository can run `npm link`, `photo install`, then `photo dev` from the project folder.
+Developers who already cloned the repository on Windows can run `npm.cmd link`, `photo install`, then `photo dev` from the project folder.
+
+## photo Commands
+
+`photo` is the global command available from any folder after install.
+
+| Command | Description |
+| --- | --- |
+| `photo install` | Reinstalls or repairs dependencies. The one-command installer runs this automatically. |
+| `photo dev` | Starts the local web app and opens the browser. It also checks and repairs missing setup when possible. |
+| `photo doctor` | Checks Node, Python, backend packages, and optional RAW support status. |
+| `photo setup` | Rebuilds or refreshes only the backend Python environment. |
+| `photo backend` | Starts only the backend API server. |
+| `photo desktop` | Starts only the frontend Vite server. |
+| `photo test` | Runs backend tests and the frontend production build. |
 
 ## Manual Setup
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import { existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
-import { spawnSync } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
+import http from "node:http";
 
 const root = resolve(import.meta.dirname, "..");
 const command = process.argv[2] ?? "help";
@@ -102,6 +103,74 @@ function runPnpm(args) {
   run(pnpm.command, [...pnpm.prefixArgs, ...args]);
 }
 
+function waitForHttp(url, timeoutMs = 90000) {
+  const started = Date.now();
+  return new Promise((resolveWait, rejectWait) => {
+    const tick = () => {
+      const request = http.get(url, (response) => {
+        response.resume();
+        resolveWait();
+      });
+      request.setTimeout(1000, () => {
+        request.destroy();
+      });
+      request.on("error", () => {
+        if (Date.now() - started > timeoutMs) {
+          rejectWait(new Error(`Timed out waiting for ${url}`));
+        } else {
+          setTimeout(tick, 900);
+        }
+      });
+    };
+    tick();
+  });
+}
+
+function openBrowser(url) {
+  if (process.env.PHOTO_NO_OPEN === "1") return;
+  if (isWindows) {
+    spawn(process.env.ComSpec ?? "cmd.exe", ["/d", "/c", "start", "", url], {
+      detached: true,
+      stdio: "ignore",
+      windowsVerbatimArguments: false,
+    }).unref();
+    return;
+  }
+
+  const opener = process.platform === "darwin" ? "open" : "xdg-open";
+  spawn(opener, [url], { detached: true, stdio: "ignore" }).unref();
+}
+
+function runPnpmDev(args) {
+  const pnpm = resolvePnpm();
+  const url = "http://127.0.0.1:5173/";
+  console.log(`[photo] local web: ${url}`);
+  console.log("[photo] starting frontend and backend. Press Ctrl+C to stop.");
+
+  const child = spawn(pnpm.command, [...pnpm.prefixArgs, ...args], {
+    cwd: root,
+    env: process.env,
+    stdio: "inherit",
+  });
+
+  waitForHttp(url)
+    .then(() => {
+      console.log(`[photo] opening browser: ${url}`);
+      openBrowser(url);
+    })
+    .catch((error) => {
+      console.warn(`[photo] browser auto-open skipped: ${error.message}`);
+    });
+
+  child.on("exit", (code, signal) => {
+    if (signal) {
+      console.error(`[photo] dev server stopped by signal ${signal}`);
+      process.exit(1);
+    }
+    process.exit(code ?? 0);
+  });
+}
+
 function runNodeScript(scriptPath, args = []) {
   run(process.execPath, [join(root, scriptPath), ...args]);
 }
@@ -145,7 +214,7 @@ switch (command) {
   case "start":
     ensureNodeDeps();
     ensureBackend();
-    runPnpm(["dev", ...rest]);
+    runPnpmDev(["dev", ...rest]);
     break;
   case "setup":
     ensureNodeDeps();

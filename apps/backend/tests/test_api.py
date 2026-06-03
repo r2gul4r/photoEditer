@@ -56,6 +56,10 @@ def test_api_analyze_recommend_preview_and_export_flow() -> None:
     assert recommendation["ai_status"]["status"] == "not_requested"
 
     candidate = recommendation["candidates"][0]
+    assert candidate["intent"]
+    assert candidate["tone_summary"]
+    assert candidate["color_summary"]
+    assert candidate["risk_summary"]
     preview = client.post(
         "/api/preview",
         json={

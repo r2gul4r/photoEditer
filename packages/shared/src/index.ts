@@ -28,5 +28,9 @@ export type CorrectionCandidate = {
   adjustments: CorrectionAdjustments;
   score: number;
   warnings: string[];
+  intent?: string | null;
+  tone_summary?: string | null;
+  color_summary?: string | null;
+  risk_summary?: string | null;
 };
 

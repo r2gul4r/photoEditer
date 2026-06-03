@@ -21,6 +21,8 @@ function candidate(command, prefixArgs = [], label = command) {
 
 const pythonCandidates = [
   process.env.TONEPILOT_PYTHON ? candidate(process.env.TONEPILOT_PYTHON, [], "TONEPILOT_PYTHON") : null,
+  existsSync(join(backendRoot, ".venv312", venvPythonRel)) ? candidate(join(backendRoot, ".venv312", venvPythonRel), [], ".venv312") : null,
+  existsSync(join(backendRoot, ".venv311", venvPythonRel)) ? candidate(join(backendRoot, ".venv311", venvPythonRel), [], ".venv311") : null,
   candidate("py", ["-3.12"], "py -3.12"),
   candidate("py", ["-3.11"], "py -3.11"),
   candidate("python3.12", [], "python3.12"),
@@ -104,6 +106,19 @@ async function createVenv(python) {
   }
 }
 
+async function repairTargetVenv() {
+  if (!venvReady()) return;
+  if (canImport(venvPython, "pip")) return;
+
+  console.warn("[setup] backend venv exists but pip is missing. Trying ensurepip...");
+  run(venvPython, ["-m", "ensurepip", "--upgrade"]);
+  if (canImport(venvPython, "pip")) return;
+
+  console.warn("[setup] backend venv is broken. Recreating it...");
+  rmSync(venvDir, { recursive: true, force: true });
+  await createVenv(resolvePython());
+}
+
 function installBackend(extraSet) {
   const spec = `${backendRoot}[${extraSet}]`;
   console.log(`[setup] installing backend dependencies: ${spec}`);
@@ -128,22 +143,50 @@ async function main() {
     return;
   }
 
+  if (venvReady() && !canImport(venvPython, "pip")) {
+    const activePython = activeVenvPython();
+    if (activePython && activePython !== venvPython) {
+      console.log(`[setup] target venv is broken; using prepared backend venv: ${activePython}`);
+      printCheck();
+      return;
+    }
+  }
+
   if (!venvReady()) {
     await createVenv(resolvePython());
-  } else if (targetVenvHasBackendDeps()) {
+  } else {
+    await repairTargetVenv();
+  }
+
+  if (targetVenvHasBackendDeps()) {
     console.log(`[setup] backend venv already ready: ${venvDir}`);
     printCheck();
     return;
-  } else {
-    console.log(`[setup] using existing backend venv: ${venvDir}`);
   }
+
+  const activePython = activeVenvPython();
+  if (activePython && activePython !== venvPython) {
+    console.log(`[setup] target venv is not ready; using prepared backend venv: ${activePython}`);
+    printCheck();
+    return;
+  }
+
+  console.log(`[setup] using existing backend venv: ${venvDir}`);
 
   const extras = noRaw ? "dev,exif" : "dev,raw,exif";
   const result = installBackend(extras);
   if (result.status !== 0 && !noRaw) {
     console.warn("[setup] RAW dependency install failed. Retrying without rawpy so the app can still run.");
     const fallback = installBackend("dev,exif");
-    if (fallback.status !== 0) process.exit(fallback.status ?? 1);
+    if (fallback.status !== 0) {
+      const fallbackPython = activeVenvPython();
+      if (fallbackPython && fallbackPython !== venvPython) {
+        console.log(`[setup] setup target failed; using prepared backend venv: ${fallbackPython}`);
+        printCheck();
+        return;
+      }
+      process.exit(fallback.status ?? 1);
+    }
     writeFileSync(noRawMarker, "rawpy install failed; run `pnpm setup -- --retry-raw` to try again.\n");
   } else if (result.status !== 0) {
     process.exit(result.status ?? 1);

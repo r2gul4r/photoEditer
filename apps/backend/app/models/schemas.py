@@ -143,6 +143,10 @@ class CorrectionCandidate(BaseModel):
     adjustments: CorrectionAdjustments
     score: float
     warnings: list[str] = Field(default_factory=list)
+    intent: str | None = None
+    tone_summary: str | None = None
+    color_summary: str | None = None
+    risk_summary: str | None = None
 
 
 class StyleInterpretation(BaseModel):

@@ -70,6 +70,10 @@ function revokeIfObjectUrl(url: string | null) {
   }
 }
 
+function normalizeStrength(strength: number) {
+  return Math.max(0, Math.min(1, Math.round(strength * 100) / 100));
+}
+
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case "start":
@@ -113,7 +117,7 @@ function reducer(state: AppState, action: Action): AppState {
     case "setAiMode":
       return { ...state, aiMode: action.aiMode };
     case "setStrength":
-      return { ...state, strength: action.strength };
+      return { ...state, strength: normalizeStrength(action.strength) };
     case "setLanguage":
       return { ...state, language: action.language };
     case "setRecommendation":

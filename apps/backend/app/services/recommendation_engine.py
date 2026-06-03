@@ -135,6 +135,58 @@ def _apply_histogram_constraints(adjustments: CorrectionAdjustments, analysis: I
     return warnings
 
 
+def _format_signed(value: float, *, unit: str = "") -> str:
+    if value == 0:
+        return f"0{unit}"
+    prefix = "+" if value > 0 else ""
+    return f"{prefix}{value:g}{unit}"
+
+
+def _dominant_hsl_summary(adjustments: CorrectionAdjustments) -> str:
+    hsl = adjustments.hsl or {}
+    if not hsl:
+        return "HSL은 크게 건드리지 않음"
+    strongest: list[tuple[str, str, float]] = []
+    for color, values in hsl.items():
+        for channel in ("hue", "saturation", "luminance"):
+            value = getattr(values, channel, 0)
+            if abs(value) >= 1:
+                strongest.append((color, channel, value))
+    if not strongest:
+        return "HSL은 미세 조정만 적용"
+    strongest.sort(key=lambda item: abs(item[2]), reverse=True)
+    color, channel, value = strongest[0]
+    return f"{color} {channel} {_format_signed(value)} 중심"
+
+
+def build_candidate_explanations(
+    adjustments: CorrectionAdjustments,
+    warnings: list[str],
+    *,
+    intent: str,
+) -> dict[str, str]:
+    tone_parts = [
+        f"노출 {_format_signed(adjustments.exposure, unit='EV')}",
+        f"대비 {_format_signed(adjustments.contrast)}",
+        f"하이라이트 {_format_signed(adjustments.highlights)}",
+        f"섀도우 {_format_signed(adjustments.shadows)}",
+    ]
+    color_parts = [
+        f"색온도 {_format_signed(adjustments.temperature, unit='K')}",
+        f"틴트 {_format_signed(adjustments.tint)}",
+        f"생동감 {_format_signed(adjustments.vibrance)}",
+        f"채도 {_format_signed(adjustments.saturation)}",
+        _dominant_hsl_summary(adjustments),
+    ]
+    risk_summary = " / ".join(warnings) if warnings else "클리핑/과채도 보호 제한 없음"
+    return {
+        "intent": intent,
+        "tone_summary": ", ".join(tone_parts),
+        "color_summary": ", ".join(color_parts),
+        "risk_summary": risk_summary,
+    }
+
+
 def generate_recommendations(analysis: ImageAnalysis, style: StyleInterpretation, strength: float = 0.7) -> list[CorrectionCandidate]:
     candidates: list[CorrectionCandidate] = []
     labels = {
@@ -151,6 +203,7 @@ def generate_recommendations(analysis: ImageAnalysis, style: StyleInterpretation
 
         score = round(max(0.1, 0.88 - index * 0.07 - len(warnings) * 0.025), 2)
         name, description = labels[variant]
+        explanations = build_candidate_explanations(adjustments, warnings, intent=description)
         candidates.append(
             CorrectionCandidate(
                 id=variant,  # type: ignore[arg-type]
@@ -159,6 +212,7 @@ def generate_recommendations(analysis: ImageAnalysis, style: StyleInterpretation
                 adjustments=adjustments,
                 score=score,
                 warnings=warnings,
+                **explanations,
             )
         )
 

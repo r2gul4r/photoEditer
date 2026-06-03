@@ -726,6 +726,37 @@ textarea:focus {
   line-height: 1.45;
 }
 
+.candidate-insights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.candidate-insights div {
+  min-width: 0;
+  border: 1px solid var(--border-1);
+  border-radius: 6px;
+  padding: 6px;
+  display: grid;
+  gap: 3px;
+  background: var(--field-bg);
+}
+
+.candidate-insights span {
+  color: var(--text-4);
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.candidate-insights strong {
+  color: var(--text-2);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
 .warnings {
   margin: 0;
   padding-left: 17px;
@@ -845,138 +876,110 @@ textarea:focus {
 
 .histogram {
   display: grid;
-  gap: 7px;
+  gap: 6px;
 }
 
 .histogram-frame {
   position: relative;
-  height: 148px;
-  border: 1px solid var(--border-1);
-  border-radius: 6px;
-  background: #080808;
+  height: 124px;
+  border: 1px solid #1c1c1c;
+  border-radius: 2px;
+  background: #3a3a3a;
+  box-shadow:
+    inset 0 1px 0 #4a4a4a,
+    inset 0 -1px 0 #1a1a1a;
   overflow: hidden;
 }
 
 .histogram-svg {
   display: block;
   width: 100%;
-  height: calc(100% - 22px);
-  shape-rendering: geometricPrecision;
-}
-
-.histogram-zone {
-  fill: rgba(255, 255, 255, 0.025);
-}
-
-.histogram-zone.zone-1,
-.histogram-zone.zone-3 {
-  fill: rgba(255, 255, 255, 0.04);
-}
-
-.histogram-zone.zone-2 {
-  fill: rgba(255, 255, 255, 0.055);
+  height: calc(100% - 18px);
+  shape-rendering: crispEdges;
 }
 
 .histogram-gridline {
-  stroke: rgba(255, 255, 255, 0.1);
+  stroke: #414141;
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
 }
 
-.histogram-area {
-  stroke-width: 1.15;
-  vector-effect: non-scaling-stroke;
-  mix-blend-mode: screen;
+.histogram-bin {
+  stroke: none;
+  shape-rendering: crispEdges;
 }
 
-.histogram-area.luma {
-  fill: rgba(235, 235, 235, 0.16);
-  stroke: rgba(235, 235, 235, 0.68);
+.histogram-bin.r {
+  fill: #df4038;
 }
 
-.histogram-area.red {
-  fill: rgba(218, 106, 106, 0.25);
-  stroke: rgba(229, 133, 133, 0.55);
+.histogram-bin.g {
+  fill: #69c944;
 }
 
-.histogram-area.green {
-  fill: rgba(124, 176, 136, 0.25);
-  stroke: rgba(148, 190, 158, 0.52);
+.histogram-bin.b {
+  fill: #2f72d9;
 }
 
-.histogram-area.blue {
-  fill: rgba(108, 133, 176, 0.25);
-  stroke: rgba(141, 158, 195, 0.52);
+.histogram-bin.rg {
+  fill: #d7cc43;
+}
+
+.histogram-bin.rb {
+  fill: #b850c9;
+}
+
+.histogram-bin.gb {
+  fill: #46bfd0;
+}
+
+.histogram-bin.rgb {
+  fill: #d0d0d0;
 }
 
 .clip-indicator {
   position: absolute;
-  top: 7px;
+  top: 3px;
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 10px solid #4a4a4a;
+  z-index: 2;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid #101010;
 }
 
 .clip-indicator.shadow {
-  left: 8px;
+  left: 4px;
 }
 
 .clip-indicator.highlight {
-  right: 8px;
+  right: 4px;
 }
 
 .clip-indicator.active.shadow {
-  border-bottom-color: #8fa0bf;
+  border-bottom-color: #d8d8d8;
 }
 
 .clip-indicator.active.highlight {
-  border-bottom-color: #d08e8e;
-}
-
-.histogram-tones {
-  position: absolute;
-  left: 8px;
-  right: 8px;
-  bottom: 5px;
-  display: grid;
-  grid-template-columns: 28fr 52fr 96fr 52fr 28fr;
-  color: var(--text-4);
-  font-size: 9px;
-  line-height: 1;
-  pointer-events: none;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.histogram-tones span:first-child {
-  text-align: left;
-}
-
-.histogram-tones span:last-child {
-  text-align: right;
-}
-
-.histogram-scale {
-  display: flex;
-  justify-content: space-between;
-  color: var(--text-4);
-  font-size: 11px;
-  line-height: 1;
-}
-
-.histogram-metrics {
-  align-items: center;
+  border-bottom-color: #d8d8d8;
 }
 
 .histogram-readout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
-  gap: 14px;
-  color: var(--text-3);
-  font-size: 11px;
+  gap: 9px;
+  z-index: 2;
+  padding: 3px 6px 4px;
+  color: #d7d7d7;
+  background: #262626;
+  border-top: 1px solid #363636;
+  font-size: 10px;
   line-height: 1;
+  pointer-events: none;
 }
 
 .extension-grid {

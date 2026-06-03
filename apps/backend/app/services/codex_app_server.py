@@ -18,7 +18,7 @@ from app.models.schemas import (
     ImageAnalysis,
     StyleInterpretation,
 )
-from app.services.recommendation_engine import ADJUSTMENT_LIMITS
+from app.services.recommendation_engine import ADJUSTMENT_LIMITS, build_candidate_explanations
 
 
 class CodexRecommendationError(RuntimeError):
@@ -213,13 +213,25 @@ def _normalize_candidate(raw: dict[str, Any]) -> CorrectionCandidate:
     if not isinstance(warnings, list):
         warnings = []
 
+    correction_adjustments = CorrectionAdjustments(**adjustments, hsl=hsl)
+    fallback_intent = str(raw.get("intent") or raw.get("description") or "AI-generated correction candidate.")
+    explanations = build_candidate_explanations(
+        correction_adjustments,
+        [str(warning) for warning in warnings],
+        intent=fallback_intent,
+    )
+
     return CorrectionCandidate(
         id=candidate_id,
         name=str(raw.get("name") or candidate_id.title()),
         description=str(raw.get("description") or "AI-generated correction candidate."),
-        adjustments=CorrectionAdjustments(**adjustments, hsl=hsl),
+        adjustments=correction_adjustments,
         score=round(max(0.0, min(1.0, score_value)), 2),
         warnings=[str(warning) for warning in warnings],
+        intent=str(raw.get("intent") or explanations["intent"]),
+        tone_summary=str(raw.get("tone_summary") or explanations["tone_summary"]),
+        color_summary=str(raw.get("color_summary") or explanations["color_summary"]),
+        risk_summary=str(raw.get("risk_summary") or explanations["risk_summary"]),
     )
 
 
@@ -248,13 +260,16 @@ def _candidate_from_vector(candidate_id: str, raw_vector: Any, warnings: list[st
         )
 
     name, description, score = CANDIDATE_LABELS[candidate_id]
+    correction_adjustments = CorrectionAdjustments(**adjustments, hsl=hsl)
+    explanations = build_candidate_explanations(correction_adjustments, warnings, intent=description)
     return CorrectionCandidate(
         id=candidate_id,  # type: ignore[arg-type]
         name=name,
         description=description,
-        adjustments=CorrectionAdjustments(**adjustments, hsl=hsl),
+        adjustments=correction_adjustments,
         score=score,
         warnings=warnings,
+        **explanations,
     )
 
 

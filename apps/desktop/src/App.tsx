@@ -412,9 +412,11 @@ function App() {
                   type="range"
                   min={0}
                   max={1}
-                  step={0.05}
+                  step={0.01}
                   value={state.strength}
-                  onChange={(event) => dispatch({ type: "setStrength", strength: Number(event.target.value) })}
+                  onChange={(event) =>
+                    dispatch({ type: "setStrength", strength: Math.round(Number(event.target.value) * 100) / 100 })
+                  }
                 />
               </label>
               <button className="button primary full" type="button" disabled={!imageId || busy} onClick={handleRecommend}>

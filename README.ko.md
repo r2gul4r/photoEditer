@@ -56,17 +56,31 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "$p=Join-Path $env:TEMP '
 - GitHub에서 photoEditer ZIP 다운로드
 - 기본 위치 `~/TonePilot/photoEditer`에 압축 해제
 - `photo` 전역 명령 등록
-- `photo install` 실행
+- 프로젝트 의존성 자동 설치
 
-설치가 끝나면 어느 폴더에서 PowerShell을 열어도:
+사용자가 직접 `photo install`을 입력할 필요는 없다. 설치가 끝나면 어느 폴더에서 PowerShell을 열어도:
 
 ```powershell
 photo dev
 ```
 
-실행 후 브라우저에서 `http://127.0.0.1:5173/`를 열면 된다. Codex는 선택사항이며, 없으면 로컬 Rules 모드로 실행된다.
+`photo dev`는 로컬 주소를 출력하고 브라우저를 자동으로 연다. 자동으로 열리지 않으면 `http://127.0.0.1:5173/`를 직접 열면 된다. Codex는 선택사항이며, 없으면 로컬 Rules 모드로 실행된다.
 
-이미 저장소를 직접 내려받은 개발자는 프로젝트 폴더에서 `npm link`, `photo install`, `photo dev` 순서로 실행해도 된다.
+이미 저장소를 직접 내려받은 개발자는 프로젝트 폴더에서 `npm.cmd link`, `photo install`, `photo dev` 순서로 실행해도 된다.
+
+## photo 명령어
+
+`photo`는 설치 후 어느 폴더에서든 실행할 수 있는 전역 명령이다.
+
+| 명령 | 설명 |
+| --- | --- |
+| `photo install` | 의존성을 다시 설치하거나 복구한다. 원클릭 설치 때는 자동으로 실행된다. |
+| `photo dev` | 로컬 웹 앱을 실행하고 브라우저를 연다. 준비가 빠져 있으면 자동으로 확인하고 보정한다. |
+| `photo doctor` | Node/Python/백엔드 패키지/RAW 지원 설치 상태를 확인한다. |
+| `photo setup` | 백엔드 Python 환경만 다시 준비한다. |
+| `photo backend` | 백엔드 API 서버만 실행한다. |
+| `photo desktop` | 프론트엔드 Vite 서버만 실행한다. |
+| `photo test` | 백엔드 테스트와 프론트엔드 빌드를 같이 실행한다. |
 
 ## 수동 설치
 

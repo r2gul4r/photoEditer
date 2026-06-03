@@ -22,6 +22,34 @@ export function CandidateCard({ candidate, selected, busy, scoreLabel, previewLa
         </div>
         <p>{candidate.description}</p>
       </div>
+      {candidate.intent || candidate.tone_summary || candidate.color_summary || candidate.risk_summary ? (
+        <div className="candidate-insights">
+          {candidate.intent ? (
+            <div>
+              <span>Intent</span>
+              <strong>{candidate.intent}</strong>
+            </div>
+          ) : null}
+          {candidate.tone_summary ? (
+            <div>
+              <span>Tone</span>
+              <strong>{candidate.tone_summary}</strong>
+            </div>
+          ) : null}
+          {candidate.color_summary ? (
+            <div>
+              <span>Color</span>
+              <strong>{candidate.color_summary}</strong>
+            </div>
+          ) : null}
+          {candidate.risk_summary ? (
+            <div>
+              <span>Risk</span>
+              <strong>{candidate.risk_summary}</strong>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
       {candidate.warnings.length > 0 ? (
         <ul className="warnings">
           {candidate.warnings.map((warning) => (
