@@ -1,16 +1,29 @@
 import { useReducer } from "react";
 
-import type { AnalyzeImageResponse, RecommendResponse } from "../api/types";
+import type {
+  AiConnectionStatus,
+  AiMode,
+  AnalyzeImageResponse,
+  RawSupportStatus,
+  RecommendResponse,
+  ReferenceLibraryResponse,
+} from "../api/types";
+import type { Language } from "../i18n";
 import type { CorrectionCandidate } from "@tonepilot/shared";
 
 export type AppState = {
+  language: Language;
   imageFile: File | null;
   originalUrl: string | null;
   analysis: AnalyzeImageResponse | null;
   recommendation: RecommendResponse | null;
+  aiConnection: AiConnectionStatus | null;
+  references: ReferenceLibraryResponse | null;
+  rawStatus: RawSupportStatus | null;
   selectedCandidate: CorrectionCandidate | null;
   previewUrl: string | null;
   stylePrompt: string;
+  aiMode: AiMode;
   strength: number;
   busyLabel: string | null;
   error: string | null;
@@ -19,22 +32,32 @@ export type AppState = {
 type Action =
   | { type: "start"; label: string }
   | { type: "error"; error: string }
-  | { type: "setImage"; file: File; originalUrl: string }
+  | { type: "setImage"; file: File; originalUrl: string; label: string }
   | { type: "setAnalysis"; analysis: AnalyzeImageResponse }
+  | { type: "setAiConnection"; aiConnection: AiConnectionStatus }
+  | { type: "setReferences"; references: ReferenceLibraryResponse }
+  | { type: "setRawStatus"; rawStatus: RawSupportStatus }
   | { type: "setPrompt"; stylePrompt: string }
+  | { type: "setAiMode"; aiMode: AiMode }
   | { type: "setStrength"; strength: number }
+  | { type: "setLanguage"; language: Language }
   | { type: "setRecommendation"; recommendation: RecommendResponse }
   | { type: "setPreview"; candidate: CorrectionCandidate; previewUrl: string }
   | { type: "idle" };
 
 const initialState: AppState = {
+  language: "en",
   imageFile: null,
   originalUrl: null,
   analysis: null,
   recommendation: null,
+  aiConnection: null,
+  references: null,
+  rawStatus: null,
   selectedCandidate: null,
   previewUrl: null,
-  stylePrompt: "시원한 일본 여름 느낌",
+  stylePrompt: "cool Japanese summer",
+  aiMode: "auto",
   strength: 0.7,
   busyLabel: null,
   error: null,
@@ -54,16 +77,31 @@ function reducer(state: AppState, action: Action): AppState {
         ...initialState,
         imageFile: action.file,
         originalUrl: action.originalUrl,
+        aiConnection: state.aiConnection,
+        references: state.references,
+        rawStatus: state.rawStatus,
         stylePrompt: state.stylePrompt,
+        aiMode: state.aiMode,
         strength: state.strength,
-        busyLabel: "이미지 분석 중",
+        language: state.language,
+        busyLabel: action.label,
       };
     case "setAnalysis":
       return { ...state, analysis: action.analysis, busyLabel: null, error: null };
+    case "setAiConnection":
+      return { ...state, aiConnection: action.aiConnection };
+    case "setReferences":
+      return { ...state, references: action.references };
+    case "setRawStatus":
+      return { ...state, rawStatus: action.rawStatus };
     case "setPrompt":
       return { ...state, stylePrompt: action.stylePrompt };
+    case "setAiMode":
+      return { ...state, aiMode: action.aiMode };
     case "setStrength":
       return { ...state, strength: action.strength };
+    case "setLanguage":
+      return { ...state, language: action.language };
     case "setRecommendation":
       return {
         ...state,

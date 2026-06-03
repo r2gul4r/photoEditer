@@ -77,6 +77,23 @@ export type RiskFlags = {
   strong_cool_cast: boolean;
 };
 
+export type AiRecommendationStatus = {
+  provider: "rules" | "codex-app-server";
+  status: "not_requested" | "used" | "fallback" | "failed";
+  message: string;
+};
+
+export type AiMode = "auto" | "codex" | "rules";
+
+export type AiConnectionStatus = {
+  provider: "codex-app-server";
+  available: boolean;
+  command: string;
+  message: string;
+  user_agent: string | null;
+  platform: string | null;
+};
+
 export type ImageAnalysis = {
   luma: LumaStats;
   rgb: RgbStats;
@@ -107,8 +124,57 @@ export type StyleInterpretation = {
 export type RecommendResponse = {
   style_interpretation: StyleInterpretation;
   candidates: import("@tonepilot/shared").CorrectionCandidate[];
+  ai_status: AiRecommendationStatus;
 };
 
 export type PreviewResponse = {
   preview_url: string;
+};
+
+export type ReferenceSource = {
+  path: string;
+  format: string | null;
+  camera: string | null;
+  lens: string | null;
+  iso: number | null;
+  exists: boolean;
+};
+
+export type ReferenceTarget = {
+  path: string;
+  style: string;
+  notes: string | null;
+  exists: boolean;
+};
+
+export type ReferencePreset = {
+  path: string;
+  adjustments: import("@tonepilot/shared").CorrectionAdjustments;
+  exists: boolean;
+};
+
+export type ReferenceManifest = {
+  id: string;
+  manifest_path: string;
+  source: ReferenceSource;
+  targets: ReferenceTarget[];
+  preset: ReferencePreset | null;
+  license: {
+    owner: string | null;
+    usage: string | null;
+  } | null;
+};
+
+export type ReferenceLibraryResponse = {
+  root: "reference";
+  count: number;
+  items: ReferenceManifest[];
+};
+
+export type RawSupportStatus = {
+  available: boolean;
+  dependency: "rawpy";
+  version: string | null;
+  message: string;
+  install_hint: string;
 };

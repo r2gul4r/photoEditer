@@ -145,15 +145,37 @@ class StyleInterpretation(BaseModel):
     slider_prior: dict[str, tuple[float, float]]
 
 
+AiMode = Literal["rules", "auto", "codex"]
+AiProvider = Literal["rules", "codex-app-server"]
+AiStatusValue = Literal["not_requested", "used", "fallback", "failed"]
+
+
+class AiRecommendationStatus(BaseModel):
+    provider: AiProvider
+    status: AiStatusValue
+    message: str
+
+
+class AiConnectionStatus(BaseModel):
+    provider: Literal["codex-app-server"]
+    available: bool
+    command: str
+    message: str
+    user_agent: str | None = None
+    platform: str | None = None
+
+
 class RecommendRequest(BaseModel):
     image_id: str
     style_prompt: str
     strength: float = Field(default=0.7, ge=0, le=1)
+    ai_mode: AiMode = "auto"
 
 
 class RecommendResponse(BaseModel):
     style_interpretation: StyleInterpretation
     candidates: list[CorrectionCandidate]
+    ai_status: AiRecommendationStatus
 
 
 class PreviewRequest(BaseModel):
@@ -177,3 +199,53 @@ class ExportRenderedImageRequest(BaseModel):
     candidate_id: str
     adjustments: CorrectionAdjustments
     format: Literal["jpeg", "png"] = "jpeg"
+
+
+class ReferenceSource(BaseModel):
+    path: str
+    format: str | None = None
+    camera: str | None = None
+    lens: str | None = None
+    iso: int | None = None
+    exists: bool = False
+
+
+class ReferenceTarget(BaseModel):
+    path: str
+    style: str
+    notes: str | None = None
+    exists: bool = False
+
+
+class ReferencePreset(BaseModel):
+    path: str
+    adjustments: CorrectionAdjustments = Field(default_factory=CorrectionAdjustments)
+    exists: bool = False
+
+
+class ReferenceLicense(BaseModel):
+    owner: str | None = None
+    usage: str | None = None
+
+
+class ReferenceManifest(BaseModel):
+    id: str
+    manifest_path: str
+    source: ReferenceSource
+    targets: list[ReferenceTarget] = Field(default_factory=list)
+    preset: ReferencePreset | None = None
+    license: ReferenceLicense | None = None
+
+
+class ReferenceLibraryResponse(BaseModel):
+    root: str = "reference"
+    count: int
+    items: list[ReferenceManifest]
+
+
+class RawSupportStatus(BaseModel):
+    available: bool
+    dependency: Literal["rawpy"] = "rawpy"
+    version: str | None = None
+    message: str
+    install_hint: str

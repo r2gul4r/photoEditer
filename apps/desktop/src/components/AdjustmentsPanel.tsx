@@ -1,29 +1,50 @@
+import type { Language } from "../i18n";
 import type { CorrectionAdjustments } from "@tonepilot/shared";
 
 type Props = {
   adjustments: CorrectionAdjustments | null;
+  language: Language;
+  emptyLabel: string;
 };
 
-const labels: Record<keyof CorrectionAdjustments, string> = {
-  exposure: "노출",
-  contrast: "대비",
-  highlights: "하이라이트",
-  shadows: "섀도우",
-  whites: "화이트",
-  blacks: "블랙",
-  temperature: "색온도",
-  tint: "틴트",
-  vibrance: "생동감",
-  saturation: "채도",
-  clarity: "명료도",
-  texture: "텍스처",
-  dehaze: "디헤이즈",
-  hsl: "HSL",
+const labels: Record<Language, Record<keyof CorrectionAdjustments, string>> = {
+  en: {
+    exposure: "Exposure",
+    contrast: "Contrast",
+    highlights: "Highlights",
+    shadows: "Shadows",
+    whites: "Whites",
+    blacks: "Blacks",
+    temperature: "Temperature",
+    tint: "Tint",
+    vibrance: "Vibrance",
+    saturation: "Saturation",
+    clarity: "Clarity",
+    texture: "Texture",
+    dehaze: "Dehaze",
+    hsl: "HSL",
+  },
+  ko: {
+    exposure: "노출",
+    contrast: "대비",
+    highlights: "하이라이트",
+    shadows: "섀도우",
+    whites: "화이트",
+    blacks: "블랙",
+    temperature: "색온도",
+    tint: "틴트",
+    vibrance: "생동감",
+    saturation: "채도",
+    clarity: "명료도",
+    texture: "텍스처",
+    dehaze: "디헤이즈",
+    hsl: "HSL",
+  },
 };
 
-export function AdjustmentsPanel({ adjustments }: Props) {
+export function AdjustmentsPanel({ adjustments, language, emptyLabel }: Props) {
   if (!adjustments) {
-    return <div className="panel-empty">보정값</div>;
+    return <div className="panel-empty">{emptyLabel}</div>;
   }
 
   const entries = Object.entries(adjustments).filter(([key]) => key !== "hsl") as [keyof CorrectionAdjustments, number][];
@@ -33,7 +54,7 @@ export function AdjustmentsPanel({ adjustments }: Props) {
     <div className="adjustments">
       {entries.map(([key, value]) => (
         <div className="adjustment-row" key={key}>
-          <span>{labels[key]}</span>
+          <span>{labels[language][key]}</span>
           <strong>{value > 0 ? `+${value}` : value}</strong>
         </div>
       ))}

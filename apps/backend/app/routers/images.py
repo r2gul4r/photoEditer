@@ -26,7 +26,7 @@ async def analyze_upload(file: UploadFile = File(...)) -> AnalyzeImageResponse:
         if record.file_type == "raw":
             raw_result = analyze_raw(record.original_path)
             if not raw_result.get("ok"):
-                raise HTTPException(status_code=422, detail=str(raw_result.get("error", "RAW analysis failed")))
+                raise HTTPException(status_code=422, detail=raw_result)
             image = render_raw_to_rgb(record.original_path)
         else:
             image = load_rgb_image(record.original_path)

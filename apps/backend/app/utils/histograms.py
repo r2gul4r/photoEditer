@@ -12,7 +12,15 @@ def as_float_rgb(rgb: np.ndarray) -> np.ndarray:
 
 
 def quantize_to_uint8(values: np.ndarray) -> np.ndarray:
-    clipped = np.clip(np.asarray(values, dtype=np.float32), 0.0, 1.0)
+    arr = np.asarray(values)
+    if arr.dtype.kind in {"u", "i"}:
+        max_value = np.iinfo(arr.dtype).max
+        if max_value == 255:
+            return np.clip(arr, 0, 255).astype(np.uint8)
+        clipped = np.clip(arr.astype(np.float32), 0.0, float(max_value))
+        return np.rint((clipped / float(max_value)) * 255.0).astype(np.uint8)
+
+    clipped = np.clip(arr.astype(np.float32), 0.0, 1.0)
     return np.rint(clipped * 255.0).astype(np.uint8)
 
 

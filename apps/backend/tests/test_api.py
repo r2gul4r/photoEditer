@@ -4,6 +4,11 @@ from fastapi.testclient import TestClient
 from PIL import Image
 
 from app.main import app
+from app.models.schemas import AiConnectionStatus
+from app.routers import ai as ai_router
+from app.routers import recommend as recommend_router
+from app.services.codex_app_server import CodexRecommendationError, CodexRecommendationResult
+from app.services.recommendation_engine import generate_recommendations
 
 
 def _jpeg_bytes() -> bytes:
@@ -36,12 +41,15 @@ def test_api_analyze_recommend_preview_and_export_flow() -> None:
             "image_id": analyzed["image_id"],
             "style_prompt": "\uc2dc\uc6d0\ud55c \uc77c\ubcf8 \uc5ec\ub984 \ub290\ub08c",
             "strength": 0.7,
+            "ai_mode": "rules",
         },
     )
     assert recommend.status_code == 200
     recommendation = recommend.json()
     assert recommendation["style_interpretation"]["style_id"] == "cool_japanese_summer"
     assert [candidate["id"] for candidate in recommendation["candidates"]] == ["natural", "style", "bold"]
+    assert recommendation["ai_status"]["provider"] == "rules"
+    assert recommendation["ai_status"]["status"] == "not_requested"
 
     candidate = recommendation["candidates"][0]
     preview = client.post(
@@ -78,3 +86,162 @@ def test_api_analyze_recommend_preview_and_export_flow() -> None:
     assert rendered_export.status_code == 200
     assert rendered_export.headers["content-type"] == "image/jpeg"
     assert rendered_export.content.startswith(b"\xff\xd8")
+
+
+def test_ai_status_reports_codex_connection(monkeypatch) -> None:
+    client = TestClient(app)
+
+    def fake_probe() -> AiConnectionStatus:
+        return AiConnectionStatus(
+            provider="codex-app-server",
+            available=True,
+            command="codex",
+            message="fake initialized",
+            user_agent="codex-test",
+            platform="windows",
+        )
+
+    monkeypatch.setattr(ai_router, "probe_codex_app_server", fake_probe)
+
+    response = client.get("/api/ai/status")
+    body = response.json()
+    assert response.status_code == 200
+    assert body["provider"] == "codex-app-server"
+    assert body["available"] is True
+    assert body["command"] == "codex"
+    assert body["user_agent"] == "codex-test"
+
+
+def test_reference_library_lists_example_manifest() -> None:
+    client = TestClient(app)
+
+    response = client.get("/api/references")
+    body = response.json()
+    assert response.status_code == 200
+    assert body["root"] == "reference"
+    assert body["count"] >= 1
+    example = next(item for item in body["items"] if item["id"] == "example-reference-001")
+    assert example["manifest_path"] == "manifests/example.json"
+    assert example["source"]["path"] == "raw/example.dng"
+    assert example["source"]["exists"] is False
+    assert example["targets"][0]["style"] == "clean-natural"
+    assert example["preset"]["adjustments"]["exposure"] == 0
+
+
+def test_raw_status_reports_dependency_state() -> None:
+    client = TestClient(app)
+
+    response = client.get("/api/raw/status")
+    body = response.json()
+    assert response.status_code == 200
+    assert body["dependency"] == "rawpy"
+    assert isinstance(body["available"], bool)
+    assert body["install_hint"]
+
+
+def test_raw_upload_failure_returns_structured_detail() -> None:
+    client = TestClient(app)
+
+    response = client.post(
+        "/api/images/analyze",
+        files={"file": ("broken.dng", b"not a real raw file", "application/octet-stream")},
+    )
+    body = response.json()
+    assert response.status_code == 422
+    assert body["detail"]["ok"] is False
+    assert body["detail"]["code"] in {"rawpy_missing", "raw_analysis_failed"}
+    assert body["detail"]["install_hint"]
+
+
+def test_recommend_defaults_to_auto_codex_path(monkeypatch) -> None:
+    client = TestClient(app)
+    analyze = client.post(
+        "/api/images/analyze",
+        files={"file": ("smoke.jpg", _jpeg_bytes(), "image/jpeg")},
+    )
+    analyzed = analyze.json()
+
+    def fake_codex_recommendations(**kwargs):
+        return CodexRecommendationResult(
+            candidates=generate_recommendations(kwargs["analysis"], kwargs["style"], kwargs["strength"]),
+            message="default auto codex candidates",
+        )
+
+    monkeypatch.setattr(recommend_router, "generate_codex_recommendations", fake_codex_recommendations)
+
+    response = client.post(
+        "/api/recommend",
+        json={
+            "image_id": analyzed["image_id"],
+            "style_prompt": "cool Japanese summer",
+            "strength": 0.7,
+        },
+    )
+
+    body = response.json()
+    assert response.status_code == 200
+    assert body["ai_status"]["provider"] == "codex-app-server"
+    assert body["ai_status"]["status"] == "used"
+
+
+def test_recommend_auto_uses_codex_when_available(monkeypatch) -> None:
+    client = TestClient(app)
+    analyze = client.post(
+        "/api/images/analyze",
+        files={"file": ("smoke.jpg", _jpeg_bytes(), "image/jpeg")},
+    )
+    analyzed = analyze.json()
+
+    def fake_codex_recommendations(**kwargs):
+        return CodexRecommendationResult(
+            candidates=generate_recommendations(kwargs["analysis"], kwargs["style"], kwargs["strength"]),
+            message="fake codex candidates",
+        )
+
+    monkeypatch.setattr(recommend_router, "generate_codex_recommendations", fake_codex_recommendations)
+
+    response = client.post(
+        "/api/recommend",
+        json={
+            "image_id": analyzed["image_id"],
+            "style_prompt": "cool Japanese summer",
+            "strength": 0.7,
+            "ai_mode": "auto",
+        },
+    )
+
+    body = response.json()
+    assert response.status_code == 200
+    assert body["ai_status"]["provider"] == "codex-app-server"
+    assert body["ai_status"]["status"] == "used"
+    assert [candidate["id"] for candidate in body["candidates"]] == ["natural", "style", "bold"]
+
+
+def test_recommend_auto_falls_back_when_codex_fails(monkeypatch) -> None:
+    client = TestClient(app)
+    analyze = client.post(
+        "/api/images/analyze",
+        files={"file": ("smoke.jpg", _jpeg_bytes(), "image/jpeg")},
+    )
+    analyzed = analyze.json()
+
+    def fake_codex_recommendations(**kwargs):
+        raise CodexRecommendationError("not logged in")
+
+    monkeypatch.setattr(recommend_router, "generate_codex_recommendations", fake_codex_recommendations)
+
+    response = client.post(
+        "/api/recommend",
+        json={
+            "image_id": analyzed["image_id"],
+            "style_prompt": "cool Japanese summer",
+            "strength": 0.7,
+            "ai_mode": "auto",
+        },
+    )
+
+    body = response.json()
+    assert response.status_code == 200
+    assert body["ai_status"]["provider"] == "codex-app-server"
+    assert body["ai_status"]["status"] == "fallback"
+    assert [candidate["id"] for candidate in body["candidates"]] == ["natural", "style", "bold"]

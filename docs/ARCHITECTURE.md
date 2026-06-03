@@ -19,6 +19,7 @@ packages/shared TypeScript shared schemas
 7. 사용자가 후보를 선택하면 `POST /api/preview`가 실제 preview를 만든다.
 8. 프론트엔드는 before/after 비교와 보정값을 표시한다.
 9. 사용자가 결과물을 export하면 `POST /api/export/rendered-image`가 JPEG/PNG 파일을 생성한다.
+10. 레퍼런스 패널은 `GET /api/references`로 `reference/manifests/*.json`를 읽고 향후 스타일 매칭/학습 데이터 연결 지점으로 사용한다.
 
 ## 확장 지점
 
@@ -26,4 +27,5 @@ packages/shared TypeScript shared schemas
 - `services/style_interpreter.py`: 룰 기반 스타일 매핑
 - `services/recommendation_engine.py`: 후보 생성
 - `services/renderer.py`: preview 렌더링
+- `services/reference_library.py`: reference manifest 로딩
 - 향후 CLIP, segmentation, ONNX 모델은 별도 서비스로 붙인다.

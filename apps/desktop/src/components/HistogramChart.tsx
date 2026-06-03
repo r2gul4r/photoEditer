@@ -2,6 +2,7 @@ import type { DisplayHistogram, HistogramChannel, ImageAnalysis } from "../api/t
 
 type Props = {
   analysis: ImageAnalysis | null;
+  emptyLabel: string;
 };
 
 const VIEWBOX_WIDTH = 256;
@@ -84,9 +85,9 @@ function fallbackHistogram(analysis: ImageAnalysis): DisplayHistogram {
   };
 }
 
-export function HistogramChart({ analysis }: Props) {
+export function HistogramChart({ analysis, emptyLabel }: Props) {
   if (!analysis) {
-    return <div className="panel-empty">히스토그램</div>;
+    return <div className="panel-empty">{emptyLabel}</div>;
   }
 
   const histogram = analysis.display_histogram ?? fallbackHistogram(analysis);

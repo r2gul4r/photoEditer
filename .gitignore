@@ -5,8 +5,10 @@ node_modules/
 dist/
 .vite/
 tonepilot-local/
+.codex-app-server-schema*/
 
 .venv/
+apps/backend/.venv311/
 __pycache__/
 .pytest_cache/
 *.pyc
@@ -14,3 +16,16 @@ __pycache__/
 
 apps/backend/.tonepilot-data/
 apps/backend/.coverage
+apps/desktop/.logs/
+
+reference/raw/*
+reference/jpeg/*
+reference/edits/*
+reference/presets/*
+reference/manifests/*
+!reference/raw/.gitkeep
+!reference/jpeg/.gitkeep
+!reference/edits/.gitkeep
+!reference/presets/.gitkeep
+!reference/manifests/.gitkeep
+!reference/manifests/example.json

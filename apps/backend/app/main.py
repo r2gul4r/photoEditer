@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
-from app.routers import export, health, images, preview, recommend
+from app.routers import ai, export, health, images, preview, raw, recommend, references
 
 
 app = FastAPI(title="TonePilot Local Backend", version="0.1.0")
@@ -16,8 +16,11 @@ app.add_middleware(
 )
 
 app.include_router(health.router)
+app.include_router(ai.router)
 app.include_router(images.router)
+app.include_router(raw.router)
 app.include_router(recommend.router)
 app.include_router(preview.router)
 app.include_router(export.router)
+app.include_router(references.router)
 

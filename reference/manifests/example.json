@@ -1,0 +1,40 @@
+{
+  "id": "example-reference-001",
+  "source": {
+    "path": "raw/example.dng",
+    "format": "raw",
+    "camera": null,
+    "lens": null,
+    "iso": null
+  },
+  "targets": [
+    {
+      "path": "edits/example-final.jpg",
+      "style": "clean-natural",
+      "notes": "Neutral correction with protected highlights and natural skin tone."
+    }
+  ],
+  "preset": {
+    "path": "presets/example.json",
+    "adjustments": {
+      "exposure": 0,
+      "contrast": 0,
+      "highlights": 0,
+      "shadows": 0,
+      "whites": 0,
+      "blacks": 0,
+      "temperature": 0,
+      "tint": 0,
+      "vibrance": 0,
+      "saturation": 0,
+      "clarity": 0,
+      "texture": 0,
+      "dehaze": 0,
+      "hsl": {}
+    }
+  },
+  "license": {
+    "owner": "local",
+    "usage": "private-training-reference"
+  }
+}

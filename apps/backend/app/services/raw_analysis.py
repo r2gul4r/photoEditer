@@ -1,8 +1,37 @@
 from pathlib import Path
 from typing import Any
+import importlib.util
 
 import numpy as np
 from PIL import Image
+
+from app.models.schemas import RawSupportStatus
+
+
+RAW_INSTALL_HINT = 'Install optional backend dependencies with: pip install -e "apps/backend[raw]"'
+
+
+def raw_support_status() -> RawSupportStatus:
+    if importlib.util.find_spec("rawpy") is None:
+        return RawSupportStatus(
+            available=False,
+            message="RAW import is disabled because rawpy is not installed.",
+            install_hint=RAW_INSTALL_HINT,
+        )
+    try:
+        import rawpy  # type: ignore
+    except Exception as exc:
+        return RawSupportStatus(
+            available=False,
+            message=f"RAW import is disabled because rawpy could not be imported: {exc}",
+            install_hint=RAW_INSTALL_HINT,
+        )
+    return RawSupportStatus(
+        available=True,
+        version=str(getattr(rawpy, "__version__", "unknown")),
+        message="RAW import is available.",
+        install_hint=RAW_INSTALL_HINT,
+    )
 
 
 def analyze_raw(path: Path) -> dict[str, Any]:
@@ -11,7 +40,9 @@ def analyze_raw(path: Path) -> dict[str, Any]:
     except ImportError:
         return {
             "ok": False,
-            "error": "rawpy is not installed. Install tonepilot-backend[raw] to enable RAW analysis.",
+            "code": "rawpy_missing",
+            "error": "rawpy is not installed. RAW analysis is disabled.",
+            "install_hint": RAW_INSTALL_HINT,
         }
 
     try:
@@ -34,7 +65,9 @@ def analyze_raw(path: Path) -> dict[str, Any]:
     except Exception as exc:
         return {
             "ok": False,
+            "code": "raw_analysis_failed",
             "error": f"RAW analysis failed: {exc}",
+            "install_hint": RAW_INSTALL_HINT,
         }
 
 
@@ -42,7 +75,7 @@ def render_raw_to_rgb(path: Path) -> Image.Image:
     try:
         import rawpy  # type: ignore
     except ImportError as exc:
-        raise RuntimeError("rawpy is not installed. Install tonepilot-backend[raw] to enable RAW import.") from exc
+        raise RuntimeError(f"rawpy is not installed. RAW import is disabled. {RAW_INSTALL_HINT}") from exc
 
     try:
         with rawpy.imread(str(path)) as raw:

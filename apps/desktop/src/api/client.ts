@@ -1,4 +1,12 @@
-import type { AnalyzeImageResponse, PreviewResponse, RecommendResponse } from "./types";
+import type {
+  AiConnectionStatus,
+  AiMode,
+  AnalyzeImageResponse,
+  PreviewResponse,
+  RecommendResponse,
+  ReferenceLibraryResponse,
+  RawSupportStatus,
+} from "./types";
 import type { CorrectionAdjustments, CorrectionCandidate } from "@tonepilot/shared";
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "http://127.0.0.1:8765";
@@ -7,8 +15,12 @@ async function parseJson<T>(response: Response): Promise<T> {
   if (!response.ok) {
     let message = `${response.status} ${response.statusText}`;
     try {
-      const body = (await response.json()) as { detail?: string };
-      message = body.detail ?? message;
+      const body = (await response.json()) as { detail?: unknown };
+      if (typeof body.detail === "string") {
+        message = body.detail;
+      } else if (body.detail) {
+        message = JSON.stringify(body.detail);
+      }
     } catch {
       // Keep the HTTP status message.
     }
@@ -21,6 +33,21 @@ export function absoluteApiUrl(path: string): string {
   return path.startsWith("http") ? path : `${API_BASE}${path}`;
 }
 
+export async function getAiStatus(): Promise<AiConnectionStatus> {
+  const response = await fetch(`${API_BASE}/api/ai/status`);
+  return parseJson<AiConnectionStatus>(response);
+}
+
+export async function getReferences(): Promise<ReferenceLibraryResponse> {
+  const response = await fetch(`${API_BASE}/api/references`);
+  return parseJson<ReferenceLibraryResponse>(response);
+}
+
+export async function getRawStatus(): Promise<RawSupportStatus> {
+  const response = await fetch(`${API_BASE}/api/raw/status`);
+  return parseJson<RawSupportStatus>(response);
+}
+
 export async function analyzeImage(file: File): Promise<AnalyzeImageResponse> {
   const formData = new FormData();
   formData.append("file", file);
@@ -31,11 +58,16 @@ export async function analyzeImage(file: File): Promise<AnalyzeImageResponse> {
   return parseJson<AnalyzeImageResponse>(response);
 }
 
-export async function recommend(imageId: string, stylePrompt: string, strength: number): Promise<RecommendResponse> {
+export async function recommend(
+  imageId: string,
+  stylePrompt: string,
+  strength: number,
+  aiMode: AiMode = "auto",
+): Promise<RecommendResponse> {
   const response = await fetch(`${API_BASE}/api/recommend`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ image_id: imageId, style_prompt: stylePrompt, strength }),
+    body: JSON.stringify({ image_id: imageId, style_prompt: stylePrompt, strength, ai_mode: aiMode }),
   });
   return parseJson<RecommendResponse>(response);
 }

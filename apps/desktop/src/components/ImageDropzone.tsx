@@ -4,9 +4,12 @@ import { useRef, useState } from "react";
 type Props = {
   onFile: (file: File) => void;
   busy: boolean;
+  title: string;
+  subtitle: string;
+  selectLabel: string;
 };
 
-export function ImageDropzone({ onFile, busy }: Props) {
+export function ImageDropzone({ onFile, busy, title, subtitle, selectLabel }: Props) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [dragging, setDragging] = useState(false);
 
@@ -37,12 +40,12 @@ export function ImageDropzone({ onFile, busy }: Props) {
       />
       <ImagePlus size={32} aria-hidden="true" />
       <div>
-        <strong>사진 열기</strong>
-        <span>RAW 우선, JPEG/PNG/TIFF 지원</span>
+        <strong>{title}</strong>
+        <span>{subtitle}</span>
       </div>
       <button className="button primary" type="button" disabled={busy} onClick={() => inputRef.current?.click()}>
         <Upload size={16} aria-hidden="true" />
-        선택
+        {selectLabel}
       </button>
     </section>
   );
