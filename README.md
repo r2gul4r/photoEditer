@@ -41,55 +41,121 @@ RAW photo -> image analysis -> style target -> histogram-aware candidates -> pre
 - Optional: rawpy for RAW import, exifread, OpenCV
 - Workspace: pnpm monorepo
 
-## Local Setup
+## Easiest Start
+
+On Windows 10/11 PowerShell, install with one command:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$p=Join-Path $env:TEMP 'photo-install.ps1'; Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/r2gul4r/photoEditer/main/install.ps1' -OutFile $p; & $p"
+```
+
+This remote command works after `install.ps1` is pushed to the GitHub `main` branch.
+
+This command automatically:
+
+- checks/installs Node.js LTS
+- checks/installs Python 3.12
+- downloads the photoEditer ZIP from GitHub
+- extracts it to `~/TonePilot/photoEditer`
+- registers the global `photo` command
+- runs `photo install`
+
+After install, open PowerShell from any folder:
+
+```powershell
+photo dev
+```
+
+Open `http://127.0.0.1:5173/` after it starts. Codex is optional; without it, the app runs in local Rules mode.
+
+Developers who already cloned the repository can run `npm link`, `photo install`, then `photo dev` from the project folder.
+
+## Manual Setup
 
 ```powershell
 corepack enable
 pnpm install
+pnpm run setup
 ```
 
 If Corepack has permission issues on Windows:
 
 ```powershell
 npx pnpm@10.14.0 install
+npx pnpm@10.14.0 run setup
 ```
 
-## Run Backend
+To check setup status:
 
 ```powershell
-cd apps/backend
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -e ".[dev]"
-python -m uvicorn app.main:app --reload --port 8765
+pnpm run doctor
 ```
 
-Install optional RAW support with:
+If `rawpy` fails to install, setup falls back to JPEG/PNG/TIFF support so the app can still run. To retry RAW support later:
 
 ```powershell
-pip install -e ".[dev,raw]"
+pnpm run setup -- --retry-raw
 ```
 
-## Run Frontend
+## Run
 
-In another terminal:
-
-```powershell
-pnpm --filter @tonepilot/desktop dev
-```
-
-Or run both from the repository root:
+Start frontend and backend together:
 
 ```powershell
 pnpm dev
 ```
 
+Backend only:
+
+```powershell
+pnpm backend:dev
+```
+
+Frontend only:
+
+```powershell
+pnpm desktop:dev
+```
+
+## Codex Connection
+
+When started through `pnpm dev`, the backend automatically resolves the Codex command:
+
+- `TONEPILOT_CODEX_COMMAND` if set
+- `codex` from PATH
+- Windows Codex app install path at `%LOCALAPPDATA%\OpenAI\Codex\bin\*\codex.exe`
+
+If Codex is missing or not logged in, the app keeps running and falls back to local Rules recommendations. Check connection status without starting a model turn:
+
+```powershell
+pnpm backend:smoke:codex-status
+```
+
+To verify a real Codex recommendation turn:
+
+```powershell
+pnpm backend:smoke:codex
+```
+
+That second command can consume Codex usage or quota.
+
+Future local AI providers should attach behind the same provider interface, so the beginner run flow can stay `pnpm dev` while the provider changes under the hood.
+
 ## Tests
 
 ```powershell
-cd apps/backend
-pytest
+pnpm backend:test
+pnpm desktop:build
 ```
+
+Codex app-server smoke checks:
+
+```powershell
+pnpm backend:smoke:codex-status
+pnpm backend:smoke:codex
+```
+
+The second command starts a real Codex recommendation turn and can consume Codex usage/quota.
 
 ## API Overview
 

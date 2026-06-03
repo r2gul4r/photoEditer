@@ -8,6 +8,8 @@ tonepilot-local/
 .codex-app-server-schema*/
 
 .venv/
+apps/backend/.venv/
+apps/backend/.venv312/
 apps/backend/.venv311/
 __pycache__/
 .pytest_cache/
@@ -17,6 +19,7 @@ __pycache__/
 apps/backend/.tonepilot-data/
 apps/backend/.coverage
 apps/desktop/.logs/
+apps/desktop/*.log
 
 reference/raw/*
 reference/jpeg/*

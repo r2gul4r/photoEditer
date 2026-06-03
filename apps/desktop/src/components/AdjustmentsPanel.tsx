@@ -1,10 +1,14 @@
 import type { Language } from "../i18n";
-import type { CorrectionAdjustments } from "@tonepilot/shared";
+import type { CorrectionAdjustments, HslAdjustment } from "@tonepilot/shared";
 
 type Props = {
   adjustments: CorrectionAdjustments | null;
   language: Language;
   emptyLabel: string;
+  busy?: boolean;
+  previewLabel?: string;
+  onChange?: (adjustments: CorrectionAdjustments) => void;
+  onPreview?: () => void;
 };
 
 const labels: Record<Language, Record<keyof CorrectionAdjustments, string>> = {
@@ -42,31 +46,126 @@ const labels: Record<Language, Record<keyof CorrectionAdjustments, string>> = {
   },
 };
 
-export function AdjustmentsPanel({ adjustments, language, emptyLabel }: Props) {
+const numericControls: Array<{
+  key: Exclude<keyof CorrectionAdjustments, "hsl">;
+  min: number;
+  max: number;
+  step: number;
+}> = [
+  { key: "exposure", min: -2, max: 2, step: 0.01 },
+  { key: "contrast", min: -100, max: 100, step: 1 },
+  { key: "highlights", min: -100, max: 100, step: 1 },
+  { key: "shadows", min: -100, max: 100, step: 1 },
+  { key: "whites", min: -100, max: 100, step: 1 },
+  { key: "blacks", min: -100, max: 100, step: 1 },
+  { key: "temperature", min: -2000, max: 2000, step: 10 },
+  { key: "tint", min: -50, max: 50, step: 1 },
+  { key: "vibrance", min: -100, max: 100, step: 1 },
+  { key: "saturation", min: -100, max: 100, step: 1 },
+  { key: "clarity", min: -100, max: 100, step: 1 },
+  { key: "texture", min: -100, max: 100, step: 1 },
+  { key: "dehaze", min: -100, max: 100, step: 1 },
+];
+
+const hslChannels = ["hue", "saturation", "luminance"] as const;
+type HslColor = NonNullable<CorrectionAdjustments["hsl"]> extends Partial<Record<infer Color, HslAdjustment>>
+  ? Color
+  : never;
+const hslChannelLabels: Record<Language, Record<(typeof hslChannels)[number], string>> = {
+  en: { hue: "H", saturation: "S", luminance: "L" },
+  ko: { hue: "H", saturation: "S", luminance: "L" },
+};
+
+function formatValue(value: number) {
+  return value > 0 ? `+${value}` : `${value}`;
+}
+
+export function AdjustmentsPanel({ adjustments, language, emptyLabel, busy = false, previewLabel, onChange, onPreview }: Props) {
   if (!adjustments) {
     return <div className="panel-empty">{emptyLabel}</div>;
   }
 
-  const entries = Object.entries(adjustments).filter(([key]) => key !== "hsl") as [keyof CorrectionAdjustments, number][];
-  const hslEntries = Object.entries(adjustments.hsl ?? {});
+  const current = adjustments;
+  const hslEntries = Object.entries(current.hsl ?? {}) as [HslColor, HslAdjustment][];
+  const editable = Boolean(onChange);
+
+  function updateValue(key: Exclude<keyof CorrectionAdjustments, "hsl">, value: number) {
+    onChange?.({ ...current, [key]: value });
+  }
+
+  function updateHslValue(color: HslColor, channel: (typeof hslChannels)[number], value: number) {
+    const currentColor = current.hsl?.[color] ?? { hue: 0, saturation: 0, luminance: 0 };
+    onChange?.({
+      ...current,
+      hsl: {
+        ...(current.hsl ?? {}),
+        [color]: {
+          hue: currentColor.hue,
+          saturation: currentColor.saturation,
+          luminance: currentColor.luminance,
+          [channel]: value,
+        },
+      },
+    });
+  }
 
   return (
     <div className="adjustments">
-      {entries.map(([key, value]) => (
-        <div className="adjustment-row" key={key}>
+      {numericControls.map(({ key, min, max, step }) => (
+        <label className={`adjustment-row${editable ? " editable" : ""}`} key={key}>
           <span>{labels[language][key]}</span>
-          <strong>{value > 0 ? `+${value}` : value}</strong>
-        </div>
+          <strong>{formatValue(current[key])}</strong>
+          {editable ? (
+            <>
+              <input
+                type="range"
+                min={min}
+                max={max}
+                step={step}
+                value={current[key]}
+                onChange={(event) => updateValue(key, Number(event.target.value))}
+              />
+              <input
+                className="adjustment-number"
+                type="number"
+                min={min}
+                max={max}
+                step={step}
+                value={current[key]}
+                onChange={(event) => updateValue(key, Number(event.target.value))}
+              />
+            </>
+          ) : null}
+        </label>
       ))}
       {hslEntries.length > 0 ? (
         <div className="hsl-list">
           <span>HSL</span>
           {hslEntries.map(([color, value]) => (
-            <small key={color}>
-              {color}: H {value.hue > 0 ? `+${value.hue}` : value.hue}, S {value.saturation > 0 ? `+${value.saturation}` : value.saturation}, L {value.luminance > 0 ? `+${value.luminance}` : value.luminance}
-            </small>
+            <div className="hsl-edit-row" key={color}>
+              <small>{color}</small>
+              {hslChannels.map((channel) => (
+                <label key={channel}>
+                  <span>{hslChannelLabels[language][channel]}</span>
+                  <input
+                    type="number"
+                    min={-100}
+                    max={100}
+                    step={1}
+                    value={value[channel]}
+                    onChange={(event) => updateHslValue(color, channel, Number(event.target.value))}
+                    disabled={!editable}
+                  />
+                </label>
+              ))}
+            </div>
           ))}
         </div>
+      ) : null}
+      {onPreview && previewLabel ? (
+        <button className="button ghost full" type="button" disabled={busy} onClick={onPreview}>
+          {previewLabel}
+        </button>
       ) : null}
     </div>
   );

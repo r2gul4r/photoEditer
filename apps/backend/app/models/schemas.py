@@ -11,6 +11,13 @@ class ImageMetadata(BaseModel):
     aperture: str | None = None
     focal_length: str | None = None
     created_at: str | None = None
+    fields: list["MetadataField"] = Field(default_factory=list)
+
+
+class MetadataField(BaseModel):
+    key: str
+    value: str
+    source: Literal["pillow", "exifread"]
 
 
 class LumaStats(BaseModel):
@@ -85,6 +92,7 @@ class AnalyzeImageResponse(BaseModel):
     file_type: str
     width: int
     height: int
+    source_preview_url: str | None = None
     metadata: ImageMetadata
     analysis: ImageAnalysis
     raw_analysis: dict[str, Any] | None = None

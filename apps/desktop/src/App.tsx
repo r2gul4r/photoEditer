@@ -77,6 +77,14 @@ function App() {
     { value: "rules", label: c.aiModeRules },
   ];
 
+  function browserPreviewUrl(file: File): string | null {
+    const lowerName = file.name.toLowerCase();
+    if (file.type === "image/jpeg" || file.type === "image/png" || lowerName.endsWith(".jpg") || lowerName.endsWith(".jpeg") || lowerName.endsWith(".png")) {
+      return URL.createObjectURL(file);
+    }
+    return null;
+  }
+
   useEffect(() => {
     let cancelled = false;
     void getAiStatus()
@@ -151,11 +159,15 @@ function App() {
   }, []);
 
   async function handleFile(file: File) {
-    const originalUrl = URL.createObjectURL(file);
+    const originalUrl = browserPreviewUrl(file);
     dispatch({ type: "setImage", file, originalUrl, label: c.analyzeBusy });
     try {
       const analysis = await analyzeImage(file);
-      dispatch({ type: "setAnalysis", analysis });
+      dispatch({
+        type: "setAnalysis",
+        analysis,
+        displayUrl: analysis.source_preview_url ? absoluteApiUrl(analysis.source_preview_url) : undefined,
+      });
     } catch (error) {
       dispatch({ type: "error", error: error instanceof Error ? error.message : c.analyzeError });
     }
@@ -298,7 +310,10 @@ function App() {
 
           <div className="photo-stage">
             {!state.originalUrl ? (
-              <div className="empty-preview stage-empty-bg" aria-hidden="true" />
+              <div className="empty-preview stage-empty-bg">
+                {busy ? <Loader2 size={28} aria-hidden="true" /> : null}
+                <span>{state.busyLabel ?? c.noPhoto}</span>
+              </div>
             ) : state.previewUrl ? (
               <BeforeAfterView
                 originalUrl={state.originalUrl}
@@ -314,7 +329,7 @@ function App() {
                 altLabel={c.originalPhoto}
               />
             )}
-            {!state.originalUrl ? (
+            {!state.originalUrl && !busy ? (
               <div className="stage-dropzone">
                 <ImageDropzone
                   onFile={handleFile}
@@ -447,7 +462,17 @@ function App() {
               <span>{c.adjustments}</span>
               <small>{state.selectedCandidate?.name ?? c.basic}</small>
             </div>
-            <AdjustmentsPanel adjustments={state.selectedCandidate?.adjustments ?? null} language={state.language} emptyLabel={c.adjustments} />
+            <AdjustmentsPanel
+              adjustments={state.selectedCandidate?.adjustments ?? null}
+              language={state.language}
+              emptyLabel={c.adjustments}
+              busy={busy}
+              previewLabel={c.tryPreview}
+              onChange={(adjustments) => dispatch({ type: "updateSelectedAdjustments", adjustments })}
+              onPreview={() => {
+                if (state.selectedCandidate) void handlePreview(state.selectedCandidate);
+              }}
+            />
           </section>
 
           <section className="inspector-block">

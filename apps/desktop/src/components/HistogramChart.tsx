@@ -7,6 +7,13 @@ type Props = {
 
 const VIEWBOX_WIDTH = 256;
 const VIEWBOX_HEIGHT = 96;
+const TONAL_ZONES = [
+  { label: "BLK", x: 0, width: 28 },
+  { label: "SHD", x: 28, width: 52 },
+  { label: "MID", x: 80, width: 96 },
+  { label: "HIL", x: 176, width: 52 },
+  { label: "WHT", x: 228, width: 28 },
+];
 
 function percent(value: number): string {
   if (value <= 0) return "0.0%";
@@ -14,22 +21,40 @@ function percent(value: number): string {
   return `${(value * 100).toFixed(1)}%`;
 }
 
-function channelLines(channel: HistogramChannel, maxCount: number, className: string) {
+function channelAreaPath(channel: HistogramChannel, maxCount: number) {
   const scale = maxCount > 0 ? VIEWBOX_HEIGHT / maxCount : 0;
-
-  return channel.bins.map((count, index) => {
-    const y = Math.max(0, VIEWBOX_HEIGHT - count * scale);
-    return (
-      <line
-        key={`${className}-${index}`}
-        className={className}
-        x1={index + 0.5}
-        x2={index + 0.5}
-        y1={VIEWBOX_HEIGHT}
-        y2={y}
-      />
-    );
+  const points = channel.bins.map((count, index, bins) => {
+    const previous = bins[index - 1] ?? count;
+    const next = bins[index + 1] ?? count;
+    const smoothed = (previous + count * 2 + next) / 4;
+    return {
+      x: (index / Math.max(1, bins.length - 1)) * VIEWBOX_WIDTH,
+      y: Math.max(0, VIEWBOX_HEIGHT - smoothed * scale),
+    };
   });
+
+  if (points.length === 0) return "";
+
+  let path = `M 0 ${VIEWBOX_HEIGHT} L ${points[0].x.toFixed(2)} ${points[0].y.toFixed(2)}`;
+  for (let index = 1; index < points.length; index += 1) {
+    const previous = points[index - 1];
+    const current = points[index];
+    const midX = (previous.x + current.x) / 2;
+    const midY = (previous.y + current.y) / 2;
+    path += ` Q ${previous.x.toFixed(2)} ${previous.y.toFixed(2)} ${midX.toFixed(2)} ${midY.toFixed(2)}`;
+  }
+  const last = points[points.length - 1];
+  path += ` L ${last.x.toFixed(2)} ${last.y.toFixed(2)} L ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT} Z`;
+  return path;
+}
+
+function channelPeak(channel: HistogramChannel, maxCount: number) {
+  if (maxCount <= 0) return 0;
+  return Math.round((channel.max_count / maxCount) * 100);
+}
+
+function rgbPercent(value: number): string {
+  return `${Math.round(value * 100)}%`;
 }
 
 function fallbackHistogram(analysis: ImageAnalysis): DisplayHistogram {
@@ -94,6 +119,7 @@ export function HistogramChart({ analysis, emptyLabel }: Props) {
   const maxCount = Math.max(1, histogram.max_count);
   const shadowActive = histogram.shadow_clip > 0;
   const highlightActive = histogram.highlight_clip > 0;
+  const lumaPeak = channelPeak(histogram.channels.luma, maxCount);
 
   return (
     <div className="histogram">
@@ -105,26 +131,51 @@ export function HistogramChart({ analysis, emptyLabel }: Props) {
           role="img"
           aria-label="RGB luminance histogram"
         >
-          <line className="histogram-midline" x1="128" x2="128" y1="0" y2={VIEWBOX_HEIGHT} />
-          <g className="histogram-luma">{channelLines(histogram.channels.luma, maxCount, "histogram-line luma")}</g>
-          <g>{channelLines(histogram.channels.r, maxCount, "histogram-line red")}</g>
-          <g>{channelLines(histogram.channels.g, maxCount, "histogram-line green")}</g>
-          <g>{channelLines(histogram.channels.b, maxCount, "histogram-line blue")}</g>
+          {TONAL_ZONES.map((zone, index) => (
+            <rect
+              key={zone.label}
+              className={`histogram-zone zone-${index}`}
+              x={zone.x}
+              y="0"
+              width={zone.width}
+              height={VIEWBOX_HEIGHT}
+            />
+          ))}
+          {[64, 128, 192].map((x) => (
+            <line key={x} className="histogram-gridline" x1={x} x2={x} y1="0" y2={VIEWBOX_HEIGHT} />
+          ))}
+          <path className="histogram-area red" d={channelAreaPath(histogram.channels.r, maxCount)} />
+          <path className="histogram-area green" d={channelAreaPath(histogram.channels.g, maxCount)} />
+          <path className="histogram-area blue" d={channelAreaPath(histogram.channels.b, maxCount)} />
+          <path className="histogram-area luma" d={channelAreaPath(histogram.channels.luma, maxCount)} />
         </svg>
         <span className={shadowActive ? "clip-indicator shadow active" : "clip-indicator shadow"} title="Shadow clipping" />
         <span
           className={highlightActive ? "clip-indicator highlight active" : "clip-indicator highlight"}
           title="Highlight clipping"
         />
+        <div className="histogram-tones" aria-hidden="true">
+          {TONAL_ZONES.map((zone) => (
+            <span key={zone.label}>{zone.label}</span>
+          ))}
+        </div>
       </div>
       <div className="histogram-scale">
-        <span>{histogram.range_min}</span>
-        <span>128</span>
-        <span>{histogram.range_max}</span>
+        <span>0</span>
+        <span>25</span>
+        <span>50</span>
+        <span>75</span>
+        <span>100</span>
       </div>
       <div className="metric-row histogram-metrics">
-        <span>Shadow {percent(histogram.shadow_clip_ratio)}</span>
-        <span>Highlight {percent(histogram.highlight_clip_ratio)}</span>
+        <span>Clip L {percent(histogram.shadow_clip_ratio)}</span>
+        <span>Peak {lumaPeak}%</span>
+        <span>Clip R {percent(histogram.highlight_clip_ratio)}</span>
+      </div>
+      <div className="histogram-readout" aria-label="Average RGB values">
+        <span>R {rgbPercent(analysis.rgb.r_mean)}</span>
+        <span>G {rgbPercent(analysis.rgb.g_mean)}</span>
+        <span>B {rgbPercent(analysis.rgb.b_mean)}</span>
       </div>
     </div>
   );

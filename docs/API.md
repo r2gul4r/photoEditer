@@ -17,6 +17,31 @@ Multipart field: `file`
 
 Returns image identity, metadata, luma/RGB/saturation histograms, and risk flags.
 
+`metadata` includes normalized summary fields plus `fields`, a list of every readable metadata tag extracted by Pillow and optional `exifread`:
+
+```json
+{
+  "metadata": {
+    "camera": "Panasonic DC-S9",
+    "lens": "LUMIX S 20-60/F3.5-5.6",
+    "iso": 100,
+    "shutter": "1/50",
+    "aperture": "11",
+    "focal_length": "20",
+    "created_at": "2025:10:18 12:15:11",
+    "fields": [
+      {
+        "key": "EXIF ExposureTime",
+        "value": "1/50",
+        "source": "exifread"
+      }
+    ]
+  }
+}
+```
+
+`source_preview_url` is a browser-displayable JPEG generated from the decoded source. The frontend uses it so RAW files can be shown even though browsers cannot render RAW object URLs directly.
+
 For RAW uploads, `rawpy` is required. If RAW support is unavailable or the file cannot be decoded, the API returns `422` with structured `detail`:
 
 ```json

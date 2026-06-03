@@ -9,7 +9,7 @@ import type {
   ReferenceLibraryResponse,
 } from "../api/types";
 import type { Language } from "../i18n";
-import type { CorrectionCandidate } from "@tonepilot/shared";
+import type { CorrectionAdjustments, CorrectionCandidate } from "@tonepilot/shared";
 
 export type AppState = {
   language: Language;
@@ -32,8 +32,8 @@ export type AppState = {
 type Action =
   | { type: "start"; label: string }
   | { type: "error"; error: string }
-  | { type: "setImage"; file: File; originalUrl: string; label: string }
-  | { type: "setAnalysis"; analysis: AnalyzeImageResponse }
+  | { type: "setImage"; file: File; originalUrl: string | null; label: string }
+  | { type: "setAnalysis"; analysis: AnalyzeImageResponse; displayUrl?: string }
   | { type: "setAiConnection"; aiConnection: AiConnectionStatus }
   | { type: "setReferences"; references: ReferenceLibraryResponse }
   | { type: "setRawStatus"; rawStatus: RawSupportStatus }
@@ -43,6 +43,7 @@ type Action =
   | { type: "setLanguage"; language: Language }
   | { type: "setRecommendation"; recommendation: RecommendResponse }
   | { type: "setPreview"; candidate: CorrectionCandidate; previewUrl: string }
+  | { type: "updateSelectedAdjustments"; adjustments: CorrectionAdjustments }
   | { type: "idle" };
 
 const initialState: AppState = {
@@ -63,6 +64,12 @@ const initialState: AppState = {
   error: null,
 };
 
+function revokeIfObjectUrl(url: string | null) {
+  if (url?.startsWith("blob:")) {
+    URL.revokeObjectURL(url);
+  }
+}
+
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case "start":
@@ -70,9 +77,7 @@ function reducer(state: AppState, action: Action): AppState {
     case "error":
       return { ...state, busyLabel: null, error: action.error };
     case "setImage":
-      if (state.originalUrl) {
-        URL.revokeObjectURL(state.originalUrl);
-      }
+      revokeIfObjectUrl(state.originalUrl);
       return {
         ...initialState,
         imageFile: action.file,
@@ -87,7 +92,16 @@ function reducer(state: AppState, action: Action): AppState {
         busyLabel: action.label,
       };
     case "setAnalysis":
-      return { ...state, analysis: action.analysis, busyLabel: null, error: null };
+      if (action.displayUrl && action.displayUrl !== state.originalUrl) {
+        revokeIfObjectUrl(state.originalUrl);
+      }
+      return {
+        ...state,
+        analysis: action.analysis,
+        originalUrl: action.displayUrl ?? state.originalUrl,
+        busyLabel: null,
+        error: null,
+      };
     case "setAiConnection":
       return { ...state, aiConnection: action.aiConnection };
     case "setReferences":
@@ -119,6 +133,29 @@ function reducer(state: AppState, action: Action): AppState {
         busyLabel: null,
         error: null,
       };
+    case "updateSelectedAdjustments": {
+      if (!state.selectedCandidate) {
+        return state;
+      }
+      const selectedCandidate = {
+        ...state.selectedCandidate,
+        adjustments: action.adjustments,
+      };
+      const recommendation = state.recommendation
+        ? {
+            ...state.recommendation,
+            candidates: state.recommendation.candidates.map((candidate) =>
+              candidate.id === selectedCandidate.id ? selectedCandidate : candidate,
+            ),
+          }
+        : state.recommendation;
+      return {
+        ...state,
+        recommendation,
+        selectedCandidate,
+        previewUrl: null,
+      };
+    }
     case "idle":
       return { ...state, busyLabel: null };
     default:

@@ -32,69 +32,43 @@ class CodexRecommendationResult:
 
 
 HSL_COLORS = ("red", "orange", "yellow", "green", "aqua", "blue", "purple", "magenta")
+HSL_CHANNELS = ("hue", "saturation", "luminance")
+BASE_SLIDERS = tuple(ADJUSTMENT_LIMITS.keys())
+CANDIDATE_KEYS = {"n": "natural", "s": "style", "b": "bold"}
+CANDIDATE_LABELS = {
+    "natural": ("Natural", "Conservative correction that keeps the original image intact.", 0.88),
+    "style": ("Style", "Balanced correction that follows the requested mood.", 0.81),
+    "bold": ("Bold", "Stronger correction for a more visible look.", 0.74),
+}
+COMPACT_VECTOR_LENGTH = len(BASE_SLIDERS) + len(HSL_COLORS) * len(HSL_CHANNELS)
 
 
 OUTPUT_SCHEMA: dict[str, Any] = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["candidates", "message"],
+    "required": ["c", "w", "m"],
     "properties": {
-        "message": {"type": "string"},
-        "candidates": {
-            "type": "array",
-            "minItems": 3,
-            "maxItems": 3,
-            "items": {
-                "type": "object",
-                "additionalProperties": False,
-                "required": ["id", "name", "description", "adjustments", "score", "warnings"],
-                "properties": {
-                    "id": {"type": "string", "enum": ["natural", "style", "bold"]},
-                    "name": {"type": "string"},
-                    "description": {"type": "string"},
-                    "score": {"type": "number", "minimum": 0, "maximum": 1},
-                    "warnings": {"type": "array", "items": {"type": "string"}},
-                    "adjustments": {
-                        "type": "object",
-                        "additionalProperties": False,
-                        "required": list(ADJUSTMENT_LIMITS.keys()) + ["hsl"],
-                        "properties": {
-                            "exposure": {"type": "number", "minimum": -2, "maximum": 2},
-                            "contrast": {"type": "number", "minimum": -100, "maximum": 100},
-                            "highlights": {"type": "number", "minimum": -100, "maximum": 100},
-                            "shadows": {"type": "number", "minimum": -100, "maximum": 100},
-                            "whites": {"type": "number", "minimum": -100, "maximum": 100},
-                            "blacks": {"type": "number", "minimum": -100, "maximum": 100},
-                            "temperature": {"type": "number", "minimum": -2000, "maximum": 2000},
-                            "tint": {"type": "number", "minimum": -50, "maximum": 50},
-                            "vibrance": {"type": "number", "minimum": -100, "maximum": 100},
-                            "saturation": {"type": "number", "minimum": -100, "maximum": 100},
-                            "clarity": {"type": "number", "minimum": -100, "maximum": 100},
-                            "texture": {"type": "number", "minimum": -100, "maximum": 100},
-                            "dehaze": {"type": "number", "minimum": -100, "maximum": 100},
-                            "hsl": {
-                                "type": "object",
-                                "additionalProperties": False,
-                                "required": list(HSL_COLORS),
-                                "properties": {
-                                    color: {
-                                        "type": "object",
-                                        "additionalProperties": False,
-                                        "required": ["hue", "saturation", "luminance"],
-                                        "properties": {
-                                            "hue": {"type": "number", "minimum": -100, "maximum": 100},
-                                            "saturation": {"type": "number", "minimum": -100, "maximum": 100},
-                                            "luminance": {"type": "number", "minimum": -100, "maximum": 100},
-                                        },
-                                    }
-                                    for color in HSL_COLORS
-                                },
-                            },
-                        },
-                    },
-                },
+        "c": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": list(CANDIDATE_KEYS),
+            "properties": {
+                key: {
+                    "type": "array",
+                    "minItems": COMPACT_VECTOR_LENGTH,
+                    "maxItems": COMPACT_VECTOR_LENGTH,
+                    "items": {"type": "number"},
+                }
+                for key in CANDIDATE_KEYS
             },
         },
+        "w": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": list(CANDIDATE_KEYS),
+            "properties": {key: {"type": "array", "items": {"type": "string"}} for key in CANDIDATE_KEYS},
+        },
+        "m": {"type": "string"},
     },
 }
 
@@ -106,55 +80,54 @@ def _project_root() -> Path:
 def _analysis_payload(analysis: ImageAnalysis) -> dict[str, Any]:
     histogram = analysis.display_histogram
     return {
-        "luma": {
-            "mean": analysis.luma.mean,
-            "std": analysis.luma.std,
-            "p01": analysis.luma.p01,
-            "p05": analysis.luma.p05,
-            "p50": analysis.luma.p50,
-            "p95": analysis.luma.p95,
-            "p99": analysis.luma.p99,
-        },
-        "rgb": {
-            "r_mean": analysis.rgb.r_mean,
-            "g_mean": analysis.rgb.g_mean,
-            "b_mean": analysis.rgb.b_mean,
-        },
-        "saturation": {
-            "mean": analysis.saturation.mean,
-            "p50": analysis.saturation.p50,
-            "p95": analysis.saturation.p95,
-        },
-        "clipping": {
-            "shadow_clip_ratio": histogram.shadow_clip_ratio,
-            "highlight_clip_ratio": histogram.highlight_clip_ratio,
-            "r_black": histogram.channels["r"].clip_black_ratio,
-            "g_black": histogram.channels["g"].clip_black_ratio,
-            "b_black": histogram.channels["b"].clip_black_ratio,
-            "r_white": histogram.channels["r"].clip_white_ratio,
-            "g_white": histogram.channels["g"].clip_white_ratio,
-            "b_white": histogram.channels["b"].clip_white_ratio,
-        },
-        "risk_flags": analysis.risk_flags.model_dump(),
+        "l": [
+            analysis.luma.mean,
+            analysis.luma.std,
+            analysis.luma.p01,
+            analysis.luma.p05,
+            analysis.luma.p50,
+            analysis.luma.p95,
+            analysis.luma.p99,
+        ],
+        "rgb": [analysis.rgb.r_mean, analysis.rgb.g_mean, analysis.rgb.b_mean],
+        "sat": [analysis.saturation.mean, analysis.saturation.p50, analysis.saturation.p95],
+        "clip": [
+            histogram.shadow_clip_ratio,
+            histogram.highlight_clip_ratio,
+            histogram.channels["r"].clip_black_ratio,
+            histogram.channels["g"].clip_black_ratio,
+            histogram.channels["b"].clip_black_ratio,
+            histogram.channels["r"].clip_white_ratio,
+            histogram.channels["g"].clip_white_ratio,
+            histogram.channels["b"].clip_white_ratio,
+        ],
+        "risk": [name for name, enabled in analysis.risk_flags.model_dump().items() if enabled],
     }
 
 
 def _prompt(style_prompt: str, style: StyleInterpretation, analysis: ImageAnalysis, strength: float) -> str:
     payload = {
-        "style_prompt": style_prompt,
+        "p": style_prompt,
         "strength": strength,
-        "style_interpretation": style.model_dump(),
-        "analysis": _analysis_payload(analysis),
-        "slider_limits": ADJUSTMENT_LIMITS,
+        "style": {
+            "id": style.style_id,
+            "mood": style.mood,
+            "targets": style.targets,
+            "avoid": style.avoid,
+            "prior": [style.slider_prior.get(slider, ADJUSTMENT_LIMITS[slider]) for slider in BASE_SLIDERS],
+        },
+        "a": _analysis_payload(analysis),
     }
+    base_order = ",".join(BASE_SLIDERS)
+    hsl_order = ",".join(f"{color}_{channel[0]}" for color in HSL_COLORS for channel in HSL_CHANNELS)
     return (
-        "You are a local photo-correction advisor for a Lightroom-inspired editor.\n"
-        "Return only valid JSON matching the supplied output schema.\n"
-        "Generate exactly three candidates: natural, style, bold.\n"
-        "Use conservative Lightroom-like slider values. Protect highlights and shadows when clipping risk is present.\n"
-        "Do not suggest generative edits, account features, cloud sync, or destructive source-file changes.\n"
-        "Candidate names and descriptions must be English.\n\n"
-        f"Input data:\n{json.dumps(payload, ensure_ascii=False)}"
+        "Return compact JSON only. Choose Lightroom-like correction values, no generative edits.\n"
+        "Output c.n/c.s/c.b as 37-number vectors for natural/style/bold.\n"
+        f"Vector order: {base_order},{hsl_order}.\n"
+        "Limits: exposure -2..2, temperature -2000..2000, tint -50..50, all other values -100..100.\n"
+        "Use n subtle, s balanced, b stronger. Protect clipped highlights/shadows and avoid oversaturation.\n"
+        "Return w.n/w.s/w.b as warning string arrays, empty when none; m is a short message.\n"
+        f"Data:{json.dumps(payload, ensure_ascii=False, separators=(',', ':'))}"
     )
 
 
@@ -201,6 +174,14 @@ def _clamp_adjustment(name: str, value: Any) -> float:
     return round(max(low, min(high, numeric)), 2)
 
 
+def _clamp_hsl(value: Any) -> float:
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError):
+        numeric = 0.0
+    return round(max(-100.0, min(100.0, numeric)), 2)
+
+
 def _normalize_candidate(raw: dict[str, Any]) -> CorrectionCandidate:
     candidate_id = raw.get("id")
     if candidate_id not in {"natural", "style", "bold"}:
@@ -217,9 +198,9 @@ def _normalize_candidate(raw: dict[str, Any]) -> CorrectionCandidate:
             if not isinstance(value, dict):
                 continue
             hsl[color] = HslAdjustment(
-                hue=round(float(value.get("hue", 0)), 2),
-                saturation=round(float(value.get("saturation", 0)), 2),
-                luminance=round(float(value.get("luminance", 0)), 2),
+                hue=_clamp_hsl(value.get("hue", 0)),
+                saturation=_clamp_hsl(value.get("saturation", 0)),
+                luminance=_clamp_hsl(value.get("luminance", 0)),
             )
 
     score = raw.get("score", 0.75)
@@ -242,11 +223,69 @@ def _normalize_candidate(raw: dict[str, Any]) -> CorrectionCandidate:
     )
 
 
+def _candidate_from_vector(candidate_id: str, raw_vector: Any, warnings: list[str]) -> CorrectionCandidate:
+    if not isinstance(raw_vector, list) or len(raw_vector) != COMPACT_VECTOR_LENGTH:
+        raise CodexRecommendationError(
+            f"Codex compact candidate {candidate_id!r} must contain {COMPACT_VECTOR_LENGTH} numbers"
+        )
+
+    adjustments = {}
+    index = 0
+    for name in BASE_SLIDERS:
+        adjustments[name] = _clamp_adjustment(name, raw_vector[index])
+        index += 1
+
+    hsl: dict[str, HslAdjustment] = {}
+    for color in HSL_COLORS:
+        values = {}
+        for channel in HSL_CHANNELS:
+            values[channel] = _clamp_hsl(raw_vector[index])
+            index += 1
+        hsl[color] = HslAdjustment(
+            hue=values["hue"],
+            saturation=values["saturation"],
+            luminance=values["luminance"],
+        )
+
+    name, description, score = CANDIDATE_LABELS[candidate_id]
+    return CorrectionCandidate(
+        id=candidate_id,  # type: ignore[arg-type]
+        name=name,
+        description=description,
+        adjustments=CorrectionAdjustments(**adjustments, hsl=hsl),
+        score=score,
+        warnings=warnings,
+    )
+
+
+def _parse_compact_candidates(payload: dict[str, Any]) -> CodexRecommendationResult:
+    raw_candidates = payload.get("c")
+    if not isinstance(raw_candidates, dict):
+        raise CodexRecommendationError("Codex JSON did not include compact candidates")
+
+    raw_warnings = payload.get("w") if isinstance(payload.get("w"), dict) else {}
+    candidates: list[CorrectionCandidate] = []
+    for compact_key, candidate_id in CANDIDATE_KEYS.items():
+        candidate_warnings = raw_warnings.get(compact_key, [])
+        if not isinstance(candidate_warnings, list):
+            candidate_warnings = []
+        candidates.append(
+            _candidate_from_vector(
+                candidate_id,
+                raw_candidates.get(compact_key),
+                [str(warning) for warning in candidate_warnings],
+            )
+        )
+
+    message = payload.get("m") or payload.get("message") or "Codex app-server generated compact correction candidates."
+    return CodexRecommendationResult(candidates=candidates, message=str(message))
+
+
 def _parse_candidates(text: str) -> CodexRecommendationResult:
     payload = _extract_json(text)
     raw_candidates = payload.get("candidates")
     if not isinstance(raw_candidates, list):
-        raise CodexRecommendationError("Codex JSON did not include a candidates list")
+        return _parse_compact_candidates(payload)
 
     candidates = [_normalize_candidate(candidate) for candidate in raw_candidates if isinstance(candidate, dict)]
     by_id = {candidate.id: candidate for candidate in candidates}

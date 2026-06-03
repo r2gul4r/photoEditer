@@ -33,7 +33,7 @@ Goal:
 | Rule fallback implemented | `apps/backend/app/routers/recommend.py`, `apps/backend/tests/test_api.py` | Complete |
 | Codex automatic mode implemented | `RecommendRequest.ai_mode = "auto"`, frontend AI mode toggle, `/api/ai/status` | Complete |
 | Model-free Codex connection status verified | `scripts/smoke_codex_recommend.py` default mode returned `available: true`, `model_turn: skipped` | Complete |
-| Actual Codex model recommendation turn verified | `scripts/smoke_codex_recommend.py --allow-codex-model-call` returned `model_turn: used`, `candidate_ids: ["natural", "style", "bold"]`, `ai_status.status: used`, and a preview URL | Complete |
+| Actual Codex model recommendation turn verified | `pnpm backend:smoke:codex` returned `model_turn: used`, `candidate_ids: ["natural", "style", "bold"]`, `ai_status.status: used`, and a preview URL | Complete |
 | Analyze/recommend/preview/export API flow verified | `apps/backend/tests/test_api.py` smoke flow | Complete |
 | Histogram compatibility tests | `apps/backend/tests/test_histograms.py` | Complete |
 | Frontend build verified | `pnpm --filter @tonepilot/desktop build` | Complete |
@@ -42,12 +42,12 @@ Goal:
 
 ## Final Codex Model Verification
 
-The approval-gated Codex model smoke was run successfully after user approval.
+The approval-gated Codex model smoke was run successfully after explicit user approval.
 
 Command:
 
 ```powershell
-C:\tmp\photoediter-venv311-20260603\Scripts\python.exe scripts\smoke_codex_recommend.py --allow-codex-model-call
+pnpm backend:smoke:codex
 ```
 
 Observed success criteria:

@@ -8,6 +8,13 @@ export type ImageMetadata = {
   aperture: string | null;
   focal_length: string | null;
   created_at: string | null;
+  fields: MetadataField[];
+};
+
+export type MetadataField = {
+  key: string;
+  value: string;
+  source: "pillow" | "exifread";
 };
 
 export type LumaStats = {
@@ -108,6 +115,7 @@ export type AnalyzeImageResponse = {
   file_type: string;
   width: number;
   height: number;
+  source_preview_url: string | null;
   metadata: ImageMetadata;
   analysis: ImageAnalysis;
   raw_analysis?: Record<string, unknown> | null;

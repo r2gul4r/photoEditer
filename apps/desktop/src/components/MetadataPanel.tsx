@@ -17,6 +17,8 @@ const labels: Record<Language, Record<string, string>> = {
     aperture: "Aperture",
     focal_length: "Focal Length",
     created_at: "Captured",
+    allMetadata: "All Metadata",
+    metadataSource: "source",
   },
   ko: {
     camera: "카메라",
@@ -26,15 +28,20 @@ const labels: Record<Language, Record<string, string>> = {
     aperture: "조리개",
     focal_length: "초점거리",
     created_at: "촬영일",
+    allMetadata: "전체 메타데이터",
+    metadataSource: "소스",
   },
 };
+
+const summaryKeys = ["camera", "lens", "iso", "shutter", "aperture", "focal_length", "created_at"] as const;
 
 export function MetadataPanel({ analysis, language, emptyLabel, rawAnalysisLabel }: Props) {
   if (!analysis) {
     return <div className="panel-empty">{emptyLabel}</div>;
   }
 
-  const rows = Object.entries(analysis.metadata);
+  const rows = summaryKeys.map((key) => [key, analysis.metadata[key]] as const);
+  const fullRows = analysis.metadata.fields ?? [];
 
   return (
     <div className="metadata">
@@ -55,6 +62,29 @@ export function MetadataPanel({ analysis, language, emptyLabel, rawAnalysisLabel
           ))}
         </tbody>
       </table>
+      {fullRows.length > 0 ? (
+        <details className="metadata-all">
+          <summary>
+            <span>{labels[language].allMetadata}</span>
+            <small>{fullRows.length}</small>
+          </summary>
+          <div className="metadata-all-table">
+            <table>
+              <tbody>
+                {fullRows.map((field) => (
+                  <tr key={`${field.source}-${field.key}`}>
+                    <th>
+                      {field.key}
+                      <small>{labels[language].metadataSource}: {field.source}</small>
+                    </th>
+                    <td>{field.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      ) : null}
     </div>
   );
 }

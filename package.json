@@ -2,10 +2,18 @@
   "name": "tonepilot-local",
   "private": true,
   "version": "0.1.0",
+  "bin": {
+    "photo": "scripts/photo.mjs"
+  },
   "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/setup.mjs --check",
+    "start": "pnpm dev",
     "dev": "concurrently -n backend,desktop \"pnpm backend:dev\" \"pnpm desktop:dev\"",
-    "backend:dev": "cd apps/backend && python -m uvicorn app.main:app --reload --port 8765",
-    "backend:test": "cd apps/backend && pytest",
+    "backend:dev": "node scripts/run_backend.mjs dev",
+    "backend:test": "node scripts/run_backend.mjs test",
+    "backend:smoke:codex-status": "node scripts/run_backend.mjs smoke:codex-status",
+    "backend:smoke:codex": "node scripts/run_backend.mjs smoke:codex",
     "desktop:dev": "pnpm --filter @tonepilot/desktop dev",
     "desktop:build": "pnpm --filter @tonepilot/desktop build"
   },

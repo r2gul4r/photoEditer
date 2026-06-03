@@ -34,6 +34,10 @@ def test_api_analyze_recommend_preview_and_export_flow() -> None:
     assert analyzed["file_type"] == "jpeg"
     assert analyzed["width"] == 96
     assert analyzed["height"] == 64
+    assert analyzed["source_preview_url"].startswith("/api/previews/")
+    source_preview = client.get(analyzed["source_preview_url"])
+    assert source_preview.status_code == 200
+    assert source_preview.headers["content-type"] == "image/jpeg"
 
     recommend = client.post(
         "/api/recommend",

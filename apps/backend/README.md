@@ -5,13 +5,14 @@ Local FastAPI backend for image analysis, recommendation generation, preview ren
 ## Run
 
 ```powershell
-cd apps/backend
-pip install -e ".[dev]"
-python -m uvicorn app.main:app --reload --port 8765
+pnpm run setup
+pnpm backend:dev
 ```
+
+The root setup script creates `apps/backend/.venv` and installs backend dependencies. Start through `pnpm backend:dev` or `pnpm dev` so the launcher can auto-detect the Codex command when available.
 
 ## Test
 
 ```powershell
-pytest
+pnpm backend:test
 ```

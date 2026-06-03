@@ -39,55 +39,119 @@ RAW 사진 -> 이미지 분석 -> 스타일 목표 -> 히스토그램 기반 후
 - Optional: RAW import용 rawpy, exifread, OpenCV
 - Workspace: pnpm monorepo
 
-## 로컬 설치
+## 가장 쉬운 실행
+
+Windows 10/11 PowerShell에서 아래 명령 하나로 설치:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$p=Join-Path $env:TEMP 'photo-install.ps1'; Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/r2gul4r/photoEditer/main/install.ps1' -OutFile $p; & $p"
+```
+
+이 원격 명령은 `install.ps1`이 GitHub `main` 브랜치에 올라간 뒤부터 동작한다.
+
+이 명령은 다음을 자동으로 처리한다:
+
+- Node.js LTS 설치 확인/설치
+- Python 3.12 설치 확인/설치
+- GitHub에서 photoEditer ZIP 다운로드
+- 기본 위치 `~/TonePilot/photoEditer`에 압축 해제
+- `photo` 전역 명령 등록
+- `photo install` 실행
+
+설치가 끝나면 어느 폴더에서 PowerShell을 열어도:
+
+```powershell
+photo dev
+```
+
+실행 후 브라우저에서 `http://127.0.0.1:5173/`를 열면 된다. Codex는 선택사항이며, 없으면 로컬 Rules 모드로 실행된다.
+
+이미 저장소를 직접 내려받은 개발자는 프로젝트 폴더에서 `npm link`, `photo install`, `photo dev` 순서로 실행해도 된다.
+
+## 수동 설치
 
 ```powershell
 corepack enable
 pnpm install
+pnpm run setup
 ```
 
 Windows에서 Corepack 권한 문제가 있으면:
 
 ```powershell
 npx pnpm@10.14.0 install
+npx pnpm@10.14.0 run setup
 ```
 
-## 백엔드 실행
+설치 상태만 확인하려면:
 
 ```powershell
-cd apps/backend
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -e ".[dev]"
-python -m uvicorn app.main:app --reload --port 8765
+pnpm run doctor
 ```
 
-RAW 지원까지 설치하려면:
+`rawpy` 설치가 실패하면 JPEG/PNG/TIFF 모드로 계속 실행된다. RAW 지원 설치를 다시 시도하려면:
 
 ```powershell
-pip install -e ".[dev,raw]"
+pnpm run setup -- --retry-raw
 ```
 
-## 프론트엔드 실행
+## 실행
 
-다른 터미널에서:
-
-```powershell
-pnpm --filter @tonepilot/desktop dev
-```
-
-루트에서 둘 다 실행하려면:
+루트에서 프론트/백엔드를 같이 실행:
 
 ```powershell
 pnpm dev
 ```
 
+백엔드만 실행:
+
+```powershell
+pnpm backend:dev
+```
+
+프론트엔드만 실행:
+
+```powershell
+pnpm desktop:dev
+```
+
+## Codex 연결
+
+`pnpm dev`로 시작하면 백엔드가 Codex 명령을 자동 탐색한다.
+
+- `TONEPILOT_CODEX_COMMAND` 환경변수가 있으면 그 값을 사용
+- PATH에 있는 `codex` 사용
+- Windows Codex 앱 설치 경로 `%LOCALAPPDATA%\OpenAI\Codex\bin\*\codex.exe` 자동 탐색
+
+Codex가 없거나 로그인되어 있지 않으면 앱은 꺼지지 않고 로컬 Rules 추천으로 fallback한다. 연결 상태만 확인:
+
+```powershell
+pnpm backend:smoke:codex-status
+```
+
+실제 Codex 추천 턴까지 확인하려면 아래 명령을 쓸 수 있다. 이 명령은 실제 사용량/쿼터를 소비할 수 있다.
+
+```powershell
+pnpm backend:smoke:codex
+```
+
+추후 로컬 AI는 이 Codex 경로와 같은 provider 인터페이스 뒤에 붙이는 방향으로 유지한다. 즉 실행 흐름은 `pnpm dev` 그대로 두고, AI 제공자만 교체하는 구조를 목표로 한다.
+
 ## 테스트
 
 ```powershell
-cd apps/backend
-pytest
+pnpm backend:test
+pnpm desktop:build
 ```
+
+Codex app-server smoke check:
+
+```powershell
+pnpm backend:smoke:codex-status
+pnpm backend:smoke:codex
+```
+
+두 번째 명령은 실제 Codex 추천 턴을 시작하므로 Codex 사용량/쿼터를 소비할 수 있다.
 
 ## API 개요
 

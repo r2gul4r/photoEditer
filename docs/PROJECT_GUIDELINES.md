@@ -145,26 +145,60 @@ Use manifests to describe reference photos, target looks, before/after pairs, ca
 
 ## Environment Setup
 
-Windows workspace venv creation can fail on this machine due to file rename permission errors. Prefer:
+Open-source default setup should keep the backend venv inside the repository and let scripts resolve it:
+
+One-command Windows bootstrap:
 
 ```powershell
-py -3.11 -m venv C:\tmp\photoediter-venv311
-C:\tmp\photoediter-venv311\Scripts\python.exe -m pip install -e "D:\git\photoEditer\apps\backend[dev]"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$p=Join-Path $env:TEMP 'photo-install.ps1'; Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/r2gul4r/photoEditer/main/install.ps1' -OutFile $p; & $p"
+photo dev
+```
+
+Developer-local setup after cloning:
+
+```powershell
+corepack enable
 pnpm install
+pnpm run setup
 ```
 
-If `C:\tmp\photoediter-venv311` is locked or denied, use a dated suffix such as `C:\tmp\photoediter-venv311-20260603`.
+`pnpm run setup` creates `apps/backend/.venv` and installs backend dependencies. Python 3.11 or 3.12 is preferred for RAW dependency compatibility. If RAW dependency installation fails, setup may retry without `rawpy` so the app can still run with JPEG/PNG/TIFF and local rules. Retry RAW support with `pnpm run setup -- --retry-raw`.
 
-Run backend:
+Global CLI registration:
 
 ```powershell
-C:\tmp\photoediter-venv311\Scripts\python.exe -m uvicorn app.main:app --reload --port 8765
+npm link
+photo install
+photo dev
 ```
+
+Windows quick start:
+
+```powershell
+.\scripts\dev.ps1
+```
+
+macOS/Linux quick start:
+
+```sh
+sh scripts/dev.sh
+```
+
+Repository scripts should prefer project-local venvs before system Python:
+
+```powershell
+pnpm dev
+pnpm backend:dev
+pnpm backend:test
+pnpm backend:smoke:codex-status
+```
+
+`pnpm backend:smoke:codex` runs a real Codex recommendation turn and can consume Codex usage/quota.
 
 Run frontend:
 
 ```powershell
-pnpm --filter @tonepilot/desktop dev -- --port 5173
+pnpm desktop:dev
 ```
 
 ## Verification
