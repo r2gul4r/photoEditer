@@ -159,6 +159,10 @@ class StyleInterpretation(BaseModel):
     lut_profile_count: int = 0
     lut_match_score: float = 0
     lut_hsl_prior: HslMap = Field(default_factory=dict)
+    preset_style_group: str | None = None
+    preset_profile_count: int = 0
+    preset_match_score: float = 0
+    preset_hsl_prior: HslMap = Field(default_factory=dict)
 
 
 AiMode = Literal["rules", "auto", "codex"]
@@ -321,6 +325,67 @@ class LutUrlIngestRequest(BaseModel):
 
 class LutStyleIndexResponse(BaseModel):
     root: str = "reference/luts/style_index.json"
+    index: dict[str, Any]
+
+
+PresetSourceStatus = Literal["allow", "unknown", "deny"]
+PresetSourceType = Literal["user_import", "allowed_public_preset"]
+
+
+class PresetSourceEntry(BaseModel):
+    id: str
+    name: str
+    status: PresetSourceStatus = "unknown"
+    sourceType: PresetSourceType = "allowed_public_preset"
+    urlPrefixes: list[str] = Field(default_factory=list)
+    license: str | None = None
+    directDownloadAllowed: bool = False
+    notes: str | None = None
+
+
+class PresetSourceRegistry(BaseModel):
+    version: int = 1
+    sources: list[PresetSourceEntry] = Field(default_factory=list)
+
+
+class PresetProfileMetadata(BaseModel):
+    sourceUrl: str | None = None
+    downloadUrl: str | None = None
+    license: str | None = None
+    status: PresetSourceStatus
+    sourceType: PresetSourceType
+    downloadedAt: str | None = None
+    importedAt: str | None = None
+    sha256: str
+    originalFilename: str
+    originalDeleted: bool
+
+
+class PresetStyleProfile(BaseModel):
+    id: str
+    version: int = 1
+    featureType: Literal["lightroom_preset_style_profile"] = "lightroom_preset_style_profile"
+    concept: str | None = None
+    title: str | None = None
+    format: Literal["xmp", "lrtemplate"]
+    metadata: PresetProfileMetadata
+    derivedTags: list[str] = Field(default_factory=list)
+    features: dict[str, Any]
+
+
+class PresetIngestResponse(BaseModel):
+    profilePath: str
+    profile: PresetStyleProfile
+
+
+class PresetProfileListResponse(BaseModel):
+    root: str = "reference/presets/profiles"
+    count: int
+    items: list[PresetStyleProfile]
+
+
+class PresetStyleIndexResponse(BaseModel):
+    root: str = "reference/presets/style_index.json"
     index: dict[str, Any]
 
 

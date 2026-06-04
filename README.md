@@ -22,7 +22,7 @@ RAW/JPEG/PNG photo -> image analysis -> style target -> histogram-aware candidat
 - Calculates luma, RGB, and saturation histograms
 - Detects risks such as highlight clipping, crushed shadows, low contrast, over-saturation, and color cast
 - Interprets Korean or English style prompts
-- Uses clustered style priors derived from market/public LUT behavior analysis, without storing or redistributing LUT originals
+- Uses clustered style priors derived from market/public LUT and public or YouTube-linked Lightroom preset behavior analysis, without storing or redistributing originals
 - Generates three correction candidates: Natural, Style, and Bold
 - Renders preview images locally
 - Exports rendered correction results as JPEG or PNG
@@ -182,6 +182,7 @@ The second command starts a real Codex recommendation turn and can consume Codex
 - `GET /api/previews/{filename}`: serve generated previews
 - `GET /api/references`: inspect local reference manifests
 - `GET /api/references/luts/style-index`: inspect clustered LUT-derived style priors
+- `GET /api/references/presets/style-index`: inspect clustered Lightroom preset-derived style priors
 - `POST /api/export/preset-json`: export selected correction values as JSON
 - `POST /api/export/rendered-image`: export the corrected result as JPEG or PNG
 
@@ -195,11 +196,13 @@ JPEG, PNG, and TIFF files are also supported. They have less recovery latitude t
 
 ## How Recommendations Work
 
-The MVP uses rule-based style interpretation plus a LUT-derived style index. For example, a prompt such as `cool Japanese summer` maps to `cool_japanese_summer`, while prompts such as `warm wedding`, `Lumix real time LUT`, `cinematic teal orange`, or `black and white monochrome` can select matching LUT-style groups.
+The MVP uses rule-based style interpretation plus LUT-derived and Lightroom preset-derived style indexes. For example, a prompt such as `cool Japanese summer` maps to `cool_japanese_summer`, while prompts such as `warm wedding`, `Lumix real time LUT`, `cinematic teal orange`, or `black and white monochrome` can select matching style groups.
 
 The LUT index is not a LUT pack. It is a low-dimensional style summary built from observed correction behavior across common public/market LUT concepts. Original `.cube` files are treated as temporary analysis inputs and are deleted after profile extraction. The recommendation engine uses only clustered priors such as tone range, color balance, HSL tendencies, prompt keywords, and risk notes.
 
-Current LUT-style groups include wedding, beauty/skintone, Lumix real-time, Panasonic Rec709 utility, teal-orange, cool night, warm sunset, film/vintage, monochrome, cinematic, pastel, vibrant, and clean natural.
+The Lightroom preset index follows the same rule: original `.xmp`, `.lrtemplate`, and ZIP files are temporary analysis inputs only. The committed artifact is a clustered style summary of slider, HSL, tone curve, color grading, calibration, prompt keyword, and risk-note tendencies from public and YouTube-linked creator preset behavior.
+
+Current style groups include wedding, beauty/skintone, Lumix real-time, Panasonic Rec709 utility, teal-orange, cool night, warm sunset, film/vintage, monochrome, cinematic, pastel, vibrant, and clean natural.
 
 ## Current Limitations
 

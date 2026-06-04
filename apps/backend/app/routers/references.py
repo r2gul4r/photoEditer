@@ -6,6 +6,9 @@ from app.models.schemas import (
     LutSourceRegistry,
     LutStyleIndexResponse,
     LutUrlIngestRequest,
+    PresetProfileListResponse,
+    PresetSourceRegistry,
+    PresetStyleIndexResponse,
     ReferenceLibraryResponse,
 )
 from app.services.lut_analysis import (
@@ -17,6 +20,12 @@ from app.services.lut_analysis import (
     load_lut_style_profiles,
 )
 from app.services.lut_style_index import load_lut_style_index
+from app.services.preset_analysis import (
+    PresetAnalysisError,
+    load_preset_source_registry,
+    load_preset_style_profiles,
+)
+from app.services.preset_style_index import load_preset_style_index
 from app.services.reference_library import ReferenceLibraryError, load_reference_library
 
 router = APIRouter(prefix="/api/references", tags=["references"])
@@ -51,6 +60,30 @@ def get_lut_style_index() -> LutStyleIndexResponse:
     try:
         return LutStyleIndexResponse(index=load_lut_style_index())
     except LutAnalysisError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@router.get("/presets/sources", response_model=PresetSourceRegistry)
+def list_preset_sources() -> PresetSourceRegistry:
+    try:
+        return load_preset_source_registry()
+    except PresetAnalysisError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@router.get("/presets/profiles", response_model=PresetProfileListResponse)
+def list_preset_profiles() -> PresetProfileListResponse:
+    try:
+        return load_preset_style_profiles()
+    except PresetAnalysisError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@router.get("/presets/style-index", response_model=PresetStyleIndexResponse)
+def get_preset_style_index() -> PresetStyleIndexResponse:
+    try:
+        return PresetStyleIndexResponse(index=load_preset_style_index())
+    except PresetAnalysisError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 

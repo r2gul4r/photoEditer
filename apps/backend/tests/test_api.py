@@ -153,6 +153,18 @@ def test_lut_reference_endpoints_list_sources_and_profiles() -> None:
     assert style_index.status_code == 200
     assert style_index.json()["index"]["kind"] == "lut_style_index"
 
+    preset_sources = client.get("/api/references/presets/sources")
+    assert preset_sources.status_code == 200
+    assert preset_sources.json()["version"] == 1
+
+    preset_profiles = client.get("/api/references/presets/profiles")
+    assert preset_profiles.status_code == 200
+    assert preset_profiles.json()["root"] == "reference/presets/profiles"
+
+    preset_style_index = client.get("/api/references/presets/style-index")
+    assert preset_style_index.status_code == 200
+    assert preset_style_index.json()["index"]["kind"] == "lightroom_preset_style_index"
+
 
 def test_raw_status_reports_dependency_state() -> None:
     client = TestClient(app)

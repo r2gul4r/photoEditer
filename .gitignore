@@ -28,6 +28,10 @@ reference/jpeg/*
 reference/edits/*
 reference/presets/*
 reference/manifests/*
+reference/presets/tmp/*
+reference/presets/imports/*
+reference/presets/originals/*
+reference/presets/profiles/*
 reference/luts/tmp/*
 reference/luts/imports/*
 reference/luts/originals/*
@@ -36,6 +40,12 @@ reference/luts/profiles/*
 !reference/jpeg/.gitkeep
 !reference/edits/.gitkeep
 !reference/presets/.gitkeep
+!reference/presets/source_registry.json
+!reference/presets/style_index.json
+!reference/presets/tmp/
+!reference/presets/tmp/.gitkeep
+!reference/presets/profiles/
+!reference/presets/profiles/.gitkeep
 !reference/manifests/.gitkeep
 !reference/manifests/example.json
 !reference/luts/

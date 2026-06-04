@@ -195,3 +195,15 @@ Returns saved LUT-derived style profiles from `reference/luts/profiles/*.json`.
 ## GET /api/references/luts/style-index
 
 Returns the clustered LUT style index from `reference/luts/style_index.json`. The recommendation engine uses this index to blend LUT-derived tone, color, and HSL priors into prompt-based correction candidates.
+
+## GET /api/references/presets/sources
+
+Returns the allow/unknown/deny source registry used by public and YouTube-linked Lightroom preset analysis.
+
+## GET /api/references/presets/profiles
+
+Returns local Lightroom preset-derived style profiles from `reference/presets/profiles/*.json`. These profiles are ignored by git and can be regenerated from approved public, YouTube-linked, or user-provided inputs.
+
+## GET /api/references/presets/style-index
+
+Returns the clustered Lightroom preset style index from `reference/presets/style_index.json`. The recommendation engine uses this index to blend preset-derived tone, color balance, HSL, tone curve, color grading, calibration, prompt keyword, and risk-note priors into prompt-based correction candidates.

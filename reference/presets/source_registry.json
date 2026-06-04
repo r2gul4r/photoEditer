@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "user-local-preset-import",
+      "name": "User Local Preset Import",
+      "status": "allow",
+      "sourceType": "user_import",
+      "urlPrefixes": [],
+      "license": "user-provided",
+      "directDownloadAllowed": false,
+      "notes": "For presets manually provided by the user."
+    },
+    {
+      "id": "thepresetsroom-free-presets",
+      "name": "The Presets Room Free Presets",
+      "status": "allow",
+      "sourceType": "allowed_public_preset",
+      "urlPrefixes": [
+        "https://thepresetsroom.com/free-lightroom-presets/",
+        "https://thepresetsroom.b-cdn.net/free-download/"
+      ],
+      "license": "free public download; original files are not redistributed",
+      "directDownloadAllowed": true,
+      "notes": "Used only for low-dimensional preset behavior analysis."
+    },
+    {
+      "id": "editingfree-youtube-free-presets",
+      "name": "Editingfree YouTube Free Presets",
+      "status": "allow",
+      "sourceType": "allowed_public_preset",
+      "urlPrefixes": [
+        "https://editingfree.com/",
+        "https://docs.google.com/uc?export=download",
+        "https://drive.usercontent.google.com/download"
+      ],
+      "license": "free public download; original files are not redistributed",
+      "directDownloadAllowed": true,
+      "notes": "YouTube-linked creator site used only for low-dimensional preset behavior analysis."
+    },
+    {
+      "id": "mackytravel-youtube-free-presets",
+      "name": "MackyTravel YouTube Free Presets",
+      "status": "unknown",
+      "sourceType": "allowed_public_preset",
+      "urlPrefixes": [
+        "https://mackytravel.com/"
+      ],
+      "license": "free public download pages; AES ZIP originals not ingested without explicit tool support",
+      "directDownloadAllowed": false,
+      "notes": "Official YouTube-linked creator source candidate; encrypted ZIPs are recorded as skipped unless a compatible extractor is available."
+    }
+  ]
+}

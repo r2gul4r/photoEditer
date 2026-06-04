@@ -136,6 +136,15 @@ export type StyleInterpretation = {
       import("@tonepilot/shared").HslAdjustment
     >
   >;
+  preset_style_group?: string | null;
+  preset_profile_count?: number;
+  preset_match_score?: number;
+  preset_hsl_prior?: Partial<
+    Record<
+      "red" | "orange" | "yellow" | "green" | "aqua" | "blue" | "purple" | "magenta",
+      import("@tonepilot/shared").HslAdjustment
+    >
+  >;
 };
 
 export type RecommendResponse = {

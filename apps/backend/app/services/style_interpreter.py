@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 from app.models.schemas import StyleInterpretation
 from app.services.lut_style_index import match_lut_style_prior
+from app.services.preset_style_index import match_preset_style_prior
 
 
 SliderPrior = dict[str, tuple[float, float]]
@@ -186,6 +187,14 @@ def _merge_unique(base: tuple[str, ...], extra: list[str]) -> list[str]:
     return items
 
 
+def _merge_unique_list(base: list[str], extra: list[str]) -> list[str]:
+    items: list[str] = []
+    for value in [*base, *extra]:
+        if value and value not in items:
+            items.append(value)
+    return items
+
+
 def _blend_slider_prior(base: SliderPrior, lut_prior: dict[str, list[float]], *, weight: float = 0.55) -> SliderPrior:
     blended: SliderPrior = dict(base)
     for name, lut_bounds in lut_prior.items():
@@ -206,6 +215,7 @@ def interpret_style(style_prompt: str) -> StyleInterpretation:
     if best_score == 0:
         best = next(style for style in STYLE_DEFINITIONS if style.style_id == "clean_instagram")
     lut_match = match_lut_style_prior(prompt, style_id=best.style_id if best_score > 0 else None)
+    preset_match = match_preset_style_prior(prompt, style_id=best.style_id if best_score > 0 else None)
     slider_prior = best.slider_prior
     mood = list(best.mood)
     targets = list(best.targets)
@@ -214,12 +224,26 @@ def interpret_style(style_prompt: str) -> StyleInterpretation:
     lut_style_group = None
     lut_profile_count = 0
     lut_match_score = 0.0
+    preset_hsl_prior = {}
+    preset_style_group = None
+    preset_profile_count = 0
+    preset_match_score = 0.0
+
+    if preset_match:
+        slider_prior = _blend_slider_prior(slider_prior, preset_match.get("sliderPrior", {}), weight=0.65)
+        mood = _merge_unique_list(mood, preset_match.get("mood", []))
+        targets = _merge_unique_list(targets, preset_match.get("targets", []))
+        avoid = _merge_unique_list(avoid, preset_match.get("riskNotes", preset_match.get("avoid", [])))
+        preset_hsl_prior = preset_match.get("hslPrior", {})
+        preset_style_group = preset_match.get("id")
+        preset_profile_count = int(preset_match.get("profileCount", 0))
+        preset_match_score = float(preset_match.get("matchScore", 0))
 
     if lut_match:
-        slider_prior = _blend_slider_prior(best.slider_prior, lut_match.get("sliderPrior", {}))
-        mood = _merge_unique(best.mood, lut_match.get("mood", []))
-        targets = _merge_unique(best.targets, lut_match.get("targets", []))
-        avoid = _merge_unique(best.avoid, lut_match.get("avoid", []))
+        slider_prior = _blend_slider_prior(slider_prior, lut_match.get("sliderPrior", {}), weight=0.35 if preset_match else 0.55)
+        mood = _merge_unique_list(mood, lut_match.get("mood", []))
+        targets = _merge_unique_list(targets, lut_match.get("targets", []))
+        avoid = _merge_unique_list(avoid, lut_match.get("avoid", []))
         lut_hsl_prior = lut_match.get("hslPrior", {})
         lut_style_group = lut_match.get("id")
         lut_profile_count = int(lut_match.get("profileCount", 0))
@@ -235,4 +259,8 @@ def interpret_style(style_prompt: str) -> StyleInterpretation:
         lut_profile_count=lut_profile_count,
         lut_match_score=lut_match_score,
         lut_hsl_prior=lut_hsl_prior,
+        preset_style_group=preset_style_group,
+        preset_profile_count=preset_profile_count,
+        preset_match_score=preset_match_score,
+        preset_hsl_prior=preset_hsl_prior,
     )

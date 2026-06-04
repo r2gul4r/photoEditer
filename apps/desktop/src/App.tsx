@@ -63,7 +63,9 @@ function App() {
   const referenceItems = state.references?.items ?? [];
   const styleInterpretation = state.recommendation?.style_interpretation;
   const candidateStyleLabel = styleInterpretation
-    ? [styleInterpretation.style_id, styleInterpretation.lut_style_group].filter(Boolean).join(" | ")
+    ? [styleInterpretation.style_id, styleInterpretation.preset_style_group, styleInterpretation.lut_style_group]
+        .filter(Boolean)
+        .join(" | ")
     : "";
 
   const moduleItems = [

@@ -1,0 +1,4622 @@
+{
+  "version": 1,
+  "kind": "lightroom_preset_style_index",
+  "profileCount": 150,
+  "groupCount": 11,
+  "duplicates": {
+    "profileCount": 150,
+    "uniqueHashCount": 150,
+    "exactHashDuplicateGroupCount": 0,
+    "normalizedFamilyDuplicateGroupCount": 1,
+    "exactHashGroups": [],
+    "normalizedFamilyGroups": [
+      {
+        "familyKey": "editingfree youtube girly www editingfree com file girly www editingfree com",
+        "profileIds": [
+          "xmp-file-girly-2-0-free-lightroom-preset-100-www-editingfree-com-05319bcbcbab",
+          "xmp-file-girly-free-lightroom-preset-100-www-editingfree-com-accd681358e3"
+        ],
+        "weightPerProfile": 0.5
+      }
+    ]
+  },
+  "selectionBasis": "Public/free Lightroom preset pages; original preset files deleted after low-dimensional profile extraction.",
+  "analyzedProfiles": [
+    {
+      "id": "xmp-file-90s-movie-free-lightroom-preset-100-www-editingfree-com-03a4f16ff15e",
+      "title": "XMP File 90s Movie Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube 90s Movie Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/90s-movie-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "xmp-file-attitude-girl-free-lightroom-preset-100-www-editingfree-com-70fdc16280be",
+      "title": "XMP file Attitude Girl Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Attitude Girl Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/attitude-girl-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "xmp-file-blue-life-free-lightroom-preset-100-www-editingfree-com-da48ed982a77",
+      "title": "XMP File Blue Life Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Blue Life Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/blue-life-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cool_night",
+      "derivedTags": [
+        "cool",
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-blue-pastels-free-lightroom-preset-100-www-editingfree-com-1c9c4a45aa10",
+      "title": "XMP File Blue Pastels Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Blue Pastels Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/blue-pastels-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "cool",
+        "pastel",
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "artistic-03-f74c59e769ce",
+      "title": "Artistic 03",
+      "concept": "editingfree-youtube Blue Vibes Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/blue-vibes-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cool_night",
+      "derivedTags": [
+        "cool",
+        "muted"
+      ]
+    },
+    {
+      "id": "xmp-file-book-lover-free-lightroom-preset-100-www-editingfree-com-5e04b15a39fa",
+      "title": "XMP File Book Lover Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Book Lover Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/book-lover-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "xmp-file-boom-free-lightroom-preset-100-www-editingfree-com-52b6b2dabc11",
+      "title": "XMP File Boom Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Boom Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/boom-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-city-evening-free-lightroom-preset-100-www-editingfree-com-81bf3d291f9b",
+      "title": "XMP File City Evening Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube City Evening Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/city-evening-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "muted"
+      ]
+    },
+    {
+      "id": "xmp-file-closeup-portraits-free-lightroom-preset-100-www-editingfree-com-85e9f853fa93",
+      "title": "XMP File Closeup Portraits Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Closeup Portraits Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/closeup-portraits-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-colourful-free-lightroom-preset-100-www-editingfree-com-3f3fa5aea8b0",
+      "title": "XMP File Colourful Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Colorful Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/colorful-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant",
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "xmp-file-colors-play-free-lightroom-preset-100-www-editingfree-com-cd40f90f6930",
+      "title": "XMP File Colors Play Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Colors Play Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/colors-play-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-cuteness-overloaded-free-lightroom-preset-100-www-editingfree-com-d6450f583266",
+      "title": "XMP File Cuteness Overloaded Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Cuteness Overloaded Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/cuteness-overloaded-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "xmp-file-dark-beauty-free-lightroom-preset-100-www-editingfree-com-50529364e89f",
+      "title": "XMP File Dark Beauty Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Dark Beauty Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/dark-beauty-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "xmp-file-dark-to-bright-free-lightroom-preset-100-www-editingfree-com-bcd9cdc6ce81",
+      "title": "XMP File Dark to Bright Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Dark to Bright Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/dark-to-bright-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-different-free-lightroom-preset-100-www-editingfree-com-174140b4b1bc",
+      "title": "XMP File Different Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Different Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/different-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-fields-free-lightroom-preset-100-www-editingfree-com-57c7793011e6",
+      "title": "XMP File Fields Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Fields Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/fields-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "monochrome",
+      "derivedTags": [
+        "soft_contrast",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "xmp-file-food-city-free-lightroom-preset-100-www-editingfree-com-abaf1169c825",
+      "title": "XMP File Food City Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Food City Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/food-city-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-girly-2-0-free-lightroom-preset-100-www-editingfree-com-05319bcbcbab",
+      "title": "XMP File Girly 2.0 Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Girly 2.0 Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/girly-2-0-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-girly-free-lightroom-preset-100-www-editingfree-com-accd681358e3",
+      "title": "XMP File Girly Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Girly Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/girly-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-gravity-free-lightroom-preset-100-www-editingfree-com-59303865f8bf",
+      "title": "XMP File Gravity Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Gravity Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/gravity-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-green-energy-free-lightroom-preset-100-www-editingfree-com-d94fba9fbd10",
+      "title": "XMP File Green Energy Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Green Energy Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/green-energy-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "monochrome",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "xmp-file-green-nature-free-lightroom-preset-100-www-editingfree-com-5923c4617dbf",
+      "title": "XMP File Green Nature Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Green Nature Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/green-nature-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "xmp-file-hdr-free-lightroom-preset-dng-and-xmp-www-editingfree-com-90f4f06adb37",
+      "title": "XMP File HDR Free Lightroom Preset DNG and XMP www.Editingfree.com",
+      "concept": "editingfree-youtube HDR Free Lightroom Preset DNG and XMP www.Editingfree.com",
+      "source": "https://editingfree.com/hdr-free-lightroom-preset-dng-and-xmp-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "xmp-file-hijabi-queen-free-lightroom-preset-100-www-editingfree-com-501e26c934a9",
+      "title": "XMP File Hijabi Queen  Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Hijabi Queen Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/hijabi-queen-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-hocus-pocus-free-lightroom-preset-100-www-editingfree-com-46c425dc11a5",
+      "title": "XMP File Hocus Pocus Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Hocus Pocus Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/hocus-pocus-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-influencer-free-lightroom-presets-100-www-editingfree-com-f7c1d5d0276b",
+      "title": "XMP File influencer Free Lightroom Presets 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Influencer Free Lightroom Presets 100% www.Editingfree.com",
+      "source": "https://editingfree.com/influencer-free-lightroom-presets-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "xmp-file-insta-model-free-lightroom-preset-100-www-editingfree-com-832b84f9fc13",
+      "title": "XMP File Insta Model Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Insta Model Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/insta-model-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "xmp-file-jungle-green-free-lightroom-preset-100-www-editingfree-com-c86f2fcc0204",
+      "title": "XMP File Jungle Green Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Jungle Green Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/jungle-green-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-la-vista-free-lightroom-preset-100-www-editingfree-com-fc6c58b5832b",
+      "title": "XMP File La Vista Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube La Vista Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/la-vista-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-light-and-airy-free-lightroom-presets-100-www-editingfree-com-c7e90777a03e",
+      "title": "XMP File Light and Airy Free Lightroom Presets 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Light and Airy Free Lightroom Presets 100% www.Editingfree.com",
+      "source": "https://editingfree.com/light-and-airy-free-lightroom-presets-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "monochrome",
+      "derivedTags": [
+        "pastel",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "xmp-file-lost-train-free-lightroom-preset-100-www-editingfree-com-17209a7030b6",
+      "title": "XMP File Lost Train Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Lost Train Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/lost-train-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-market-free-lightroom-preset-100-www-editingfree-com-89bc2d6a29e5",
+      "title": "XMP File Market Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Market Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/market-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-mix-free-lightroom-preset-100-www-editingfree-com-70328d0722c3",
+      "title": "XMP File Mix Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Mix Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/mix-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "xmp-file-no-smoking-free-lightroom-preset-100-www-editingfree-com-6d5fc1b5ecf5",
+      "title": "XMP File No Smoking Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube No Smoking Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/no-smoking-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-office-free-lightroom-preset-100-www-editingfree-com-1-033555b371dd",
+      "title": "XMP File Office Free Lightroom Preset 100_ www.Editingfree.com_1",
+      "concept": "editingfree-youtube Office Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/office-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-peace-free-lightroom-preset-100-www-editingfree-com-889bc2fc02cc",
+      "title": "XMP File Peace Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Peace Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/peace-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-purple-girl-free-lightroom-preset-100-www-editingfree-com-a3df7e882a43",
+      "title": "XMP File Purple Girl Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Purple Girl Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/purple-girl-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "artistic-03-9d2b85d5e5bf",
+      "title": "Artistic 03",
+      "concept": "editingfree-youtube Red and Black Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/red-and-black-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "monochrome",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "xmp-file-red-and-blue-free-lightroom-preset-100-www-editingfree-com-efcc3a0c3a1e",
+      "title": "XMP File Red and Blue Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Red and Blue Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/red-and-blue-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cool_night",
+      "derivedTags": [
+        "cool",
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-red-magic-free-lightroom-preset-100-www-editingfree-com-6616867fb50e",
+      "title": "XMP File Red Magic Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Red Magic Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/red-magic-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-romantic-date-free-lightroom-preset-100-www-editingfree-com-34b780deb2b0",
+      "title": "XMP File Romantic Date Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Romantic Date 2.0 Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/romantic-date-2-0-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "xmp-file-snow-girl-free-lightroom-preset-100-www-editingfree-com-c8d2c985b489",
+      "title": "XMP File Snow Girl Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Snow Girl Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/snow-girl-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cool_night",
+      "derivedTags": [
+        "cool",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-soft-aesthetic-free-lightroom-preset-100-www-editingfree-com-d77192f08453",
+      "title": "XMP file Soft Aesthetic Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Soft Aesthetic Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/soft-aesthetic-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "pastel",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "xmp-file-spice-it-up-free-lightroom-preset-100-www-editingfree-com-afd8be391830",
+      "title": "XMP File Spice it Up Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Spice it Up Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/spice-it-up-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "xmp-file-style-free-lightroom-preset-100-www-editingfree-com-b3140ca48cd1",
+      "title": "XMP File Style Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Style Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/style-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-sunset-beach-free-lightroom-preset-100-www-editingfree-com-2132e439388a",
+      "title": "XMP File Sunset Beach Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Sunset Beach Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/sunset-beach-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "xmp-file-super-market-free-lightroom-preset-100-www-editingfree-com-a93a5f94e6de",
+      "title": "XMP File Super Market Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Super Market Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/super-market-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "vintage-10-0d116b2fad3c",
+      "title": "Vintage 10",
+      "concept": "editingfree-youtube Tennis Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/tennis-free-lightroom-preset-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "monochrome",
+      "derivedTags": [
+        "film",
+        "muted",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "xmp-file-that-girl-free-lightroom-preset-100-www-editingfree-com-67ddfdf6adac",
+      "title": "XMP File That Girl Free Lightroom Preset 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube That Girl Free Lightroom Preset 100% www.Editingfree.com",
+      "source": "https://editingfree.com/that-girl-free-lightroom-preset/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "xmp-file-tron-free-lightroom-presets-100-www-editingfree-com-63a4f576f08c",
+      "title": "XMP File Tron Free Lightroom Presets 100_ www.Editingfree.com",
+      "concept": "editingfree-youtube Tron Free Lightroom Presets 100% www.Editingfree.com",
+      "source": "https://editingfree.com/tron-free-lightroom-presets-100-www-editingfree-com/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "daydreaming-7724064e1d07",
+      "title": "Daydreaming",
+      "concept": "thepresetsroom aesthetic Daydreaming (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/aesthetic/daydreaming/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "fade-lights-a35fbd0db76e",
+      "title": "Fade Lights",
+      "concept": "thepresetsroom aesthetic Fade Lights (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/aesthetic/fade-lights/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "soft-colors-1d4fa25edd6d",
+      "title": "Soft Colors",
+      "concept": "thepresetsroom aesthetic Soft Colors (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/aesthetic/soft-colors/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "pastel",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "antique-facade-22c4f2cdb3b1",
+      "title": "Antique Facade",
+      "concept": "thepresetsroom architecture Antique Facade (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/architecture/antique-facade/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "clarity-b7abb66b1659",
+      "title": "Clarity",
+      "concept": "thepresetsroom architecture Clarity (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/architecture/clarity/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "skyscraper-f8ca9daa3e8d",
+      "title": "Skyscraper",
+      "concept": "thepresetsroom architecture Skyscraper (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/architecture/skyscraper/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "beach-portrait-6d6e4a93f220",
+      "title": "Beach Portrait",
+      "concept": "thepresetsroom beach Beach Portrait (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/beach/beach-portrait/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "muted"
+      ]
+    },
+    {
+      "id": "hot-sand-511d2f8d83c0",
+      "title": "Hot Sand",
+      "concept": "thepresetsroom beach Hot Sand (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/beach/hot-sand/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "maldivas-6c8c6f8dabdb",
+      "title": "Maldivas",
+      "concept": "thepresetsroom beach Maldivas (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/beach/maldivas/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "salty-day-f83aab0d033d",
+      "title": "Salty Day",
+      "concept": "thepresetsroom beach Salty Day (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/beach/salty-day/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "sea-view-c197937a2ac2",
+      "title": "Sea View",
+      "concept": "thepresetsroom beach Sea Views (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/beach/sea-views/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "christmas-lights-b422e389f9e0",
+      "title": "Christmas Lights",
+      "concept": "thepresetsroom christmas Christmas Lights (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/christmas-lights/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "christmas-tree-0fb31b349405",
+      "title": "Christmas Tree",
+      "concept": "thepresetsroom christmas Christmas Tree (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/christmas-tree/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "cozy-holidays-36f779ce0de3",
+      "title": "Cozy Holidays",
+      "concept": "thepresetsroom christmas Cozy Holidays (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/cozy-holidays/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "muted"
+      ]
+    },
+    {
+      "id": "family-time-4828c82d4c06",
+      "title": "Family Time",
+      "concept": "thepresetsroom christmas Family Time (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/family-time/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "golden-details-23d546315e8c",
+      "title": "Golden Details",
+      "concept": "thepresetsroom christmas Golden Details (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/golden-details/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "muted"
+      ]
+    },
+    {
+      "id": "blvck-0bbd0606d244",
+      "title": "BLVCK",
+      "concept": "thepresetsroom cinematic BLVCK (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/cinematic/blvck/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "cinematic-city-29a9ab6c52ac",
+      "title": "Cinematic City",
+      "concept": "thepresetsroom cinematic Cinematic City (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/cinematic/cinematic-city/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "dark-knight-9f696aa34b1f",
+      "title": "Dark Knight",
+      "concept": "thepresetsroom cinematic Dark Knight (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/cinematic/dark-knight/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cool",
+        "cinematic",
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "mad-max-e3c12c9ad697",
+      "title": "Mad Max",
+      "concept": "thepresetsroom cinematic Mad Max (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/cinematic/mad-max/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "muted"
+      ]
+    },
+    {
+      "id": "35mm-a47ed2ce58d4",
+      "title": "35mm",
+      "concept": "thepresetsroom film 35mm (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/film/35mm/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "film"
+      ]
+    },
+    {
+      "id": "fuji-45976385ff24",
+      "title": "Fuji",
+      "concept": "thepresetsroom film Fuji (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/film/fuji/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "film",
+        "muted"
+      ]
+    },
+    {
+      "id": "kodak-df49241c4bf7",
+      "title": "Kodak",
+      "concept": "thepresetsroom film Kodak (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/film/kodak/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "film"
+      ]
+    },
+    {
+      "id": "polaroid-fe7e91eaee7b",
+      "title": "Polaroid",
+      "concept": "thepresetsroom film Polaroid (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/film/polaroid/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "film"
+      ]
+    },
+    {
+      "id": "bolognese-f0152499e938",
+      "title": "Bolognese",
+      "concept": "thepresetsroom food Bolognese (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/food/bolognese/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "foodie-7ee52c2f00cf",
+      "title": "Foodie",
+      "concept": "thepresetsroom food Foodie (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/food/foodie/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "house-salad-e638ee2d8555",
+      "title": "House Salad",
+      "concept": "thepresetsroom food House Salad (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/food/house-salad/",
+      "format": "xmp",
+      "groupId": "monochrome",
+      "derivedTags": [
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "moody-cuisine-380741ac6b42",
+      "title": "Moody Cuisine",
+      "concept": "thepresetsroom food Moody Cuisine (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/food/moody-cuisine/",
+      "format": "xmp",
+      "groupId": "monochrome",
+      "derivedTags": [
+        "cinematic",
+        "soft_contrast",
+        "muted",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "golden-reflex-0099c20f1943",
+      "title": "Golden Reflex",
+      "concept": "thepresetsroom golden-hour Golden Reflex (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/golden-reflex/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "golden-tones-d0930df4772f",
+      "title": "Golden Tones",
+      "concept": "thepresetsroom golden-hour Golden Tones (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/golden-tones/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "los-angeles-b7767a401f16",
+      "title": "Los Angeles",
+      "concept": "thepresetsroom golden-hour Los Angeles (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/los-angeles/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm"
+      ]
+    },
+    {
+      "id": "orange-lights-66dfe6a2fe5e",
+      "title": "Orange Lights",
+      "concept": "thepresetsroom golden-hour Orange Lights (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/orange-lights/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "palm-tree-2ddabe567801",
+      "title": "Palm Tree",
+      "concept": "thepresetsroom golden-hour Palm Tree (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/palm-tree/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "adventure-d82edbbfac1b",
+      "title": "Adventure",
+      "concept": "thepresetsroom gopro Adventure (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/gopro/adventure/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "enlight-7abf827062f7",
+      "title": "Enlight",
+      "concept": "thepresetsroom gopro Enlight (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/gopro/enlight/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "hdr-gopro-43add6b24e53",
+      "title": "HDR GoPro",
+      "concept": "thepresetsroom gopro HDR GoPro (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/gopro/hdr-gopro/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "arm-day-8952f549fc8c",
+      "title": "Arm Day",
+      "concept": "thepresetsroom gym-fitness Arm Day (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/gym-fitness/arm-day/",
+      "format": "xmp",
+      "groupId": "monochrome",
+      "derivedTags": [
+        "muted",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "classic-e06dd3be36fb",
+      "title": "Classic",
+      "concept": "thepresetsroom gym-fitness Classic (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/gym-fitness/classic/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "most-muscular-50a4c3d979c8",
+      "title": "Most Muscular",
+      "concept": "thepresetsroom gym-fitness Most Muscular (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/gym-fitness/most-muscular/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "dark-mountains-4db83d76064b",
+      "title": "Dark mountains",
+      "concept": "thepresetsroom landscape Dark Mountains (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/landscape/dark-mountains/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "hdr-landscape-927eda397f66",
+      "title": "HDR Landscape",
+      "concept": "thepresetsroom landscape HDR Landscape (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/landscape/hdr-landscape/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "muddy-views-e1bda2928e9f",
+      "title": "Muddy Views",
+      "concept": "thepresetsroom landscape Muddy Views (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/landscape/muddy-views/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "muted"
+      ]
+    },
+    {
+      "id": "adobe-color-6b961d15f1b2",
+      "title": "Adobe Color",
+      "concept": "thepresetsroom landscape Sunny Landscape (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/landscape/sunny-landscape/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "the-summit-2343591ec3e4",
+      "title": "The Summit",
+      "concept": "thepresetsroom landscape The Summit (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/landscape/the-summit/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "airy-portrait-38da0e326f42",
+      "title": "Airy Portrait",
+      "concept": "thepresetsroom light-and-airy Airy Portrait (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/light-and-airy/airy-portrait/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "pastel"
+      ]
+    },
+    {
+      "id": "dreamy-home-5b5afbb9c81a",
+      "title": "Dreamy Home",
+      "concept": "thepresetsroom light-and-airy Dreamy Home (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/light-and-airy/dreamy-home/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "pastel",
+        "muted"
+      ]
+    },
+    {
+      "id": "film-airy-120167777349",
+      "title": "Film & Airy",
+      "concept": "thepresetsroom light-and-airy Film & Airy (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/light-and-airy/film-airy/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "film",
+        "pastel"
+      ]
+    },
+    {
+      "id": "warm-airy-f883b4e1eab2",
+      "title": "Warm & Airy",
+      "concept": "thepresetsroom light-and-airy Warm & Airy (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/light-and-airy/warm-airy/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "pastel",
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "dark-moody-a17d0639aa86",
+      "title": "Dark Moody",
+      "concept": "thepresetsroom moody Dark Moody (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/moody/dark-moody/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "forest-bath-f479262fda0c",
+      "title": "Forest Bath",
+      "concept": "thepresetsroom moody Forest Bath (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/moody/forest-bath/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "green-touch-aad39e8c273b",
+      "title": "Green Touch",
+      "concept": "thepresetsroom moody Green Touch (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/moody/green-touch/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic"
+      ]
+    },
+    {
+      "id": "into-the-wild-07606e4f8523",
+      "title": "Into the Wild",
+      "concept": "thepresetsroom moody Into the Wild (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/moody/into-the-wild/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "muted"
+      ]
+    },
+    {
+      "id": "moody-forest-38a9a7b396bc",
+      "title": "Moody Forest",
+      "concept": "thepresetsroom moody Moody Forest (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/moody/moody-forest/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "muted"
+      ]
+    },
+    {
+      "id": "alfresco-portrait-1efbbf82168c",
+      "title": "Alfresco Portrait",
+      "concept": "thepresetsroom outdoor Alfresco Portrait (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/outdoor/alfresco-portrait/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "daylight-shooting-74d76749d4e9",
+      "title": "Daylight Shooting",
+      "concept": "thepresetsroom outdoor Daylight Shooting (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/outdoor/daylight-shooting/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "outdoor-time-6f52edfc0b61",
+      "title": "Outdoor Time",
+      "concept": "thepresetsroom outdoor Outdoor Time (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/outdoor/outdoor-time/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": []
+    },
+    {
+      "id": "outer-session-530199812d31",
+      "title": "Outer Session",
+      "concept": "thepresetsroom outdoor Outer Session (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/outdoor/outer-session/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "chic-06d37dbd70bf",
+      "title": "Chic",
+      "concept": "thepresetsroom portrait Chic (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/portrait/chic/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "clean-portrait-887a1c42a668",
+      "title": "Clean Portrait",
+      "concept": "thepresetsroom portrait Clean Portrait (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/portrait/clean-portrait/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "clean",
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "greyscale-portrait-2a0cb61286e9",
+      "title": "Greyscale Portrait",
+      "concept": "thepresetsroom portrait Greyscale Portrait (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/portrait/greyscale-portrait/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "urbanite-26e8dd50bcb8",
+      "title": "Urbanite",
+      "concept": "thepresetsroom portrait Urbanite (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/portrait/urbanite/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "cinematic",
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "clean-airy-4ba4714a94a3",
+      "title": "Clean & Airy",
+      "concept": "thepresetsroom product Clean & Airy (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/product/clean-airy/",
+      "format": "xmp",
+      "groupId": "pastel_soft",
+      "derivedTags": [
+        "pastel",
+        "clean",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "dark-background-3fd9be07a5a0",
+      "title": "Dark Background",
+      "concept": "thepresetsroom product Dark Background (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/product/dark-background/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "clean",
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "focus-contrast-94ff4597badc",
+      "title": "Focus & Contrast",
+      "concept": "thepresetsroom product Focus & Contrast (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/product/focus-contrast/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "clean",
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "lightening-up-d377e6a4abb5",
+      "title": "Lightening Up",
+      "concept": "thepresetsroom product Lightening Up (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/product/lightening-up/",
+      "format": "xmp",
+      "groupId": "clean_natural",
+      "derivedTags": [
+        "clean"
+      ]
+    },
+    {
+      "id": "whitening-background-166f62a16ef9",
+      "title": "Whitening Background",
+      "concept": "thepresetsroom product Whitening Background (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/product/whitening-background/",
+      "format": "xmp",
+      "groupId": "clean_natural",
+      "derivedTags": [
+        "clean",
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "game-day-7011aeba3086",
+      "title": "Game Day",
+      "concept": "thepresetsroom sport Game Day (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sport/game-day/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "hdr-sport-17ee46640eef",
+      "title": "HDR Sport",
+      "concept": "thepresetsroom sport HDR Sport (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sport/hdr-sport/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant",
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "ironman-e8949bf5d737",
+      "title": "IronMan",
+      "concept": "thepresetsroom sport IronMan (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sport/ironman/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant",
+        "muted"
+      ]
+    },
+    {
+      "id": "vibrant-098c5ae51cf2",
+      "title": "Vibrant",
+      "concept": "thepresetsroom sport Vibrant (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sport/vibrant/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "bright-holidays-2c32cd4735b8",
+      "title": "Bright Holidays",
+      "concept": "thepresetsroom summer Bright Holidays (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/summer/bright-holidays/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "high_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "ibiza-2e6c23bd4192",
+      "title": "Ibiza",
+      "concept": "thepresetsroom summer Ibiza (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/summer/ibiza/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "macedonia-9fa00ae9d343",
+      "title": "Macedonia",
+      "concept": "thepresetsroom summer Macedonia (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/summer/macedonia/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "morenita-3a9414b5539b",
+      "title": "Morenita",
+      "concept": "thepresetsroom summer Morenita (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/summer/morenita/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "noon-985aa32b9a1c",
+      "title": "Noon",
+      "concept": "thepresetsroom summer Noon (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/summer/noon/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm"
+      ]
+    },
+    {
+      "id": "summer-of-69-8230b8b9cf22",
+      "title": "Summer of '69",
+      "concept": "thepresetsroom summer Summer of ’69 (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/summer/summer-of-69/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "city-twilight-2bf20a4ac449",
+      "title": "City Twilight",
+      "concept": "thepresetsroom sunset City Twilight (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sunset/city-twilight/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "warm",
+        "cinematic",
+        "muted"
+      ]
+    },
+    {
+      "id": "oporto-c25fa7e781a2",
+      "title": "Oporto",
+      "concept": "thepresetsroom sunset Oporto (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sunset/oporto/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "sunrise-at-the-beach-d3146440fc57",
+      "title": "Sunrise at the Beach",
+      "concept": "thepresetsroom sunset Sunrise at the Beach (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sunset/sunrise-at-the-beach/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "sunset-sesh-28f4a11c75d4",
+      "title": "Sunset Sesh",
+      "concept": "thepresetsroom sunset Sunset Sesh (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sunset/sunset-sesh/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm"
+      ]
+    },
+    {
+      "id": "waiting-the-dusk-39fccc468d8d",
+      "title": "Waiting the Dusk",
+      "concept": "thepresetsroom sunset Waiting the Dusk (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/sunset/waiting-the-dusk/",
+      "format": "xmp",
+      "groupId": "warm_sunset",
+      "derivedTags": [
+        "warm",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "backpacking-f3533f040f1a",
+      "title": "Backpacking",
+      "concept": "thepresetsroom travel Backpacking (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/travel/backpacking/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "sun-seeking-traveler-8c9719dbe8e8",
+      "title": "Sun-seeking traveler",
+      "concept": "thepresetsroom travel Sun-seeking Traveler (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/travel/sun-seeking-traveler/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "wanderers-blog-b9863f37d4f5",
+      "title": "Wanderers Blog",
+      "concept": "thepresetsroom travel Wanderer’s Blog (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/travel/wanderers-blog/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "wanderluster-40f888e24a29",
+      "title": "Wanderluster",
+      "concept": "thepresetsroom travel Wanderluster (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/travel/wanderluster/",
+      "format": "xmp",
+      "groupId": "vibrant_pop",
+      "derivedTags": [
+        "vibrant"
+      ]
+    },
+    {
+      "id": "dark-metro-ed92fca2415b",
+      "title": "Dark Metro",
+      "concept": "thepresetsroom urban Dark Metro (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/urban/dark-metro/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cinematic",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "moody-orange-city-f9adc1198c83",
+      "title": "Moody Orange City",
+      "concept": "thepresetsroom urban Moody Orange City (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/urban/moody-orange-city/",
+      "format": "xmp",
+      "groupId": "teal_orange",
+      "derivedTags": [
+        "teal_orange",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "urban-portrait-005ab501c26e",
+      "title": "Urban Portrait",
+      "concept": "thepresetsroom urban Urban Portrait (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/urban/urban-portrait/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "cinematic",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "winter-in-the-city-768730472c80",
+      "title": "Winter in the City",
+      "concept": "thepresetsroom urban Winter in the City (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/urban/winter-in-the-city/",
+      "format": "xmp",
+      "groupId": "cinematic_mood",
+      "derivedTags": [
+        "cool",
+        "cinematic",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "80s-a2b0cbf489f8",
+      "title": "80s",
+      "concept": "thepresetsroom vintage 80’s (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/80s/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "film",
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "classy-portrait-a720baee9371",
+      "title": "Classy Portrait",
+      "concept": "thepresetsroom vintage Classy Portrait (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/classy-portrait/",
+      "format": "xmp",
+      "groupId": "beauty_skin",
+      "derivedTags": [
+        "beauty",
+        "film",
+        "muted"
+      ]
+    },
+    {
+      "id": "dark-vintage-9ad0ea391a82",
+      "title": "Dark Vintage",
+      "concept": "thepresetsroom vintage Dark Vintage (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/dark-vintage/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "film",
+        "high_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "old-fashion-wedding-601e4fe26038",
+      "title": "Old Fashion Wedding",
+      "concept": "thepresetsroom vintage Old Fashion Wedding (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/old-fashion-wedding/",
+      "format": "xmp",
+      "groupId": "wedding_warm",
+      "derivedTags": [
+        "wedding",
+        "film",
+        "soft_contrast",
+        "vibrant"
+      ]
+    },
+    {
+      "id": "sepia-e02e59d184a0",
+      "title": "Sepia",
+      "concept": "thepresetsroom vintage Sepia (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/sepia/",
+      "format": "xmp",
+      "groupId": "film_vintage",
+      "derivedTags": [
+        "film",
+        "soft_contrast"
+      ]
+    },
+    {
+      "id": "boho-wedding-1937add05c1d",
+      "title": "Boho Wedding",
+      "concept": "thepresetsroom wedding Boho Wedding (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/boho-wedding/",
+      "format": "xmp",
+      "groupId": "wedding_warm",
+      "derivedTags": [
+        "wedding",
+        "soft_contrast",
+        "muted",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "classic-marriage-da7bf525d90d",
+      "title": "Classic Marriage",
+      "concept": "thepresetsroom wedding Classic Marriage (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/classic-marriage/",
+      "format": "xmp",
+      "groupId": "wedding_warm",
+      "derivedTags": [
+        "wedding",
+        "high_contrast"
+      ]
+    },
+    {
+      "id": "little-details-e941e566be7c",
+      "title": "Little Details",
+      "concept": "thepresetsroom wedding Little Details (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/little-details/",
+      "format": "xmp",
+      "groupId": "wedding_warm",
+      "derivedTags": [
+        "wedding",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "rustic-marriage-58515e0e2361",
+      "title": "Rustic Marriage",
+      "concept": "thepresetsroom wedding Rustic Marriage (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/rustic-marriage/",
+      "format": "xmp",
+      "groupId": "wedding_warm",
+      "derivedTags": [
+        "wedding",
+        "soft_contrast",
+        "muted"
+      ]
+    },
+    {
+      "id": "the-special-day-99d427c7b477",
+      "title": "The Special Day",
+      "concept": "thepresetsroom wedding The Special Day (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/the-special-day/",
+      "format": "xmp",
+      "groupId": "wedding_warm",
+      "derivedTags": [
+        "wedding",
+        "muted"
+      ]
+    },
+    {
+      "id": "white-pearl-021ccd1d7a54",
+      "title": "White Pearl",
+      "concept": "thepresetsroom wedding White Pearl (Free Preset)",
+      "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/white-pearl/",
+      "format": "xmp",
+      "groupId": "wedding_warm",
+      "derivedTags": [
+        "wedding",
+        "high_contrast",
+        "muted"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "cinematic_mood",
+      "label": "Cinematic Mood",
+      "profileCount": 39,
+      "effectiveWeight": 39.0,
+      "promptKeywords": [
+        "cinema",
+        "cinematic",
+        "movie",
+        "drama",
+        "moody",
+        "se7en",
+        "bladerunner",
+        "apocalypse",
+        "시네마",
+        "영화"
+      ],
+      "mood": [
+        "cinematic",
+        "dramatic",
+        "controlled"
+      ],
+      "targets": [
+        "stronger contrast",
+        "mood color",
+        "controlled highlight rolloff"
+      ],
+      "avoid": [
+        "overly crushed blacks",
+        "heavy color cast",
+        "HDR-looking contrast"
+      ],
+      "riskNotes": [
+        "overly crushed blacks",
+        "heavy color cast",
+        "HDR-looking contrast"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.2,
+          0.2
+        ],
+        "contrast": [
+          0.5,
+          23.5
+        ],
+        "highlights": [
+          -76.0,
+          -16.0
+        ],
+        "shadows": [
+          5.5,
+          74.5
+        ],
+        "whites": [
+          -30.0,
+          10.0
+        ],
+        "blacks": [
+          -28.0,
+          28.0
+        ],
+        "vibrance": [
+          -12.0,
+          18.0
+        ],
+        "saturation": [
+          -20.0,
+          0.0
+        ],
+        "clarity": [
+          -7.0,
+          27.0
+        ],
+        "texture": [
+          -5.0,
+          5.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.0,
+        "contrast": 12.0,
+        "highlights": -46.0,
+        "shadows": 40.0,
+        "whites": -10.0,
+        "blacks": 0.0,
+        "clarity": 10.0,
+        "texture": 0.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 3.0,
+        "saturation": -10.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "orange": {
+          "hue": 0.0,
+          "saturation": -8.0,
+          "luminance": 0.0
+        },
+        "yellow": {
+          "hue": -6.0,
+          "saturation": -20.0,
+          "luminance": 0.0
+        },
+        "green": {
+          "hue": 0.0,
+          "saturation": -25.0,
+          "luminance": 0.0
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": -15.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": -6.0,
+          "saturation": -19.0,
+          "luminance": 0.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 0.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 26.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "muted",
+        "cinematic",
+        "high_contrast",
+        "soft_contrast",
+        "cool",
+        "warm",
+        "vibrant"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets landscape sunny landscape",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets gopro adventure",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets architecture antique facade",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets cinematic blvck",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets christmas christmas tree",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets cinematic cinematic city",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets sunset city twilight",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets architecture clarity",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "adobe-color-6b961d15f1b2",
+          "title": "Adobe Color",
+          "concept": "thepresetsroom landscape Sunny Landscape (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/landscape/sunny-landscape/",
+          "weight": 1.0
+        },
+        {
+          "id": "adventure-d82edbbfac1b",
+          "title": "Adventure",
+          "concept": "thepresetsroom gopro Adventure (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/gopro/adventure/",
+          "weight": 1.0
+        },
+        {
+          "id": "antique-facade-22c4f2cdb3b1",
+          "title": "Antique Facade",
+          "concept": "thepresetsroom architecture Antique Facade (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/architecture/antique-facade/",
+          "weight": 1.0
+        },
+        {
+          "id": "blvck-0bbd0606d244",
+          "title": "BLVCK",
+          "concept": "thepresetsroom cinematic BLVCK (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/cinematic/blvck/",
+          "weight": 1.0
+        },
+        {
+          "id": "christmas-tree-0fb31b349405",
+          "title": "Christmas Tree",
+          "concept": "thepresetsroom christmas Christmas Tree (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/christmas-tree/",
+          "weight": 1.0
+        },
+        {
+          "id": "cinematic-city-29a9ab6c52ac",
+          "title": "Cinematic City",
+          "concept": "thepresetsroom cinematic Cinematic City (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/cinematic/cinematic-city/",
+          "weight": 1.0
+        },
+        {
+          "id": "city-twilight-2bf20a4ac449",
+          "title": "City Twilight",
+          "concept": "thepresetsroom sunset City Twilight (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/sunset/city-twilight/",
+          "weight": 1.0
+        },
+        {
+          "id": "clarity-b7abb66b1659",
+          "title": "Clarity",
+          "concept": "thepresetsroom architecture Clarity (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/architecture/clarity/",
+          "weight": 1.0
+        },
+        {
+          "id": "dark-knight-9f696aa34b1f",
+          "title": "Dark Knight",
+          "concept": "thepresetsroom cinematic Dark Knight (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/cinematic/dark-knight/",
+          "weight": 1.0
+        },
+        {
+          "id": "dark-metro-ed92fca2415b",
+          "title": "Dark Metro",
+          "concept": "thepresetsroom urban Dark Metro (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/urban/dark-metro/",
+          "weight": 1.0
+        },
+        {
+          "id": "dark-moody-a17d0639aa86",
+          "title": "Dark Moody",
+          "concept": "thepresetsroom moody Dark Moody (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/moody/dark-moody/",
+          "weight": 1.0
+        },
+        {
+          "id": "dark-mountains-4db83d76064b",
+          "title": "Dark mountains",
+          "concept": "thepresetsroom landscape Dark Mountains (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/landscape/dark-mountains/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "vibrant_pop",
+      "label": "Vibrant Pop",
+      "profileCount": 38,
+      "effectiveWeight": 38.0,
+      "promptKeywords": [
+        "pop",
+        "vibrant",
+        "velvia",
+        "colorful",
+        "rgbman",
+        "redman",
+        "greenman",
+        "blueman",
+        "색감",
+        "비비드"
+      ],
+      "mood": [
+        "vibrant",
+        "colorful",
+        "punchy"
+      ],
+      "targets": [
+        "strong color presence",
+        "clear hue separation",
+        "lively saturation"
+      ],
+      "avoid": [
+        "oversaturation",
+        "neon colors",
+        "skin color drift"
+      ],
+      "riskNotes": [
+        "oversaturation",
+        "neon colors",
+        "skin color drift"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.245,
+          0.245
+        ],
+        "contrast": [
+          -6.5,
+          26.5
+        ],
+        "highlights": [
+          -70.5,
+          8.5
+        ],
+        "shadows": [
+          20.0,
+          68.0
+        ],
+        "whites": [
+          -17.5,
+          37.5
+        ],
+        "blacks": [
+          -5.0,
+          45.0
+        ],
+        "vibrance": [
+          15.5,
+          42.5
+        ],
+        "saturation": [
+          -6.5,
+          10.5
+        ],
+        "clarity": [
+          -22.0,
+          22.0
+        ],
+        "texture": [
+          -5.0,
+          5.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.0,
+        "contrast": 10.0,
+        "highlights": -31.0,
+        "shadows": 44.0,
+        "whites": 10.0,
+        "blacks": 20.0,
+        "clarity": 0.0,
+        "texture": 0.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 29.0,
+        "saturation": 2.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.0,
+          "saturation": 7.0,
+          "luminance": 0.0
+        },
+        "orange": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "yellow": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "green": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 0.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 0.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "vibrant",
+        "high_contrast",
+        "soft_contrast",
+        "clean",
+        "muted"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets travel backpacking",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets product dark background",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets outdoor daylight shooting",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets product focus contrast",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets sport game day",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets landscape hdr landscape",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets sport hdr sport",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets beach hot sand",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "backpacking-f3533f040f1a",
+          "title": "Backpacking",
+          "concept": "thepresetsroom travel Backpacking (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/travel/backpacking/",
+          "weight": 1.0
+        },
+        {
+          "id": "dark-background-3fd9be07a5a0",
+          "title": "Dark Background",
+          "concept": "thepresetsroom product Dark Background (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/product/dark-background/",
+          "weight": 1.0
+        },
+        {
+          "id": "daylight-shooting-74d76749d4e9",
+          "title": "Daylight Shooting",
+          "concept": "thepresetsroom outdoor Daylight Shooting (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/outdoor/daylight-shooting/",
+          "weight": 1.0
+        },
+        {
+          "id": "focus-contrast-94ff4597badc",
+          "title": "Focus & Contrast",
+          "concept": "thepresetsroom product Focus & Contrast (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/product/focus-contrast/",
+          "weight": 1.0
+        },
+        {
+          "id": "game-day-7011aeba3086",
+          "title": "Game Day",
+          "concept": "thepresetsroom sport Game Day (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/sport/game-day/",
+          "weight": 1.0
+        },
+        {
+          "id": "hdr-landscape-927eda397f66",
+          "title": "HDR Landscape",
+          "concept": "thepresetsroom landscape HDR Landscape (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/landscape/hdr-landscape/",
+          "weight": 1.0
+        },
+        {
+          "id": "hdr-sport-17ee46640eef",
+          "title": "HDR Sport",
+          "concept": "thepresetsroom sport HDR Sport (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/sport/hdr-sport/",
+          "weight": 1.0
+        },
+        {
+          "id": "hot-sand-511d2f8d83c0",
+          "title": "Hot Sand",
+          "concept": "thepresetsroom beach Hot Sand (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/beach/hot-sand/",
+          "weight": 1.0
+        },
+        {
+          "id": "ironman-e8949bf5d737",
+          "title": "IronMan",
+          "concept": "thepresetsroom sport IronMan (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/sport/ironman/",
+          "weight": 1.0
+        },
+        {
+          "id": "outer-session-530199812d31",
+          "title": "Outer Session",
+          "concept": "thepresetsroom outdoor Outer Session (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/outdoor/outer-session/",
+          "weight": 1.0
+        },
+        {
+          "id": "sea-view-c197937a2ac2",
+          "title": "Sea View",
+          "concept": "thepresetsroom beach Sea Views (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/beach/sea-views/",
+          "weight": 1.0
+        },
+        {
+          "id": "skyscraper-f8ca9daa3e8d",
+          "title": "Skyscraper",
+          "concept": "thepresetsroom architecture Skyscraper (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/architecture/skyscraper/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "warm_sunset",
+      "label": "Warm Sunset",
+      "profileCount": 19,
+      "effectiveWeight": 19.0,
+      "promptKeywords": [
+        "sunset",
+        "golden",
+        "warm",
+        "dawn",
+        "sepia",
+        "kodak",
+        "kodakchrome",
+        "vintage vibes",
+        "노을",
+        "따뜻"
+      ],
+      "mood": [
+        "warm",
+        "glowing",
+        "nostalgic"
+      ],
+      "targets": [
+        "warm highlights",
+        "golden midtones",
+        "gentle color warmth"
+      ],
+      "avoid": [
+        "yellow whites",
+        "orange skin",
+        "brown color cast"
+      ],
+      "riskNotes": [
+        "yellow whites",
+        "orange skin",
+        "brown color cast"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          0.11,
+          0.49
+        ],
+        "contrast": [
+          -8.0,
+          24.0
+        ],
+        "highlights": [
+          -94.0,
+          -18.0
+        ],
+        "shadows": [
+          32.5,
+          77.5
+        ],
+        "whites": [
+          -60.5,
+          50.5
+        ],
+        "blacks": [
+          -17.5,
+          23.5
+        ],
+        "vibrance": [
+          2.0,
+          20.0
+        ],
+        "saturation": [
+          -9.5,
+          9.5
+        ],
+        "clarity": [
+          -0.5,
+          20.5
+        ],
+        "texture": [
+          -5.0,
+          5.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.3,
+        "contrast": 8.0,
+        "highlights": -56.0,
+        "shadows": 55.0,
+        "whites": -5.0,
+        "blacks": 3.0,
+        "clarity": 10.0,
+        "texture": 0.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 11.0,
+        "saturation": 0.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "orange": {
+          "hue": 0.0,
+          "saturation": -7.0,
+          "luminance": -17.0
+        },
+        "yellow": {
+          "hue": -33.0,
+          "saturation": -20.0,
+          "luminance": 0.0
+        },
+        "green": {
+          "hue": 0.0,
+          "saturation": -37.0,
+          "luminance": 0.0
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": -20.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": -17.0,
+          "saturation": 0.0,
+          "luminance": -13.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 28.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 56.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "warm",
+        "muted",
+        "soft_contrast",
+        "vibrant",
+        "high_contrast",
+        "pastel"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets summer bright holidays",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets christmas cozy holidays",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets christmas golden details",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets golden hour golden reflex",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets golden hour golden tones",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets summer ibiza",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets golden hour los angeles",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets summer macedonia",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "bright-holidays-2c32cd4735b8",
+          "title": "Bright Holidays",
+          "concept": "thepresetsroom summer Bright Holidays (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/summer/bright-holidays/",
+          "weight": 1.0
+        },
+        {
+          "id": "cozy-holidays-36f779ce0de3",
+          "title": "Cozy Holidays",
+          "concept": "thepresetsroom christmas Cozy Holidays (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/cozy-holidays/",
+          "weight": 1.0
+        },
+        {
+          "id": "golden-details-23d546315e8c",
+          "title": "Golden Details",
+          "concept": "thepresetsroom christmas Golden Details (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/golden-details/",
+          "weight": 1.0
+        },
+        {
+          "id": "golden-reflex-0099c20f1943",
+          "title": "Golden Reflex",
+          "concept": "thepresetsroom golden-hour Golden Reflex (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/golden-reflex/",
+          "weight": 1.0
+        },
+        {
+          "id": "golden-tones-d0930df4772f",
+          "title": "Golden Tones",
+          "concept": "thepresetsroom golden-hour Golden Tones (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/golden-tones/",
+          "weight": 1.0
+        },
+        {
+          "id": "ibiza-2e6c23bd4192",
+          "title": "Ibiza",
+          "concept": "thepresetsroom summer Ibiza (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/summer/ibiza/",
+          "weight": 1.0
+        },
+        {
+          "id": "los-angeles-b7767a401f16",
+          "title": "Los Angeles",
+          "concept": "thepresetsroom golden-hour Los Angeles (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/los-angeles/",
+          "weight": 1.0
+        },
+        {
+          "id": "macedonia-9fa00ae9d343",
+          "title": "Macedonia",
+          "concept": "thepresetsroom summer Macedonia (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/summer/macedonia/",
+          "weight": 1.0
+        },
+        {
+          "id": "morenita-3a9414b5539b",
+          "title": "Morenita",
+          "concept": "thepresetsroom summer Morenita (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/summer/morenita/",
+          "weight": 1.0
+        },
+        {
+          "id": "noon-985aa32b9a1c",
+          "title": "Noon",
+          "concept": "thepresetsroom summer Noon (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/summer/noon/",
+          "weight": 1.0
+        },
+        {
+          "id": "oporto-c25fa7e781a2",
+          "title": "Oporto",
+          "concept": "thepresetsroom sunset Oporto (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/sunset/oporto/",
+          "weight": 1.0
+        },
+        {
+          "id": "orange-lights-66dfe6a2fe5e",
+          "title": "Orange Lights",
+          "concept": "thepresetsroom golden-hour Orange Lights (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/golden-hour/orange-lights/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "pastel_soft",
+      "label": "Pastel Soft",
+      "profileCount": 12,
+      "effectiveWeight": 12.0,
+      "promptKeywords": [
+        "pastel",
+        "pastelkrome",
+        "dreamy",
+        "faded",
+        "soft",
+        "파스텔",
+        "부드러운"
+      ],
+      "mood": [
+        "soft",
+        "pastel",
+        "light"
+      ],
+      "targets": [
+        "soft contrast",
+        "pastel saturation",
+        "lifted shadows"
+      ],
+      "avoid": [
+        "washed-out subject",
+        "weak blacks",
+        "colorless mids"
+      ],
+      "riskNotes": [
+        "washed-out subject",
+        "weak blacks",
+        "colorless mids"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.27,
+          0.38
+        ],
+        "contrast": [
+          -38.5,
+          -13.5
+        ],
+        "highlights": [
+          -70.5,
+          8.5
+        ],
+        "shadows": [
+          12.5,
+          52.5
+        ],
+        "whites": [
+          -7.5,
+          26.5
+        ],
+        "blacks": [
+          -21.5,
+          41.5
+        ],
+        "vibrance": [
+          -4.5,
+          14.5
+        ],
+        "saturation": [
+          -7.0,
+          7.0
+        ],
+        "clarity": [
+          -3.0,
+          18.0
+        ],
+        "texture": [
+          -5.0,
+          5.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.055,
+        "contrast": -26.0,
+        "highlights": -31.0,
+        "shadows": 32.5,
+        "whites": 9.5,
+        "blacks": 10.0,
+        "clarity": 7.5,
+        "texture": 0.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 5.0,
+        "saturation": 0.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 10.0,
+          "saturation": -7.0,
+          "luminance": 2.5
+        },
+        "orange": {
+          "hue": 0.0,
+          "saturation": -4.5,
+          "luminance": -2.0
+        },
+        "yellow": {
+          "hue": 0.0,
+          "saturation": -51.0,
+          "luminance": 6.0
+        },
+        "green": {
+          "hue": 0.0,
+          "saturation": -23.0,
+          "luminance": 0.0
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": -8.5,
+          "saturation": -8.0,
+          "luminance": -3.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": -9.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": -1.5,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 0.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 2.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "soft_contrast",
+        "muted",
+        "pastel",
+        "vibrant",
+        "clean",
+        "cool"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets food bolognese",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets christmas christmas lights",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets product clean airy",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets light and airy dreamy home",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets christmas family time",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets beach salty day",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets aesthetic soft colors",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com attitude girl free lightroom preset 100 www editingfree com",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "bolognese-f0152499e938",
+          "title": "Bolognese",
+          "concept": "thepresetsroom food Bolognese (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/food/bolognese/",
+          "weight": 1.0
+        },
+        {
+          "id": "christmas-lights-b422e389f9e0",
+          "title": "Christmas Lights",
+          "concept": "thepresetsroom christmas Christmas Lights (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/christmas-lights/",
+          "weight": 1.0
+        },
+        {
+          "id": "clean-airy-4ba4714a94a3",
+          "title": "Clean & Airy",
+          "concept": "thepresetsroom product Clean & Airy (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/product/clean-airy/",
+          "weight": 1.0
+        },
+        {
+          "id": "dreamy-home-5b5afbb9c81a",
+          "title": "Dreamy Home",
+          "concept": "thepresetsroom light-and-airy Dreamy Home (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/light-and-airy/dreamy-home/",
+          "weight": 1.0
+        },
+        {
+          "id": "family-time-4828c82d4c06",
+          "title": "Family Time",
+          "concept": "thepresetsroom christmas Family Time (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/christmas/family-time/",
+          "weight": 1.0
+        },
+        {
+          "id": "salty-day-f83aab0d033d",
+          "title": "Salty Day",
+          "concept": "thepresetsroom beach Salty Day (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/beach/salty-day/",
+          "weight": 1.0
+        },
+        {
+          "id": "soft-colors-1d4fa25edd6d",
+          "title": "Soft Colors",
+          "concept": "thepresetsroom aesthetic Soft Colors (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/aesthetic/soft-colors/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-attitude-girl-free-lightroom-preset-100-www-editingfree-com-70fdc16280be",
+          "title": "XMP file Attitude Girl Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Attitude Girl Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/attitude-girl-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-blue-pastels-free-lightroom-preset-100-www-editingfree-com-1c9c4a45aa10",
+          "title": "XMP File Blue Pastels Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Blue Pastels Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/blue-pastels-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-insta-model-free-lightroom-preset-100-www-editingfree-com-832b84f9fc13",
+          "title": "XMP File Insta Model Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Insta Model Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/insta-model-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-soft-aesthetic-free-lightroom-preset-100-www-editingfree-com-d77192f08453",
+          "title": "XMP file Soft Aesthetic Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Soft Aesthetic Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/soft-aesthetic-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-tron-free-lightroom-presets-100-www-editingfree-com-63a4f576f08c",
+          "title": "XMP File Tron Free Lightroom Presets 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Tron Free Lightroom Presets 100% www.Editingfree.com",
+          "source": "https://editingfree.com/tron-free-lightroom-presets-100-www-editingfree-com/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "beauty_skin",
+      "label": "Beauty Skin",
+      "profileCount": 11,
+      "effectiveWeight": 11.0,
+      "promptKeywords": [
+        "beauty",
+        "skin",
+        "skintone",
+        "face",
+        "smile",
+        "피부",
+        "인물",
+        "스킨"
+      ],
+      "mood": [
+        "clean",
+        "polished",
+        "skin-friendly"
+      ],
+      "targets": [
+        "smooth skin color",
+        "clean midtones",
+        "controlled saturation"
+      ],
+      "avoid": [
+        "plastic skin",
+        "magenta cast",
+        "over-softened detail"
+      ],
+      "riskNotes": [
+        "plastic skin",
+        "magenta cast",
+        "over-softened detail"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.325,
+          0.525
+        ],
+        "contrast": [
+          -52.5,
+          2.5
+        ],
+        "highlights": [
+          -22.5,
+          22.5
+        ],
+        "shadows": [
+          -4.0,
+          56.0
+        ],
+        "whites": [
+          -20.0,
+          20.0
+        ],
+        "blacks": [
+          -18.5,
+          18.5
+        ],
+        "vibrance": [
+          10.0,
+          29.0
+        ],
+        "saturation": [
+          -12.5,
+          12.5
+        ],
+        "clarity": [
+          5.0,
+          35.0
+        ],
+        "texture": [
+          -5.0,
+          5.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.1,
+        "contrast": -25.0,
+        "highlights": 0.0,
+        "shadows": 26.0,
+        "whites": 0.0,
+        "blacks": 0.0,
+        "clarity": 20.0,
+        "texture": 0.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 19.5,
+        "saturation": 0.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "orange": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "yellow": {
+          "hue": 0.0,
+          "saturation": -48.0,
+          "luminance": 0.0
+        },
+        "green": {
+          "hue": 0.0,
+          "saturation": -32.5,
+          "luminance": 0.0
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": -45.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": 0.0,
+          "saturation": -32.5,
+          "luminance": 0.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": -7.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": -7.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 0.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 0.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "beauty",
+        "film",
+        "soft_contrast",
+        "muted",
+        "vibrant",
+        "cinematic",
+        "pastel",
+        "clean",
+        "high_contrast"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets light and airy airy portrait",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets outdoor alfresco portrait",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets beach beach portrait",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets portrait chic",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets vintage classy portrait",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets portrait clean portrait",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets portrait greyscale portrait",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets urban urban portrait",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "airy-portrait-38da0e326f42",
+          "title": "Airy Portrait",
+          "concept": "thepresetsroom light-and-airy Airy Portrait (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/light-and-airy/airy-portrait/",
+          "weight": 1.0
+        },
+        {
+          "id": "alfresco-portrait-1efbbf82168c",
+          "title": "Alfresco Portrait",
+          "concept": "thepresetsroom outdoor Alfresco Portrait (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/outdoor/alfresco-portrait/",
+          "weight": 1.0
+        },
+        {
+          "id": "beach-portrait-6d6e4a93f220",
+          "title": "Beach Portrait",
+          "concept": "thepresetsroom beach Beach Portrait (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/beach/beach-portrait/",
+          "weight": 1.0
+        },
+        {
+          "id": "chic-06d37dbd70bf",
+          "title": "Chic",
+          "concept": "thepresetsroom portrait Chic (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/portrait/chic/",
+          "weight": 1.0
+        },
+        {
+          "id": "classy-portrait-a720baee9371",
+          "title": "Classy Portrait",
+          "concept": "thepresetsroom vintage Classy Portrait (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/classy-portrait/",
+          "weight": 1.0
+        },
+        {
+          "id": "clean-portrait-887a1c42a668",
+          "title": "Clean Portrait",
+          "concept": "thepresetsroom portrait Clean Portrait (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/portrait/clean-portrait/",
+          "weight": 1.0
+        },
+        {
+          "id": "greyscale-portrait-2a0cb61286e9",
+          "title": "Greyscale Portrait",
+          "concept": "thepresetsroom portrait Greyscale Portrait (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/portrait/greyscale-portrait/",
+          "weight": 1.0
+        },
+        {
+          "id": "urban-portrait-005ab501c26e",
+          "title": "Urban Portrait",
+          "concept": "thepresetsroom urban Urban Portrait (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/urban/urban-portrait/",
+          "weight": 1.0
+        },
+        {
+          "id": "urbanite-26e8dd50bcb8",
+          "title": "Urbanite",
+          "concept": "thepresetsroom portrait Urbanite (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/portrait/urbanite/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-closeup-portraits-free-lightroom-preset-100-www-editingfree-com-85e9f853fa93",
+          "title": "XMP File Closeup Portraits Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Closeup Portraits Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/closeup-portraits-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-dark-beauty-free-lightroom-preset-100-www-editingfree-com-50529364e89f",
+          "title": "XMP File Dark Beauty Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Dark Beauty Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/dark-beauty-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "film_vintage",
+      "label": "Film Vintage",
+      "profileCount": 9,
+      "effectiveWeight": 9.0,
+      "promptKeywords": [
+        "film",
+        "vintage",
+        "chrome",
+        "provia",
+        "astia",
+        "eterna",
+        "velvia",
+        "classic",
+        "nostalgic",
+        "reala",
+        "fuji",
+        "필름",
+        "빈티지"
+      ],
+      "mood": [
+        "analog",
+        "nostalgic",
+        "film-like"
+      ],
+      "targets": [
+        "film color separation",
+        "controlled saturation",
+        "soft rolloff"
+      ],
+      "avoid": [
+        "dirty whites",
+        "overdone emulation",
+        "muddy greens"
+      ],
+      "riskNotes": [
+        "dirty whites",
+        "overdone emulation",
+        "muddy greens"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.305,
+          0.305
+        ],
+        "contrast": [
+          -6.0,
+          10.0
+        ],
+        "highlights": [
+          -55.0,
+          -15.0
+        ],
+        "shadows": [
+          18.5,
+          51.5
+        ],
+        "whites": [
+          -11.0,
+          5.0
+        ],
+        "blacks": [
+          -16.0,
+          16.0
+        ],
+        "vibrance": [
+          -3.0,
+          17.0
+        ],
+        "saturation": [
+          -18.0,
+          -2.0
+        ],
+        "clarity": [
+          2.5,
+          17.5
+        ],
+        "texture": [
+          -5.0,
+          5.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.0,
+        "contrast": 2.0,
+        "highlights": -35.0,
+        "shadows": 35.0,
+        "whites": -3.0,
+        "blacks": 0.0,
+        "clarity": 10.0,
+        "texture": 0.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 7.0,
+        "saturation": -10.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": -27.0
+        },
+        "orange": {
+          "hue": 0.0,
+          "saturation": -1.5,
+          "luminance": -2.5
+        },
+        "yellow": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": -5.0
+        },
+        "green": {
+          "hue": -2.5,
+          "saturation": -5.0,
+          "luminance": 0.0
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": -7.5,
+          "saturation": -17.5,
+          "luminance": 0.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": -14.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 48.0,
+          "lum": 0.0,
+          "saturation": 3.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 61.0,
+          "lum": 0.0,
+          "saturation": 5.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "film",
+        "muted",
+        "high_contrast",
+        "pastel",
+        "soft_contrast"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets film 35mm",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets vintage 80s",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets gym fitness classic",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets vintage dark vintage",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets light and airy film airy",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets film fuji",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets film kodak",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets film polaroid",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "35mm-a47ed2ce58d4",
+          "title": "35mm",
+          "concept": "thepresetsroom film 35mm (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/film/35mm/",
+          "weight": 1.0
+        },
+        {
+          "id": "80s-a2b0cbf489f8",
+          "title": "80s",
+          "concept": "thepresetsroom vintage 80’s (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/80s/",
+          "weight": 1.0
+        },
+        {
+          "id": "classic-e06dd3be36fb",
+          "title": "Classic",
+          "concept": "thepresetsroom gym-fitness Classic (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/gym-fitness/classic/",
+          "weight": 1.0
+        },
+        {
+          "id": "dark-vintage-9ad0ea391a82",
+          "title": "Dark Vintage",
+          "concept": "thepresetsroom vintage Dark Vintage (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/dark-vintage/",
+          "weight": 1.0
+        },
+        {
+          "id": "film-airy-120167777349",
+          "title": "Film & Airy",
+          "concept": "thepresetsroom light-and-airy Film & Airy (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/light-and-airy/film-airy/",
+          "weight": 1.0
+        },
+        {
+          "id": "fuji-45976385ff24",
+          "title": "Fuji",
+          "concept": "thepresetsroom film Fuji (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/film/fuji/",
+          "weight": 1.0
+        },
+        {
+          "id": "kodak-df49241c4bf7",
+          "title": "Kodak",
+          "concept": "thepresetsroom film Kodak (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/film/kodak/",
+          "weight": 1.0
+        },
+        {
+          "id": "polaroid-fe7e91eaee7b",
+          "title": "Polaroid",
+          "concept": "thepresetsroom film Polaroid (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/film/polaroid/",
+          "weight": 1.0
+        },
+        {
+          "id": "sepia-e02e59d184a0",
+          "title": "Sepia",
+          "concept": "thepresetsroom vintage Sepia (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/sepia/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "monochrome",
+      "label": "Monochrome",
+      "profileCount": 8,
+      "effectiveWeight": 8.0,
+      "promptKeywords": [
+        "mono",
+        "bandw",
+        "b&w",
+        "black and white",
+        "achromic",
+        "acros",
+        "흑백",
+        "모노"
+      ],
+      "mood": [
+        "monochrome",
+        "graphic",
+        "contrast"
+      ],
+      "targets": [
+        "black and white tonality",
+        "strong luma separation",
+        "controlled contrast"
+      ],
+      "avoid": [
+        "blocked shadows",
+        "featureless highlights",
+        "unwanted color residue"
+      ],
+      "riskNotes": [
+        "blocked shadows",
+        "featureless highlights",
+        "unwanted color residue",
+        "heavy desaturation may remove intended color cues"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.125,
+          0.125
+        ],
+        "contrast": [
+          -2.0,
+          14.0
+        ],
+        "highlights": [
+          -75.5,
+          -15.5
+        ],
+        "shadows": [
+          -47.5,
+          47.5
+        ],
+        "whites": [
+          -68.0,
+          17.0
+        ],
+        "blacks": [
+          48.5,
+          64.5
+        ],
+        "vibrance": [
+          -14.5,
+          32.5
+        ],
+        "saturation": [
+          -45.0,
+          -31.0
+        ],
+        "clarity": [
+          -5.0,
+          17.0
+        ],
+        "texture": [
+          -8.0,
+          8.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.0,
+        "contrast": 6.0,
+        "highlights": -45.5,
+        "shadows": 0.0,
+        "whites": -25.5,
+        "blacks": 56.5,
+        "clarity": 6.0,
+        "texture": 0.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 9.0,
+        "saturation": -38.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.0,
+          "saturation": -8.0,
+          "luminance": 2.5
+        },
+        "orange": {
+          "hue": -1.5,
+          "saturation": 6.0,
+          "luminance": 0.0
+        },
+        "yellow": {
+          "hue": -5.5,
+          "saturation": -7.5,
+          "luminance": 7.0
+        },
+        "green": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "aqua": {
+          "hue": -11.5,
+          "saturation": -20.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": -10.0,
+          "saturation": -19.5,
+          "luminance": 0.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": -21.5,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": -11.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 39.5,
+          "lum": 0.0,
+          "saturation": 8.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 46.0,
+          "lum": 0.0,
+          "saturation": 3.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "muted",
+        "monochrome",
+        "soft_contrast",
+        "high_contrast",
+        "cinematic",
+        "film",
+        "pastel"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets gym fitness arm day",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com red and black free lightroom preset 100 www editingfree com",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets food house salad",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets food moody cuisine",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com tennis free lightroom preset 100 www editingfree com",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com fields free lightroom preset 100 www editingfree com",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com green energy free lightroom preset 100 www editingfree com",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com light and airy free lightroom presets 100 www editingfree com",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "arm-day-8952f549fc8c",
+          "title": "Arm Day",
+          "concept": "thepresetsroom gym-fitness Arm Day (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/gym-fitness/arm-day/",
+          "weight": 1.0
+        },
+        {
+          "id": "artistic-03-9d2b85d5e5bf",
+          "title": "Artistic 03",
+          "concept": "editingfree-youtube Red and Black Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/red-and-black-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "house-salad-e638ee2d8555",
+          "title": "House Salad",
+          "concept": "thepresetsroom food House Salad (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/food/house-salad/",
+          "weight": 1.0
+        },
+        {
+          "id": "moody-cuisine-380741ac6b42",
+          "title": "Moody Cuisine",
+          "concept": "thepresetsroom food Moody Cuisine (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/food/moody-cuisine/",
+          "weight": 1.0
+        },
+        {
+          "id": "vintage-10-0d116b2fad3c",
+          "title": "Vintage 10",
+          "concept": "editingfree-youtube Tennis Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/tennis-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-fields-free-lightroom-preset-100-www-editingfree-com-57c7793011e6",
+          "title": "XMP File Fields Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Fields Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/fields-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-green-energy-free-lightroom-preset-100-www-editingfree-com-d94fba9fbd10",
+          "title": "XMP File Green Energy Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Green Energy Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/green-energy-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-light-and-airy-free-lightroom-presets-100-www-editingfree-com-c7e90777a03e",
+          "title": "XMP File Light and Airy Free Lightroom Presets 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Light and Airy Free Lightroom Presets 100% www.Editingfree.com",
+          "source": "https://editingfree.com/light-and-airy-free-lightroom-presets-100-www-editingfree-com/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "wedding_warm",
+      "label": "Wedding Warm",
+      "profileCount": 7,
+      "effectiveWeight": 7.0,
+      "promptKeywords": [
+        "wedding",
+        "bridal",
+        "warmwedding",
+        "coolwedding",
+        "웨딩",
+        "결혼"
+      ],
+      "mood": [
+        "warm",
+        "soft",
+        "skin-friendly",
+        "event"
+      ],
+      "targets": [
+        "warm skin tone",
+        "soft highlight rolloff",
+        "gentle contrast"
+      ],
+      "avoid": [
+        "orange skin",
+        "clipped dress highlights",
+        "muddy indoor shadows"
+      ],
+      "riskNotes": [
+        "orange skin",
+        "clipped dress highlights",
+        "muddy indoor shadows"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.265,
+          0.265
+        ],
+        "contrast": [
+          -49.5,
+          21.5
+        ],
+        "highlights": [
+          -65.5,
+          25.5
+        ],
+        "shadows": [
+          21.0,
+          81.0
+        ],
+        "whites": [
+          -17.0,
+          17.0
+        ],
+        "blacks": [
+          13.5,
+          66.5
+        ],
+        "vibrance": [
+          5.0,
+          20.0
+        ],
+        "saturation": [
+          -35.0,
+          -9.0
+        ],
+        "clarity": [
+          2.0,
+          18.0
+        ],
+        "texture": [
+          -5.0,
+          5.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.0,
+        "contrast": -14.0,
+        "highlights": -20.0,
+        "shadows": 51.0,
+        "whites": 0.0,
+        "blacks": 40.0,
+        "clarity": 10.0,
+        "texture": 0.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 12.5,
+        "saturation": -22.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": -5.5,
+          "saturation": 0.0,
+          "luminance": -4.5
+        },
+        "orange": {
+          "hue": -8.0,
+          "saturation": -13.0,
+          "luminance": -16.5
+        },
+        "yellow": {
+          "hue": -20.5,
+          "saturation": -52.0,
+          "luminance": 14.0
+        },
+        "green": {
+          "hue": 14.0,
+          "saturation": -59.0,
+          "luminance": -7.5
+        },
+        "aqua": {
+          "hue": 39.0,
+          "saturation": -32.0,
+          "luminance": -11.0
+        },
+        "blue": {
+          "hue": 3.5,
+          "saturation": -49.0,
+          "luminance": -14.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": -40.0,
+          "luminance": 10.0
+        },
+        "magenta": {
+          "hue": 20.0,
+          "saturation": -35.0,
+          "luminance": 5.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 57.0,
+          "lum": 0.0,
+          "saturation": 9.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 0.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "wedding",
+        "muted",
+        "soft_contrast",
+        "high_contrast",
+        "monochrome",
+        "film",
+        "vibrant"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets wedding boho wedding",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets wedding classic marriage",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets wedding little details",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets vintage old fashion wedding",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets wedding rustic marriage",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets wedding the special day",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets wedding white pearl",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "boho-wedding-1937add05c1d",
+          "title": "Boho Wedding",
+          "concept": "thepresetsroom wedding Boho Wedding (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/boho-wedding/",
+          "weight": 1.0
+        },
+        {
+          "id": "classic-marriage-da7bf525d90d",
+          "title": "Classic Marriage",
+          "concept": "thepresetsroom wedding Classic Marriage (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/classic-marriage/",
+          "weight": 1.0
+        },
+        {
+          "id": "little-details-e941e566be7c",
+          "title": "Little Details",
+          "concept": "thepresetsroom wedding Little Details (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/little-details/",
+          "weight": 1.0
+        },
+        {
+          "id": "old-fashion-wedding-601e4fe26038",
+          "title": "Old Fashion Wedding",
+          "concept": "thepresetsroom vintage Old Fashion Wedding (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/vintage/old-fashion-wedding/",
+          "weight": 1.0
+        },
+        {
+          "id": "rustic-marriage-58515e0e2361",
+          "title": "Rustic Marriage",
+          "concept": "thepresetsroom wedding Rustic Marriage (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/rustic-marriage/",
+          "weight": 1.0
+        },
+        {
+          "id": "the-special-day-99d427c7b477",
+          "title": "The Special Day",
+          "concept": "thepresetsroom wedding The Special Day (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/the-special-day/",
+          "weight": 1.0
+        },
+        {
+          "id": "white-pearl-021ccd1d7a54",
+          "title": "White Pearl",
+          "concept": "thepresetsroom wedding White Pearl (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/wedding/white-pearl/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "cool_night",
+      "label": "Cool Night",
+      "profileCount": 4,
+      "effectiveWeight": 4.0,
+      "promptKeywords": [
+        "night",
+        "dusk",
+        "cold",
+        "cool",
+        "blue",
+        "icy",
+        "noir",
+        "horror",
+        "야경",
+        "차가운"
+      ],
+      "mood": [
+        "cool",
+        "moody",
+        "low-key"
+      ],
+      "targets": [
+        "cool shadows",
+        "protected highlights",
+        "night atmosphere"
+      ],
+      "avoid": [
+        "dead skin tone",
+        "crushed blacks",
+        "flat blue cast"
+      ],
+      "riskNotes": [
+        "dead skin tone",
+        "crushed blacks",
+        "flat blue cast"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          0.07,
+          0.55
+        ],
+        "contrast": [
+          -11.5,
+          24.5
+        ],
+        "highlights": [
+          -100.5,
+          29.5
+        ],
+        "shadows": [
+          -7.0,
+          65.0
+        ],
+        "whites": [
+          -30.5,
+          15.5
+        ],
+        "blacks": [
+          -1.0,
+          57.0
+        ],
+        "vibrance": [
+          4.0,
+          39.0
+        ],
+        "saturation": [
+          -11.5,
+          16.5
+        ],
+        "clarity": [
+          -24.0,
+          35.0
+        ],
+        "texture": [
+          -10.5,
+          21.5
+        ],
+        "dehaze": [
+          -0.5,
+          11.5
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.31,
+        "contrast": 6.5,
+        "highlights": -35.5,
+        "shadows": 29.0,
+        "whites": -7.5,
+        "blacks": 28.0,
+        "clarity": 5.5,
+        "texture": 5.5,
+        "dehaze": 5.5
+      },
+      "colorBalancePrior": {
+        "vibrance": 21.5,
+        "saturation": 2.5
+      },
+      "hslPrior": {
+        "red": {
+          "hue": -20.0,
+          "saturation": -17.5,
+          "luminance": 8.5
+        },
+        "orange": {
+          "hue": -4.5,
+          "saturation": -23.0,
+          "luminance": 5.0
+        },
+        "yellow": {
+          "hue": -1.5,
+          "saturation": 7.0,
+          "luminance": 5.0
+        },
+        "green": {
+          "hue": 5.0,
+          "saturation": 5.0,
+          "luminance": 0.0
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": -12.5,
+          "saturation": 15.0,
+          "luminance": -4.5
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 15.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 10.5,
+          "saturation": 3.5
+        },
+        "highlights": {
+          "hue": 0.0,
+          "saturation": 0.0
+        }
+      },
+      "topTags": [
+        "cool",
+        "vibrant",
+        "muted",
+        "soft_contrast",
+        "high_contrast"
+      ],
+      "topSources": [
+        {
+          "source": "https editingfree com blue vibes free lightroom preset 100 www editingfree com",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com blue life free lightroom preset 100 www editingfree com",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com red and blue free lightroom preset 100 www editingfree com",
+          "count": 1
+        },
+        {
+          "source": "https editingfree com snow girl free lightroom preset 100 www editingfree com",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "artistic-03-f74c59e769ce",
+          "title": "Artistic 03",
+          "concept": "editingfree-youtube Blue Vibes Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/blue-vibes-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-blue-life-free-lightroom-preset-100-www-editingfree-com-da48ed982a77",
+          "title": "XMP File Blue Life Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Blue Life Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/blue-life-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-red-and-blue-free-lightroom-preset-100-www-editingfree-com-efcc3a0c3a1e",
+          "title": "XMP File Red and Blue Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Red and Blue Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/red-and-blue-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        },
+        {
+          "id": "xmp-file-snow-girl-free-lightroom-preset-100-www-editingfree-com-c8d2c985b489",
+          "title": "XMP File Snow Girl Free Lightroom Preset 100_ www.Editingfree.com",
+          "concept": "editingfree-youtube Snow Girl Free Lightroom Preset 100% www.Editingfree.com",
+          "source": "https://editingfree.com/snow-girl-free-lightroom-preset-100-www-editingfree-com/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "clean_natural",
+      "label": "Clean Natural",
+      "profileCount": 2,
+      "effectiveWeight": 2.0,
+      "promptKeywords": [
+        "clean",
+        "natural",
+        "protect",
+        "denoise",
+        "neutral",
+        "standard",
+        "자연",
+        "깔끔"
+      ],
+      "mood": [
+        "clean",
+        "natural",
+        "safe"
+      ],
+      "targets": [
+        "low-risk correction",
+        "natural color",
+        "protected highlight detail"
+      ],
+      "avoid": [
+        "boring flat output",
+        "weak style signal",
+        "clinical color"
+      ],
+      "riskNotes": [
+        "boring flat output",
+        "weak style signal",
+        "clinical color"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.065,
+          0.175
+        ],
+        "contrast": [
+          9.0,
+          35.0
+        ],
+        "highlights": [
+          -52.5,
+          -32.5
+        ],
+        "shadows": [
+          44.0,
+          100.0
+        ],
+        "whites": [
+          -16.0,
+          55.0
+        ],
+        "blacks": [
+          -9.0,
+          100.0
+        ],
+        "vibrance": [
+          -11.5,
+          2.5
+        ],
+        "saturation": [
+          -9.5,
+          4.5
+        ],
+        "clarity": [
+          8.0,
+          30.0
+        ],
+        "texture": [
+          0.0,
+          22.0
+        ],
+        "dehaze": [
+          -6.0,
+          6.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.055,
+        "contrast": 22.0,
+        "highlights": -42.5,
+        "shadows": 72.0,
+        "whites": 19.5,
+        "blacks": 45.5,
+        "clarity": 19.0,
+        "texture": 11.0,
+        "dehaze": 0.0
+      },
+      "colorBalancePrior": {
+        "vibrance": -4.5,
+        "saturation": -2.5
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.0,
+          "saturation": -3.0,
+          "luminance": -3.0
+        },
+        "orange": {
+          "hue": 0.0,
+          "saturation": -2.5,
+          "luminance": -2.5
+        },
+        "yellow": {
+          "hue": 0.5,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "green": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 3.5
+        },
+        "aqua": {
+          "hue": 2.0,
+          "saturation": 0.5,
+          "luminance": -4.5
+        },
+        "blue": {
+          "hue": 0.0,
+          "saturation": 5.0,
+          "luminance": -3.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 0.0,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 179.5,
+          "lum": 0.0,
+          "saturation": 0.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "clean",
+        "high_contrast"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets product lightening up",
+          "count": 1
+        },
+        {
+          "source": "https thepresetsroom com free lightroom presets product whitening background",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "lightening-up-d377e6a4abb5",
+          "title": "Lightening Up",
+          "concept": "thepresetsroom product Lightening Up (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/product/lightening-up/",
+          "weight": 1.0
+        },
+        {
+          "id": "whitening-background-166f62a16ef9",
+          "title": "Whitening Background",
+          "concept": "thepresetsroom product Whitening Background (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/product/whitening-background/",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "teal_orange",
+      "label": "Teal Orange",
+      "profileCount": 1,
+      "effectiveWeight": 1.0,
+      "promptKeywords": [
+        "teal",
+        "orange",
+        "cyan",
+        "aqua",
+        "blockbuster",
+        "틸",
+        "오렌지"
+      ],
+      "mood": [
+        "cinematic",
+        "split-tone",
+        "stylized"
+      ],
+      "targets": [
+        "cool shadows",
+        "warm highlights",
+        "separated blues and oranges"
+      ],
+      "avoid": [
+        "blue skin",
+        "neon cyan",
+        "oversaturated orange"
+      ],
+      "riskNotes": [
+        "blue skin",
+        "neon cyan",
+        "oversaturated orange",
+        "strong saturation may overshoot skin and foliage"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          0.24,
+          0.48
+        ],
+        "contrast": [
+          9.0,
+          25.0
+        ],
+        "highlights": [
+          -90.0,
+          -70.0
+        ],
+        "shadows": [
+          30.0,
+          50.0
+        ],
+        "whites": [
+          27.0,
+          43.0
+        ],
+        "blacks": [
+          -33.0,
+          -17.0
+        ],
+        "vibrance": [
+          28.0,
+          42.0
+        ],
+        "saturation": [
+          1.0,
+          15.0
+        ],
+        "clarity": [
+          9.0,
+          21.0
+        ],
+        "texture": [
+          -5.0,
+          5.0
+        ],
+        "dehaze": [
+          44.0,
+          56.0
+        ]
+      },
+      "tonePrior": {
+        "exposure": 0.36,
+        "contrast": 17.0,
+        "highlights": -80.0,
+        "shadows": 40.0,
+        "whites": 35.0,
+        "blacks": -25.0,
+        "clarity": 15.0,
+        "texture": 0.0,
+        "dehaze": 50.0
+      },
+      "colorBalancePrior": {
+        "vibrance": 35.0,
+        "saturation": 8.0
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 16.0,
+          "saturation": -20.0,
+          "luminance": 0.0
+        },
+        "orange": {
+          "hue": 0.0,
+          "saturation": -25.0,
+          "luminance": 0.0
+        },
+        "yellow": {
+          "hue": 0.0,
+          "saturation": -60.0,
+          "luminance": 0.0
+        },
+        "green": {
+          "hue": -10.0,
+          "saturation": -33.0,
+          "luminance": 10.0
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": -62.0,
+          "luminance": 0.0
+        },
+        "blue": {
+          "hue": 0.0,
+          "saturation": -100.0,
+          "luminance": 0.0
+        },
+        "purple": {
+          "hue": 0.0,
+          "saturation": -36.0,
+          "luminance": 0.0
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": -22.0,
+          "luminance": 0.0
+        }
+      },
+      "colorGradingPrior": {
+        "shadows": {
+          "hue": 171.0,
+          "lum": 0.0,
+          "saturation": 19.0
+        },
+        "midtones": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        },
+        "highlights": {
+          "hue": 219.0,
+          "lum": 0.0,
+          "saturation": 4.0
+        },
+        "global": {
+          "hue": 0.0,
+          "sat": 0.0,
+          "lum": 0.0
+        }
+      },
+      "topTags": [
+        "teal_orange",
+        "cinematic"
+      ],
+      "topSources": [
+        {
+          "source": "https thepresetsroom com free lightroom presets urban moody orange city",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "moody-orange-city-f9adc1198c83",
+          "title": "Moody Orange City",
+          "concept": "thepresetsroom urban Moody Orange City (Free Preset)",
+          "source": "https://thepresetsroom.com/free-lightroom-presets/urban/moody-orange-city/",
+          "weight": 1.0
+        }
+      ]
+    }
+  ]
+}
