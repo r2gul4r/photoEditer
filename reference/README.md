@@ -9,8 +9,12 @@ Folder layout:
 - `edits/`: before/after pairs and rendered comparison files.
 - `presets/`: XMP, JSON preset exports, or known slider settings.
 - `manifests/`: metadata files that describe reference examples.
+- `luts/source_registry.json`: allow/unknown/deny registry for LUT ingest sources.
+- `luts/profiles/`: non-invertible LUT-derived style profiles for AI correction priors.
+- `luts/tmp/`: temporary `.cube` originals during ingest only. Originals are deleted after analysis.
 
 Keep private photos local. Commit only templates, notes, and non-sensitive manifests.
+Do not commit third-party LUT originals. Store only source metadata and low-dimensional style profiles.
 
 Suggested flow:
 
@@ -18,3 +22,4 @@ Suggested flow:
 2. Put final/reference edits in `edits/`.
 3. Store known sliders or XMP/JSON data in `presets/`.
 4. Add a manifest entry linking the files and describing the target look.
+5. Import `.cube` LUTs through the backend LUT importer when you want derived style data.

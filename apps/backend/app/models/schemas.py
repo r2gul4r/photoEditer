@@ -155,6 +155,10 @@ class StyleInterpretation(BaseModel):
     targets: list[str]
     avoid: list[str]
     slider_prior: dict[str, tuple[float, float]]
+    lut_style_group: str | None = None
+    lut_profile_count: int = 0
+    lut_match_score: float = 0
+    lut_hsl_prior: HslMap = Field(default_factory=dict)
 
 
 AiMode = Literal["rules", "auto", "codex"]
@@ -253,6 +257,71 @@ class ReferenceLibraryResponse(BaseModel):
     root: str = "reference"
     count: int
     items: list[ReferenceManifest]
+
+
+LutSourceStatus = Literal["allow", "unknown", "deny"]
+LutSourceType = Literal["user_import", "allowed_public_lut"]
+
+
+class LutSourceEntry(BaseModel):
+    id: str
+    name: str
+    status: LutSourceStatus = "unknown"
+    sourceType: LutSourceType = "allowed_public_lut"
+    urlPrefixes: list[str] = Field(default_factory=list)
+    license: str | None = None
+    directDownloadAllowed: bool = False
+    notes: str | None = None
+
+
+class LutSourceRegistry(BaseModel):
+    version: int = 1
+    sources: list[LutSourceEntry] = Field(default_factory=list)
+
+
+class LutProfileMetadata(BaseModel):
+    sourceUrl: str | None = None
+    license: str | None = None
+    status: LutSourceStatus
+    sourceType: LutSourceType
+    downloadedAt: str | None = None
+    importedAt: str | None = None
+    sha256: str
+    originalFilename: str
+    originalDeleted: bool
+
+
+class LutStyleProfile(BaseModel):
+    id: str
+    version: int = 1
+    featureType: Literal["non_invertible_lut_style_profile"] = "non_invertible_lut_style_profile"
+    concept: str | None = None
+    title: str | None = None
+    cubeSize: int
+    metadata: LutProfileMetadata
+    derivedTags: list[str] = Field(default_factory=list)
+    features: dict[str, Any]
+
+
+class LutIngestResponse(BaseModel):
+    profilePath: str
+    profile: LutStyleProfile
+
+
+class LutProfileListResponse(BaseModel):
+    root: str = "reference/luts/profiles"
+    count: int
+    items: list[LutStyleProfile]
+
+
+class LutUrlIngestRequest(BaseModel):
+    sourceUrl: str
+    concept: str | None = None
+
+
+class LutStyleIndexResponse(BaseModel):
+    root: str = "reference/luts/style_index.json"
+    index: dict[str, Any]
 
 
 class RawSupportStatus(BaseModel):

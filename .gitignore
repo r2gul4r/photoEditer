@@ -13,8 +13,10 @@ apps/backend/.venv312/
 apps/backend/.venv311/
 __pycache__/
 .pytest_cache/
+.pytest-tmp/
 *.pyc
 *.egg-info/
+test-output/
 
 apps/backend/.tonepilot-data/
 apps/backend/.coverage
@@ -26,9 +28,20 @@ reference/jpeg/*
 reference/edits/*
 reference/presets/*
 reference/manifests/*
+reference/luts/tmp/*
+reference/luts/imports/*
+reference/luts/originals/*
+reference/luts/profiles/*
 !reference/raw/.gitkeep
 !reference/jpeg/.gitkeep
 !reference/edits/.gitkeep
 !reference/presets/.gitkeep
 !reference/manifests/.gitkeep
 !reference/manifests/example.json
+!reference/luts/
+!reference/luts/source_registry.json
+!reference/luts/style_index.json
+!reference/luts/tmp/
+!reference/luts/tmp/.gitkeep
+!reference/luts/profiles/
+!reference/luts/profiles/.gitkeep

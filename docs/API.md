@@ -145,3 +145,53 @@ Returns local reference manifests from `reference/manifests/*.json`.
   ]
 }
 ```
+
+## GET /api/references/luts/sources
+
+Returns the allow/unknown/deny source registry used by URL-based LUT ingestion.
+
+```json
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "user-local-import",
+      "status": "allow",
+      "sourceType": "user_import",
+      "urlPrefixes": [],
+      "license": "user-provided",
+      "directDownloadAllowed": false
+    }
+  ]
+}
+```
+
+## POST /api/references/luts/import
+
+Multipart fields:
+
+- `file`: required `.cube` file.
+- `concept`: optional style label such as `cool summer` or `golden hour`.
+- `source_url`: optional source URL metadata.
+- `license_name`: optional license metadata.
+
+The uploaded LUT is written only to `reference/luts/tmp/`, parsed, converted to a non-invertible style profile, then deleted.
+
+## POST /api/references/luts/ingest-url
+
+Downloads and analyzes a `.cube` URL only when the URL matches an `allow` source with `directDownloadAllowed: true`.
+
+```json
+{
+  "sourceUrl": "https://example.com/free/warm.cube",
+  "concept": "golden hour"
+}
+```
+
+## GET /api/references/luts/profiles
+
+Returns saved LUT-derived style profiles from `reference/luts/profiles/*.json`.
+
+## GET /api/references/luts/style-index
+
+Returns the clustered LUT style index from `reference/luts/style_index.json`. The recommendation engine uses this index to blend LUT-derived tone, color, and HSL priors into prompt-based correction candidates.

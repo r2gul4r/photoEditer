@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
 from app.models.schemas import StyleInterpretation
+from app.services.lut_style_index import match_lut_style_prior
 
 
 SliderPrior = dict[str, tuple[float, float]]
@@ -177,17 +178,61 @@ def _score_prompt(prompt: str, style: StyleDefinition) -> int:
     return score
 
 
+def _merge_unique(base: tuple[str, ...], extra: list[str]) -> list[str]:
+    items: list[str] = []
+    for value in [*base, *extra]:
+        if value and value not in items:
+            items.append(value)
+    return items
+
+
+def _blend_slider_prior(base: SliderPrior, lut_prior: dict[str, list[float]], *, weight: float = 0.55) -> SliderPrior:
+    blended: SliderPrior = dict(base)
+    for name, lut_bounds in lut_prior.items():
+        if not isinstance(lut_bounds, list) or len(lut_bounds) != 2:
+            continue
+        lut_low, lut_high = float(lut_bounds[0]), float(lut_bounds[1])
+        base_low, base_high = blended.get(name, (0.0, 0.0))
+        low = base_low * (1 - weight) + lut_low * weight
+        high = base_high * (1 - weight) + lut_high * weight
+        blended[name] = (round(low, 3), round(high, 3))
+    return blended
+
+
 def interpret_style(style_prompt: str) -> StyleInterpretation:
     prompt = style_prompt.strip()
     best = max(STYLE_DEFINITIONS, key=lambda style: _score_prompt(prompt, style))
-    if _score_prompt(prompt, best) == 0:
+    best_score = _score_prompt(prompt, best)
+    if best_score == 0:
         best = next(style for style in STYLE_DEFINITIONS if style.style_id == "clean_instagram")
+    lut_match = match_lut_style_prior(prompt, style_id=best.style_id if best_score > 0 else None)
+    slider_prior = best.slider_prior
+    mood = list(best.mood)
+    targets = list(best.targets)
+    avoid = list(best.avoid)
+    lut_hsl_prior = {}
+    lut_style_group = None
+    lut_profile_count = 0
+    lut_match_score = 0.0
+
+    if lut_match:
+        slider_prior = _blend_slider_prior(best.slider_prior, lut_match.get("sliderPrior", {}))
+        mood = _merge_unique(best.mood, lut_match.get("mood", []))
+        targets = _merge_unique(best.targets, lut_match.get("targets", []))
+        avoid = _merge_unique(best.avoid, lut_match.get("avoid", []))
+        lut_hsl_prior = lut_match.get("hslPrior", {})
+        lut_style_group = lut_match.get("id")
+        lut_profile_count = int(lut_match.get("profileCount", 0))
+        lut_match_score = float(lut_match.get("matchScore", 0))
 
     return StyleInterpretation(
         style_id=best.style_id,
-        mood=list(best.mood),
-        targets=list(best.targets),
-        avoid=list(best.avoid),
-        slider_prior=best.slider_prior,
+        mood=mood,
+        targets=targets,
+        avoid=avoid,
+        slider_prior=slider_prior,
+        lut_style_group=lut_style_group,
+        lut_profile_count=lut_profile_count,
+        lut_match_score=lut_match_score,
+        lut_hsl_prior=lut_hsl_prior,
     )
-

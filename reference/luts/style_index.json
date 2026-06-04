@@ -1,0 +1,2776 @@
+{
+  "version": 1,
+  "kind": "lut_style_index",
+  "profileCount": 300,
+  "groupCount": 13,
+  "duplicates": {
+    "profileCount": 300,
+    "uniqueHashCount": 298,
+    "exactHashDuplicateGroupCount": 2,
+    "normalizedFamilyDuplicateGroupCount": 4,
+    "exactHashGroups": [
+      {
+        "sha256": "0f3fae84c10fc3f9f5f748ed5051f9710e77740a1654eb29f9f79473b3b5203a",
+        "profileIds": [
+          "se7enx2_rtl-0f3fae84c10f",
+          "se7enx_rtl-0f3fae84c10f"
+        ],
+        "weightPerProfile": 0.5
+      },
+      {
+        "sha256": "6f0b747289cd85774d8d562c23616f1ad03adf5568b8ddf440b1cc73672da20e",
+        "profileIds": [
+          "coolwedding3b_driftwood-6f0b747289cd",
+          "coolwedding3b_srgb_driftwood-6f0b747289cd"
+        ],
+        "weightPerProfile": 0.5
+      }
+    ],
+    "normalizedFamilyGroups": [
+      {
+        "familyKey": "nick driftwood dope709 v104 doperec709 v104",
+        "profileIds": [
+          "doperec709-v104_33-90601d484e72",
+          "doperec709-v104_65-e64f7b3ad422"
+        ],
+        "weightPerProfile": 0.5
+      },
+      {
+        "familyKey": "nick driftwood likephotov2 likephotov2 dwg intermediate driftwood",
+        "profileIds": [
+          "likephotov2_dwg_intermediate_to-rec709_driftwood_lut_33_size-ef08ca983e28",
+          "likephotov2_dwg_intermediate_to-rec709_driftwood_lut_65_size-18e6a180c1e9"
+        ],
+        "weightPerProfile": 0.5
+      },
+      {
+        "familyKey": "nick driftwood wedding toningmix experimental wedding beta test rtl lightroom photoshop warmwedding2b",
+        "profileIds": [
+          "warmwedding2b-srgb-65-1fea9ad3f3d5",
+          "warmwedding2b-srgb_33-7631300d560d"
+        ],
+        "weightPerProfile": 0.5
+      },
+      {
+        "familyKey": "nick driftwood wedding toningmix experimental wedding beta test rtl lightroom photoshop warmwedding3b",
+        "profileIds": [
+          "warmwedding3b-srgb-65-fbdc37c81792",
+          "warmwedding3b-srgb_33-d6d52f862de9"
+        ],
+        "weightPerProfile": 0.5
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "vibrant_pop",
+      "label": "Vibrant Pop",
+      "profileCount": 85,
+      "effectiveWeight": 84.0,
+      "keywords": [
+        "pop",
+        "vibrant",
+        "velvia",
+        "colorful",
+        "rgbman",
+        "redman",
+        "greenman",
+        "blueman",
+        "색감",
+        "비비드"
+      ],
+      "mood": [
+        "vibrant",
+        "colorful",
+        "punchy"
+      ],
+      "targets": [
+        "strong color presence",
+        "clear hue separation",
+        "lively saturation"
+      ],
+      "avoid": [
+        "oversaturation",
+        "neon colors",
+        "skin color drift"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.116,
+          0.124
+        ],
+        "contrast": [
+          8.62,
+          26.62
+        ],
+        "highlights": [
+          -2.952,
+          17.048
+        ],
+        "shadows": [
+          -19.833,
+          0.167
+        ],
+        "whites": [
+          -8.045,
+          7.955
+        ],
+        "blacks": [
+          -12.095,
+          3.905
+        ],
+        "temperature": [
+          -416.056,
+          103.944
+        ],
+        "tint": [
+          -10.647,
+          3.353
+        ],
+        "vibrance": [
+          10.672,
+          26.672
+        ],
+        "saturation": [
+          4.826,
+          18.826
+        ],
+        "clarity": [
+          -0.532,
+          11.468
+        ],
+        "texture": [
+          -1.598,
+          8.402
+        ],
+        "dehaze": [
+          -1.139,
+          10.861
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": -0.75,
+          "saturation": 0.02,
+          "luminance": 0.44
+        },
+        "orange": {
+          "hue": -2.2,
+          "saturation": -0.94,
+          "luminance": -6.23
+        },
+        "yellow": {
+          "hue": 0.87,
+          "saturation": -4.25,
+          "luminance": -1.36
+        },
+        "green": {
+          "hue": 2.15,
+          "saturation": 1.76,
+          "luminance": -1.15
+        },
+        "aqua": {
+          "hue": 0.09,
+          "saturation": -0.37,
+          "luminance": -2.44
+        },
+        "blue": {
+          "hue": -2.56,
+          "saturation": 1.48,
+          "luminance": 2.61
+        },
+        "purple": {
+          "hue": -2.66,
+          "saturation": -0.47,
+          "luminance": 1.04
+        },
+        "magenta": {
+          "hue": 1.39,
+          "saturation": -2.67,
+          "luminance": 1.1
+        }
+      },
+      "topTags": [
+        "vibrant",
+        "high_contrast",
+        "cool",
+        "warm",
+        "muted",
+        "cinematic_split_tone",
+        "balanced"
+      ],
+      "topSources": [
+        {
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "count": 30
+        },
+        {
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "count": 26
+        },
+        {
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "count": 12
+        },
+        {
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "count": 11
+        },
+        {
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "count": 3
+        },
+        {
+          "source": "nickdriftwood.com/wp-content/uploads",
+          "count": 2
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "dwd_s5ii-9c74e4a39081",
+          "concept": "nick driftwood lumix s5ii hi precision Driftwood S5II LUT FREE DWD S5II",
+          "source": "nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "driftwood-s5ii-lut-f2a8d28b0566",
+          "concept": "nick driftwood lumix s5ii hi precision Driftwood S5II LUT FREE Driftwood S5II LUT",
+          "source": "nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "bleachybypass-superbright-33-e-e-a47e01ce2c0b",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E BleachyBypass SuperBright 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "bluenight-33-e-e-f3d0761bf351",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E BlueNight 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "cyan-1-33-e-e-7e5bf1b26e2c",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Cyan 1 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "cyan-2-33-e-e-037eaa4fe909",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Cyan 2 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "fashion-1-33-e-e-0f06d85d682c",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Fashion 1 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "fashion-2-33-e-e-ef232aa44a63",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Fashion 2 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "fashion-lo-con-33-e-e-230aaee6c833",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Fashion Lo Con 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "golden-1-33-e-e-62eaa2e196d8",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Golden 1 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "golden-2-33-e-e-54f196168c53",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Golden 2 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "hangover-33-e-e-93b8a147fa66",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Hangover 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "pastel_soft",
+      "label": "Pastel Soft",
+      "profileCount": 47,
+      "effectiveWeight": 47.0,
+      "keywords": [
+        "pastel",
+        "pastelkrome",
+        "dreamy",
+        "faded",
+        "soft",
+        "파스텔",
+        "부드러운"
+      ],
+      "mood": [
+        "soft",
+        "pastel",
+        "light"
+      ],
+      "targets": [
+        "soft contrast",
+        "pastel saturation",
+        "lifted shadows"
+      ],
+      "avoid": [
+        "washed-out subject",
+        "weak blacks",
+        "colorless mids"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.127,
+          0.113
+        ],
+        "contrast": [
+          -8.501,
+          9.499
+        ],
+        "highlights": [
+          -10.91,
+          9.09
+        ],
+        "shadows": [
+          -16.364,
+          3.636
+        ],
+        "whites": [
+          -14.424,
+          1.576
+        ],
+        "blacks": [
+          -8.35,
+          7.65
+        ],
+        "temperature": [
+          -623.893,
+          -103.893
+        ],
+        "tint": [
+          -9.481,
+          4.519
+        ],
+        "vibrance": [
+          -1.177,
+          14.823
+        ],
+        "saturation": [
+          -2.716,
+          11.284
+        ],
+        "clarity": [
+          -5.859,
+          6.141
+        ],
+        "texture": [
+          -4.912,
+          5.088
+        ],
+        "dehaze": [
+          -5.875,
+          6.125
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": -0.5,
+          "saturation": -2.81,
+          "luminance": 1.48
+        },
+        "orange": {
+          "hue": -3.58,
+          "saturation": -4.12,
+          "luminance": -7.73
+        },
+        "yellow": {
+          "hue": -0.36,
+          "saturation": -11.57,
+          "luminance": -4.3
+        },
+        "green": {
+          "hue": 3.83,
+          "saturation": -4.92,
+          "luminance": -3.54
+        },
+        "aqua": {
+          "hue": -0.01,
+          "saturation": -5.52,
+          "luminance": -4.99
+        },
+        "blue": {
+          "hue": -3.34,
+          "saturation": -4.0,
+          "luminance": 9.21
+        },
+        "purple": {
+          "hue": -3.37,
+          "saturation": -5.7,
+          "luminance": 7.91
+        },
+        "magenta": {
+          "hue": 1.26,
+          "saturation": -8.87,
+          "luminance": 4.97
+        }
+      },
+      "topTags": [
+        "vibrant",
+        "high_contrast",
+        "soft_contrast",
+        "cool",
+        "muted",
+        "warm",
+        "cinematic_split_tone"
+      ],
+      "topSources": [
+        {
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "count": 21
+        },
+        {
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "count": 10
+        },
+        {
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "count": 10
+        },
+        {
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "count": 3
+        },
+        {
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "count": 2
+        },
+        {
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "day-for-night-9b77a31c9b60",
+          "concept": "lumix creator day for night by Jon Simo Day for Night",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "faded-summer-0bcb156578db",
+          "concept": "lumix creator faded summer by Caleb Hoover Faded Summer",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "vintage-vibes-3aafcd590428",
+          "concept": "lumix creator vintage vibes by Jon Simo Vintage Vibes",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "blue-dusk-33-e-e-d367b8840182",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Blue Dusk 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "matrix-2-33-e-e-47cd5e1f0f94",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Matrix 2 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "city_neon_cinema-7deb16c12b14",
+          "concept": "cinematic and blockbuster city neon cinema",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "dreamy_cinema-c0b0ebdfade9",
+          "concept": "cinematic and blockbuster dreamy cinema",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "city_night_film-b3e8c19e9dc1",
+          "concept": "dark and moody city night film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "cool_haze-24f0d34d18c1",
+          "concept": "dark and moody cool haze",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "dramatic_warmth-5470ce61693b",
+          "concept": "dark and moody dramatic warmth",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "faded_memories-776b0eec61b3",
+          "concept": "film stock and vintage faded memories",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "low_key_film-6a3aac564f44",
+          "concept": "film stock and vintage low key film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "wedding_warm",
+      "label": "Wedding Warm",
+      "profileCount": 37,
+      "effectiveWeight": 35.0,
+      "keywords": [
+        "wedding",
+        "bridal",
+        "warmwedding",
+        "coolwedding",
+        "웨딩",
+        "결혼"
+      ],
+      "mood": [
+        "warm",
+        "soft",
+        "skin-friendly",
+        "event"
+      ],
+      "targets": [
+        "warm skin tone",
+        "soft highlight rolloff",
+        "gentle contrast"
+      ],
+      "avoid": [
+        "orange skin",
+        "clipped dress highlights",
+        "muddy indoor shadows"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          0.146,
+          0.386
+        ],
+        "contrast": [
+          13.702,
+          31.702
+        ],
+        "highlights": [
+          3.365,
+          23.365
+        ],
+        "shadows": [
+          -18.027,
+          1.973
+        ],
+        "whites": [
+          -5.049,
+          10.951
+        ],
+        "blacks": [
+          -11.41,
+          4.59
+        ],
+        "temperature": [
+          -486.683,
+          33.317
+        ],
+        "tint": [
+          -3.593,
+          10.407
+        ],
+        "vibrance": [
+          -1.084,
+          14.916
+        ],
+        "saturation": [
+          -2.62,
+          11.38
+        ],
+        "clarity": [
+          1.046,
+          13.046
+        ],
+        "texture": [
+          -0.616,
+          9.384
+        ],
+        "dehaze": [
+          0.263,
+          12.263
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.81,
+          "saturation": 2.63,
+          "luminance": 2.43
+        },
+        "orange": {
+          "hue": -1.21,
+          "saturation": -1.87,
+          "luminance": 1.97
+        },
+        "yellow": {
+          "hue": -0.01,
+          "saturation": -10.57,
+          "luminance": -5.16
+        },
+        "green": {
+          "hue": -3.24,
+          "saturation": -5.14,
+          "luminance": 2.91
+        },
+        "aqua": {
+          "hue": -0.03,
+          "saturation": -3.93,
+          "luminance": 0.29
+        },
+        "blue": {
+          "hue": 0.94,
+          "saturation": 2.59,
+          "luminance": -0.4
+        },
+        "purple": {
+          "hue": 1.64,
+          "saturation": 1.98,
+          "luminance": -0.7
+        },
+        "magenta": {
+          "hue": 0.07,
+          "saturation": 0.29,
+          "luminance": -1.81
+        }
+      },
+      "topTags": [
+        "high_contrast",
+        "vibrant",
+        "cool",
+        "muted",
+        "warm"
+      ],
+      "topSources": [
+        {
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "count": 37
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "wedding1_driftwood_33-bc67b76cd2c7",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding1 Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding1b_driftwood_33-d1f4c936ea67",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding1b Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding1c_driftwood_33-c81809ca41db",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding1c Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding2_driftwood_33-a5fc22ccd872",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding2 Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding2b_driftwood_33-e2faa3b48193",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding2b Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding2c_driftwood_33-9dd35e05d264",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding2c Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding2d_driftwood_33-cb6b2e4b412c",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding2d Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding3_driftwood_33-b8f46c861878",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding3 Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding3b_driftwood_33-54840ac63ccf",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding3b Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding4_driftwood_33-099176b25bdb",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding4 Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding4b_driftwood_33-889f6db6dfe3",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding4b Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "wedding5_driftwood_33-beab10e86850",
+          "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding5 Driftwood 33",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "warm_sunset",
+      "label": "Warm Sunset",
+      "profileCount": 35,
+      "effectiveWeight": 35.0,
+      "keywords": [
+        "sunset",
+        "golden",
+        "warm",
+        "dawn",
+        "sepia",
+        "kodak",
+        "kodakchrome",
+        "vintage vibes",
+        "노을",
+        "따뜻"
+      ],
+      "mood": [
+        "warm",
+        "glowing",
+        "nostalgic"
+      ],
+      "targets": [
+        "warm highlights",
+        "golden midtones",
+        "gentle color warmth"
+      ],
+      "avoid": [
+        "yellow whites",
+        "orange skin",
+        "brown color cast"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.055,
+          0.185
+        ],
+        "contrast": [
+          -0.629,
+          17.371
+        ],
+        "highlights": [
+          -4.72,
+          15.28
+        ],
+        "shadows": [
+          -13.583,
+          6.417
+        ],
+        "whites": [
+          -8.885,
+          7.115
+        ],
+        "blacks": [
+          -7.504,
+          8.496
+        ],
+        "temperature": [
+          521.323,
+          1041.323
+        ],
+        "tint": [
+          -9.478,
+          4.522
+        ],
+        "vibrance": [
+          -27.239,
+          -11.239
+        ],
+        "saturation": [
+          -20.499,
+          -6.499
+        ],
+        "clarity": [
+          -3.402,
+          8.598
+        ],
+        "texture": [
+          -3.383,
+          6.617
+        ],
+        "dehaze": [
+          -3.691,
+          8.309
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 1.79,
+          "saturation": -3.27,
+          "luminance": 4.94
+        },
+        "orange": {
+          "hue": 0.42,
+          "saturation": -4.01,
+          "luminance": 2.03
+        },
+        "yellow": {
+          "hue": -0.96,
+          "saturation": -12.51,
+          "luminance": -1.16
+        },
+        "green": {
+          "hue": -3.18,
+          "saturation": -11.77,
+          "luminance": 2.39
+        },
+        "aqua": {
+          "hue": -1.72,
+          "saturation": -13.11,
+          "luminance": 1.62
+        },
+        "blue": {
+          "hue": 1.27,
+          "saturation": -9.86,
+          "luminance": 8.6
+        },
+        "purple": {
+          "hue": 1.52,
+          "saturation": -11.18,
+          "luminance": 7.54
+        },
+        "magenta": {
+          "hue": 4.12,
+          "saturation": -11.87,
+          "luminance": 8.54
+        }
+      },
+      "topTags": [
+        "warm",
+        "muted",
+        "high_contrast",
+        "cinematic_split_tone"
+      ],
+      "topSources": [
+        {
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "count": 20
+        },
+        {
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "count": 9
+        },
+        {
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "count": 3
+        },
+        {
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "count": 2
+        },
+        {
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "dark-floral-eb992620fdb4",
+          "concept": "lumix creator dark floral by Devon Williams Dark Floral",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "dusty-earth-e16ce961c1bd",
+          "concept": "lumix creator dusty earth by Devon Williams Dusty Earth",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "gritty-cinema-4274826ade93",
+          "concept": "lumix creator gritty cinema by Jon Simo Gritty Cinema",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "mystic_emerald_drama-8521e3ae5682",
+          "concept": "dark and moody mystic emerald drama",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "woodland_drama-ea8191f8e042",
+          "concept": "dark and moody woodland drama",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "classic_film-e51d94637d27",
+          "concept": "film stock and vintage classic film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "golden_wood_film-bc2c0ae9af5f",
+          "concept": "film stock and vintage golden wood film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "golden_years_film-34de1170977a",
+          "concept": "film stock and vintage golden years film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "red_film-e67fed21a61b",
+          "concept": "film stock and vintage red film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "vintage_400_film-2a0c1496c13b",
+          "concept": "film stock and vintage vintage 400 film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "warm_roast_film-2e68c773dd51",
+          "concept": "film stock and vintage warm roast film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "warm_correction-73875f4ed355",
+          "concept": "utility and correction warm correction",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "cool_night",
+      "label": "Cool Night",
+      "profileCount": 25,
+      "effectiveWeight": 25.0,
+      "keywords": [
+        "night",
+        "dusk",
+        "cold",
+        "cool",
+        "blue",
+        "icy",
+        "noir",
+        "horror",
+        "야경",
+        "차가운"
+      ],
+      "mood": [
+        "cool",
+        "moody",
+        "low-key"
+      ],
+      "targets": [
+        "cool shadows",
+        "protected highlights",
+        "night atmosphere"
+      ],
+      "avoid": [
+        "dead skin tone",
+        "crushed blacks",
+        "flat blue cast"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.093,
+          0.147
+        ],
+        "contrast": [
+          4.207,
+          22.207
+        ],
+        "highlights": [
+          -4.068,
+          15.932
+        ],
+        "shadows": [
+          -16.804,
+          3.196
+        ],
+        "whites": [
+          -8.861,
+          7.139
+        ],
+        "blacks": [
+          -9.579,
+          6.421
+        ],
+        "temperature": [
+          -913.378,
+          -393.378
+        ],
+        "tint": [
+          -9.041,
+          4.959
+        ],
+        "vibrance": [
+          -16.043,
+          -0.043
+        ],
+        "saturation": [
+          -12.094,
+          1.906
+        ],
+        "clarity": [
+          -1.901,
+          10.099
+        ],
+        "texture": [
+          -2.45,
+          7.55
+        ],
+        "dehaze": [
+          -2.357,
+          9.643
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": -1.21,
+          "saturation": -4.54,
+          "luminance": 3.28
+        },
+        "orange": {
+          "hue": -4.23,
+          "saturation": -7.82,
+          "luminance": -2.4
+        },
+        "yellow": {
+          "hue": -0.42,
+          "saturation": -14.58,
+          "luminance": -0.73
+        },
+        "green": {
+          "hue": 4.38,
+          "saturation": -5.8,
+          "luminance": -2.18
+        },
+        "aqua": {
+          "hue": -0.15,
+          "saturation": -6.46,
+          "luminance": -4.1
+        },
+        "blue": {
+          "hue": -5.2,
+          "saturation": -4.97,
+          "luminance": 10.45
+        },
+        "purple": {
+          "hue": -5.72,
+          "saturation": -12.88,
+          "luminance": 10.27
+        },
+        "magenta": {
+          "hue": 1.14,
+          "saturation": -14.09,
+          "luminance": 11.83
+        }
+      },
+      "topTags": [
+        "cool",
+        "high_contrast",
+        "muted",
+        "warm"
+      ],
+      "topSources": [
+        {
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "count": 9
+        },
+        {
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "count": 5
+        },
+        {
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "count": 4
+        },
+        {
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "count": 3
+        },
+        {
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "count": 2
+        },
+        {
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "chasm-lake-efd5c2f984d8",
+          "concept": "lumix creator chasm lake by Devon Williams Chasm Lake",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "steelblue-33-e-e-846043f27668",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E SteelBlue 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "cold_shadows-c711e5fd0b5f",
+          "concept": "dark and moody cold shadows",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "night_glow-aa0abdfa876a",
+          "concept": "dark and moody night glow",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "noir_era-5b6663cbb50f",
+          "concept": "dark and moody noir era",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "retro_red_shadows-64f282b0179b",
+          "concept": "dark and moody retro red shadows",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "spy_night-456ef04325a3",
+          "concept": "dark and moody spy night",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "astia_srgb-84d884693ca5",
+          "concept": "cube lut astia sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "classic-20chrome_srgb-4568770fd3a8",
+          "concept": "cube lut classic chrome sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "l-log_to_classic_vlog-efca5805c90e",
+          "concept": "Leica L Log to Classic VLog",
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "weight": 1.0
+        },
+        {
+          "id": "n-log_bt2020_to_rec709_bt1886_vlog-8eb89df23357",
+          "concept": "Nikon N Log BT2020 to REC709 BT1886 VLog",
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "weight": 1.0
+        },
+        {
+          "id": "red_filmbias_rec2020_n-log_to_rec709_bt1886_vlog-be6b84aebcdc",
+          "concept": "Nikon RED FilmBias Rec2020 N Log to Rec709 BT1886 VLog",
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "film_vintage",
+      "label": "Film Vintage",
+      "profileCount": 16,
+      "effectiveWeight": 16.0,
+      "keywords": [
+        "film",
+        "vintage",
+        "chrome",
+        "provia",
+        "astia",
+        "eterna",
+        "velvia",
+        "classic",
+        "nostalgic",
+        "reala",
+        "fuji",
+        "필름",
+        "빈티지"
+      ],
+      "mood": [
+        "analog",
+        "nostalgic",
+        "film-like"
+      ],
+      "targets": [
+        "film color separation",
+        "controlled saturation",
+        "soft rolloff"
+      ],
+      "avoid": [
+        "dirty whites",
+        "overdone emulation",
+        "muddy greens"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          0.052,
+          0.292
+        ],
+        "contrast": [
+          6.862,
+          24.862
+        ],
+        "highlights": [
+          0.012,
+          20.012
+        ],
+        "shadows": [
+          -14.058,
+          5.942
+        ],
+        "whites": [
+          -6.692,
+          9.308
+        ],
+        "blacks": [
+          -9.221,
+          6.779
+        ],
+        "temperature": [
+          -285.766,
+          234.234
+        ],
+        "tint": [
+          -12.486,
+          1.514
+        ],
+        "vibrance": [
+          -26.214,
+          -10.214
+        ],
+        "saturation": [
+          -19.582,
+          -5.582
+        ],
+        "clarity": [
+          -1.077,
+          10.923
+        ],
+        "texture": [
+          -1.937,
+          8.063
+        ],
+        "dehaze": [
+          -1.624,
+          10.376
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 2.06,
+          "saturation": -5.67,
+          "luminance": 9.7
+        },
+        "orange": {
+          "hue": -0.71,
+          "saturation": -7.74,
+          "luminance": 5.55
+        },
+        "yellow": {
+          "hue": 0.06,
+          "saturation": -14.49,
+          "luminance": 0.58
+        },
+        "green": {
+          "hue": 1.99,
+          "saturation": -7.2,
+          "luminance": 3.47
+        },
+        "aqua": {
+          "hue": -0.9,
+          "saturation": -15.21,
+          "luminance": 4.96
+        },
+        "blue": {
+          "hue": -2.08,
+          "saturation": -9.36,
+          "luminance": 13.19
+        },
+        "purple": {
+          "hue": -1.36,
+          "saturation": -13.13,
+          "luminance": 14.0
+        },
+        "magenta": {
+          "hue": 1.96,
+          "saturation": -16.2,
+          "luminance": 15.01
+        }
+      },
+      "topTags": [
+        "high_contrast",
+        "muted",
+        "cinematic_split_tone",
+        "balanced"
+      ],
+      "topSources": [
+        {
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "count": 10
+        },
+        {
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "count": 4
+        },
+        {
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "count": 1
+        },
+        {
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "standard_film-a60303f734d3",
+          "concept": "film stock and vintage standard film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "bleach-20bypass_srgb-0415a60d9947",
+          "concept": "cube lut bleach bypass sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "classic-20neg_srgb-de8b59d1017c",
+          "concept": "cube lut classic neg sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "eterna_srgb-1847d5560f92",
+          "concept": "cube lut eterna sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "nostalgic-20neg_srgb-329c903aea19",
+          "concept": "cube lut nostalgic neg sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "pro-20neg-20hi_srgb-2ddec4a6a436",
+          "concept": "cube lut pro neg hi sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "pro-20neg-20std_srgb-9dbdd7208b23",
+          "concept": "cube lut pro neg std sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "provia_srgb-5aecd2df2999",
+          "concept": "cube lut provia sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "reala-20ace_srgb-8555ccd47f91",
+          "concept": "cube lut reala ace sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "provia-20to-20bleach-20bypass-20srgb-8425966e8c1e",
+          "concept": "provia conversion luts Provia to Bleach Bypass sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "provia-20to-20classic-20neg-20srgb-c8d7b46bb781",
+          "concept": "provia conversion luts Provia to Classic Neg sRGB",
+          "source": "raw.githubusercontent.com/abpy/FujifilmCameraProfiles",
+          "weight": 1.0
+        },
+        {
+          "id": "flog2c_to_classic-chrome_vlog-fb75d916720a",
+          "concept": "Fujifilm FLog2C to CLASSIC CHROME VLog",
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "beauty_skin",
+      "label": "Beauty Skin",
+      "profileCount": 14,
+      "effectiveWeight": 14.0,
+      "keywords": [
+        "beauty",
+        "skin",
+        "skintone",
+        "face",
+        "smile",
+        "피부",
+        "인물",
+        "스킨"
+      ],
+      "mood": [
+        "clean",
+        "polished",
+        "skin-friendly"
+      ],
+      "targets": [
+        "smooth skin color",
+        "clean midtones",
+        "controlled saturation"
+      ],
+      "avoid": [
+        "plastic skin",
+        "magenta cast",
+        "over-softened detail"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          0.12,
+          0.36
+        ],
+        "contrast": [
+          11.619,
+          29.619
+        ],
+        "highlights": [
+          2.108,
+          22.108
+        ],
+        "shadows": [
+          -16.026,
+          3.974
+        ],
+        "whites": [
+          -5.963,
+          10.037
+        ],
+        "blacks": [
+          -9.022,
+          6.978
+        ],
+        "temperature": [
+          -140.211,
+          379.789
+        ],
+        "tint": [
+          -26.648,
+          -12.648
+        ],
+        "vibrance": [
+          -8.048,
+          7.952
+        ],
+        "saturation": [
+          -7.031,
+          6.969
+        ],
+        "clarity": [
+          0.399,
+          12.399
+        ],
+        "texture": [
+          -1.018,
+          8.982
+        ],
+        "dehaze": [
+          -0.312,
+          11.688
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": -0.3,
+          "saturation": 1.23,
+          "luminance": -1.68
+        },
+        "orange": {
+          "hue": -1.89,
+          "saturation": -16.35,
+          "luminance": 8.11
+        },
+        "yellow": {
+          "hue": -0.5,
+          "saturation": -18.0,
+          "luminance": 2.08
+        },
+        "green": {
+          "hue": 2.4,
+          "saturation": 1.2,
+          "luminance": -2.44
+        },
+        "aqua": {
+          "hue": 0.34,
+          "saturation": 0.95,
+          "luminance": -2.11
+        },
+        "blue": {
+          "hue": -7.39,
+          "saturation": 2.75,
+          "luminance": 14.48
+        },
+        "purple": {
+          "hue": -11.09,
+          "saturation": -6.07,
+          "luminance": 12.61
+        },
+        "magenta": {
+          "hue": -8.29,
+          "saturation": -18.0,
+          "luminance": 17.8
+        }
+      },
+      "topTags": [
+        "high_contrast",
+        "warm",
+        "cool",
+        "muted",
+        "vibrant",
+        "cinematic_split_tone"
+      ],
+      "topSources": [
+        {
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "count": 14
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "beauty01_65size-f91755d4984a",
+          "concept": "nick driftwood beauty Beauty01 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty02_65size-e4832c485e2e",
+          "concept": "nick driftwood beauty Beauty02 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty03_65size-a25169ddd5da",
+          "concept": "nick driftwood beauty Beauty03 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty04_65size-66f38070ce92",
+          "concept": "nick driftwood beauty Beauty04 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty05_65size-ad14da22d08b",
+          "concept": "nick driftwood beauty Beauty05 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty06hi_65size-3f033cbb51e5",
+          "concept": "nick driftwood beauty Beauty06hi 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty06lo_65size-5c50abd3ee3c",
+          "concept": "nick driftwood beauty Beauty06lo 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty07_65size-b02d188d49d5",
+          "concept": "nick driftwood beauty Beauty07 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty08_65size-c7c851c781b7",
+          "concept": "nick driftwood beauty Beauty08 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty09_65size-5af97867ff71",
+          "concept": "nick driftwood beauty Beauty09 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty10_65size-2c593fd1a651",
+          "concept": "nick driftwood beauty Beauty10 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "beauty11_65size-837bbd45832d",
+          "concept": "nick driftwood beauty Beauty11 65size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "teal_orange",
+      "label": "Teal Orange",
+      "profileCount": 12,
+      "effectiveWeight": 12.0,
+      "keywords": [
+        "teal",
+        "orange",
+        "cyan",
+        "aqua",
+        "blockbuster",
+        "틸",
+        "오렌지"
+      ],
+      "mood": [
+        "cinematic",
+        "split-tone",
+        "stylized"
+      ],
+      "targets": [
+        "cool shadows",
+        "warm highlights",
+        "separated blues and oranges"
+      ],
+      "avoid": [
+        "blue skin",
+        "neon cyan",
+        "oversaturated orange"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.142,
+          0.098
+        ],
+        "contrast": [
+          -5.133,
+          12.867
+        ],
+        "highlights": [
+          -10.31,
+          9.69
+        ],
+        "shadows": [
+          -15.069,
+          4.931
+        ],
+        "whites": [
+          -12.27,
+          3.73
+        ],
+        "blacks": [
+          -8.884,
+          7.116
+        ],
+        "temperature": [
+          406.592,
+          926.592
+        ],
+        "tint": [
+          -15.69,
+          -1.69
+        ],
+        "vibrance": [
+          -9.094,
+          6.906
+        ],
+        "saturation": [
+          -7.693,
+          6.307
+        ],
+        "clarity": [
+          -4.8,
+          7.2
+        ],
+        "texture": [
+          -4.253,
+          5.747
+        ],
+        "dehaze": [
+          -4.933,
+          7.067
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 1.08,
+          "saturation": -4.89,
+          "luminance": 3.16
+        },
+        "orange": {
+          "hue": -1.25,
+          "saturation": -3.54,
+          "luminance": -4.4
+        },
+        "yellow": {
+          "hue": -1.65,
+          "saturation": -6.79,
+          "luminance": -5.45
+        },
+        "green": {
+          "hue": -0.68,
+          "saturation": -3.39,
+          "luminance": -4.96
+        },
+        "aqua": {
+          "hue": -0.76,
+          "saturation": -6.25,
+          "luminance": -5.96
+        },
+        "blue": {
+          "hue": -4.94,
+          "saturation": -3.89,
+          "luminance": 8.44
+        },
+        "purple": {
+          "hue": -2.06,
+          "saturation": -10.44,
+          "luminance": 5.01
+        },
+        "magenta": {
+          "hue": 3.82,
+          "saturation": -10.55,
+          "luminance": 6.91
+        }
+      },
+      "topTags": [
+        "warm",
+        "high_contrast",
+        "muted",
+        "cinematic_split_tone",
+        "cool",
+        "balanced"
+      ],
+      "topSources": [
+        {
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "count": 11
+        },
+        {
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "lock-box-744fd614ce2e",
+          "concept": "lumix creator lock box forest by Devon Williams Lock Box",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "bold_red_cinema-66d71fb7cfb6",
+          "concept": "cinematic and blockbuster bold red cinema",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "cool_cinema-1567f44ba7f5",
+          "concept": "cinematic and blockbuster cool cinema",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "elegant_dark_cinema-6932b2921233",
+          "concept": "cinematic and blockbuster elegant dark cinema",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "romantic_cinema-aa271c757d82",
+          "concept": "cinematic and blockbuster romantic cinema",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "teal_cinema-77289596b040",
+          "concept": "cinematic and blockbuster teal cinema",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "warm_cinema-6b68588309c5",
+          "concept": "cinematic and blockbuster warm cinema",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "dark_orange_film-ca1b3e21fa16",
+          "concept": "film stock and vintage dark orange film",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "moonlight_orange-6b914da07c8b",
+          "concept": "teal and orange vibes moonlight orange",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "signature_teal_-26_orange-38529bbf5a1d",
+          "concept": "teal and orange vibes signature teal and orange",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "tropical_teal-999593ead201",
+          "concept": "teal and orange vibes tropical teal",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "western_sunset-20d8b52f80cf",
+          "concept": "teal and orange vibes western sunset",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "cinematic_mood",
+      "label": "Cinematic Mood",
+      "profileCount": 10,
+      "effectiveWeight": 10.0,
+      "keywords": [
+        "cinema",
+        "cinematic",
+        "movie",
+        "drama",
+        "moody",
+        "se7en",
+        "bladerunner",
+        "apocalypse",
+        "시네마",
+        "영화"
+      ],
+      "mood": [
+        "cinematic",
+        "dramatic",
+        "controlled"
+      ],
+      "targets": [
+        "stronger contrast",
+        "mood color",
+        "controlled highlight rolloff"
+      ],
+      "avoid": [
+        "overly crushed blacks",
+        "heavy color cast",
+        "HDR-looking contrast"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.082,
+          0.158
+        ],
+        "contrast": [
+          -6.525,
+          11.475
+        ],
+        "highlights": [
+          -7.339,
+          12.661
+        ],
+        "shadows": [
+          -10.02,
+          9.98
+        ],
+        "whites": [
+          -9.2,
+          6.8
+        ],
+        "blacks": [
+          -5.249,
+          10.751
+        ],
+        "temperature": [
+          -223.79,
+          296.21
+        ],
+        "tint": [
+          -7.007,
+          6.993
+        ],
+        "vibrance": [
+          -19.806,
+          -3.806
+        ],
+        "saturation": [
+          -14.477,
+          -0.477
+        ],
+        "clarity": [
+          -5.232,
+          6.768
+        ],
+        "texture": [
+          -4.522,
+          5.478
+        ],
+        "dehaze": [
+          -5.317,
+          6.683
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.68,
+          "saturation": -2.76,
+          "luminance": 4.47
+        },
+        "orange": {
+          "hue": -0.17,
+          "saturation": -5.86,
+          "luminance": 1.94
+        },
+        "yellow": {
+          "hue": -0.47,
+          "saturation": -13.05,
+          "luminance": -0.93
+        },
+        "green": {
+          "hue": -0.78,
+          "saturation": -10.63,
+          "luminance": 2.52
+        },
+        "aqua": {
+          "hue": 0.53,
+          "saturation": -14.25,
+          "luminance": 3.62
+        },
+        "blue": {
+          "hue": -0.25,
+          "saturation": -4.54,
+          "luminance": 9.05
+        },
+        "purple": {
+          "hue": -1.72,
+          "saturation": -8.97,
+          "luminance": 7.23
+        },
+        "magenta": {
+          "hue": 0.34,
+          "saturation": -10.54,
+          "luminance": 8.55
+        }
+      },
+      "topTags": [
+        "muted",
+        "cinematic_split_tone",
+        "balanced",
+        "high_contrast"
+      ],
+      "topSources": [
+        {
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "count": 10
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "downs-b70fc10b284a",
+          "concept": "q ddl Q DDL Pack 1 Downs",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "lowery-f6c1c377b3ef",
+          "concept": "q ddl Q DDL Pack 1 Lowery",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "nunez-5266bc9e1aa1",
+          "concept": "q ddl Q DDL Pack 1 Nunez",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "olson-f62934848dda",
+          "concept": "q ddl Q DDL Pack 1 Olson",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "poole-23ff940c82b3",
+          "concept": "q ddl Q DDL Pack 1 Poole",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "rocha-5906c57cf9f7",
+          "concept": "q ddl Q DDL Pack 1 Rocha",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "rojas-81691ab831cf",
+          "concept": "q ddl Q DDL Pack 1 Rojas",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "sutton-f85bda1d3d6f",
+          "concept": "q ddl Q DDL Pack 1 Sutton",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "ballard-a9753cf49f0b",
+          "concept": "q ddl Q DDL Pack 2 Ballard",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "cantrell-0627243c5d7e",
+          "concept": "q ddl Q DDL Pack 2 Cantrell",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "monochrome",
+      "label": "Monochrome",
+      "profileCount": 10,
+      "effectiveWeight": 10.0,
+      "keywords": [
+        "mono",
+        "bandw",
+        "b&w",
+        "black and white",
+        "achromic",
+        "acros",
+        "흑백",
+        "모노"
+      ],
+      "mood": [
+        "monochrome",
+        "graphic",
+        "contrast"
+      ],
+      "targets": [
+        "black and white tonality",
+        "strong luma separation",
+        "controlled contrast"
+      ],
+      "avoid": [
+        "blocked shadows",
+        "featureless highlights",
+        "unwanted color residue"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.12,
+          0.12
+        ],
+        "contrast": [
+          4.575,
+          22.575
+        ],
+        "highlights": [
+          -0.745,
+          19.255
+        ],
+        "shadows": [
+          -15.111,
+          4.889
+        ],
+        "whites": [
+          -6.587,
+          9.413
+        ],
+        "blacks": [
+          -6.385,
+          9.615
+        ],
+        "temperature": [
+          -251.925,
+          268.075
+        ],
+        "tint": [
+          -5.874,
+          8.126
+        ],
+        "vibrance": [
+          -45,
+          -36.675
+        ],
+        "saturation": [
+          -40,
+          -31.644
+        ],
+        "clarity": [
+          -1.787,
+          10.213
+        ],
+        "texture": [
+          -2.379,
+          7.621
+        ],
+        "dehaze": [
+          -2.255,
+          9.745
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 1.38,
+          "saturation": -16.73,
+          "luminance": 6.81
+        },
+        "orange": {
+          "hue": -0.91,
+          "saturation": -17.41,
+          "luminance": 6.76
+        },
+        "yellow": {
+          "hue": -10.79,
+          "saturation": -18.0,
+          "luminance": 2.0
+        },
+        "green": {
+          "hue": 1.92,
+          "saturation": -18.0,
+          "luminance": 7.75
+        },
+        "aqua": {
+          "hue": -4.01,
+          "saturation": -18.0,
+          "luminance": 8.14
+        },
+        "blue": {
+          "hue": 1.16,
+          "saturation": -17.05,
+          "luminance": 7.92
+        },
+        "purple": {
+          "hue": 4.09,
+          "saturation": -17.42,
+          "luminance": 6.99
+        },
+        "magenta": {
+          "hue": 6.23,
+          "saturation": -17.83,
+          "luminance": 8.9
+        }
+      },
+      "topTags": [
+        "muted",
+        "monochrome_like",
+        "high_contrast",
+        "soft_contrast"
+      ],
+      "topSources": [
+        {
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "count": 4
+        },
+        {
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "count": 3
+        },
+        {
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "count": 2
+        },
+        {
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "count": 1
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "leafy-greens-d335ead121f2",
+          "concept": "lumix creator leafy greens by Devon Williams Leafy Greens",
+          "source": "eww.pavc.panasonic.co.jp/nwbgosm/Lumix",
+          "weight": 1.0
+        },
+        {
+          "id": "bandw-hicon-33-e-e-f4573d546974",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E BandW HiCon 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "bandw-locon-33-e-e-045ecf9f4123",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E BandW LoCon 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "bandw-locon-dark-33-e-e-1e7abaf2ab62",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E BandW LoCon Dark 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "bandw-midcon-33-e-e-338ef6b54551",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E BandW MidCon 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "flog2c_to_acros_vlog-e1d69bf7bd50",
+          "concept": "Fujifilm FLog2C to ACROS VLog",
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "weight": 1.0
+        },
+        {
+          "id": "red_achromic_rec2020_n-log_to_rec709_vlog-59b717b82aad",
+          "concept": "Nikon RED Achromic Rec2020 N Log to Rec709 VLog",
+          "source": "raw.githubusercontent.com/shenmintao/V-Log-Alchemy",
+          "weight": 1.0
+        },
+        {
+          "id": "davis-bcd81e80d0cf",
+          "concept": "q ddl Q DDL Pack 1 Davis",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "montes-db3875137109",
+          "concept": "q ddl Q DDL Pack 1 Montes",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        },
+        {
+          "id": "perez-16dd60a48fc2",
+          "concept": "q ddl Q DDL Pack 1 Perez",
+          "source": "www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "panasonic_rec709",
+      "label": "Panasonic Rec709 Utility",
+      "profileCount": 4,
+      "effectiveWeight": 3.0,
+      "keywords": [
+        "panasonic",
+        "varicam",
+        "rec709",
+        "709",
+        "v709",
+        "logc",
+        "n-log",
+        "flog",
+        "cineon",
+        "파나소닉"
+      ],
+      "mood": [
+        "technical",
+        "neutral",
+        "display-ready"
+      ],
+      "targets": [
+        "clean Rec709 transform",
+        "safe contrast",
+        "predictable color"
+      ],
+      "avoid": [
+        "stacking multiple transforms",
+        "crushed log shadows",
+        "overcorrected highlights"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.16,
+          0.08
+        ],
+        "contrast": [
+          1.894,
+          19.894
+        ],
+        "highlights": [
+          -0.951,
+          19.049
+        ],
+        "shadows": [
+          -18.732,
+          1.268
+        ],
+        "whites": [
+          -10.396,
+          5.604
+        ],
+        "blacks": [
+          -8.099,
+          7.901
+        ],
+        "temperature": [
+          -436.658,
+          83.342
+        ],
+        "tint": [
+          -6.432,
+          7.568
+        ],
+        "vibrance": [
+          -19.447,
+          -3.447
+        ],
+        "saturation": [
+          -14.294,
+          -0.294
+        ],
+        "clarity": [
+          -2.619,
+          9.381
+        ],
+        "texture": [
+          -2.896,
+          7.104
+        ],
+        "dehaze": [
+          -2.995,
+          9.005
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.32,
+          "saturation": -6.67,
+          "luminance": 1.83
+        },
+        "orange": {
+          "hue": -4.82,
+          "saturation": -6.67,
+          "luminance": -15.15
+        },
+        "yellow": {
+          "hue": -0.96,
+          "saturation": -14.11,
+          "luminance": -9.34
+        },
+        "green": {
+          "hue": 2.92,
+          "saturation": -6.68,
+          "luminance": -4.7
+        },
+        "aqua": {
+          "hue": 0.28,
+          "saturation": -6.93,
+          "luminance": -4.65
+        },
+        "blue": {
+          "hue": -1.11,
+          "saturation": -7.08,
+          "luminance": 7.17
+        },
+        "purple": {
+          "hue": -2.68,
+          "saturation": -6.9,
+          "luminance": 2.99
+        },
+        "magenta": {
+          "hue": 0.87,
+          "saturation": -6.67,
+          "luminance": 2.17
+        }
+      },
+      "topTags": [
+        "balanced",
+        "muted",
+        "high_contrast"
+      ],
+      "topSources": [
+        {
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "count": 2
+        },
+        {
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "count": 2
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "agressive-709-33-e-e-089509757127",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E Agressive 709 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "bleachybypass-locon-33-e-e-e4c7fc73d703",
+          "concept": "panasonic varicam ee 33 Cube LUTs E E BleachyBypass LoCon 33 E E",
+          "source": "pro-av.panasonic.net/en/cinema_camera_varicam_eva",
+          "weight": 1.0
+        },
+        {
+          "id": "likephotov2_dwg_intermediate_to-rec709_driftwood_lut_33_size-ef08ca983e28",
+          "concept": "nick driftwood likephotov2 LikePhotov2 DWG Intermediate to Rec709 Driftwood LUT 33 size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 0.5
+        },
+        {
+          "id": "likephotov2_dwg_intermediate_to-rec709_driftwood_lut_65_size-18e6a180c1e9",
+          "concept": "nick driftwood likephotov2 LikePhotov2 DWG Intermediate to Rec709 Driftwood LUT 65 size",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 0.5
+        }
+      ]
+    },
+    {
+      "id": "lumix_realtime",
+      "label": "Lumix Real Time",
+      "profileCount": 3,
+      "effectiveWeight": 3.0,
+      "keywords": [
+        "lumix",
+        "s5ii",
+        "s5iix",
+        "rtl",
+        "real time",
+        "v-log",
+        "vlog",
+        "driftwood",
+        "루믹스",
+        "브이로그"
+      ],
+      "mood": [
+        "camera-ready",
+        "balanced",
+        "rec709"
+      ],
+      "targets": [
+        "V-Log to display-ready contrast",
+        "camera-friendly color",
+        "moderate saturation"
+      ],
+      "avoid": [
+        "double-normalized contrast",
+        "too much log correction",
+        "hard clipping"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.077,
+          0.163
+        ],
+        "contrast": [
+          7.941,
+          25.941
+        ],
+        "highlights": [
+          -3.423,
+          16.577
+        ],
+        "shadows": [
+          -18.816,
+          1.184
+        ],
+        "whites": [
+          -9.114,
+          6.886
+        ],
+        "blacks": [
+          -12.144,
+          3.856
+        ],
+        "temperature": [
+          -293.717,
+          226.283
+        ],
+        "tint": [
+          -6.78,
+          7.22
+        ],
+        "vibrance": [
+          -22.15,
+          -6.15
+        ],
+        "saturation": [
+          -15.962,
+          -1.962
+        ],
+        "clarity": [
+          -0.743,
+          11.258
+        ],
+        "texture": [
+          -1.729,
+          8.271
+        ],
+        "dehaze": [
+          -1.327,
+          10.673
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.37,
+          "saturation": -6.04,
+          "luminance": -0.19
+        },
+        "orange": {
+          "hue": -5.12,
+          "saturation": -7.71,
+          "luminance": -13.78
+        },
+        "yellow": {
+          "hue": -0.62,
+          "saturation": -14.02,
+          "luminance": -5.85
+        },
+        "green": {
+          "hue": 0.4,
+          "saturation": -14.6,
+          "luminance": -7.74
+        },
+        "aqua": {
+          "hue": 0.92,
+          "saturation": -16.62,
+          "luminance": -2.83
+        },
+        "blue": {
+          "hue": -3.21,
+          "saturation": -10.62,
+          "luminance": 14.76
+        },
+        "purple": {
+          "hue": -3.83,
+          "saturation": -17.45,
+          "luminance": 15.55
+        },
+        "magenta": {
+          "hue": -3.18,
+          "saturation": -16.06,
+          "luminance": 11.34
+        }
+      },
+      "topTags": [
+        "high_contrast",
+        "muted"
+      ],
+      "topSources": [
+        {
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "count": 3
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "1969_rtl-4105652dcaf2",
+          "concept": "nick driftwood free real time lut 1969 RTL",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "velvetdriftwood_rtl-28b9d38e11ad",
+          "concept": "nick driftwood free real time lut VelvetDriftwood RTL",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        },
+        {
+          "id": "likephotov2_dwg_intermediate_to_dwd_intermediate_driftwood_lut-fa3419f19ff9",
+          "concept": "nick driftwood likephotov2 LikePhotov2 DWG Intermediate to DWD Intermediate Driftwood LUT",
+          "source": "www.nickdriftwood.com/wp-content/uploads",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "id": "clean_natural",
+      "label": "Clean Natural",
+      "profileCount": 2,
+      "effectiveWeight": 2.0,
+      "keywords": [
+        "clean",
+        "natural",
+        "protect",
+        "denoise",
+        "neutral",
+        "standard",
+        "자연",
+        "깔끔"
+      ],
+      "mood": [
+        "clean",
+        "natural",
+        "safe"
+      ],
+      "targets": [
+        "low-risk correction",
+        "natural color",
+        "protected highlight detail"
+      ],
+      "avoid": [
+        "boring flat output",
+        "weak style signal",
+        "clinical color"
+      ],
+      "sliderPrior": {
+        "exposure": [
+          -0.17,
+          0.07
+        ],
+        "contrast": [
+          -6.281,
+          11.719
+        ],
+        "highlights": [
+          -12.883,
+          7.117
+        ],
+        "shadows": [
+          -18.355,
+          1.645
+        ],
+        "whites": [
+          -10.131,
+          5.869
+        ],
+        "blacks": [
+          -11.958,
+          4.042
+        ],
+        "temperature": [
+          -186.475,
+          333.525
+        ],
+        "tint": [
+          -13.787,
+          0.213
+        ],
+        "vibrance": [
+          -10.79,
+          5.21
+        ],
+        "saturation": [
+          -8.767,
+          5.233
+        ],
+        "clarity": [
+          -5.156,
+          6.844
+        ],
+        "texture": [
+          -4.475,
+          5.525
+        ],
+        "dehaze": [
+          -5.25,
+          6.75
+        ]
+      },
+      "hslPrior": {
+        "red": {
+          "hue": 0.0,
+          "saturation": -2.05,
+          "luminance": -10.0
+        },
+        "orange": {
+          "hue": -0.03,
+          "saturation": -1.1,
+          "luminance": -2.19
+        },
+        "yellow": {
+          "hue": 0.0,
+          "saturation": -3.49,
+          "luminance": -1.56
+        },
+        "green": {
+          "hue": 0.0,
+          "saturation": -8.46,
+          "luminance": 0.15
+        },
+        "aqua": {
+          "hue": 0.0,
+          "saturation": -8.24,
+          "luminance": -1.15
+        },
+        "blue": {
+          "hue": 12.0,
+          "saturation": -18.0,
+          "luminance": -8.3
+        },
+        "purple": {
+          "hue": 0.07,
+          "saturation": -1.99,
+          "luminance": -6.43
+        },
+        "magenta": {
+          "hue": 0.0,
+          "saturation": 0.12,
+          "luminance": -7.79
+        }
+      },
+      "topTags": [
+        "balanced"
+      ],
+      "topSources": [
+        {
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "count": 2
+        }
+      ],
+      "representativeProfiles": [
+        {
+          "id": "clean_-26_denoise-2cc6c19e4f49",
+          "concept": "utility and correction clean and denoise",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        },
+        {
+          "id": "protect_highlights-16149cd6fcb2",
+          "concept": "utility and correction protect highlights",
+          "source": "raw.githubusercontent.com/OpenShot/openshot-qt",
+          "weight": 1.0
+        }
+      ]
+    }
+  ]
+}

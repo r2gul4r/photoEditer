@@ -136,6 +136,24 @@ def test_reference_library_lists_example_manifest() -> None:
     assert example["preset"]["adjustments"]["exposure"] == 0
 
 
+def test_lut_reference_endpoints_list_sources_and_profiles() -> None:
+    client = TestClient(app)
+
+    sources = client.get("/api/references/luts/sources")
+    assert sources.status_code == 200
+    assert sources.json()["version"] == 1
+    assert any(source["id"] == "user-local-import" for source in sources.json()["sources"])
+
+    profiles = client.get("/api/references/luts/profiles")
+    assert profiles.status_code == 200
+    assert profiles.json()["root"] == "reference/luts/profiles"
+    assert isinstance(profiles.json()["items"], list)
+
+    style_index = client.get("/api/references/luts/style-index")
+    assert style_index.status_code == 200
+    assert style_index.json()["index"]["kind"] == "lut_style_index"
+
+
 def test_raw_status_reports_dependency_state() -> None:
     client = TestClient(app)
 

@@ -25,3 +25,13 @@ def test_highlight_risk_limits_candidate_exposure() -> None:
     assert candidates[0].adjustments.highlights <= -28
     assert candidates[0].warnings
 
+
+def test_lut_style_index_prior_affects_hsl_adjustments() -> None:
+    analysis = analyze_rgb_array(np.full((48, 48, 3), 0.48, dtype=np.float32))
+    style = interpret_style("cinematic teal orange")
+
+    candidates = generate_recommendations(analysis, style, strength=0.8)
+
+    assert style.lut_style_group == "teal_orange"
+    assert style.lut_profile_count > 0
+    assert candidates[1].adjustments.hsl

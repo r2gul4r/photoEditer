@@ -1,11 +1,13 @@
 import io
+from pathlib import Path
+from uuid import uuid4
 
 from PIL import Image
 
 from app.services.metadata import read_metadata
 
 
-def test_read_metadata_includes_summary_and_full_fields(tmp_path) -> None:
+def test_read_metadata_includes_summary_and_full_fields() -> None:
     image = Image.new("RGB", (16, 12), (120, 130, 140))
     exif = Image.Exif()
     exif[271] = "TestMake"
@@ -14,7 +16,9 @@ def test_read_metadata_includes_summary_and_full_fields(tmp_path) -> None:
 
     buffer = io.BytesIO()
     image.save(buffer, format="JPEG", exif=exif)
-    path = tmp_path / "metadata.jpg"
+    root = Path(__file__).resolve().parents[1] / ".tonepilot-data" / "test-metadata" / uuid4().hex
+    root.mkdir(parents=True, exist_ok=True)
+    path = root / "metadata.jpg"
     path.write_bytes(buffer.getvalue())
 
     metadata = read_metadata(path)

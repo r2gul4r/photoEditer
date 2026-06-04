@@ -83,6 +83,12 @@ def _build_adjustments(style: StyleInterpretation, variant: str, strength: float
     hsl = {}
     for color, adjustment in HSL_BY_STYLE.get(style.style_id, {}).items():
         hsl[color] = {key: round(value * hsl_multiplier, 2) for key, value in adjustment.items()}
+    for color, adjustment in style.lut_hsl_prior.items():
+        current = hsl.get(color, {})
+        hsl[color] = {
+            key: round(current.get(key, 0) * 0.45 + getattr(adjustment, key, 0) * hsl_multiplier * 0.55, 2)
+            for key in ("hue", "saturation", "luminance")
+        }
 
     return CorrectionAdjustments(**values, hsl=hsl)
 

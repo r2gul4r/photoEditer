@@ -127,6 +127,15 @@ export type StyleInterpretation = {
   targets: string[];
   avoid: string[];
   slider_prior: Record<string, [number, number]>;
+  lut_style_group?: string | null;
+  lut_profile_count?: number;
+  lut_match_score?: number;
+  lut_hsl_prior?: Partial<
+    Record<
+      "red" | "orange" | "yellow" | "green" | "aqua" | "blue" | "purple" | "magenta",
+      import("@tonepilot/shared").HslAdjustment
+    >
+  >;
 };
 
 export type RecommendResponse = {

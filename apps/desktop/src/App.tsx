@@ -61,6 +61,10 @@ function App() {
   const rawStatusLabel = !state.rawStatus ? c.codexChecking : state.rawStatus.available ? c.rawReady : c.rawUnavailable;
   const loadedFilename = state.analysis?.filename ?? state.imageFile?.name ?? c.noPhoto;
   const referenceItems = state.references?.items ?? [];
+  const styleInterpretation = state.recommendation?.style_interpretation;
+  const candidateStyleLabel = styleInterpretation
+    ? [styleInterpretation.style_id, styleInterpretation.lut_style_group].filter(Boolean).join(" | ")
+    : "";
 
   const moduleItems = [
     { label: c.library, icon: <Images size={19} aria-hidden="true" /> },
@@ -429,9 +433,7 @@ function App() {
           <section className="inspector-block">
             <div className="inspector-title">
               <span>{c.candidates}</span>
-              {state.recommendation ? (
-                <small>{state.recommendation.style_interpretation.style_id}</small>
-              ) : null}
+              {state.recommendation ? <small>{candidateStyleLabel}</small> : null}
             </div>
             <div className="candidate-list">
               {state.recommendation?.candidates.length ? (

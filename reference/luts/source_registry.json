@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "user-local-import",
+      "name": "User-provided local LUT import",
+      "status": "allow",
+      "sourceType": "user_import",
+      "urlPrefixes": [],
+      "license": "user-provided",
+      "directDownloadAllowed": false,
+      "notes": "Manual imports are analyzed from a temporary copy and the temporary original is deleted after extraction."
+    },
+    {
+      "id": "abpy-fujifilm-camera-profiles",
+      "name": "abpy/FujifilmCameraProfiles",
+      "status": "allow",
+      "sourceType": "allowed_public_lut",
+      "urlPrefixes": [
+        "https://raw.githubusercontent.com/abpy/FujifilmCameraProfiles/master/"
+      ],
+      "license": "CC-BY-NC-SA-4.0",
+      "directDownloadAllowed": true,
+      "notes": "Community Fujifilm film simulation LUTs. sRGB variants are ingested to avoid DisplayP3 duplicates."
+    },
+    {
+      "id": "shenmintao-v-log-alchemy",
+      "name": "shenmintao/V-Log-Alchemy",
+      "status": "allow",
+      "sourceType": "allowed_public_lut",
+      "urlPrefixes": [
+        "https://raw.githubusercontent.com/shenmintao/V-Log-Alchemy/main/"
+      ],
+      "license": "Apache-2.0",
+      "directDownloadAllowed": true,
+      "notes": "Pre-generated 33-point .cube LUTs for Panasonic V-Log/V-Gamut input."
+    },
+    {
+      "id": "openshot-rec709-luts",
+      "name": "OpenShot built-in Rec.709 LUTs",
+      "status": "allow",
+      "sourceType": "allowed_public_lut",
+      "urlPrefixes": [
+        "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/"
+      ],
+      "license": "GPL-3.0-or-later",
+      "directDownloadAllowed": true,
+      "notes": "OpenShot built-in popular Rec.709 LUTs, grouped by cinematic, moody, vintage, teal-orange, utility, and vibrant categories."
+    },
+    {
+      "id": "q-ddl-photoshoplus-mirror",
+      "name": "Q-DDL 856 free LUTs via Photoshoplus mirror",
+      "status": "allow",
+      "sourceType": "allowed_public_lut",
+      "urlPrefixes": [
+        "https://www.photoshoplus.fr/download/q-ddl-color-luts-"
+      ],
+      "license": "CC-BY-4.0",
+      "directDownloadAllowed": true,
+      "notes": "Q-DDL free LUT packs documented as original .cube files under Creative Commons Attribution 4.0; QuickDDL is offline, Photoshoplus mirrors the original zip packs."
+    },
+    {
+      "id": "panasonic-lumix-creators-lut",
+      "name": "Panasonic LUMIX Creator's LUT",
+      "status": "allow",
+      "sourceType": "allowed_public_lut",
+      "urlPrefixes": [
+        "https://eww.pavc.panasonic.co.jp/nwbgosm/Lumix/"
+      ],
+      "license": "Panasonic public download",
+      "directDownloadAllowed": true,
+      "notes": "Official Panasonic LUMIX Creator's LUT zip downloads for V-Log / V-Log to Rec709 workflows."
+    },
+    {
+      "id": "panasonic-varicam-lut-library",
+      "name": "Panasonic VariCam LUT Library",
+      "status": "allow",
+      "sourceType": "allowed_public_lut",
+      "urlPrefixes": [
+        "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/support/lut/data/"
+      ],
+      "license": "Panasonic public download",
+      "directDownloadAllowed": true,
+      "notes": "Official Panasonic VariCam 33-point E-E .cube LUT library for post color grading."
+    },
+    {
+      "id": "nick-driftwood-free-lumix-luts",
+      "name": "Nick Driftwood free LUMIX / V-Log LUTs",
+      "status": "allow",
+      "sourceType": "allowed_public_lut",
+      "urlPrefixes": [
+        "https://www.nickdriftwood.com/wp-content/uploads/",
+        "https://nickdriftwood.com/wp-content/uploads/"
+      ],
+      "license": "free public creator download",
+      "directDownloadAllowed": true,
+      "notes": "Free creator LUT packs for LUMIX V-Log / Real Time LUT workflows, published by Nick Driftwood."
+    }
+  ]
+}

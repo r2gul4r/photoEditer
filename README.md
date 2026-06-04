@@ -1,5 +1,5 @@
 <p align="right">
-  <a href="README.ko.md">한국어</a>
+  <a href="README.ko.md">Korean</a>
 </p>
 
 # photoEditer
@@ -11,7 +11,7 @@ The intended workflow is Lightroom-like: start from a RAW file whenever possible
 Core flow:
 
 ```text
-RAW photo -> image analysis -> style target -> histogram-aware candidates -> preview -> JPEG/PNG export
+RAW/JPEG/PNG photo -> image analysis -> style target -> histogram-aware candidates -> preview -> JPEG/PNG export
 ```
 
 ## What It Does
@@ -22,6 +22,7 @@ RAW photo -> image analysis -> style target -> histogram-aware candidates -> pre
 - Calculates luma, RGB, and saturation histograms
 - Detects risks such as highlight clipping, crushed shadows, low contrast, over-saturation, and color cast
 - Interprets Korean or English style prompts
+- Uses clustered style priors derived from market/public LUT behavior analysis, without storing or redistributing LUT originals
 - Generates three correction candidates: Natural, Style, and Bold
 - Renders preview images locally
 - Exports rendered correction results as JPEG or PNG
@@ -31,6 +32,7 @@ RAW photo -> image analysis -> style target -> histogram-aware candidates -> pre
 
 - It is not a cloud AI photo editor
 - It does not generate anime or synthetic images
+- It does not ship third-party LUT originals or act as a LUT redistribution library
 - It is not a full Lightroom replacement yet, but it is designed around a similar RAW-to-output workflow
 - It does not require accounts, payments, or cloud APIs
 
@@ -178,6 +180,8 @@ The second command starts a real Codex recommendation turn and can consume Codex
 - `POST /api/recommend`: generate correction candidates from a style prompt
 - `POST /api/preview`: render a preview from selected adjustments
 - `GET /api/previews/{filename}`: serve generated previews
+- `GET /api/references`: inspect local reference manifests
+- `GET /api/references/luts/style-index`: inspect clustered LUT-derived style priors
 - `POST /api/export/preset-json`: export selected correction values as JSON
 - `POST /api/export/rendered-image`: export the corrected result as JPEG or PNG
 
@@ -187,9 +191,15 @@ See [docs/API.md](docs/API.md) for details.
 
 For RAW files, the backend uses optional `rawpy` to read RAW sensor data and produce a renderable RGB working image. It keeps RAW-specific stats such as black level, white level, mean, p99, and histogram data, then runs the same RGB/luma/saturation analysis used for JPEG, PNG, and TIFF imports.
 
+JPEG, PNG, and TIFF files are also supported. They have less recovery latitude than RAW because tone and color are already baked into the image, but the app can still analyze them, recommend style-aware corrections, render previews, and export adjusted results.
+
 ## How Recommendations Work
 
-The MVP uses rule-based style interpretation. For example, a prompt such as `시원한 일본 여름 느낌` maps to `cool_japanese_summer`. The recommendation engine combines that style target with histogram analysis and risk flags to produce Natural, Style, and Bold candidates.
+The MVP uses rule-based style interpretation plus a LUT-derived style index. For example, a prompt such as `cool Japanese summer` maps to `cool_japanese_summer`, while prompts such as `warm wedding`, `Lumix real time LUT`, `cinematic teal orange`, or `black and white monochrome` can select matching LUT-style groups.
+
+The LUT index is not a LUT pack. It is a low-dimensional style summary built from observed correction behavior across common public/market LUT concepts. Original `.cube` files are treated as temporary analysis inputs and are deleted after profile extraction. The recommendation engine uses only clustered priors such as tone range, color balance, HSL tendencies, prompt keywords, and risk notes.
+
+Current LUT-style groups include wedding, beauty/skintone, Lumix real-time, Panasonic Rec709 utility, teal-orange, cool night, warm sunset, film/vintage, monochrome, cinematic, pastel, vibrant, and clean natural.
 
 ## Current Limitations
 
