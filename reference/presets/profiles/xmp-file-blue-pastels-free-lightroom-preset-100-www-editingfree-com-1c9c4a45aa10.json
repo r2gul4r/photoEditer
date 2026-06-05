@@ -1,0 +1,243 @@
+{
+  "id": "xmp-file-blue-pastels-free-lightroom-preset-100-www-editingfree-com-1c9c4a45aa10",
+  "version": 1,
+  "featureType": "lightroom_preset_style_profile",
+  "concept": "editingfree-youtube Blue Pastels Free Lightroom Preset 100% www.Editingfree.com",
+  "title": "XMP File Blue Pastels Free Lightroom Preset 100_ www.Editingfree.com",
+  "format": "xmp",
+  "metadata": {
+    "sourceUrl": "https://editingfree.com/blue-pastels-free-lightroom-preset-100-www-editingfree-com/",
+    "downloadUrl": "https://docs.google.com/uc?export=download&id=1YTJImXJREnw5qeQBGPCobA2mN1Oaux01",
+    "license": "free public download; originals not redistributed",
+    "status": "allow",
+    "sourceType": "allowed_public_preset",
+    "downloadedAt": "2026-06-04T06:01:05.900707+00:00",
+    "importedAt": null,
+    "sha256": "1c9c4a45aa102d89ef2f1cac4a32ddfe51d071cb7d75d4734bbd2c43a836a60b",
+    "originalFilename": "XMP File Blue Pastels Free Lightroom Preset 100_ www.Editingfree.com.xmp",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "cool",
+    "pastel",
+    "soft_contrast",
+    "vibrant"
+  ],
+  "features": {
+    "sliderAdjustments": {
+      "exposure": 0.11,
+      "contrast": -27.0,
+      "highlights": -76.0,
+      "shadows": 20.0,
+      "whites": -37.0,
+      "blacks": 50.0,
+      "vibrance": 27.0,
+      "saturation": 10.0,
+      "clarity": -13.0,
+      "texture": -10.0,
+      "dehaze": 9.0
+    },
+    "hslAdjustments": {
+      "red": {
+        "hue": 16.0,
+        "saturation": -6.0,
+        "luminance": 17.0
+      },
+      "orange": {
+        "hue": -11.0,
+        "saturation": 9.0,
+        "luminance": 25.0
+      },
+      "yellow": {
+        "hue": -33.0,
+        "saturation": -26.0,
+        "luminance": 32.0
+      },
+      "green": {
+        "hue": 82.0,
+        "saturation": -50.0,
+        "luminance": 36.0
+      },
+      "aqua": {
+        "hue": 46.0,
+        "saturation": 15.0,
+        "luminance": 18.0
+      },
+      "blue": {
+        "hue": -15.0,
+        "saturation": -16.0,
+        "luminance": 37.0
+      },
+      "purple": {
+        "hue": -27.0,
+        "saturation": 18.0,
+        "luminance": 37.0
+      },
+      "magenta": {
+        "hue": 56.0,
+        "saturation": 28.0,
+        "luminance": 34.0
+      }
+    },
+    "colorGrading": {
+      "shadows": {
+        "hue": 0.0,
+        "saturation": 0.0
+      },
+      "highlights": {
+        "hue": 0.0,
+        "saturation": 0.0
+      }
+    },
+    "calibration": {
+      "RedHue": 0.0,
+      "RedSaturation": 0.0,
+      "GreenHue": 0.0,
+      "GreenSaturation": 0.0,
+      "BlueHue": 0.0,
+      "BlueSaturation": 0.0,
+      "ShadowTint": 0.0,
+      "CameraProfile": "Embedded",
+      "ProcessVersion": "11.0"
+    },
+    "toneCurve": {
+      "rgb": [
+        "0, 0",
+        "32, 49",
+        "74, 96",
+        "120, 143",
+        "170, 178",
+        "215, 216"
+      ],
+      "red": [
+        "0, 0",
+        "255, 255"
+      ],
+      "green": [
+        "0, 0",
+        "255, 255"
+      ],
+      "blue": [
+        "0, 0",
+        "211, 223"
+      ]
+    },
+    "includedKeys": [
+      "AutoLateralCA",
+      "Blacks2012",
+      "BlueHue",
+      "BlueSaturation",
+      "CameraModelRestriction",
+      "CameraProfile",
+      "Clarity2012",
+      "Cluster",
+      "ColorNoiseReduction",
+      "ContactInfo",
+      "Contrast2012",
+      "ConvertToGrayscale",
+      "Copyright",
+      "CropConstrainToWarp",
+      "DefringeGreenAmount",
+      "DefringeGreenHueHi",
+      "DefringeGreenHueLo",
+      "DefringePurpleAmount",
+      "DefringePurpleHueHi",
+      "DefringePurpleHueLo",
+      "Dehaze",
+      "Exposure2012",
+      "GrainAmount",
+      "GrainFrequency",
+      "GrainSize",
+      "GreenHue",
+      "GreenSaturation",
+      "Group",
+      "HasSettings",
+      "Highlights2012",
+      "HueAdjustmentAqua",
+      "HueAdjustmentBlue",
+      "HueAdjustmentGreen",
+      "HueAdjustmentMagenta",
+      "HueAdjustmentOrange",
+      "HueAdjustmentPurple",
+      "HueAdjustmentRed",
+      "HueAdjustmentYellow",
+      "IncrementalTemperature",
+      "IncrementalTint",
+      "LensManualDistortionAmount",
+      "LensProfileEnable",
+      "LensProfileSetup",
+      "LuminanceAdjustmentAqua",
+      "LuminanceAdjustmentBlue",
+      "LuminanceAdjustmentGreen",
+      "LuminanceAdjustmentMagenta",
+      "LuminanceAdjustmentOrange",
+      "LuminanceAdjustmentPurple",
+      "LuminanceAdjustmentRed",
+      "LuminanceAdjustmentYellow",
+      "LuminanceSmoothing",
+      "Name",
+      "OverrideLookVignette",
+      "ParametricDarks",
+      "ParametricHighlightSplit",
+      "ParametricHighlights",
+      "ParametricLights",
+      "ParametricMidtoneSplit",
+      "ParametricShadowSplit",
+      "ParametricShadows",
+      "PerspectiveAspect",
+      "PerspectiveHorizontal",
+      "PerspectiveRotate",
+      "PerspectiveScale",
+      "PerspectiveUpright",
+      "PerspectiveVertical",
+      "PerspectiveX",
+      "PerspectiveY",
+      "PostCropVignetteAmount",
+      "PresetType",
+      "ProcessVersion",
+      "RedHue",
+      "RedSaturation",
+      "Saturation",
+      "SaturationAdjustmentAqua",
+      "SaturationAdjustmentBlue",
+      "SaturationAdjustmentGreen",
+      "SaturationAdjustmentMagenta",
+      "SaturationAdjustmentOrange",
+      "SaturationAdjustmentPurple",
+      "SaturationAdjustmentRed",
+      "SaturationAdjustmentYellow",
+      "ShadowTint",
+      "Shadows2012",
+      "SharpenDetail",
+      "SharpenEdgeMasking",
+      "SharpenRadius",
+      "Sharpness",
+      "SplitToningBalance",
+      "SplitToningHighlightHue",
+      "SplitToningHighlightSaturation",
+      "SplitToningShadowHue",
+      "SplitToningShadowSaturation",
+      "SupportsAmount",
+      "SupportsColor",
+      "SupportsHighDynamicRange",
+      "SupportsMonochrome",
+      "SupportsNormalDynamicRange",
+      "SupportsOutputReferred",
+      "SupportsSceneReferred",
+      "Texture",
+      "ToneCurve",
+      "ToneCurveName",
+      "ToneCurveName2012",
+      "ToneCurvePV2012",
+      "ToneCurvePV2012Blue",
+      "ToneCurvePV2012Green",
+      "ToneCurvePV2012Red",
+      "UUID",
+      "Version",
+      "Vibrance",
+      "VignetteAmount",
+      "WhiteBalance",
+      "Whites2012"
+    ]
+  }
+}

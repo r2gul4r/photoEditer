@@ -17,6 +17,8 @@ __pycache__/
 *.pyc
 *.egg-info/
 test-output/
+.playwright-cli/
+output/playwright/
 
 apps/backend/.tonepilot-data/
 apps/backend/.coverage
@@ -46,6 +48,7 @@ reference/luts/profiles/*
 !reference/presets/tmp/.gitkeep
 !reference/presets/profiles/
 !reference/presets/profiles/.gitkeep
+!reference/presets/profiles/*.json
 !reference/manifests/.gitkeep
 !reference/manifests/example.json
 !reference/luts/
@@ -55,3 +58,4 @@ reference/luts/profiles/*
 !reference/luts/tmp/.gitkeep
 !reference/luts/profiles/
 !reference/luts/profiles/.gitkeep
+!reference/luts/profiles/*.json

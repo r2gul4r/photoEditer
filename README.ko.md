@@ -64,7 +64,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "$p=Join-Path $env:TEMP '
 photo dev
 ```
 
-`photo dev`는 로컬 주소를 출력하고 브라우저를 자동으로 연다. 자동으로 열리지 않으면 `http://127.0.0.1:5173/`를 직접 열면 된다. Codex는 선택사항이며, 없으면 로컬 Rules 모드로 실행된다.
+`photo dev`는 로컬 주소를 출력하고 브라우저를 자동으로 연다. 자동으로 열리지 않으면 출력된 로컬 주소를 직접 열면 된다. 기본은 `http://127.0.0.1:5173/`이고, 이미 사용 중이면 `5173-5199` 범위에서 다른 포트를 골라 출력한다. Codex는 선택사항이며, 없으면 로컬 Rules 모드로 실행된다.
 
 이미 저장소를 직접 내려받은 개발자는 프로젝트 폴더에서 `npm.cmd link`, `photo install`, `photo dev` 순서로 실행해도 된다.
 

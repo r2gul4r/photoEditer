@@ -1,0 +1,238 @@
+{
+  "id": "little-details-e941e566be7c",
+  "version": 1,
+  "featureType": "lightroom_preset_style_profile",
+  "concept": "thepresetsroom wedding Little Details (Free Preset)",
+  "title": "Little Details",
+  "format": "xmp",
+  "metadata": {
+    "sourceUrl": "https://thepresetsroom.com/free-lightroom-presets/wedding/little-details/",
+    "downloadUrl": "https://thepresetsroom.b-cdn.net/free-download/little-details.zip",
+    "license": "free public download; originals not redistributed",
+    "status": "allow",
+    "sourceType": "allowed_public_preset",
+    "downloadedAt": "2026-06-04T05:40:19.043584+00:00",
+    "importedAt": null,
+    "sha256": "e941e566be7c9b5a110edea0208250ea0d1cc9880f1e4adf303939a2402f8046",
+    "originalFilename": "Little Details.xmp",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "wedding",
+    "soft_contrast",
+    "muted"
+  ],
+  "features": {
+    "sliderAdjustments": {
+      "exposure": -0.15,
+      "contrast": -67.0,
+      "highlights": 14.0,
+      "shadows": 100.0,
+      "whites": 24.0,
+      "blacks": 78.0,
+      "vibrance": 15.0,
+      "saturation": -22.0,
+      "clarity": 21.0,
+      "texture": 0.0,
+      "dehaze": 25.0
+    },
+    "hslAdjustments": {
+      "red": {
+        "hue": -11.0,
+        "saturation": -56.0,
+        "luminance": -9.0
+      },
+      "orange": {
+        "hue": -11.0,
+        "saturation": -30.0,
+        "luminance": -41.0
+      },
+      "yellow": {
+        "hue": -41.0,
+        "saturation": -52.0,
+        "luminance": 14.0
+      },
+      "green": {
+        "hue": 14.0,
+        "saturation": -59.0,
+        "luminance": -100.0
+      },
+      "aqua": {
+        "hue": 54.0,
+        "saturation": -64.0,
+        "luminance": -11.0
+      },
+      "blue": {
+        "hue": 7.0,
+        "saturation": -58.0,
+        "luminance": -14.0
+      },
+      "purple": {
+        "hue": 0.0,
+        "saturation": -40.0,
+        "luminance": 15.0
+      },
+      "magenta": {
+        "hue": 20.0,
+        "saturation": -35.0,
+        "luminance": 5.0
+      }
+    },
+    "colorGrading": {
+      "shadows": {
+        "hue": 57.0,
+        "saturation": 22.0
+      },
+      "highlights": {
+        "hue": 0.0,
+        "saturation": 0.0
+      }
+    },
+    "calibration": {
+      "RedHue": 48.0,
+      "RedSaturation": 11.0,
+      "GreenHue": 100.0,
+      "GreenSaturation": -43.0,
+      "BlueHue": -10.0,
+      "BlueSaturation": -10.0,
+      "ShadowTint": -2.0,
+      "CameraProfile": "Default Color",
+      "ProcessVersion": "11.0"
+    },
+    "toneCurve": {
+      "rgb": [
+        "0, 0",
+        "51, 42",
+        "128, 108",
+        "255, 207"
+      ],
+      "red": [
+        "0, 0",
+        "20, 3",
+        "60, 20",
+        "119, 121",
+        "177, 202",
+        "255, 255"
+      ],
+      "green": [
+        "0, 0",
+        "67, 36",
+        "120, 125",
+        "179, 205",
+        "255, 255"
+      ],
+      "blue": [
+        "0, 0",
+        "43, 22",
+        "121, 122",
+        "175, 200",
+        "255, 255"
+      ]
+    },
+    "includedKeys": [
+      "AutoLateralCA",
+      "Blacks2012",
+      "BlueHue",
+      "BlueSaturation",
+      "CameraModelRestriction",
+      "CameraProfile",
+      "Clarity2012",
+      "Cluster",
+      "ColorNoiseReduction",
+      "ContactInfo",
+      "Contrast2012",
+      "ConvertToGrayscale",
+      "Copyright",
+      "CropConstrainToWarp",
+      "DefringeGreenAmount",
+      "DefringeGreenHueHi",
+      "DefringeGreenHueLo",
+      "DefringePurpleAmount",
+      "DefringePurpleHueHi",
+      "DefringePurpleHueLo",
+      "Dehaze",
+      "Exposure2012",
+      "GrainAmount",
+      "GreenHue",
+      "GreenSaturation",
+      "Group",
+      "HasSettings",
+      "Highlights2012",
+      "HueAdjustmentAqua",
+      "HueAdjustmentBlue",
+      "HueAdjustmentGreen",
+      "HueAdjustmentMagenta",
+      "HueAdjustmentOrange",
+      "HueAdjustmentPurple",
+      "HueAdjustmentRed",
+      "HueAdjustmentYellow",
+      "IncrementalTemperature",
+      "IncrementalTint",
+      "LensManualDistortionAmount",
+      "LuminanceAdjustmentAqua",
+      "LuminanceAdjustmentBlue",
+      "LuminanceAdjustmentGreen",
+      "LuminanceAdjustmentMagenta",
+      "LuminanceAdjustmentOrange",
+      "LuminanceAdjustmentPurple",
+      "LuminanceAdjustmentRed",
+      "LuminanceAdjustmentYellow",
+      "LuminanceNoiseReductionContrast",
+      "LuminanceNoiseReductionDetail",
+      "LuminanceSmoothing",
+      "Name",
+      "OverrideLookVignette",
+      "ParametricDarks",
+      "ParametricHighlightSplit",
+      "ParametricHighlights",
+      "ParametricLights",
+      "ParametricMidtoneSplit",
+      "ParametricShadowSplit",
+      "ParametricShadows",
+      "PostCropVignetteAmount",
+      "PresetType",
+      "ProcessVersion",
+      "RedHue",
+      "RedSaturation",
+      "Saturation",
+      "SaturationAdjustmentAqua",
+      "SaturationAdjustmentBlue",
+      "SaturationAdjustmentGreen",
+      "SaturationAdjustmentMagenta",
+      "SaturationAdjustmentOrange",
+      "SaturationAdjustmentPurple",
+      "SaturationAdjustmentRed",
+      "SaturationAdjustmentYellow",
+      "ShadowTint",
+      "Shadows2012",
+      "SharpenDetail",
+      "SharpenEdgeMasking",
+      "SharpenRadius",
+      "Sharpness",
+      "SplitToningBalance",
+      "SplitToningHighlightHue",
+      "SplitToningHighlightSaturation",
+      "SplitToningShadowHue",
+      "SplitToningShadowSaturation",
+      "SupportsAmount",
+      "SupportsColor",
+      "SupportsHighDynamicRange",
+      "SupportsMonochrome",
+      "SupportsNormalDynamicRange",
+      "SupportsOutputReferred",
+      "SupportsSceneReferred",
+      "Texture",
+      "ToneCurveName2012",
+      "ToneCurvePV2012",
+      "ToneCurvePV2012Blue",
+      "ToneCurvePV2012Green",
+      "ToneCurvePV2012Red",
+      "UUID",
+      "Version",
+      "Vibrance",
+      "VignetteAmount",
+      "WhiteBalance",
+      "Whites2012"
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "id": "retro_red_shadows-64f282b0179b",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "dark and moody retro red shadows",
+  "title": "Untitled-1",
+  "cubeSize": 32,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/src/colors/dark_%26_moody/retro_red_shadows.cube",
+    "license": "GPL-3.0-or-later",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:21:55Z",
+    "importedAt": null,
+    "sha256": "64f282b0179bf86edd1b2768edbc1dc3c238a203015b5ddebc044594673839dc",
+    "originalFilename": "retro_red_shadows.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "cool"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0368
+        },
+        {
+          "input": 0.25,
+          "output": 0.1019
+        },
+        {
+          "input": 0.5,
+          "output": 0.2761
+        },
+        {
+          "input": 0.75,
+          "output": 0.5833
+        },
+        {
+          "input": 0.9,
+          "output": 0.8494
+        },
+        {
+          "input": 1.0,
+          "output": 1.0
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 1.0,
+      "shadow_lift": -0.1057,
+      "midtone_lift": -0.2239,
+      "highlight_lift": -0.1086,
+      "contrast_delta": 0.0126
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.0402,
+        "green": -0.045,
+        "blue": 0.0499
+      },
+      "temperature_shift": -0.0901,
+      "tint_shift": 0.0498
+    },
+    "saturation": {
+      "mean_delta": -0.0481,
+      "p10_delta": -0.4596,
+      "p90_delta": 0.2626,
+      "output_mean": 0.6361
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": -1.58,
+        "saturation_delta": -0.0315,
+        "luminance_delta": 0.0265
+      },
+      "orange": {
+        "hue_shift_degrees": -9.75,
+        "saturation_delta": -0.0267,
+        "luminance_delta": -0.0947
+      },
+      "yellow": {
+        "hue_shift_degrees": -0.11,
+        "saturation_delta": -0.0005,
+        "luminance_delta": -0.033
+      },
+      "green": {
+        "hue_shift_degrees": -120.0,
+        "saturation_delta": -0.95,
+        "luminance_delta": 0.2706
+      },
+      "aqua": {
+        "hue_shift_degrees": 0.3,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.1523
+      },
+      "blue": {
+        "hue_shift_degrees": -0.43,
+        "saturation_delta": -0.0673,
+        "luminance_delta": 0.067
+      },
+      "purple": {
+        "hue_shift_degrees": -14.41,
+        "saturation_delta": -0.1098,
+        "luminance_delta": 0.0491
+      },
+      "magenta": {
+        "hue_shift_degrees": -0.18,
+        "saturation_delta": -0.4717,
+        "luminance_delta": 0.3371
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.1262,
+        "green": -0.1101,
+        "blue": -0.0736
+      },
+      "highlight_rgb_bias": {
+        "red": -0.1628,
+        "green": -0.0984,
+        "blue": -0.0713
+      },
+      "shadow_cool_bias": 0.0526,
+      "highlight_warm_bias": -0.0915
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

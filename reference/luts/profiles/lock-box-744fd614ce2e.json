@@ -1,0 +1,139 @@
+{
+  "id": "lock-box-744fd614ce2e",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "lumix creator lock box forest by Devon Williams Lock Box",
+  "title": "LD - Explorer Teal 3",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://eww.pavc.panasonic.co.jp/nwbgosm/Lumix/Lock_Box_Forest_Devon_Williams.zip#Lock Box.cube",
+    "license": "Panasonic public download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:37:19Z",
+    "importedAt": null,
+    "sha256": "744fd614ce2e58beb0c4b37e57c083c55f6de43c419944dccf780a7573f5af0e",
+    "originalFilename": "Lock Box.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "cool",
+    "muted"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0239
+        },
+        {
+          "input": 0.1,
+          "output": 0.086
+        },
+        {
+          "input": 0.25,
+          "output": 0.2568
+        },
+        {
+          "input": 0.5,
+          "output": 0.541
+        },
+        {
+          "input": 0.75,
+          "output": 0.7932
+        },
+        {
+          "input": 0.9,
+          "output": 0.9271
+        },
+        {
+          "input": 1.0,
+          "output": 0.9941
+        }
+      ],
+      "black_point": 0.0239,
+      "white_point": 0.9941,
+      "shadow_lift": -0.0036,
+      "midtone_lift": 0.041,
+      "highlight_lift": 0.0352,
+      "contrast_delta": 0.0411
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.015,
+        "green": 0.0573,
+        "blue": 0.053
+      },
+      "temperature_shift": -0.038,
+      "tint_shift": -0.0232
+    },
+    "saturation": {
+      "mean_delta": -0.0736,
+      "p10_delta": -0.302,
+      "p90_delta": 0.0897,
+      "output_mean": 0.61
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 7.54,
+        "saturation_delta": 0.013,
+        "luminance_delta": 0.0542
+      },
+      "orange": {
+        "hue_shift_degrees": -3.98,
+        "saturation_delta": -0.1115,
+        "luminance_delta": -0.0082
+      },
+      "yellow": {
+        "hue_shift_degrees": -6.02,
+        "saturation_delta": -0.4209,
+        "luminance_delta": -0.0218
+      },
+      "green": {
+        "hue_shift_degrees": 34.7,
+        "saturation_delta": -0.0389,
+        "luminance_delta": -0.0615
+      },
+      "aqua": {
+        "hue_shift_degrees": -2.71,
+        "saturation_delta": -0.0188,
+        "luminance_delta": -0.0031
+      },
+      "blue": {
+        "hue_shift_degrees": -34.8,
+        "saturation_delta": -0.0651,
+        "luminance_delta": 0.2894
+      },
+      "purple": {
+        "hue_shift_degrees": -14.46,
+        "saturation_delta": -0.4297,
+        "luminance_delta": 0.2811
+      },
+      "magenta": {
+        "hue_shift_degrees": 9.89,
+        "saturation_delta": -0.3728,
+        "luminance_delta": 0.2597
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0219,
+        "green": -0.0037,
+        "blue": -0.0091
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0742,
+        "green": 0.0311,
+        "blue": -0.0144
+      },
+      "shadow_cool_bias": 0.0128,
+      "highlight_warm_bias": 0.0886
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

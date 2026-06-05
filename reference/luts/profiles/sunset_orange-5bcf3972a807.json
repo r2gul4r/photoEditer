@@ -1,0 +1,138 @@
+{
+  "id": "sunset_orange-5bcf3972a807",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "teal and orange vibes sunset orange",
+  "title": "Alexanderbarrels_FilmicSoft.png",
+  "cubeSize": 32,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/src/colors/teal_%26_orange_vibes/sunset_orange.cube",
+    "license": "GPL-3.0-or-later",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:22:13Z",
+    "importedAt": null,
+    "sha256": "5bcf3972a807bb880f311ac70d029ac527b84b22fb45d73c65c11436cf593206",
+    "originalFilename": "sunset_orange.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "cool"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0008
+        },
+        {
+          "input": 0.1,
+          "output": 0.101
+        },
+        {
+          "input": 0.25,
+          "output": 0.2482
+        },
+        {
+          "input": 0.5,
+          "output": 0.4968
+        },
+        {
+          "input": 0.75,
+          "output": 0.748
+        },
+        {
+          "input": 0.9,
+          "output": 0.8971
+        },
+        {
+          "input": 1.0,
+          "output": 1.0
+        }
+      ],
+      "black_point": 0.0008,
+      "white_point": 1.0,
+      "shadow_lift": -0.0004,
+      "midtone_lift": -0.0032,
+      "highlight_lift": -0.0024,
+      "contrast_delta": -0.004
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.0071,
+        "green": -0.035,
+        "blue": 0.0698
+      },
+      "temperature_shift": -0.0769,
+      "tint_shift": 0.0664
+    },
+    "saturation": {
+      "mean_delta": -0.0308,
+      "p10_delta": -0.572,
+      "p90_delta": 0.2934,
+      "output_mean": 0.6534
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 0.09,
+        "saturation_delta": 0.0489,
+        "luminance_delta": -0.0379
+      },
+      "orange": {
+        "hue_shift_degrees": -0.97,
+        "saturation_delta": 0.0486,
+        "luminance_delta": -0.0366
+      },
+      "yellow": {
+        "hue_shift_degrees": -7.19,
+        "saturation_delta": -0.6564,
+        "luminance_delta": 0.0221
+      },
+      "green": {
+        "hue_shift_degrees": 19.45,
+        "saturation_delta": -0.8003,
+        "luminance_delta": 0.1146
+      },
+      "aqua": {
+        "hue_shift_degrees": -0.47,
+        "saturation_delta": 0.0461,
+        "luminance_delta": -0.0104
+      },
+      "blue": {
+        "hue_shift_degrees": -29.39,
+        "saturation_delta": 0.0488,
+        "luminance_delta": 0.295
+      },
+      "purple": {
+        "hue_shift_degrees": -38.87,
+        "saturation_delta": 0.0497,
+        "luminance_delta": 0.0292
+      },
+      "magenta": {
+        "hue_shift_degrees": -0.59,
+        "saturation_delta": 0.048,
+        "luminance_delta": -0.0364
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": 0.0001,
+        "green": -0.0017,
+        "blue": 0.0047
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0008,
+        "green": -0.0027,
+        "blue": 0.0024
+      },
+      "shadow_cool_bias": 0.0046,
+      "highlight_warm_bias": -0.0016
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

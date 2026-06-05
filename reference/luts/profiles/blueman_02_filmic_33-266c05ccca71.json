@@ -1,0 +1,140 @@
+{
+  "id": "blueman_02_filmic_33-266c05ccca71",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "nick driftwood rgbman 33 Blueman 02 filmic 33",
+  "title": "Blueman02 filmic Driftwood",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://www.nickdriftwood.com/wp-content/uploads/2023/04/RGBMAN.zip#RGBMAN/33/Blueman_02_filmic_33.cube",
+    "license": "free public creator download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:55:27Z",
+    "importedAt": null,
+    "sha256": "266c05ccca719d0284509744066e9188c47a1c3b317a1388dfe4372333b83754",
+    "originalFilename": "Blueman_02_filmic_33.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "cool",
+    "muted",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0
+        },
+        {
+          "input": 0.25,
+          "output": 0.0029
+        },
+        {
+          "input": 0.5,
+          "output": 0.4634
+        },
+        {
+          "input": 0.75,
+          "output": 0.9958
+        },
+        {
+          "input": 0.9,
+          "output": 0.9998
+        },
+        {
+          "input": 1.0,
+          "output": 0.9998
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 0.9998,
+      "shadow_lift": -0.1736,
+      "midtone_lift": -0.0366,
+      "highlight_lift": 0.1728,
+      "contrast_delta": 0.1998
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.1138,
+        "green": 0.1411,
+        "blue": 0.2489
+      },
+      "temperature_shift": -0.3627,
+      "tint_shift": -0.0736
+    },
+    "saturation": {
+      "mean_delta": -0.0863,
+      "p10_delta": -0.744,
+      "p90_delta": 0.4369,
+      "output_mean": 0.5974
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": -55.57,
+        "saturation_delta": -0.9331,
+        "luminance_delta": 0.7346
+      },
+      "orange": {
+        "hue_shift_degrees": 154.74,
+        "saturation_delta": -0.9489,
+        "luminance_delta": 0.4617
+      },
+      "yellow": {
+        "hue_shift_degrees": 120.0,
+        "saturation_delta": -0.9489,
+        "luminance_delta": 0.0684
+      },
+      "green": {
+        "hue_shift_degrees": 63.66,
+        "saturation_delta": 0.0052,
+        "luminance_delta": 0.0085
+      },
+      "aqua": {
+        "hue_shift_degrees": 3.66,
+        "saturation_delta": 0.0052,
+        "luminance_delta": -0.0601
+      },
+      "blue": {
+        "hue_shift_degrees": -25.3,
+        "saturation_delta": 0.0054,
+        "luminance_delta": 0.2201
+      },
+      "purple": {
+        "hue_shift_degrees": -52.26,
+        "saturation_delta": 0.005,
+        "luminance_delta": 0.1557
+      },
+      "magenta": {
+        "hue_shift_degrees": 1.39,
+        "saturation_delta": -0.9411,
+        "luminance_delta": 0.6719
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.18,
+        "green": -0.18,
+        "blue": -0.18
+      },
+      "highlight_rgb_bias": {
+        "red": 0.1789,
+        "green": 0.18,
+        "blue": 0.18
+      },
+      "shadow_cool_bias": 0.0,
+      "highlight_warm_bias": -0.0011
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

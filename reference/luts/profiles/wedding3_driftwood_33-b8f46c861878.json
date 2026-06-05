@@ -1,0 +1,139 @@
+{
+  "id": "wedding3_driftwood_33-b8f46c861878",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "nick driftwood wedding Driftwood Wedding LUT 33size Wedding3 Driftwood 33",
+  "title": "Driftwood Wedding LUT Series for V-Log to Rec709",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://www.nickdriftwood.com/wp-content/uploads/2023/04/Wedding_LUT_Pack_Nick_Driftwood.zip#Driftwood_Wedding_LUT_33size/Wedding3_Driftwood_33.cube",
+    "license": "free public creator download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:53:59Z",
+    "importedAt": null,
+    "sha256": "b8f46c86187800dcef1b5700286d7b1552fafaeff07fdef3a17048706b8b3aab",
+    "originalFilename": "Wedding3_Driftwood_33.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "vibrant",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0261
+        },
+        {
+          "input": 0.25,
+          "output": 0.1265
+        },
+        {
+          "input": 0.5,
+          "output": 0.585
+        },
+        {
+          "input": 0.75,
+          "output": 0.931
+        },
+        {
+          "input": 0.9,
+          "output": 0.9763
+        },
+        {
+          "input": 1.0,
+          "output": 1.0
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 1.0,
+      "shadow_lift": -0.0987,
+      "midtone_lift": 0.085,
+      "highlight_lift": 0.1287,
+      "contrast_delta": 0.1502
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.0144,
+        "green": 0.0157,
+        "blue": 0.0051
+      },
+      "temperature_shift": -0.0195,
+      "tint_shift": -0.0203
+    },
+    "saturation": {
+      "mean_delta": 0.1508,
+      "p10_delta": -0.0392,
+      "p90_delta": 0.3567,
+      "output_mean": 0.8344
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 10.92,
+        "saturation_delta": 0.05,
+        "luminance_delta": 0.0822
+      },
+      "orange": {
+        "hue_shift_degrees": 10.02,
+        "saturation_delta": 0.044,
+        "luminance_delta": 0.0785
+      },
+      "yellow": {
+        "hue_shift_degrees": -0.54,
+        "saturation_delta": -0.1107,
+        "luminance_delta": -0.126
+      },
+      "green": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0399
+      },
+      "aqua": {
+        "hue_shift_degrees": 0.46,
+        "saturation_delta": 0.048,
+        "luminance_delta": -0.0297
+      },
+      "blue": {
+        "hue_shift_degrees": -3.18,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0121
+      },
+      "purple": {
+        "hue_shift_degrees": -0.1,
+        "saturation_delta": 0.0325,
+        "luminance_delta": -0.0324
+      },
+      "magenta": {
+        "hue_shift_degrees": -0.01,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0439
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.1178,
+        "green": -0.1183,
+        "blue": -0.116
+      },
+      "highlight_rgb_bias": {
+        "red": 0.1341,
+        "green": 0.1341,
+        "blue": 0.1341
+      },
+      "shadow_cool_bias": 0.0018,
+      "highlight_warm_bias": 0.0
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

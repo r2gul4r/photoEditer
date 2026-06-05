@@ -1,0 +1,139 @@
+{
+  "id": "vintage_400_film-2a0c1496c13b",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "film stock and vintage vintage 400 film",
+  "title": "M Fahri - 400h",
+  "cubeSize": 25,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/src/colors/film_stock_%26_vintage/vintage_400_film.cube",
+    "license": "GPL-3.0-or-later",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:22:08Z",
+    "importedAt": null,
+    "sha256": "2a0c1496c13b625ac22cdf4cfba807b0a71cbedec8d256b5aff2c77c2bf87d02",
+    "originalFilename": "vintage_400_film.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "warm",
+    "muted"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0182
+        },
+        {
+          "input": 0.1,
+          "output": 0.0859
+        },
+        {
+          "input": 0.25,
+          "output": 0.2569
+        },
+        {
+          "input": 0.5,
+          "output": 0.5857
+        },
+        {
+          "input": 0.75,
+          "output": 0.791
+        },
+        {
+          "input": 0.9,
+          "output": 0.8982
+        },
+        {
+          "input": 1.0,
+          "output": 0.977
+        }
+      ],
+      "black_point": 0.0182,
+      "white_point": 0.977,
+      "shadow_lift": -0.0036,
+      "midtone_lift": 0.0857,
+      "highlight_lift": 0.0196,
+      "contrast_delta": 0.0123
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.1042,
+        "green": 0.0514,
+        "blue": 0.0317
+      },
+      "temperature_shift": 0.0725,
+      "tint_shift": 0.0166
+    },
+    "saturation": {
+      "mean_delta": -0.1194,
+      "p10_delta": -0.3534,
+      "p90_delta": 0.0919,
+      "output_mean": 0.5692
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 14.06,
+        "saturation_delta": 0.0448,
+        "luminance_delta": 0.1314
+      },
+      "orange": {
+        "hue_shift_degrees": 6.11,
+        "saturation_delta": 0.046,
+        "luminance_delta": 0.0386
+      },
+      "yellow": {
+        "hue_shift_degrees": 3.32,
+        "saturation_delta": -0.4735,
+        "luminance_delta": -0.0166
+      },
+      "green": {
+        "hue_shift_degrees": 8.13,
+        "saturation_delta": -0.4038,
+        "luminance_delta": 0.0664
+      },
+      "aqua": {
+        "hue_shift_degrees": 1.02,
+        "saturation_delta": -0.466,
+        "luminance_delta": 0.0513
+      },
+      "blue": {
+        "hue_shift_degrees": 24.08,
+        "saturation_delta": -0.3945,
+        "luminance_delta": 0.3833
+      },
+      "purple": {
+        "hue_shift_degrees": 9.06,
+        "saturation_delta": -0.4436,
+        "luminance_delta": 0.351
+      },
+      "magenta": {
+        "hue_shift_degrees": 6.15,
+        "saturation_delta": -0.5311,
+        "luminance_delta": 0.3674
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0284,
+        "green": -0.0079,
+        "blue": -0.0306
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0366,
+        "green": 0.0201,
+        "blue": 0.0094
+      },
+      "shadow_cool_bias": -0.0023,
+      "highlight_warm_bias": 0.0272
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

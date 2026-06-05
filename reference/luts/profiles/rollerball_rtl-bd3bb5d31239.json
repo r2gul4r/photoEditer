@@ -1,0 +1,140 @@
+{
+  "id": "rollerball_rtl-bd3bb5d31239",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "nick driftwood free real time lut Rollerball RTL",
+  "title": "Driftwood Real Time Lut LUT",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://www.nickdriftwood.com/wp-content/uploads/2024/11/FREE-Real-Time-LUT-PAck-from-Nick-Driftwood.zip#Rollerball_RTL.cube",
+    "license": "free public creator download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:42:24Z",
+    "importedAt": null,
+    "sha256": "bd3bb5d31239c1dd4d079d23bec11ce3c0f3188f0e09ff0b8bbb3f61baa5ee3c",
+    "originalFilename": "Rollerball_RTL.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "warm",
+    "vibrant",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0133
+        },
+        {
+          "input": 0.25,
+          "output": 0.15
+        },
+        {
+          "input": 0.5,
+          "output": 0.5209
+        },
+        {
+          "input": 0.75,
+          "output": 0.7875
+        },
+        {
+          "input": 0.9,
+          "output": 0.9079
+        },
+        {
+          "input": 1.0,
+          "output": 0.9651
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 0.9651,
+      "shadow_lift": -0.0934,
+      "midtone_lift": 0.0209,
+      "highlight_lift": 0.0227,
+      "contrast_delta": 0.0946
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.0753,
+        "green": -0.1444,
+        "blue": -0.117
+      },
+      "temperature_shift": 0.0417,
+      "tint_shift": 0.0483
+    },
+    "saturation": {
+      "mean_delta": 0.0944,
+      "p10_delta": -0.1208,
+      "p90_delta": 0.3352,
+      "output_mean": 0.778
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 0.1,
+        "saturation_delta": -0.0384,
+        "luminance_delta": -0.029
+      },
+      "orange": {
+        "hue_shift_degrees": -14.12,
+        "saturation_delta": -0.0965,
+        "luminance_delta": -0.1303
+      },
+      "yellow": {
+        "hue_shift_degrees": -0.54,
+        "saturation_delta": -0.275,
+        "luminance_delta": 0.0106
+      },
+      "green": {
+        "hue_shift_degrees": -1.45,
+        "saturation_delta": -0.1552,
+        "luminance_delta": -0.3214
+      },
+      "aqua": {
+        "hue_shift_degrees": 15.55,
+        "saturation_delta": -0.1886,
+        "luminance_delta": -0.1382
+      },
+      "blue": {
+        "hue_shift_degrees": 0.03,
+        "saturation_delta": 0.0471,
+        "luminance_delta": -0.0873
+      },
+      "purple": {
+        "hue_shift_degrees": -17.99,
+        "saturation_delta": 0.0424,
+        "luminance_delta": -0.1541
+      },
+      "magenta": {
+        "hue_shift_degrees": 19.29,
+        "saturation_delta": -0.0811,
+        "luminance_delta": 0.0173
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.1125,
+        "green": -0.113,
+        "blue": -0.1118
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0253,
+        "green": 0.0283,
+        "blue": 0.0297
+      },
+      "shadow_cool_bias": 0.0007,
+      "highlight_warm_bias": -0.0044
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

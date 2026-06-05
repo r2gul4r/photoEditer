@@ -1,0 +1,138 @@
+{
+  "id": "leafy-greens-d335ead121f2",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "lumix creator leafy greens by Devon Williams Leafy Greens",
+  "title": "LD - Dark Monochrome 2",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://eww.pavc.panasonic.co.jp/nwbgosm/Lumix/Leafy_Greens_Devon_Williams.zip#Leafy Greens.cube",
+    "license": "Panasonic public download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:37:18Z",
+    "importedAt": null,
+    "sha256": "d335ead121f2adc0defc39aacaffb8c8f3fd2af0598d943329cbeba345f67352",
+    "originalFilename": "Leafy Greens.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "muted"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0343
+        },
+        {
+          "input": 0.1,
+          "output": 0.0749
+        },
+        {
+          "input": 0.25,
+          "output": 0.1835
+        },
+        {
+          "input": 0.5,
+          "output": 0.4428
+        },
+        {
+          "input": 0.75,
+          "output": 0.7168
+        },
+        {
+          "input": 0.9,
+          "output": 0.8638
+        },
+        {
+          "input": 1.0,
+          "output": 0.9332
+        }
+      ],
+      "black_point": 0.0343,
+      "white_point": 0.9332,
+      "shadow_lift": -0.0458,
+      "midtone_lift": -0.0572,
+      "highlight_lift": -0.0347,
+      "contrast_delta": -0.0112
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.0245,
+        "green": -0.0315,
+        "blue": 0.0143
+      },
+      "temperature_shift": 0.0102,
+      "tint_shift": 0.0509
+    },
+    "saturation": {
+      "mean_delta": -0.2783,
+      "p10_delta": -0.6087,
+      "p90_delta": -0.0583,
+      "output_mean": 0.4054
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 6.98,
+        "saturation_delta": -0.0956,
+        "luminance_delta": 0.0944
+      },
+      "orange": {
+        "hue_shift_degrees": -5.9,
+        "saturation_delta": -0.2203,
+        "luminance_delta": 0.0001
+      },
+      "yellow": {
+        "hue_shift_degrees": 0.21,
+        "saturation_delta": -0.6838,
+        "luminance_delta": -0.0274
+      },
+      "green": {
+        "hue_shift_degrees": 28.95,
+        "saturation_delta": -0.6912,
+        "luminance_delta": 0.0075
+      },
+      "aqua": {
+        "hue_shift_degrees": 1.44,
+        "saturation_delta": -0.5675,
+        "luminance_delta": -0.0137
+      },
+      "blue": {
+        "hue_shift_degrees": -4.42,
+        "saturation_delta": -0.1551,
+        "luminance_delta": 0.0361
+      },
+      "purple": {
+        "hue_shift_degrees": -6.28,
+        "saturation_delta": -0.2216,
+        "luminance_delta": 0.0323
+      },
+      "magenta": {
+        "hue_shift_degrees": 9.12,
+        "saturation_delta": -0.2971,
+        "luminance_delta": 0.0958
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0675,
+        "green": -0.0482,
+        "blue": -0.0311
+      },
+      "highlight_rgb_bias": {
+        "red": -0.0333,
+        "green": -0.0294,
+        "blue": -0.0222
+      },
+      "shadow_cool_bias": 0.0364,
+      "highlight_warm_bias": -0.0111
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

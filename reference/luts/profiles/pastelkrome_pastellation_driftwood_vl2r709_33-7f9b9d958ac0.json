@@ -1,0 +1,140 @@
+{
+  "id": "pastelkrome_pastellation_driftwood_vl2r709_33-7f9b9d958ac0",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "nick driftwood pastelkrome 33 size  In Camera   monitor   or NLE  PastelKrome Pastellation Driftwood VL2R709 33",
+  "title": "Driftwood Pastelation Curve",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://www.nickdriftwood.com/wp-content/uploads/2023/04/PastelKrome-Series.zip#PastelKrome Series/33 size  In Camera - monitor - or NLE /PastelKrome_Pastellation_Driftwood_VL2R709_33.cube",
+    "license": "free public creator download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:42:48Z",
+    "importedAt": null,
+    "sha256": "7f9b9d958ac01f4fb94f70d46d9ee9443f61bcc7fd0c0406236e394ebc6bb19f",
+    "originalFilename": "PastelKrome_Pastellation_Driftwood_VL2R709_33.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "cool",
+    "vibrant",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0279
+        },
+        {
+          "input": 0.25,
+          "output": 0.1762
+        },
+        {
+          "input": 0.5,
+          "output": 0.7763
+        },
+        {
+          "input": 0.75,
+          "output": 0.9668
+        },
+        {
+          "input": 0.9,
+          "output": 0.9935
+        },
+        {
+          "input": 1.0,
+          "output": 1.0
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 1.0,
+      "shadow_lift": -0.0729,
+      "midtone_lift": 0.2763,
+      "highlight_lift": 0.1551,
+      "contrast_delta": 0.1656
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.095,
+        "green": 0.0713,
+        "blue": 0.0622
+      },
+      "temperature_shift": -0.1573,
+      "tint_shift": -0.0877
+    },
+    "saturation": {
+      "mean_delta": 0.2063,
+      "p10_delta": 0.0,
+      "p90_delta": 0.5,
+      "output_mean": 0.89
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0537
+      },
+      "orange": {
+        "hue_shift_degrees": -25.26,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.3398
+      },
+      "yellow": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": -0.9489,
+        "luminance_delta": 0.0685
+      },
+      "green": {
+        "hue_shift_degrees": 59.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": 0.0568
+      },
+      "aqua": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0106
+      },
+      "blue": {
+        "hue_shift_degrees": -60.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": 0.6688
+      },
+      "purple": {
+        "hue_shift_degrees": -85.26,
+        "saturation_delta": 0.05,
+        "luminance_delta": 0.5838
+      },
+      "magenta": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": -0.8947,
+        "luminance_delta": 0.6399
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.1232,
+        "green": -0.0955,
+        "blue": -0.0804
+      },
+      "highlight_rgb_bias": {
+        "red": 0.1505,
+        "green": 0.1636,
+        "blue": 0.1715
+      },
+      "shadow_cool_bias": 0.0429,
+      "highlight_warm_bias": -0.0209
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

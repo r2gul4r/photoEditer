@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { spawn, spawnSync } from "node:child_process";
 import http from "node:http";
+import net from "node:net";
 
 const root = resolve(import.meta.dirname, "..");
 const command = process.argv[2] ?? "help";
@@ -126,6 +127,26 @@ function waitForHttp(url, timeoutMs = 90000) {
   });
 }
 
+function canListen(port) {
+  return new Promise((resolveCheck) => {
+    const server = net.createServer();
+    server.once("error", () => resolveCheck(false));
+    server.once("listening", () => {
+      server.close(() => resolveCheck(true));
+    });
+    server.listen(port, "127.0.0.1");
+  });
+}
+
+async function findDesktopPort() {
+  const requested = Number(process.env.TONEPILOT_DESKTOP_PORT ?? 5173);
+  if (await canListen(requested)) return requested;
+  for (let port = 5174; port <= 5199; port += 1) {
+    if (await canListen(port)) return port;
+  }
+  throw new Error("No free desktop port found in 5173-5199.");
+}
+
 function openBrowser(url) {
   if (process.env.PHOTO_NO_OPEN === "1") return;
   if (isWindows) {
@@ -141,15 +162,21 @@ function openBrowser(url) {
   spawn(opener, [url], { detached: true, stdio: "ignore" }).unref();
 }
 
-function runPnpmDev(args) {
+async function runPnpmDev(args) {
   const pnpm = resolvePnpm();
-  const url = "http://127.0.0.1:5173/";
+  const desktopPort = await findDesktopPort();
+  const url = `http://127.0.0.1:${desktopPort}/`;
+  const env = {
+    ...process.env,
+    TONEPILOT_DESKTOP_PORT: String(desktopPort),
+    VITE_API_BASE_URL: process.env.VITE_API_BASE_URL ?? "http://127.0.0.1:8765",
+  };
   console.log(`[photo] local web: ${url}`);
   console.log("[photo] starting frontend and backend. Press Ctrl+C to stop.");
 
   const child = spawn(pnpm.command, [...pnpm.prefixArgs, ...args], {
     cwd: root,
-    env: process.env,
+    env,
     stdio: "inherit",
   });
 
@@ -214,7 +241,7 @@ switch (command) {
   case "start":
     ensureNodeDeps();
     ensureBackend();
-    runPnpmDev(["dev", ...rest]);
+    await runPnpmDev(["dev", ...rest]);
     break;
   case "setup":
     ensureNodeDeps();

@@ -12,6 +12,7 @@ from app.models.schemas import (
     ReferenceLibraryResponse,
 )
 from app.services.lut_analysis import (
+    MAX_LUT_BYTES,
     LutAnalysisError,
     LutSourcePolicyError,
     ingest_lut_bytes,
@@ -29,6 +30,20 @@ from app.services.preset_style_index import load_preset_style_index
 from app.services.reference_library import ReferenceLibraryError, load_reference_library
 
 router = APIRouter(prefix="/api/references", tags=["references"])
+
+
+async def read_limited_lut_upload(file: UploadFile) -> bytes:
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = await file.read(512 * 1024)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > MAX_LUT_BYTES:
+            raise HTTPException(status_code=413, detail=f"LUT file exceeds {MAX_LUT_BYTES // (1024 * 1024)}MB limit")
+        chunks.append(chunk)
+    return b"".join(chunks)
 
 
 @router.get("", response_model=ReferenceLibraryResponse)
@@ -94,7 +109,7 @@ async def import_lut_profile(
     source_url: str | None = Form(default=None),
     license_name: str | None = Form(default=None),
 ) -> LutIngestResponse:
-    content = await file.read()
+    content = await read_limited_lut_upload(file)
     try:
         return ingest_lut_bytes(
             content,

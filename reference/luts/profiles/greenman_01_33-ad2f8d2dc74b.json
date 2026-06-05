@@ -1,0 +1,140 @@
+{
+  "id": "greenman_01_33-ad2f8d2dc74b",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "nick driftwood rgbman 33 Greenman 01 33",
+  "title": "Greenman01 Driftwood",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://www.nickdriftwood.com/wp-content/uploads/2023/04/RGBMAN.zip#RGBMAN/33/Greenman_01_33.cube",
+    "license": "free public creator download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:55:27Z",
+    "importedAt": null,
+    "sha256": "ad2f8d2dc74bc479ca8712d6621db3e22765278c4833f05caf69a484d4d65e69",
+    "originalFilename": "Greenman_01_33.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "cool",
+    "muted",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0
+        },
+        {
+          "input": 0.25,
+          "output": 0.0038
+        },
+        {
+          "input": 0.5,
+          "output": 0.4697
+        },
+        {
+          "input": 0.75,
+          "output": 0.9905
+        },
+        {
+          "input": 0.9,
+          "output": 0.9997
+        },
+        {
+          "input": 1.0,
+          "output": 0.9997
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 0.9997,
+      "shadow_lift": -0.1731,
+      "midtone_lift": -0.0303,
+      "highlight_lift": 0.1701,
+      "contrast_delta": 0.1997
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.117,
+        "green": 0.1507,
+        "blue": 0.2254
+      },
+      "temperature_shift": -0.3424,
+      "tint_shift": -0.0964
+    },
+    "saturation": {
+      "mean_delta": -0.0906,
+      "p10_delta": -0.7194,
+      "p90_delta": 0.4054,
+      "output_mean": 0.5931
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": -58.68,
+        "saturation_delta": -0.9397,
+        "luminance_delta": 0.7394
+      },
+      "orange": {
+        "hue_shift_degrees": -84.34,
+        "saturation_delta": -0.9405,
+        "luminance_delta": 0.4539
+      },
+      "yellow": {
+        "hue_shift_degrees": 120.76,
+        "saturation_delta": -0.9488,
+        "luminance_delta": 0.0683
+      },
+      "green": {
+        "hue_shift_degrees": 61.02,
+        "saturation_delta": -0.0112,
+        "luminance_delta": 0.057
+      },
+      "aqua": {
+        "hue_shift_degrees": 1.02,
+        "saturation_delta": -0.0112,
+        "luminance_delta": -0.0116
+      },
+      "blue": {
+        "hue_shift_degrees": -23.87,
+        "saturation_delta": -0.0094,
+        "luminance_delta": 0.2223
+      },
+      "purple": {
+        "hue_shift_degrees": -50.87,
+        "saturation_delta": -0.0106,
+        "luminance_delta": 0.158
+      },
+      "magenta": {
+        "hue_shift_degrees": -6.86,
+        "saturation_delta": -0.9453,
+        "luminance_delta": 0.6753
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.18,
+        "green": -0.18,
+        "blue": -0.18
+      },
+      "highlight_rgb_bias": {
+        "red": 0.1787,
+        "green": 0.18,
+        "blue": 0.18
+      },
+      "shadow_cool_bias": 0.0,
+      "highlight_warm_bias": -0.0013
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

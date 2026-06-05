@@ -6,14 +6,27 @@ type Props = {
   candidate: CorrectionCandidate;
   selected: boolean;
   busy: boolean;
+  thumbnailUrl: string | null;
   scoreLabel: string;
   previewLabel: string;
+  insightLabels: {
+    intent: string;
+    tone: string;
+    color: string;
+    risk: string;
+  };
   onPreview: (candidate: CorrectionCandidate) => void;
 };
 
-export function CandidateCard({ candidate, selected, busy, scoreLabel, previewLabel, onPreview }: Props) {
+export function CandidateCard({ candidate, selected, busy, thumbnailUrl, scoreLabel, previewLabel, insightLabels, onPreview }: Props) {
   return (
     <article className={`candidate ${selected ? "selected" : ""}`}>
+      {thumbnailUrl ? (
+        <button className="candidate-thumb" type="button" disabled={busy} onClick={() => onPreview(candidate)}>
+          <img src={thumbnailUrl} alt="" aria-hidden="true" />
+          <span>{candidate.name}</span>
+        </button>
+      ) : null}
       <div>
         <div className="candidate-title">
           <Wand2 size={16} aria-hidden="true" />
@@ -26,25 +39,25 @@ export function CandidateCard({ candidate, selected, busy, scoreLabel, previewLa
         <div className="candidate-insights">
           {candidate.intent ? (
             <div>
-              <span>Intent</span>
+              <span>{insightLabels.intent}</span>
               <strong>{candidate.intent}</strong>
             </div>
           ) : null}
           {candidate.tone_summary ? (
             <div>
-              <span>Tone</span>
+              <span>{insightLabels.tone}</span>
               <strong>{candidate.tone_summary}</strong>
             </div>
           ) : null}
           {candidate.color_summary ? (
             <div>
-              <span>Color</span>
+              <span>{insightLabels.color}</span>
               <strong>{candidate.color_summary}</strong>
             </div>
           ) : null}
           {candidate.risk_summary ? (
             <div>
-              <span>Risk</span>
+              <span>{insightLabels.risk}</span>
               <strong>{candidate.risk_summary}</strong>
             </div>
           ) : null}

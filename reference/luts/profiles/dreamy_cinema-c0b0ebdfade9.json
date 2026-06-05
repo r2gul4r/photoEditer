@@ -1,0 +1,139 @@
+{
+  "id": "dreamy_cinema-c0b0ebdfade9",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "cinematic and blockbuster dreamy cinema",
+  "title": null,
+  "cubeSize": 16,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/src/colors/cinematic_%26_blockbuster/dreamy_cinema.cube",
+    "license": "GPL-3.0-or-later",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:21:42Z",
+    "importedAt": null,
+    "sha256": "c0b0ebdfade9661fb670bd825a4237039618dcbd49d4c21359da2e03027fcbb7",
+    "originalFilename": "dreamy_cinema.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "high_contrast",
+    "cinematic_split_tone"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0583
+        },
+        {
+          "input": 0.25,
+          "output": 0.1838
+        },
+        {
+          "input": 0.5,
+          "output": 0.4614
+        },
+        {
+          "input": 0.75,
+          "output": 0.8282
+        },
+        {
+          "input": 0.9,
+          "output": 0.9405
+        },
+        {
+          "input": 1.0,
+          "output": 0.9945
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 0.9945,
+      "shadow_lift": -0.0539,
+      "midtone_lift": -0.0386,
+      "highlight_lift": 0.0594,
+      "contrast_delta": 0.0822
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.0606,
+        "green": 0.0072,
+        "blue": -0.0553
+      },
+      "temperature_shift": -0.0053,
+      "tint_shift": -0.0651
+    },
+    "saturation": {
+      "mean_delta": -0.0048,
+      "p10_delta": -0.2752,
+      "p90_delta": 0.2356,
+      "output_mean": 0.695
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 12.71,
+        "saturation_delta": 0.0071,
+        "luminance_delta": 0.1171
+      },
+      "orange": {
+        "hue_shift_degrees": 3.19,
+        "saturation_delta": -0.0035,
+        "luminance_delta": 0.0375
+      },
+      "yellow": {
+        "hue_shift_degrees": -8.3,
+        "saturation_delta": -0.0753,
+        "luminance_delta": -0.0811
+      },
+      "green": {
+        "hue_shift_degrees": -1.27,
+        "saturation_delta": -0.1336,
+        "luminance_delta": -0.1846
+      },
+      "aqua": {
+        "hue_shift_degrees": 17.38,
+        "saturation_delta": -0.0846,
+        "luminance_delta": -0.2369
+      },
+      "blue": {
+        "hue_shift_degrees": -26.23,
+        "saturation_delta": -0.0053,
+        "luminance_delta": 0.18
+      },
+      "purple": {
+        "hue_shift_degrees": -51.61,
+        "saturation_delta": -0.0732,
+        "luminance_delta": 0.1176
+      },
+      "magenta": {
+        "hue_shift_degrees": 36.62,
+        "saturation_delta": -0.5706,
+        "luminance_delta": 0.2576
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.1159,
+        "green": -0.041,
+        "blue": -0.0298
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0704,
+        "green": 0.0714,
+        "blue": 0.0285
+      },
+      "shadow_cool_bias": 0.0861,
+      "highlight_warm_bias": 0.0418
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

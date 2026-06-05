@@ -1,0 +1,140 @@
+{
+  "id": "noir_era-5b6663cbb50f",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "dark and moody noir era",
+  "title": "Era",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/src/colors/dark_%26_moody/noir_era.cube",
+    "license": "GPL-3.0-or-later",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:21:54Z",
+    "importedAt": null,
+    "sha256": "5b6663cbb50f8e3a61664b44315501e7cf44eaf29d7e55311fe12bff9a9b09fe",
+    "originalFilename": "noir_era.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "warm",
+    "muted",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0005
+        },
+        {
+          "input": 0.1,
+          "output": 0.0538
+        },
+        {
+          "input": 0.25,
+          "output": 0.1368
+        },
+        {
+          "input": 0.5,
+          "output": 0.3855
+        },
+        {
+          "input": 0.75,
+          "output": 0.7382
+        },
+        {
+          "input": 0.9,
+          "output": 0.92
+        },
+        {
+          "input": 1.0,
+          "output": 0.9996
+        }
+      ],
+      "black_point": 0.0005,
+      "white_point": 0.9996,
+      "shadow_lift": -0.0797,
+      "midtone_lift": -0.1145,
+      "highlight_lift": 0.0041,
+      "contrast_delta": 0.0662
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.0134,
+        "green": -0.0725,
+        "blue": -0.141
+      },
+      "temperature_shift": 0.1276,
+      "tint_shift": -0.0047
+    },
+    "saturation": {
+      "mean_delta": -0.1499,
+      "p10_delta": -0.4219,
+      "p90_delta": 0.0819,
+      "output_mean": 0.5338
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": -0.65,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.125
+      },
+      "orange": {
+        "hue_shift_degrees": -3.56,
+        "saturation_delta": -0.3013,
+        "luminance_delta": 0.0456
+      },
+      "yellow": {
+        "hue_shift_degrees": -12.59,
+        "saturation_delta": -0.4175,
+        "luminance_delta": -0.053
+      },
+      "green": {
+        "hue_shift_degrees": -6.11,
+        "saturation_delta": -0.1142,
+        "luminance_delta": -0.3598
+      },
+      "aqua": {
+        "hue_shift_degrees": -48.76,
+        "saturation_delta": -0.7128,
+        "luminance_delta": -0.0889
+      },
+      "blue": {
+        "hue_shift_degrees": 5.36,
+        "saturation_delta": -0.2665,
+        "luminance_delta": 0.0657
+      },
+      "purple": {
+        "hue_shift_degrees": 15.11,
+        "saturation_delta": -0.3964,
+        "luminance_delta": 0.0781
+      },
+      "magenta": {
+        "hue_shift_degrees": 35.67,
+        "saturation_delta": -0.4735,
+        "luminance_delta": 0.137
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0877,
+        "green": -0.0756,
+        "blue": -0.0666
+      },
+      "highlight_rgb_bias": {
+        "red": 0.1098,
+        "green": 0.0007,
+        "blue": -0.1575
+      },
+      "shadow_cool_bias": 0.0211,
+      "highlight_warm_bias": 0.2673
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

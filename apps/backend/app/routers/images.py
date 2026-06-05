@@ -11,13 +11,27 @@ from app.utils.image_io import SUPPORTED_EXTENSIONS, downscale, infer_file_type,
 router = APIRouter(prefix="/api/images", tags=["images"])
 
 
+async def read_limited_upload(file: UploadFile, max_bytes: int) -> bytes:
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = await file.read(1024 * 1024)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > max_bytes:
+            raise HTTPException(status_code=413, detail=f"Uploaded file exceeds {max_bytes // (1024 * 1024)}MB limit")
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
 @router.post("/analyze", response_model=AnalyzeImageResponse)
 async def analyze_upload(file: UploadFile = File(...)) -> AnalyzeImageResponse:
     file_type = infer_file_type(file.filename or "upload")
     if file_type not in {*SUPPORTED_EXTENSIONS.values(), "raw"}:
         raise HTTPException(status_code=415, detail=f"Unsupported file type for MVP: {file_type}")
 
-    content = await file.read()
+    content = await read_limited_upload(file, settings.max_upload_bytes)
     if not content:
         raise HTTPException(status_code=400, detail="Uploaded file is empty")
 

@@ -1,0 +1,138 @@
+{
+  "id": "ballard-a9753cf49f0b",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "q ddl Q DDL Pack 2 Ballard",
+  "title": "Ballard",
+  "cubeSize": 17,
+  "metadata": {
+    "sourceUrl": "https://www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs/?tmstv=1780543774#Q-DDL Color LUTs - Cinematic/Q-DDL_Pack_2_s5480.zip/Q-DDL_Pack_2/Ballard.cube",
+    "license": "CC-BY-4.0",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:31:43Z",
+    "importedAt": null,
+    "sha256": "a9753cf49f0b66aa011024604ea1725ad0f17c04c1836f39ebab03abf2341b46",
+    "originalFilename": "Ballard.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "muted"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0356
+        },
+        {
+          "input": 0.1,
+          "output": 0.1124
+        },
+        {
+          "input": 0.25,
+          "output": 0.2669
+        },
+        {
+          "input": 0.5,
+          "output": 0.5498
+        },
+        {
+          "input": 0.75,
+          "output": 0.799
+        },
+        {
+          "input": 0.9,
+          "output": 0.924
+        },
+        {
+          "input": 1.0,
+          "output": 0.9784
+        }
+      ],
+      "black_point": 0.0356,
+      "white_point": 0.9784,
+      "shadow_lift": 0.0146,
+      "midtone_lift": 0.0498,
+      "highlight_lift": 0.0365,
+      "contrast_delta": 0.0116
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.0551,
+        "green": 0.0665,
+        "blue": 0.0301
+      },
+      "temperature_shift": 0.025,
+      "tint_shift": -0.024
+    },
+    "saturation": {
+      "mean_delta": -0.1007,
+      "p10_delta": -0.3157,
+      "p90_delta": 0.0738,
+      "output_mean": 0.597
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 6.44,
+        "saturation_delta": 0.0441,
+        "luminance_delta": 0.0259
+      },
+      "orange": {
+        "hue_shift_degrees": 3.16,
+        "saturation_delta": -0.119,
+        "luminance_delta": 0.0334
+      },
+      "yellow": {
+        "hue_shift_degrees": 4.22,
+        "saturation_delta": -0.1828,
+        "luminance_delta": -0.018
+      },
+      "green": {
+        "hue_shift_degrees": 19.48,
+        "saturation_delta": 0.0442,
+        "luminance_delta": 0.0066
+      },
+      "aqua": {
+        "hue_shift_degrees": 11.22,
+        "saturation_delta": -0.6608,
+        "luminance_delta": 0.101
+      },
+      "blue": {
+        "hue_shift_degrees": 6.92,
+        "saturation_delta": -0.2444,
+        "luminance_delta": 0.2421
+      },
+      "purple": {
+        "hue_shift_degrees": -8.3,
+        "saturation_delta": -0.2892,
+        "luminance_delta": 0.2144
+      },
+      "magenta": {
+        "hue_shift_degrees": -5.21,
+        "saturation_delta": -0.293,
+        "luminance_delta": 0.1865
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0383,
+        "green": 0.027,
+        "blue": -0.0132
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0632,
+        "green": 0.0383,
+        "blue": 0.0101
+      },
+      "shadow_cool_bias": 0.025,
+      "highlight_warm_bias": 0.053
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

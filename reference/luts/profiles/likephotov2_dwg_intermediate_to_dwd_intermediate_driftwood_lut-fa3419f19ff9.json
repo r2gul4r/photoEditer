@@ -1,0 +1,139 @@
+{
+  "id": "likephotov2_dwg_intermediate_to_dwd_intermediate_driftwood_lut-fa3419f19ff9",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "nick driftwood likephotov2 LikePhotov2 DWG Intermediate to DWD Intermediate Driftwood LUT",
+  "title": "Driftwood LikePhoto DWG Intermediate LUT",
+  "cubeSize": 65,
+  "metadata": {
+    "sourceUrl": "https://www.nickdriftwood.com/wp-content/uploads/2023/04/LikePhotoV2.zip#LikePhotov2_DWG_Intermediate_to_DWD_Intermediate_Driftwood_LUT.cube",
+    "license": "free public creator download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:44:20Z",
+    "importedAt": null,
+    "sha256": "fa3419f19ff9e7a15230a2c164c3a7fca7f53350c94d8cf90180078919a61ce9",
+    "originalFilename": "LikePhotov2_DWG_Intermediate_to_DWD_Intermediate_Driftwood_LUT.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "muted",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0372
+        },
+        {
+          "input": 0.25,
+          "output": 0.162
+        },
+        {
+          "input": 0.5,
+          "output": 0.5152
+        },
+        {
+          "input": 0.75,
+          "output": 0.8564
+        },
+        {
+          "input": 0.9,
+          "output": 0.945
+        },
+        {
+          "input": 1.0,
+          "output": 0.9932
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 0.9932,
+      "shadow_lift": -0.0754,
+      "midtone_lift": 0.0152,
+      "highlight_lift": 0.0757,
+      "contrast_delta": 0.1077
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.0043,
+        "green": 0.0129,
+        "blue": 0.0097
+      },
+      "temperature_shift": -0.0054,
+      "tint_shift": -0.0059
+    },
+    "saturation": {
+      "mean_delta": -0.2963,
+      "p10_delta": -0.5606,
+      "p90_delta": -0.0161,
+      "output_mean": 0.3797
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 4.08,
+        "saturation_delta": -0.463,
+        "luminance_delta": 0.0935
+      },
+      "orange": {
+        "hue_shift_degrees": -21.13,
+        "saturation_delta": -0.4633,
+        "luminance_delta": -0.1923
+      },
+      "yellow": {
+        "hue_shift_degrees": -8.74,
+        "saturation_delta": -0.5003,
+        "luminance_delta": -0.2583
+      },
+      "green": {
+        "hue_shift_degrees": -5.48,
+        "saturation_delta": -0.6193,
+        "luminance_delta": -0.1342
+      },
+      "aqua": {
+        "hue_shift_degrees": 2.73,
+        "saturation_delta": -0.5785,
+        "luminance_delta": -0.0797
+      },
+      "blue": {
+        "hue_shift_degrees": -9.37,
+        "saturation_delta": -0.4585,
+        "luminance_delta": 0.2412
+      },
+      "purple": {
+        "hue_shift_degrees": 0.13,
+        "saturation_delta": -0.5662,
+        "luminance_delta": 0.2262
+      },
+      "magenta": {
+        "hue_shift_degrees": -15.53,
+        "saturation_delta": -0.5841,
+        "luminance_delta": 0.1485
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0799,
+        "green": -0.0786,
+        "blue": -0.0782
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0872,
+        "green": 0.1039,
+        "blue": 0.1018
+      },
+      "shadow_cool_bias": 0.0017,
+      "highlight_warm_bias": -0.0146
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

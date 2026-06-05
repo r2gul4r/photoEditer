@@ -1,0 +1,139 @@
+{
+  "id": "moonlight_orange-6b914da07c8b",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "teal and orange vibes moonlight orange",
+  "title": "LUNA COLOR",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/src/colors/teal_%26_orange_vibes/moonlight_orange.cube",
+    "license": "GPL-3.0-or-later",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:22:11Z",
+    "importedAt": null,
+    "sha256": "6b914da07c8b3e2ea9329038f9a3df5554ca119f585ea483cda8d8e5f910cc38",
+    "originalFilename": "moonlight_orange.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "muted",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0386
+        },
+        {
+          "input": 0.1,
+          "output": 0.0864
+        },
+        {
+          "input": 0.25,
+          "output": 0.2077
+        },
+        {
+          "input": 0.5,
+          "output": 0.5659
+        },
+        {
+          "input": 0.75,
+          "output": 0.829
+        },
+        {
+          "input": 0.9,
+          "output": 0.9533
+        },
+        {
+          "input": 1.0,
+          "output": 1.0
+        }
+      ],
+      "black_point": 0.0386,
+      "white_point": 1.0,
+      "shadow_lift": -0.028,
+      "midtone_lift": 0.0659,
+      "highlight_lift": 0.0661,
+      "contrast_delta": 0.0669
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.0202,
+        "green": 0.0091,
+        "blue": -0.0044
+      },
+      "temperature_shift": 0.0246,
+      "tint_shift": -0.0012
+    },
+    "saturation": {
+      "mean_delta": -0.1394,
+      "p10_delta": -0.3662,
+      "p90_delta": 0.0683,
+      "output_mean": 0.5443
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 0.88,
+        "saturation_delta": -0.1891,
+        "luminance_delta": 0.1228
+      },
+      "orange": {
+        "hue_shift_degrees": -22.57,
+        "saturation_delta": -0.192,
+        "luminance_delta": -0.1445
+      },
+      "yellow": {
+        "hue_shift_degrees": -2.46,
+        "saturation_delta": -0.4596,
+        "luminance_delta": 0.0105
+      },
+      "green": {
+        "hue_shift_degrees": -2.6,
+        "saturation_delta": -0.4012,
+        "luminance_delta": -0.0244
+      },
+      "aqua": {
+        "hue_shift_degrees": -3.56,
+        "saturation_delta": -0.4209,
+        "luminance_delta": -0.0201
+      },
+      "blue": {
+        "hue_shift_degrees": -9.68,
+        "saturation_delta": -0.1542,
+        "luminance_delta": 0.146
+      },
+      "purple": {
+        "hue_shift_degrees": -17.47,
+        "saturation_delta": -0.2538,
+        "luminance_delta": 0.0756
+      },
+      "magenta": {
+        "hue_shift_degrees": 7.51,
+        "saturation_delta": -0.3368,
+        "luminance_delta": 0.1705
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0512,
+        "green": -0.034,
+        "blue": -0.0392
+      },
+      "highlight_rgb_bias": {
+        "red": 0.075,
+        "green": 0.0736,
+        "blue": 0.0554
+      },
+      "shadow_cool_bias": 0.012,
+      "highlight_warm_bias": 0.0196
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

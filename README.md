@@ -69,6 +69,7 @@ photo dev
 ```
 
 `photo dev` prints the local URL and opens the browser automatically. If it does not open, visit `http://127.0.0.1:5173/` manually. Codex is optional; without it, the app runs in local Rules mode.
+If port `5173` is already occupied, `photo dev` selects another local port in `5173-5199` and prints the actual URL.
 
 Developers who already cloned the repository on Windows can run `npm.cmd link`, `photo install`, then `photo dev` from the project folder.
 
@@ -201,6 +202,8 @@ The MVP uses rule-based style interpretation plus LUT-derived and Lightroom pres
 The LUT index is not a LUT pack. It is a low-dimensional style summary built from observed correction behavior across common public/market LUT concepts. Original `.cube` files are treated as temporary analysis inputs and are deleted after profile extraction. The recommendation engine uses only clustered priors such as tone range, color balance, HSL tendencies, prompt keywords, and risk notes.
 
 The Lightroom preset index follows the same rule: original `.xmp`, `.lrtemplate`, and ZIP files are temporary analysis inputs only. The committed artifact is a clustered style summary of slider, HSL, tone curve, color grading, calibration, prompt keyword, and risk-note tendencies from public and YouTube-linked creator preset behavior.
+
+See [docs/THIRD_PARTY_DATA_POLICY.md](docs/THIRD_PARTY_DATA_POLICY.md) for the release policy around third-party LUT and preset-derived data.
 
 Current style groups include wedding, beauty/skintone, Lumix real-time, Panasonic Rec709 utility, teal-orange, cool night, warm sunset, film/vintage, monochrome, cinematic, pastel, vibrant, and clean natural.
 

@@ -1,0 +1,138 @@
+{
+  "id": "tropical_teal-999593ead201",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "teal and orange vibes tropical teal",
+  "title": null,
+  "cubeSize": 16,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/src/colors/teal_%26_orange_vibes/tropical_teal.cube",
+    "license": "GPL-3.0-or-later",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:22:14Z",
+    "importedAt": null,
+    "sha256": "999593ead201770e90138d9ed89d65c61df360f294b6bf434197cb032b3f6bcc",
+    "originalFilename": "tropical_teal.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "warm"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0357
+        },
+        {
+          "input": 0.1,
+          "output": 0.0562
+        },
+        {
+          "input": 0.25,
+          "output": 0.1565
+        },
+        {
+          "input": 0.5,
+          "output": 0.4287
+        },
+        {
+          "input": 0.75,
+          "output": 0.7158
+        },
+        {
+          "input": 0.9,
+          "output": 0.8352
+        },
+        {
+          "input": 1.0,
+          "output": 0.8893
+        }
+      ],
+      "black_point": 0.0357,
+      "white_point": 0.8893,
+      "shadow_lift": -0.0686,
+      "midtone_lift": -0.0713,
+      "highlight_lift": -0.0495,
+      "contrast_delta": -0.0211
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.0681,
+        "green": -0.1358,
+        "blue": -0.2059
+      },
+      "temperature_shift": 0.1377,
+      "tint_shift": -0.0012
+    },
+    "saturation": {
+      "mean_delta": 0.0376,
+      "p10_delta": -0.1945,
+      "p90_delta": 0.2973,
+      "output_mean": 0.7374
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 0.05,
+        "saturation_delta": -0.0629,
+        "luminance_delta": -0.1292
+      },
+      "orange": {
+        "hue_shift_degrees": -14.06,
+        "saturation_delta": -0.0384,
+        "luminance_delta": -0.2548
+      },
+      "yellow": {
+        "hue_shift_degrees": -15.73,
+        "saturation_delta": -0.2292,
+        "luminance_delta": -0.1503
+      },
+      "green": {
+        "hue_shift_degrees": -74.02,
+        "saturation_delta": -0.1558,
+        "luminance_delta": 0.0451
+      },
+      "aqua": {
+        "hue_shift_degrees": 1.89,
+        "saturation_delta": -0.4405,
+        "luminance_delta": -0.0916
+      },
+      "blue": {
+        "hue_shift_degrees": -0.0,
+        "saturation_delta": -0.0988,
+        "luminance_delta": -0.0672
+      },
+      "purple": {
+        "hue_shift_degrees": -24.81,
+        "saturation_delta": -0.085,
+        "luminance_delta": -0.1484
+      },
+      "magenta": {
+        "hue_shift_degrees": -4.07,
+        "saturation_delta": -0.0639,
+        "luminance_delta": -0.1784
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0827,
+        "green": -0.082,
+        "blue": -0.0777
+      },
+      "highlight_rgb_bias": {
+        "red": -0.0168,
+        "green": -0.0449,
+        "blue": -0.0704
+      },
+      "shadow_cool_bias": 0.0049,
+      "highlight_warm_bias": 0.0536
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

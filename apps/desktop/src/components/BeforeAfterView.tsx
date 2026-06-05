@@ -19,8 +19,9 @@ export function BeforeAfterView({ originalUrl, previewUrl, originalLabel, previe
         alt={previewLabel}
         style={{ clipPath: `inset(0 ${100 - split}% 0 0)` }}
       />
-      <div className="before-after-label before">{previewLabel}</div>
-      <div className="before-after-label after">{originalLabel}</div>
+      <span className="before-after-handle" style={{ left: `${split}%` }} aria-hidden="true" />
+      <div className="before-after-label before">{originalLabel}</div>
+      <div className="before-after-label after">{previewLabel}</div>
       <input
         aria-label="before after slider"
         type="range"

@@ -1,0 +1,139 @@
+{
+  "id": "pro-20neg-20std_srgb-9dbdd7208b23",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "cube lut pro neg std sRGB",
+  "title": null,
+  "cubeSize": 32,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/abpy/FujifilmCameraProfiles/master/cube%20lut/pro%20neg%20std_sRGB.cube",
+    "license": "CC-BY-NC-SA-4.0",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:21:12Z",
+    "importedAt": null,
+    "sha256": "9dbdd7208b2389c101206ca9095035e5b12afd09bd257ed262f63bbf7791f235",
+    "originalFilename": "pro%20neg%20std_sRGB.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "muted",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0749
+        },
+        {
+          "input": 0.25,
+          "output": 0.3017
+        },
+        {
+          "input": 0.5,
+          "output": 0.6842
+        },
+        {
+          "input": 0.75,
+          "output": 0.9154
+        },
+        {
+          "input": 0.9,
+          "output": 0.9782
+        },
+        {
+          "input": 1.0,
+          "output": 1.0
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 1.0,
+      "shadow_lift": 0.0133,
+      "midtone_lift": 0.1842,
+      "highlight_lift": 0.1218,
+      "contrast_delta": 0.1033
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.1019,
+        "green": 0.156,
+        "blue": 0.1277
+      },
+      "temperature_shift": -0.0258,
+      "tint_shift": -0.0413
+    },
+    "saturation": {
+      "mean_delta": -0.0849,
+      "p10_delta": -0.2714,
+      "p90_delta": 0.1111,
+      "output_mean": 0.5993
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 12.93,
+        "saturation_delta": 0.05,
+        "luminance_delta": 0.1147
+      },
+      "orange": {
+        "hue_shift_degrees": 7.05,
+        "saturation_delta": 0.0363,
+        "luminance_delta": 0.0652
+      },
+      "yellow": {
+        "hue_shift_degrees": 1.96,
+        "saturation_delta": -0.3583,
+        "luminance_delta": 0.0218
+      },
+      "green": {
+        "hue_shift_degrees": 12.64,
+        "saturation_delta": 0.05,
+        "luminance_delta": 0.001
+      },
+      "aqua": {
+        "hue_shift_degrees": -3.36,
+        "saturation_delta": -0.3021,
+        "luminance_delta": 0.0616
+      },
+      "blue": {
+        "hue_shift_degrees": -3.43,
+        "saturation_delta": -0.2157,
+        "luminance_delta": 0.2301
+      },
+      "purple": {
+        "hue_shift_degrees": 7.57,
+        "saturation_delta": -0.299,
+        "luminance_delta": 0.2681
+      },
+      "magenta": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": -0.5148,
+        "luminance_delta": 0.3682
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": 0.0038,
+        "green": 0.0057,
+        "blue": 0.005
+      },
+      "highlight_rgb_bias": {
+        "red": 0.1315,
+        "green": 0.1322,
+        "blue": 0.1317
+      },
+      "shadow_cool_bias": 0.0012,
+      "highlight_warm_bias": -0.0002
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

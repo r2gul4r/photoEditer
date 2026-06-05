@@ -1,0 +1,139 @@
+{
+  "id": "chasm-lake-efd5c2f984d8",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "lumix creator chasm lake by Devon Williams Chasm Lake",
+  "title": "LD - Pacific Coast 3",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://eww.pavc.panasonic.co.jp/nwbgosm/Lumix/Chasm_Lake_Devon_Williams.zip#Chasm Lake.cube",
+    "license": "Panasonic public download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:37:16Z",
+    "importedAt": null,
+    "sha256": "efd5c2f984d8a777ffeaed581447c4285550cf6568fb862e542e319a9724ff36",
+    "originalFilename": "Chasm Lake.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "cool",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0122
+        },
+        {
+          "input": 0.1,
+          "output": 0.0894
+        },
+        {
+          "input": 0.25,
+          "output": 0.2714
+        },
+        {
+          "input": 0.5,
+          "output": 0.5617
+        },
+        {
+          "input": 0.75,
+          "output": 0.8177
+        },
+        {
+          "input": 0.9,
+          "output": 0.9457
+        },
+        {
+          "input": 1.0,
+          "output": 0.9985
+        }
+      ],
+      "black_point": 0.0122,
+      "white_point": 0.9985,
+      "shadow_lift": 0.0054,
+      "midtone_lift": 0.0617,
+      "highlight_lift": 0.0567,
+      "contrast_delta": 0.0563
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.0208,
+        "green": 0.0586,
+        "blue": 0.0721
+      },
+      "temperature_shift": -0.0513,
+      "tint_shift": -0.0122
+    },
+    "saturation": {
+      "mean_delta": -0.0492,
+      "p10_delta": -0.1493,
+      "p90_delta": 0.0669,
+      "output_mean": 0.6344
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 6.84,
+        "saturation_delta": -0.1109,
+        "luminance_delta": 0.1558
+      },
+      "orange": {
+        "hue_shift_degrees": 3.73,
+        "saturation_delta": -0.1251,
+        "luminance_delta": 0.0924
+      },
+      "yellow": {
+        "hue_shift_degrees": 0.51,
+        "saturation_delta": -0.1672,
+        "luminance_delta": 0.0105
+      },
+      "green": {
+        "hue_shift_degrees": 13.66,
+        "saturation_delta": 0.0209,
+        "luminance_delta": -0.0417
+      },
+      "aqua": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.0103,
+        "luminance_delta": -0.0022
+      },
+      "blue": {
+        "hue_shift_degrees": -2.34,
+        "saturation_delta": -0.0872,
+        "luminance_delta": 0.1026
+      },
+      "purple": {
+        "hue_shift_degrees": -0.06,
+        "saturation_delta": -0.1338,
+        "luminance_delta": 0.1117
+      },
+      "magenta": {
+        "hue_shift_degrees": 0.01,
+        "saturation_delta": -0.1689,
+        "luminance_delta": 0.1208
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.0258,
+        "green": 0.0112,
+        "blue": 0.0348
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0498,
+        "green": 0.0617,
+        "blue": 0.076
+      },
+      "shadow_cool_bias": 0.0606,
+      "highlight_warm_bias": -0.0262
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

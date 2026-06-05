@@ -1,0 +1,140 @@
+{
+  "id": "cold_shadows-c711e5fd0b5f",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "dark and moody cold shadows",
+  "title": "ColorFinale Export",
+  "cubeSize": 33,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/src/colors/dark_%26_moody/cold_shadows.cube",
+    "license": "GPL-3.0-or-later",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:21:49Z",
+    "importedAt": null,
+    "sha256": "c711e5fd0b5f62b6c96dbbe5d211d7681a91c9ae728500fb64716e469afb0aad",
+    "originalFilename": "cold_shadows.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "warm",
+    "muted",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.101
+        },
+        {
+          "input": 0.1,
+          "output": 0.1033
+        },
+        {
+          "input": 0.25,
+          "output": 0.148
+        },
+        {
+          "input": 0.5,
+          "output": 0.569
+        },
+        {
+          "input": 0.75,
+          "output": 0.8855
+        },
+        {
+          "input": 0.9,
+          "output": 0.968
+        },
+        {
+          "input": 1.0,
+          "output": 0.9805
+        }
+      ],
+      "black_point": 0.101,
+      "white_point": 0.9805,
+      "shadow_lift": -0.0494,
+      "midtone_lift": 0.069,
+      "highlight_lift": 0.1017,
+      "contrast_delta": 0.0646
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.1411,
+        "green": 0.1007,
+        "blue": 0.0045
+      },
+      "temperature_shift": 0.1367,
+      "tint_shift": -0.0279
+    },
+    "saturation": {
+      "mean_delta": -0.2026,
+      "p10_delta": -0.5153,
+      "p90_delta": 0.1407,
+      "output_mean": 0.4811
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 24.99,
+        "saturation_delta": 0.0207,
+        "luminance_delta": 0.2728
+      },
+      "orange": {
+        "hue_shift_degrees": 4.51,
+        "saturation_delta": 0.05,
+        "luminance_delta": 0.0295
+      },
+      "yellow": {
+        "hue_shift_degrees": -19.8,
+        "saturation_delta": -0.0426,
+        "luminance_delta": -0.2111
+      },
+      "green": {
+        "hue_shift_degrees": -0.08,
+        "saturation_delta": -0.6075,
+        "luminance_delta": 0.1323
+      },
+      "aqua": {
+        "hue_shift_degrees": -26.78,
+        "saturation_delta": -0.6259,
+        "luminance_delta": 0.0943
+      },
+      "blue": {
+        "hue_shift_degrees": -35.96,
+        "saturation_delta": -0.4445,
+        "luminance_delta": 0.4724
+      },
+      "purple": {
+        "hue_shift_degrees": -40.12,
+        "saturation_delta": -0.6025,
+        "luminance_delta": 0.4458
+      },
+      "magenta": {
+        "hue_shift_degrees": -9.08,
+        "saturation_delta": -0.5996,
+        "luminance_delta": 0.3563
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.1356,
+        "green": -0.0385,
+        "blue": -0.0563
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0952,
+        "green": 0.1291,
+        "blue": 0.131
+      },
+      "shadow_cool_bias": 0.0793,
+      "highlight_warm_bias": -0.0358
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

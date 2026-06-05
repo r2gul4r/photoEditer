@@ -1,18 +1,26 @@
 import {
   Aperture,
   BookOpen,
+  ChevronRight,
   Columns2,
   Crop,
   Download,
   FileJson,
+  Flag,
   FolderOpen,
+  Grid2X2,
   Images,
   Languages,
   Loader2,
+  Menu,
+  Minus,
   RotateCw,
   Settings,
   SlidersHorizontal,
   Sparkles,
+  Square,
+  Star,
+  X,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -69,19 +77,37 @@ function App() {
     : "";
 
   const moduleItems = [
-    { label: c.library, icon: <Images size={19} aria-hidden="true" /> },
-    { label: c.edit, icon: <SlidersHorizontal size={19} aria-hidden="true" />, active: true },
-    { label: c.ai, icon: <Sparkles size={19} aria-hidden="true" /> },
-    { label: c.reference, icon: <BookOpen size={19} aria-hidden="true" /> },
-    { label: c.export, icon: <Download size={19} aria-hidden="true" /> },
+    { label: c.library, icon: <Images size={19} aria-hidden="true" />, enabled: false },
+    { label: c.edit, icon: <SlidersHorizontal size={19} aria-hidden="true" />, active: true, enabled: true },
+    { label: c.ai, icon: <Sparkles size={19} aria-hidden="true" />, enabled: false },
+    { label: c.reference, icon: <BookOpen size={19} aria-hidden="true" />, enabled: false },
+    { label: c.export, icon: <Download size={19} aria-hidden="true" />, enabled: false },
   ];
 
-  const developTabs = [c.basic, c.toneCurve, c.color, c.detail, c.masks];
+  const developTabs = [
+    { label: c.basic, enabled: true },
+    { label: c.toneCurve, enabled: false },
+    { label: c.color, enabled: false },
+    { label: c.detail, enabled: false },
+    { label: c.masks, enabled: false },
+  ];
   const aiModeOptions: Array<{ value: AiMode; label: string }> = [
     { value: "auto", label: c.aiModeAuto },
     { value: "codex", label: c.aiModeCodex },
     { value: "rules", label: c.aiModeRules },
   ];
+  const megapixels = state.analysis ? ((state.analysis.width * state.analysis.height) / 1_000_000).toFixed(1) : null;
+  const captureInfo = [
+    state.analysis ? `${state.analysis.width} x ${state.analysis.height}` : null,
+    megapixels ? `${megapixels} ${c.megapixels}` : null,
+    state.analysis?.file_type.toUpperCase() ?? null,
+    state.analysis?.metadata.focal_length,
+    state.analysis?.metadata.aperture,
+    state.analysis?.metadata.shutter,
+    state.analysis?.metadata.iso ? `ISO ${state.analysis.metadata.iso}` : null,
+  ].filter(Boolean);
+  const insightLabels = { intent: c.intent, tone: c.tone, color: c.color, risk: c.risk };
+  const candidateThumbUrl = state.previewUrl ?? state.originalUrl;
 
   function browserPreviewUrl(file: File): string | null {
     const lowerName = file.name.toLowerCase();
@@ -233,6 +259,11 @@ function App() {
             <small>{c.appSubtitle}</small>
           </div>
         </div>
+        <div className="topbar-path" aria-label="Current photo">
+          <span>{state.analysis?.metadata.created_at ?? c.localOnly}</span>
+          <ChevronRight size={14} aria-hidden="true" />
+          <strong>{loadedFilename}</strong>
+        </div>
         <div className="topbar-actions">
           <input
             ref={topFileInputRef}
@@ -266,8 +297,21 @@ function App() {
             <Languages size={17} aria-hidden="true" />
             {state.language.toUpperCase()}
           </button>
-          <button className="icon-button" type="button" title={c.settings}>
+          <button className="icon-button" type="button" title={c.plannedFeature} disabled>
             <Settings size={18} aria-hidden="true" />
+          </button>
+          <span className="topbar-divider" aria-hidden="true" />
+          <button className="icon-button quiet" type="button" title={c.plannedFeature} disabled>
+            <Menu size={18} aria-hidden="true" />
+          </button>
+          <button className="icon-button quiet window-control" type="button" title={c.plannedFeature} disabled>
+            <Minus size={16} aria-hidden="true" />
+          </button>
+          <button className="icon-button quiet window-control" type="button" title={c.plannedFeature} disabled>
+            <Square size={14} aria-hidden="true" />
+          </button>
+          <button className="icon-button quiet window-control" type="button" title={c.plannedFeature} disabled>
+            <X size={16} aria-hidden="true" />
           </button>
         </div>
       </header>
@@ -275,7 +319,13 @@ function App() {
       <main className="workspace editor-workspace">
         <nav className="module-rail" aria-label="Editor modules">
           {moduleItems.map((item) => (
-            <button key={item.label} className={`module-button${item.active ? " active" : ""}`} type="button">
+            <button
+              key={item.label}
+              className={`module-button${item.active ? " active" : ""}`}
+              type="button"
+              disabled={!item.enabled}
+              title={item.enabled ? item.label : c.plannedFeature}
+            >
               {item.icon}
               <span>{item.label}</span>
             </button>
@@ -285,15 +335,15 @@ function App() {
         <section className="canvas-pane">
           <div className="editor-toolbar">
             <div className="toolbar-group">
-              <button className="tool-chip" type="button" disabled={!state.originalUrl}>
+              <button className="tool-chip" type="button" disabled title={c.plannedFeature}>
                 <Crop size={15} aria-hidden="true" />
                 {c.crop}
               </button>
-              <button className="tool-chip" type="button" disabled={!state.originalUrl}>
+              <button className="tool-chip" type="button" disabled title={c.plannedFeature}>
                 <RotateCw size={15} aria-hidden="true" />
                 {c.rotate}
               </button>
-              <button className="tool-chip" type="button" disabled={!state.previewUrl}>
+              <button className="tool-chip" type="button" disabled title={state.previewUrl ? c.sourceFirst : c.plannedFeature}>
                 <Columns2 size={15} aria-hidden="true" />
                 {c.compare}
               </button>
@@ -318,7 +368,7 @@ function App() {
             {!state.originalUrl ? (
               <div className="empty-preview stage-empty-bg">
                 {busy ? <Loader2 size={28} aria-hidden="true" /> : null}
-                <span>{state.busyLabel ?? c.noPhoto}</span>
+                {busy ? <span>{state.busyLabel ?? c.noPhoto}</span> : null}
               </div>
             ) : state.previewUrl ? (
               <BeforeAfterView
@@ -346,6 +396,28 @@ function App() {
                 />
               </div>
             ) : null}
+          </div>
+
+          <div className="photo-info-row">
+            <div className="view-tools" aria-label="View tools">
+              <button className="mini-tool" type="button" disabled title={c.plannedFeature}>
+                <Grid2X2 size={15} aria-hidden="true" />
+              </button>
+              <button className="mini-tool" type="button" disabled title={c.plannedFeature}>
+                <Columns2 size={15} aria-hidden="true" />
+              </button>
+              <span className="zoom-chip">Fit</span>
+              <span className="zoom-chip">100%</span>
+            </div>
+            <div className="rating-strip" aria-label="Rating">
+              {[0, 1, 2, 3, 4].map((value) => (
+                <Star key={value} size={14} aria-hidden="true" />
+              ))}
+              <Flag size={14} aria-hidden="true" />
+            </div>
+            <div className="capture-info">
+              {captureInfo.length ? captureInfo.map((item) => <span key={item}>{item}</span>) : <span>{c.noPhoto}</span>}
+            </div>
           </div>
 
           {state.error ? <div className="error-box">{state.error}</div> : null}
@@ -445,8 +517,10 @@ function App() {
                     candidate={candidate}
                     selected={state.selectedCandidate?.id === candidate.id}
                     busy={busy}
+                    thumbnailUrl={candidateThumbUrl}
                     scoreLabel={c.score}
                     previewLabel={c.tryPreview}
+                    insightLabels={insightLabels}
                     onPreview={handlePreview}
                   />
                 ))
@@ -459,8 +533,14 @@ function App() {
           <section className="inspector-block">
             <div className="develop-tabs" role="tablist" aria-label="Develop controls">
               {developTabs.map((tab, index) => (
-                <button key={tab} className={`tab-button${index === 0 ? " active" : ""}`} type="button">
-                  {tab}
+                <button
+                  key={tab.label}
+                  className={`tab-button${index === 0 ? " active" : ""}`}
+                  type="button"
+                  disabled={!tab.enabled}
+                  title={tab.enabled ? tab.label : c.plannedFeature}
+                >
+                  {tab.label}
                 </button>
               ))}
             </div>

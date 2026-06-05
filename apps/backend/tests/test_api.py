@@ -5,6 +5,7 @@ from PIL import Image
 
 from app.main import app
 from app.models.schemas import AiConnectionStatus
+from app.config import settings
 from app.routers import ai as ai_router
 from app.routers import recommend as recommend_router
 from app.services.codex_app_server import CodexRecommendationError, CodexRecommendationResult
@@ -189,6 +190,19 @@ def test_raw_upload_failure_returns_structured_detail() -> None:
     assert body["detail"]["ok"] is False
     assert body["detail"]["code"] in {"rawpy_missing", "raw_analysis_failed"}
     assert body["detail"]["install_hint"]
+
+
+def test_image_upload_rejects_files_over_limit(monkeypatch) -> None:
+    client = TestClient(app)
+    monkeypatch.setattr(settings, "max_upload_bytes", 8)
+
+    response = client.post(
+        "/api/images/analyze",
+        files={"file": ("too-large.jpg", b"x" * 9, "image/jpeg")},
+    )
+
+    assert response.status_code == 413
+    assert "exceeds" in response.json()["detail"]
 
 
 def test_recommend_defaults_to_auto_codex_path(monkeypatch) -> None:

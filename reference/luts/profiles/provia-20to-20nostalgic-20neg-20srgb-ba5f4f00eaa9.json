@@ -1,0 +1,139 @@
+{
+  "id": "provia-20to-20nostalgic-20neg-20srgb-ba5f4f00eaa9",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "provia conversion luts Provia to Nostalgic Neg sRGB",
+  "title": null,
+  "cubeSize": 32,
+  "metadata": {
+    "sourceUrl": "https://raw.githubusercontent.com/abpy/FujifilmCameraProfiles/master/provia%20conversion%20luts/Provia%20to%20Nostalgic%20Neg%20sRGB.cube",
+    "license": "CC-BY-NC-SA-4.0",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:21:17Z",
+    "importedAt": null,
+    "sha256": "ba5f4f00eaa990d4bd7d7b9f022c66bff5d6f407d29895c7c2a0bd1c77cc9dcf",
+    "originalFilename": "Provia%20to%20Nostalgic%20Neg%20sRGB.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "warm",
+    "muted"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0159
+        },
+        {
+          "input": 0.1,
+          "output": 0.1085
+        },
+        {
+          "input": 0.25,
+          "output": 0.2643
+        },
+        {
+          "input": 0.5,
+          "output": 0.5077
+        },
+        {
+          "input": 0.75,
+          "output": 0.7638
+        },
+        {
+          "input": 0.9,
+          "output": 0.9068
+        },
+        {
+          "input": 1.0,
+          "output": 0.9848
+        }
+      ],
+      "black_point": 0.0159,
+      "white_point": 0.9848,
+      "shadow_lift": 0.0114,
+      "midtone_lift": 0.0077,
+      "highlight_lift": 0.0103,
+      "contrast_delta": -0.0017
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.0444,
+        "green": 0.0078,
+        "blue": -0.0054
+      },
+      "temperature_shift": 0.0498,
+      "tint_shift": 0.0117
+    },
+    "saturation": {
+      "mean_delta": -0.1064,
+      "p10_delta": -0.3696,
+      "p90_delta": 0.0862,
+      "output_mean": 0.5778
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 7.91,
+        "saturation_delta": -0.0043,
+        "luminance_delta": 0.0503
+      },
+      "orange": {
+        "hue_shift_degrees": 3.77,
+        "saturation_delta": 0.0493,
+        "luminance_delta": -0.0342
+      },
+      "yellow": {
+        "hue_shift_degrees": 5.33,
+        "saturation_delta": -0.4681,
+        "luminance_delta": -0.0124
+      },
+      "green": {
+        "hue_shift_degrees": -13.48,
+        "saturation_delta": -0.6483,
+        "luminance_delta": 0.131
+      },
+      "aqua": {
+        "hue_shift_degrees": 5.71,
+        "saturation_delta": -0.6068,
+        "luminance_delta": 0.0574
+      },
+      "blue": {
+        "hue_shift_degrees": -6.83,
+        "saturation_delta": -0.1943,
+        "luminance_delta": 0.1949
+      },
+      "purple": {
+        "hue_shift_degrees": -22.53,
+        "saturation_delta": -0.2852,
+        "luminance_delta": 0.1247
+      },
+      "magenta": {
+        "hue_shift_degrees": 10.29,
+        "saturation_delta": -0.4194,
+        "luminance_delta": 0.2156
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": 0.0193,
+        "green": 0.0123,
+        "blue": 0.0074
+      },
+      "highlight_rgb_bias": {
+        "red": 0.0317,
+        "green": 0.0071,
+        "blue": -0.0258
+      },
+      "shadow_cool_bias": -0.0118,
+      "highlight_warm_bias": 0.0576
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

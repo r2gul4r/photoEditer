@@ -1,0 +1,139 @@
+{
+  "id": "driftwood-s5ii-lut-f2a8d28b0566",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "nick driftwood lumix s5ii hi precision Driftwood S5II LUT FREE Driftwood S5II LUT",
+  "title": "Driftwood LUT Pack v2 S5II Sensor",
+  "cubeSize": 65,
+  "metadata": {
+    "sourceUrl": "https://nickdriftwood.com/wp-content/uploads/2023/01/Driftwood-S5II-LUT-FREE.zip#Driftwood S5II LUT FREE/Driftwood S5II LUT.cube",
+    "license": "free public creator download",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:42:13Z",
+    "importedAt": null,
+    "sha256": "f2a8d28b05664ccfcae0680cfbd8d5618a9ad5b7bb522539a006dbf9626f4f4b",
+    "originalFilename": "Driftwood S5II LUT.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "vibrant",
+    "high_contrast"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.0
+        },
+        {
+          "input": 0.1,
+          "output": 0.0039
+        },
+        {
+          "input": 0.25,
+          "output": 0.1105
+        },
+        {
+          "input": 0.5,
+          "output": 0.5583
+        },
+        {
+          "input": 0.75,
+          "output": 0.9454
+        },
+        {
+          "input": 0.9,
+          "output": 0.9981
+        },
+        {
+          "input": 1.0,
+          "output": 0.9981
+        }
+      ],
+      "black_point": 0.0,
+      "white_point": 0.9981,
+      "shadow_lift": -0.1178,
+      "midtone_lift": 0.0583,
+      "highlight_lift": 0.1467,
+      "contrast_delta": 0.1941
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": -0.0175,
+        "green": -0.0037,
+        "blue": -0.0213
+      },
+      "temperature_shift": 0.0038,
+      "tint_shift": -0.0157
+    },
+    "saturation": {
+      "mean_delta": 0.1537,
+      "p10_delta": -0.0499,
+      "p90_delta": 0.3642,
+      "output_mean": 0.8297
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0398
+      },
+      "orange": {
+        "hue_shift_degrees": -1.58,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0441
+      },
+      "yellow": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0054
+      },
+      "green": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0156
+      },
+      "aqua": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0122
+      },
+      "blue": {
+        "hue_shift_degrees": 0.0,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0483
+      },
+      "purple": {
+        "hue_shift_degrees": -10.78,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0822
+      },
+      "magenta": {
+        "hue_shift_degrees": 0.48,
+        "saturation_delta": 0.05,
+        "luminance_delta": -0.0369
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": -0.136,
+        "green": -0.1369,
+        "blue": -0.1462
+      },
+      "highlight_rgb_bias": {
+        "red": 0.1654,
+        "green": 0.1648,
+        "blue": 0.1613
+      },
+      "shadow_cool_bias": -0.0102,
+      "highlight_warm_bias": 0.0041
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}

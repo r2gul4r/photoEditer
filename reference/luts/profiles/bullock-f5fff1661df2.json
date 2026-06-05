@@ -1,0 +1,139 @@
+{
+  "id": "bullock-f5fff1661df2",
+  "version": 1,
+  "featureType": "non_invertible_lut_style_profile",
+  "concept": "q ddl Q DDL Pack 2 Bullock",
+  "title": "Bullock",
+  "cubeSize": 17,
+  "metadata": {
+    "sourceUrl": "https://www.photoshoplus.fr/download/q-ddl-color-luts-cinematic-5-packs/?tmstv=1780543774#Q-DDL Color LUTs - Cinematic/Q-DDL_Pack_2_s5480.zip/Q-DDL_Pack_2/Bullock.cube",
+    "license": "CC-BY-4.0",
+    "status": "allow",
+    "sourceType": "allowed_public_lut",
+    "downloadedAt": "2026-06-04T03:31:43Z",
+    "importedAt": null,
+    "sha256": "f5fff1661df25f1bf9569ff90f54a7ac0a198275ab8597d71ee0bdd6e019f4a9",
+    "originalFilename": "Bullock.cube",
+    "originalDeleted": true
+  },
+  "derivedTags": [
+    "warm",
+    "muted"
+  ],
+  "features": {
+    "tone": {
+      "curve": [
+        {
+          "input": 0.0,
+          "output": 0.1006
+        },
+        {
+          "input": 0.1,
+          "output": 0.1481
+        },
+        {
+          "input": 0.25,
+          "output": 0.2678
+        },
+        {
+          "input": 0.5,
+          "output": 0.5288
+        },
+        {
+          "input": 0.75,
+          "output": 0.7686
+        },
+        {
+          "input": 0.9,
+          "output": 0.8992
+        },
+        {
+          "input": 1.0,
+          "output": 0.9545
+        }
+      ],
+      "black_point": 0.1006,
+      "white_point": 0.9545,
+      "shadow_lift": 0.0329,
+      "midtone_lift": 0.0288,
+      "highlight_lift": 0.0089,
+      "contrast_delta": -0.0489
+    },
+    "color_balance": {
+      "rgb_mean_delta": {
+        "red": 0.1395,
+        "green": 0.0057,
+        "blue": -0.104
+      },
+      "temperature_shift": 0.2436,
+      "tint_shift": 0.0121
+    },
+    "saturation": {
+      "mean_delta": -0.1002,
+      "p10_delta": -0.4016,
+      "p90_delta": 0.124,
+      "output_mean": 0.5976
+    },
+    "color_probes": {
+      "red": {
+        "hue_shift_degrees": -9.49,
+        "saturation_delta": -0.0749,
+        "luminance_delta": 0.0489
+      },
+      "orange": {
+        "hue_shift_degrees": -7.91,
+        "saturation_delta": -0.1573,
+        "luminance_delta": -0.0099
+      },
+      "yellow": {
+        "hue_shift_degrees": -6.32,
+        "saturation_delta": -0.1448,
+        "luminance_delta": -0.0551
+      },
+      "green": {
+        "hue_shift_degrees": -23.51,
+        "saturation_delta": -0.0041,
+        "luminance_delta": -0.0237
+      },
+      "aqua": {
+        "hue_shift_degrees": -26.78,
+        "saturation_delta": -0.4647,
+        "luminance_delta": -0.05
+      },
+      "blue": {
+        "hue_shift_degrees": -3.84,
+        "saturation_delta": -0.3777,
+        "luminance_delta": 0.1688
+      },
+      "purple": {
+        "hue_shift_degrees": 20.18,
+        "saturation_delta": -0.2404,
+        "luminance_delta": 0.1018
+      },
+      "magenta": {
+        "hue_shift_degrees": 20.15,
+        "saturation_delta": -0.1003,
+        "luminance_delta": 0.0394
+      }
+    },
+    "split_tone": {
+      "shadow_rgb_bias": {
+        "red": 0.1191,
+        "green": 0.0003,
+        "blue": -0.0087
+      },
+      "highlight_rgb_bias": {
+        "red": 0.1284,
+        "green": 0.0023,
+        "blue": -0.2015
+      },
+      "shadow_cool_bias": -0.1278,
+      "highlight_warm_bias": 0.3299
+    },
+    "privacy": {
+      "stores_lookup_table": false,
+      "stores_original_file": false,
+      "non_invertible_summary": true
+    }
+  }
+}
