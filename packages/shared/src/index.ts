@@ -4,6 +4,22 @@ export type HslAdjustment = {
   luminance: number;
 };
 
+export type CropAspect = "original" | "square" | "landscape" | "portrait";
+
+export type ColorGradeAdjustment = {
+  hue: number;
+  saturation: number;
+  luminance: number;
+};
+
+export type ColorGradingAdjustment = {
+  shadows: ColorGradeAdjustment;
+  midtones: ColorGradeAdjustment;
+  highlights: ColorGradeAdjustment;
+  balance: number;
+  blending: number;
+};
+
 export type CorrectionAdjustments = {
   exposure: number;
   contrast: number;
@@ -18,7 +34,12 @@ export type CorrectionAdjustments = {
   clarity: number;
   texture: number;
   dehaze: number;
+  noise_reduction: number;
+  vignette_correction: number;
+  rotation_degrees: number;
+  crop_aspect: CropAspect;
   hsl?: Partial<Record<"red" | "orange" | "yellow" | "green" | "aqua" | "blue" | "purple" | "magenta", HslAdjustment>>;
+  color_grading: ColorGradingAdjustment;
 };
 
 export type CorrectionCandidate = {

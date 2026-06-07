@@ -408,41 +408,25 @@ def ingest_lut_bytes(
         raise LutAnalysisError("Only .cube LUT files are supported")
 
     root = reference_root or _reference_root()
-    tmp_dir = root / "luts" / "tmp"
-    tmp_dir.mkdir(parents=True, exist_ok=True)
-    safe_name = f"{uuid4()}-{_safe_stem(filename)}.cube"
-    tmp_path = tmp_dir / safe_name
     sha256 = hashlib.sha256(content).hexdigest()
-    original_deleted = False
+    text = _decode_cube_text(content)
+    lut = parse_cube_lut(text)
 
-    try:
-        tmp_path.write_bytes(content)
-        text = _decode_cube_text(tmp_path.read_bytes())
-        lut = parse_cube_lut(text)
-        tmp_path.unlink()
-        original_deleted = not tmp_path.exists()
-
-        if not original_deleted:
-            raise LutAnalysisError("Temporary LUT original was not deleted")
-
-        profile_id = f"{_safe_stem(filename)}-{sha256[:12]}"
-        metadata = LutProfileMetadata(
-            sourceUrl=source_url,
-            license=license_name,
-            status=status,  # type: ignore[arg-type]
-            sourceType=source_type,  # type: ignore[arg-type]
-            downloadedAt=downloaded_at,
-            importedAt=imported_at or (None if downloaded_at else _utc_now()),
-            sha256=sha256,
-            originalFilename=Path(filename).name,
-            originalDeleted=original_deleted,
-        )
-        profile = extract_lut_style_profile(lut, concept=concept, metadata=metadata, profile_id=profile_id)
-        profile_path = _write_profile(profile, root)
-        return LutIngestResponse(profilePath=_relative_path(profile_path, root), profile=profile)
-    finally:
-        if tmp_path.exists():
-            tmp_path.unlink()
+    profile_id = f"{_safe_stem(filename)}-{sha256[:12]}"
+    metadata = LutProfileMetadata(
+        sourceUrl=source_url,
+        license=license_name,
+        status=status,  # type: ignore[arg-type]
+        sourceType=source_type,  # type: ignore[arg-type]
+        downloadedAt=downloaded_at,
+        importedAt=imported_at or (None if downloaded_at else _utc_now()),
+        sha256=sha256,
+        originalFilename=Path(filename).name,
+        originalDeleted=True,
+    )
+    profile = extract_lut_style_profile(lut, concept=concept, metadata=metadata, profile_id=profile_id)
+    profile_path = _write_profile(profile, root)
+    return LutIngestResponse(profilePath=_relative_path(profile_path, root), profile=profile)
 
 
 def load_lut_source_registry(reference_root: Path | None = None) -> LutSourceRegistry:

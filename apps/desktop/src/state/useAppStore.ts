@@ -7,6 +7,7 @@ import type {
   RawSupportStatus,
   RecommendResponse,
   ReferenceLibraryResponse,
+  StyleReferenceSignal,
 } from "../api/types";
 import type { Language } from "../i18n";
 import type { CorrectionAdjustments, CorrectionCandidate } from "@tonepilot/shared";
@@ -19,6 +20,7 @@ export type AppState = {
   recommendation: RecommendResponse | null;
   aiConnection: AiConnectionStatus | null;
   references: ReferenceLibraryResponse | null;
+  styleReference: StyleReferenceSignal | null;
   rawStatus: RawSupportStatus | null;
   selectedCandidate: CorrectionCandidate | null;
   previewUrl: string | null;
@@ -36,6 +38,7 @@ type Action =
   | { type: "setAnalysis"; analysis: AnalyzeImageResponse; displayUrl?: string }
   | { type: "setAiConnection"; aiConnection: AiConnectionStatus }
   | { type: "setReferences"; references: ReferenceLibraryResponse }
+  | { type: "setStyleReference"; styleReference: StyleReferenceSignal | null }
   | { type: "setRawStatus"; rawStatus: RawSupportStatus }
   | { type: "setPrompt"; stylePrompt: string }
   | { type: "setAiMode"; aiMode: AiMode }
@@ -44,6 +47,7 @@ type Action =
   | { type: "setRecommendation"; recommendation: RecommendResponse }
   | { type: "setPreview"; candidate: CorrectionCandidate; previewUrl: string }
   | { type: "updateSelectedAdjustments"; adjustments: CorrectionAdjustments }
+  | { type: "resetSession" }
   | { type: "idle" };
 
 const initialState: AppState = {
@@ -54,6 +58,7 @@ const initialState: AppState = {
   recommendation: null,
   aiConnection: null,
   references: null,
+  styleReference: null,
   rawStatus: null,
   selectedCandidate: null,
   previewUrl: null,
@@ -88,6 +93,7 @@ function reducer(state: AppState, action: Action): AppState {
         originalUrl: action.originalUrl,
         aiConnection: state.aiConnection,
         references: state.references,
+        styleReference: state.styleReference,
         rawStatus: state.rawStatus,
         stylePrompt: state.stylePrompt,
         aiMode: state.aiMode,
@@ -110,6 +116,8 @@ function reducer(state: AppState, action: Action): AppState {
       return { ...state, aiConnection: action.aiConnection };
     case "setReferences":
       return { ...state, references: action.references };
+    case "setStyleReference":
+      return { ...state, styleReference: action.styleReference, busyLabel: null, error: null };
     case "setRawStatus":
       return { ...state, rawStatus: action.rawStatus };
     case "setPrompt":
@@ -160,6 +168,18 @@ function reducer(state: AppState, action: Action): AppState {
         previewUrl: null,
       };
     }
+    case "resetSession":
+      revokeIfObjectUrl(state.originalUrl);
+      return {
+        ...initialState,
+        aiConnection: state.aiConnection,
+        references: state.references,
+        rawStatus: state.rawStatus,
+        stylePrompt: state.stylePrompt,
+        aiMode: state.aiMode,
+        strength: state.strength,
+        language: state.language,
+      };
     case "idle":
       return { ...state, busyLabel: null };
     default:

@@ -66,6 +66,8 @@ photo dev
 
 `photo dev`는 로컬 주소를 출력하고 브라우저를 자동으로 연다. 자동으로 열리지 않으면 출력된 로컬 주소를 직접 열면 된다. 기본은 `http://127.0.0.1:5173/`이고, 이미 사용 중이면 `5173-5199` 범위에서 다른 포트를 골라 출력한다. Codex는 선택사항이며, 없으면 로컬 Rules 모드로 실행된다.
 
+백엔드 venv와 Python 패키지는 매번 다시 설치하지 않는다. 첫 실행이나 환경이 깨진 경우에만 준비하고, 이후 `photo dev`, `pnpm dev`, `pnpm backend:dev`는 이미 준비된 venv를 자동으로 재사용한다.
+
 이미 저장소를 직접 내려받은 개발자는 프로젝트 폴더에서 `npm.cmd link`, `photo install`, `photo dev` 순서로 실행해도 된다.
 
 ## photo 명령어
@@ -75,7 +77,7 @@ photo dev
 | 명령 | 설명 |
 | --- | --- |
 | `photo install` | 의존성을 다시 설치하거나 복구한다. 원클릭 설치 때는 자동으로 실행된다. |
-| `photo dev` | 로컬 웹 앱을 실행하고 브라우저를 연다. 준비가 빠져 있으면 자동으로 확인하고 보정한다. |
+| `photo dev` | 로컬 웹 앱을 실행하고 브라우저를 연다. 준비가 빠져 있으면 한 번만 보정하고, 이후에는 기존 환경을 재사용한다. |
 | `photo doctor` | Node/Python/백엔드 패키지/RAW 지원 설치 상태를 확인한다. |
 | `photo setup` | 백엔드 Python 환경만 다시 준비한다. |
 | `photo backend` | 백엔드 API 서버만 실행한다. |
@@ -116,6 +118,8 @@ pnpm run setup -- --retry-raw
 ```powershell
 pnpm dev
 ```
+
+`pnpm dev`도 백엔드 환경이 없을 때만 setup을 한 번 실행한다. 정상 설치 후에는 venv와 백엔드 의존성을 반복 설치하지 않는다.
 
 백엔드만 실행:
 

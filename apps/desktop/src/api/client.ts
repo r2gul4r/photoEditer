@@ -6,6 +6,7 @@ import type {
   RecommendResponse,
   ReferenceLibraryResponse,
   RawSupportStatus,
+  StyleReferenceUploadResponse,
 } from "./types";
 import type { CorrectionAdjustments, CorrectionCandidate } from "@tonepilot/shared";
 
@@ -43,6 +44,16 @@ export async function getReferences(): Promise<ReferenceLibraryResponse> {
   return parseJson<ReferenceLibraryResponse>(response);
 }
 
+export async function uploadStyleReferences(files: File[]): Promise<StyleReferenceUploadResponse> {
+  const formData = new FormData();
+  files.forEach((file) => formData.append("files", file));
+  const response = await fetch(`${API_BASE}/api/references/style-targets`, {
+    method: "POST",
+    body: formData,
+  });
+  return parseJson<StyleReferenceUploadResponse>(response);
+}
+
 export async function getRawStatus(): Promise<RawSupportStatus> {
   const response = await fetch(`${API_BASE}/api/raw/status`);
   return parseJson<RawSupportStatus>(response);
@@ -63,11 +74,18 @@ export async function recommend(
   stylePrompt: string,
   strength: number,
   aiMode: AiMode = "auto",
+  styleReferenceId?: string | null,
 ): Promise<RecommendResponse> {
   const response = await fetch(`${API_BASE}/api/recommend`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ image_id: imageId, style_prompt: stylePrompt, strength, ai_mode: aiMode }),
+    body: JSON.stringify({
+      image_id: imageId,
+      style_prompt: stylePrompt,
+      strength,
+      ai_mode: aiMode,
+      style_reference_id: styleReferenceId,
+    }),
   });
   return parseJson<RecommendResponse>(response);
 }

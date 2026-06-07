@@ -180,7 +180,7 @@ CLASSIFICATION_PRIORITY = (
 
 STYLE_ID_GROUP_HINTS: dict[str, dict[str, int]] = {
     "soft_film": {"film_vintage": 10, "pastel_soft": 6},
-    "cool_japanese_summer": {"cool_night": 8, "pastel_soft": 4},
+    "cool_japanese_summer": {"pastel_soft": 24, "clean_natural": 12, "cool_night": -8},
     "anime_background": {"pastel_soft": 8, "vibrant_pop": 4},
     "warm_cafe": {"warm_sunset": 8},
     "cinematic_mood": {"cinematic_mood": 10},

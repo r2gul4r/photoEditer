@@ -104,6 +104,20 @@ class HslAdjustment(BaseModel):
     luminance: float = 0
 
 
+class ColorGradeAdjustment(BaseModel):
+    hue: float = 0
+    saturation: float = 0
+    luminance: float = 0
+
+
+class ColorGradingAdjustment(BaseModel):
+    shadows: ColorGradeAdjustment = Field(default_factory=ColorGradeAdjustment)
+    midtones: ColorGradeAdjustment = Field(default_factory=ColorGradeAdjustment)
+    highlights: ColorGradeAdjustment = Field(default_factory=ColorGradeAdjustment)
+    balance: float = 0
+    blending: float = 50
+
+
 HslMap = dict[
     Literal[
         "red",
@@ -117,6 +131,9 @@ HslMap = dict[
     ],
     HslAdjustment,
 ]
+
+
+CropAspect = Literal["original", "square", "landscape", "portrait"]
 
 
 class CorrectionAdjustments(BaseModel):
@@ -133,7 +150,12 @@ class CorrectionAdjustments(BaseModel):
     clarity: float = 0
     texture: float = 0
     dehaze: float = 0
+    noise_reduction: float = 0
+    vignette_correction: float = 0
+    rotation_degrees: int = 0
+    crop_aspect: CropAspect = "original"
     hsl: HslMap = Field(default_factory=dict)
+    color_grading: ColorGradingAdjustment = Field(default_factory=ColorGradingAdjustment)
 
 
 class CorrectionCandidate(BaseModel):
@@ -190,6 +212,7 @@ class RecommendRequest(BaseModel):
     style_prompt: str
     strength: float = Field(default=0.7, ge=0, le=1)
     ai_mode: AiMode = "auto"
+    style_reference_id: str | None = None
 
 
 class RecommendResponse(BaseModel):
@@ -261,6 +284,27 @@ class ReferenceLibraryResponse(BaseModel):
     root: str = "reference"
     count: int
     items: list[ReferenceManifest]
+
+
+class StyleReferenceSignal(BaseModel):
+    style_reference_id: str
+    count: int
+    filenames: list[str]
+    summary: str
+    luma_p50: float
+    luma_std: float
+    saturation_mean: float
+    saturation_p50: float
+    warmth_bias: float
+    tint_bias: float
+    shadow_blue_bias: float
+    highlight_warmth_bias: float
+    hsl_prior: HslMap = Field(default_factory=dict)
+    color_grading: ColorGradingAdjustment = Field(default_factory=ColorGradingAdjustment)
+
+
+class StyleReferenceUploadResponse(BaseModel):
+    reference: StyleReferenceSignal
 
 
 LutSourceStatus = Literal["allow", "unknown", "deny"]

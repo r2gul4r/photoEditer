@@ -44,8 +44,26 @@ function canUse(candidate) {
   return result.status === 0;
 }
 
+function findPython() {
+  return candidates.find(canUse) ?? null;
+}
+
+function runBackendSetup() {
+  console.log("[backend] backend dependencies are missing; running one-time setup...");
+  const result = spawnSync(process.execPath, [join(root, "scripts", "setup.mjs")], {
+    cwd: root,
+    env: process.env,
+    stdio: "inherit",
+  });
+  if (result.status !== 0) process.exit(result.status ?? 1);
+}
+
 function resolvePython() {
-  const found = candidates.find(canUse);
+  let found = findPython();
+  if (!found && process.env.TONEPILOT_SKIP_BACKEND_SETUP !== "1") {
+    runBackendSetup();
+    found = findPython();
+  }
   if (!found) {
     const tried = candidates.map((item) => `  - ${item.label}`).join("\n");
     console.error(`No usable Python runtime with backend dependencies found.\nTried:\n${tried}`);

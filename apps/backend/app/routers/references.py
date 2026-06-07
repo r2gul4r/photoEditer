@@ -1,5 +1,6 @@
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 
+from app.config import settings
 from app.models.schemas import (
     LutIngestResponse,
     LutProfileListResponse,
@@ -10,6 +11,7 @@ from app.models.schemas import (
     PresetSourceRegistry,
     PresetStyleIndexResponse,
     ReferenceLibraryResponse,
+    StyleReferenceUploadResponse,
 )
 from app.services.lut_analysis import (
     MAX_LUT_BYTES,
@@ -28,6 +30,12 @@ from app.services.preset_analysis import (
 )
 from app.services.preset_style_index import load_preset_style_index
 from app.services.reference_library import ReferenceLibraryError, load_reference_library
+from app.services.style_reference_store import (
+    MAX_STYLE_REFERENCE_FILES,
+    StyleReferenceError,
+    StyleReferenceUpload,
+    style_reference_store,
+)
 
 router = APIRouter(prefix="/api/references", tags=["references"])
 
@@ -46,11 +54,47 @@ async def read_limited_lut_upload(file: UploadFile) -> bytes:
     return b"".join(chunks)
 
 
+async def read_limited_style_reference_upload(file: UploadFile, max_bytes: int) -> bytes:
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = await file.read(1024 * 1024)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > max_bytes:
+            raise HTTPException(status_code=413, detail=f"Style reference batch exceeds {settings.max_upload_bytes // (1024 * 1024)}MB limit")
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
 @router.get("", response_model=ReferenceLibraryResponse)
 def list_references() -> ReferenceLibraryResponse:
     try:
         return load_reference_library()
     except ReferenceLibraryError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@router.post("/style-targets", response_model=StyleReferenceUploadResponse)
+async def upload_style_reference_targets(files: list[UploadFile] = File(...)) -> StyleReferenceUploadResponse:
+    if len(files) > MAX_STYLE_REFERENCE_FILES:
+        raise HTTPException(status_code=413, detail=f"Style reference upload is limited to {MAX_STYLE_REFERENCE_FILES} images")
+
+    uploads: list[StyleReferenceUpload] = []
+    total_bytes = 0
+    for file in files:
+        content = await read_limited_style_reference_upload(file, settings.max_upload_bytes - total_bytes)
+        total_bytes += len(content)
+        uploads.append(
+            StyleReferenceUpload(
+                filename=file.filename or "style-reference.jpg",
+                content=content,
+            )
+        )
+    try:
+        return StyleReferenceUploadResponse(reference=style_reference_store.save_uploads(uploads))
+    except StyleReferenceError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 

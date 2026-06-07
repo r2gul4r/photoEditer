@@ -9,6 +9,7 @@ from app.models.schemas import RawSupportStatus
 
 
 RAW_INSTALL_HINT = 'Install optional backend dependencies with: pip install -e "apps/backend[raw]"'
+RAW_UNSUPPORTED_HINT = "This RAW file may be unsupported by the installed rawpy/libraw build or may not be a camera RAW file."
 
 
 def raw_support_status() -> RawSupportStatus:
@@ -67,7 +68,7 @@ def analyze_raw(path: Path) -> dict[str, Any]:
             "ok": False,
             "code": "raw_analysis_failed",
             "error": f"RAW analysis failed: {exc}",
-            "install_hint": RAW_INSTALL_HINT,
+            "install_hint": RAW_UNSUPPORTED_HINT,
         }
 
 

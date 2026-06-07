@@ -71,6 +71,8 @@ photo dev
 `photo dev` prints the local URL and opens the browser automatically. If it does not open, visit `http://127.0.0.1:5173/` manually. Codex is optional; without it, the app runs in local Rules mode.
 If port `5173` is already occupied, `photo dev` selects another local port in `5173-5199` and prints the actual URL.
 
+The backend venv and Python packages are not reinstalled on every run. They are prepared on first run or when the environment is missing/broken, then reused by `photo dev`, `pnpm dev`, and `pnpm backend:dev`.
+
 Developers who already cloned the repository on Windows can run `npm.cmd link`, `photo install`, then `photo dev` from the project folder.
 
 ## photo Commands
@@ -80,7 +82,7 @@ Developers who already cloned the repository on Windows can run `npm.cmd link`, 
 | Command | Description |
 | --- | --- |
 | `photo install` | Reinstalls or repairs dependencies. The one-command installer runs this automatically. |
-| `photo dev` | Starts the local web app and opens the browser. It also checks and repairs missing setup when possible. |
+| `photo dev` | Starts the local web app and opens the browser. It repairs missing setup once, then reuses the existing environment. |
 | `photo doctor` | Checks Node, Python, backend packages, and optional RAW support status. |
 | `photo setup` | Rebuilds or refreshes only the backend Python environment. |
 | `photo backend` | Starts only the backend API server. |
@@ -121,6 +123,8 @@ Start frontend and backend together:
 ```powershell
 pnpm dev
 ```
+
+`pnpm dev` also runs backend setup only when no usable backend environment exists. After a successful install, it does not repeatedly reinstall the venv or backend dependencies.
 
 Backend only:
 

@@ -1,6 +1,6 @@
 import { existsSync, rmSync, writeFileSync } from "node:fs";
 import { mkdir } from "node:fs/promises";
-import { join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const root = resolve(import.meta.dirname, "..");
@@ -10,10 +10,10 @@ const isWindows = process.platform === "win32";
 const venvPythonRel = isWindows ? join("Scripts", "python.exe") : join("bin", "python");
 const venvPython = join(venvDir, venvPythonRel);
 const knownVenvPythons = [".venv", ".venv312", ".venv311"].map((name) => join(backendRoot, name, venvPythonRel));
-const noRawMarker = join(venvDir, ".tonepilot-no-raw");
 const checkOnly = process.argv.includes("--check");
 const noRaw = process.argv.includes("--no-raw");
 const retryRaw = process.argv.includes("--retry-raw");
+const requiredBackendModules = ["fastapi", "uvicorn", "pytest", "exifread"];
 
 function candidate(command, prefixArgs = [], label = command) {
   return { command, prefixArgs, label };
@@ -78,8 +78,22 @@ function canImport(python, moduleName) {
   return result.status === 0;
 }
 
+function venvRootForPython(python) {
+  return dirname(dirname(python));
+}
+
+function noRawMarkerForPython(python) {
+  return join(venvRootForPython(python), ".tonepilot-no-raw");
+}
+
+function backendDepsReady(python) {
+  const requiredReady = requiredBackendModules.every((moduleName) => canImport(python, moduleName));
+  const rawReady = noRaw || canImport(python, "rawpy") || (!retryRaw && existsSync(noRawMarkerForPython(python)));
+  return requiredReady && rawReady;
+}
+
 function activeVenvPython() {
-  return knownVenvPythons.find((path) => existsSync(path) && canImport(path, "fastapi") && canImport(path, "uvicorn")) ?? null;
+  return knownVenvPythons.find((path) => existsSync(path) && backendDepsReady(path)) ?? null;
 }
 
 function checkImport(moduleName) {
@@ -90,10 +104,7 @@ function checkImport(moduleName) {
 
 function targetVenvHasBackendDeps() {
   if (!venvReady()) return false;
-  const required = ["fastapi", "uvicorn", "pytest", "exifread"];
-  const requiredReady = required.every((moduleName) => canImport(venvPython, moduleName));
-  const rawReady = noRaw || canImport(venvPython, "rawpy") || (!retryRaw && existsSync(noRawMarker));
-  return requiredReady && rawReady;
+  return backendDepsReady(venvPython);
 }
 
 async function createVenv(python) {
@@ -128,7 +139,7 @@ function installBackend(extraSet) {
 function printCheck() {
   const activePython = activeVenvPython();
   console.log("[setup] status");
-  console.log(`  setup target venv: ${venvReady() ? venvDir : "missing"}`);
+  console.log(`  managed venv: ${venvReady() ? venvDir : "missing (created only when no ready backend venv exists)"}`);
   console.log(`  active backend python: ${activePython ?? "missing"}`);
   console.log(`  fastapi: ${checkImport("fastapi") ? "ok" : "missing"}`);
   console.log(`  uvicorn: ${checkImport("uvicorn") ? "ok" : "missing"}`);
@@ -139,6 +150,13 @@ function printCheck() {
 
 async function main() {
   if (checkOnly) {
+    printCheck();
+    return;
+  }
+
+  const readyPython = activeVenvPython();
+  if (readyPython && readyPython !== venvPython) {
+    console.log(`[setup] backend environment already ready: ${readyPython}`);
     printCheck();
     return;
   }
@@ -187,11 +205,11 @@ async function main() {
       }
       process.exit(fallback.status ?? 1);
     }
-    writeFileSync(noRawMarker, "rawpy install failed; run `pnpm setup -- --retry-raw` to try again.\n");
+    writeFileSync(noRawMarkerForPython(venvPython), "rawpy install failed; run `pnpm setup -- --retry-raw` to try again.\n");
   } else if (result.status !== 0) {
     process.exit(result.status ?? 1);
-  } else if (existsSync(noRawMarker)) {
-    rmSync(noRawMarker);
+  } else if (existsSync(noRawMarkerForPython(venvPython))) {
+    rmSync(noRawMarkerForPython(venvPython));
   }
 
   printCheck();

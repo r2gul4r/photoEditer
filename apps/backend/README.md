@@ -5,11 +5,10 @@ Local FastAPI backend for image analysis, recommendation generation, preview ren
 ## Run
 
 ```powershell
-pnpm run setup
 pnpm backend:dev
 ```
 
-The root setup script creates `apps/backend/.venv` and installs backend dependencies. Start through `pnpm backend:dev` or `pnpm dev` so the launcher can auto-detect the Codex command when available.
+The backend launcher reuses an existing prepared venv. If no usable backend environment exists, it runs the root setup once and then starts the server. Start through `pnpm backend:dev` or `pnpm dev` so the launcher can auto-detect the Codex command when available.
 
 ## Test
 

@@ -62,22 +62,22 @@ STYLE_DEFINITIONS: tuple[StyleDefinition, ...] = (
         triggers=("시원한 일본 여름", "일본 여름", "시원", "여름", "청량", "파란 하늘", "유카타", "cool summer", "japanese summer"),
         mood=("cool", "bright", "fresh", "summer"),
         targets=("bright high-key image", "clear cyan-blue sky", "fresh green", "soft contrast", "gentle highlights"),
-        avoid=("overexposed sky", "blue skin tone", "oversaturated green", "heavy HDR"),
+        avoid=("overexposed sky", "blue skin tone", "global blue wash", "oversaturated green", "heavy HDR"),
         slider_prior={
             **COMMON_PRIOR,
-            "exposure": (0.05, 0.55),
-            "contrast": (-20, 5),
-            "highlights": (-40, -5),
-            "shadows": (5, 35),
-            "whites": (-5, 10),
-            "blacks": (0, 12),
-            "temperature": (-900, -100),
-            "tint": (-4, 8),
-            "vibrance": (8, 28),
-            "saturation": (-4, 10),
-            "clarity": (-10, 2),
-            "texture": (-8, 2),
-            "dehaze": (-8, 2),
+            "exposure": (0.08, 0.38),
+            "contrast": (-22, -4),
+            "highlights": (-34, -8),
+            "shadows": (8, 28),
+            "whites": (-4, 8),
+            "blacks": (4, 14),
+            "temperature": (-420, -60),
+            "tint": (-2, 6),
+            "vibrance": (10, 24),
+            "saturation": (-8, 3),
+            "clarity": (-12, -2),
+            "texture": (-8, 0),
+            "dehaze": (-10, 0),
         },
     ),
     StyleDefinition(
@@ -124,10 +124,25 @@ STYLE_DEFINITIONS: tuple[StyleDefinition, ...] = (
     ),
     StyleDefinition(
         style_id="cinematic_mood",
-        triggers=("시네마틱", "영화", "cinematic", "moody", "dramatic"),
+        triggers=(
+            "시네마틱",
+            "영화",
+            "파란 암부",
+            "암부 파란빛",
+            "암부에 파란빛",
+            "틸앤오렌지",
+            "틸 오렌지",
+            "cinematic",
+            "moody",
+            "dramatic",
+            "teal and orange",
+            "teal orange",
+            "blue shadows",
+            "cool shadows",
+        ),
         mood=("cinematic", "moody", "dramatic", "controlled"),
-        targets=("protected highlights", "deeper blacks", "richer contrast", "cool shadows"),
-        avoid=("clipped blacks", "crushed faces", "muddy low contrast"),
+        targets=("protected highlights", "deeper blacks", "richer contrast", "blue shadows", "warm highlight separation"),
+        avoid=("clipped blacks", "crushed faces", "muddy low contrast", "blue skin"),
         slider_prior={
             **COMMON_PRIOR,
             "exposure": (-0.18, 0.12),
@@ -208,6 +223,24 @@ def _blend_slider_prior(base: SliderPrior, lut_prior: dict[str, list[float]], *,
     return blended
 
 
+def _clamp_prior_bounds(prior: SliderPrior, limits: dict[str, tuple[float, float]]) -> SliderPrior:
+    clamped = dict(prior)
+    for name, (limit_low, limit_high) in limits.items():
+        low, high = clamped.get(name, (0.0, 0.0))
+        low = max(low, limit_low)
+        high = min(high, limit_high)
+        if low > high:
+            midpoint = (low + high) / 2
+            low, high = midpoint, midpoint
+        clamped[name] = (round(low, 3), round(high, 3))
+    return clamped
+
+
+def _remove_values(values: list[str], blocked: set[str]) -> list[str]:
+    blocked_normalized = {value.casefold() for value in blocked}
+    return [value for value in values if value.casefold() not in blocked_normalized]
+
+
 def interpret_style(style_prompt: str) -> StyleInterpretation:
     prompt = style_prompt.strip()
     best = max(STYLE_DEFINITIONS, key=lambda style: _score_prompt(prompt, style))
@@ -248,6 +281,27 @@ def interpret_style(style_prompt: str) -> StyleInterpretation:
         lut_style_group = lut_match.get("id")
         lut_profile_count = int(lut_match.get("profileCount", 0))
         lut_match_score = float(lut_match.get("matchScore", 0))
+
+    if best.style_id == "cool_japanese_summer":
+        slider_prior = _clamp_prior_bounds(
+            slider_prior,
+            {
+                "exposure": (0.0, 0.42),
+                "contrast": (-24, 4),
+                "highlights": (-42, -4),
+                "shadows": (4, 32),
+                "temperature": (-420, -40),
+                "tint": (-4, 8),
+                "vibrance": (4, 26),
+                "saturation": (-12, 5),
+                "clarity": (-14, 2),
+                "texture": (-10, 2),
+                "dehaze": (-12, 1),
+            },
+        )
+        mood = _remove_values(mood, {"moody", "low-key"})
+        targets = _remove_values(targets, {"night atmosphere", "cool shadows"})
+        avoid = _merge_unique_list(avoid, ["flat blue cast"])
 
     return StyleInterpretation(
         style_id=best.style_id,

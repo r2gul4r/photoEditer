@@ -5,11 +5,15 @@ type Props = {
   adjustments: CorrectionAdjustments | null;
   language: Language;
   emptyLabel: string;
+  group?: AdjustmentGroup;
   busy?: boolean;
   previewLabel?: string;
   onChange?: (adjustments: CorrectionAdjustments) => void;
   onPreview?: () => void;
 };
+
+export type AdjustmentGroup = "basic" | "toneCurve" | "color" | "detail" | "masks";
+type NumericAdjustmentKey = Exclude<keyof CorrectionAdjustments, "hsl" | "color_grading" | "crop_aspect" | "rotation_degrees">;
 
 const labels: Record<Language, Record<keyof CorrectionAdjustments, string>> = {
   en: {
@@ -26,7 +30,12 @@ const labels: Record<Language, Record<keyof CorrectionAdjustments, string>> = {
     clarity: "Clarity",
     texture: "Texture",
     dehaze: "Dehaze",
+    noise_reduction: "Noise Reduction",
+    vignette_correction: "Vignette",
+    rotation_degrees: "Rotation",
+    crop_aspect: "Crop",
     hsl: "HSL",
+    color_grading: "Color Grading",
   },
   ko: {
     exposure: "노출",
@@ -42,12 +51,17 @@ const labels: Record<Language, Record<keyof CorrectionAdjustments, string>> = {
     clarity: "명료도",
     texture: "텍스처",
     dehaze: "디헤이즈",
+    noise_reduction: "노이즈 감소",
+    vignette_correction: "비네팅 보정",
+    rotation_degrees: "회전",
+    crop_aspect: "크롭",
     hsl: "HSL",
+    color_grading: "컬러 그레이딩",
   },
 };
 
 const numericControls: Array<{
-  key: Exclude<keyof CorrectionAdjustments, "hsl">;
+  key: NumericAdjustmentKey;
   min: number;
   max: number;
   step: number;
@@ -65,7 +79,17 @@ const numericControls: Array<{
   { key: "clarity", min: -100, max: 100, step: 1 },
   { key: "texture", min: -100, max: 100, step: 1 },
   { key: "dehaze", min: -100, max: 100, step: 1 },
+  { key: "noise_reduction", min: 0, max: 100, step: 1 },
+  { key: "vignette_correction", min: 0, max: 100, step: 1 },
 ];
+
+const controlsByGroup: Record<AdjustmentGroup, NumericAdjustmentKey[]> = {
+  basic: ["exposure", "contrast", "highlights", "shadows", "whites", "blacks"],
+  toneCurve: ["contrast", "highlights", "shadows", "whites", "blacks"],
+  color: ["temperature", "tint", "vibrance", "saturation"],
+  detail: ["clarity", "texture", "dehaze", "noise_reduction", "vignette_correction"],
+  masks: ["exposure", "highlights", "shadows", "clarity"],
+};
 
 const hslChannels = ["hue", "saturation", "luminance"] as const;
 type HslColor = NonNullable<CorrectionAdjustments["hsl"]> extends Partial<Record<infer Color, HslAdjustment>>
@@ -80,7 +104,16 @@ function formatValue(value: number) {
   return value > 0 ? `+${value}` : `${value}`;
 }
 
-export function AdjustmentsPanel({ adjustments, language, emptyLabel, busy = false, previewLabel, onChange, onPreview }: Props) {
+export function AdjustmentsPanel({
+  adjustments,
+  language,
+  emptyLabel,
+  group = "basic",
+  busy = false,
+  previewLabel,
+  onChange,
+  onPreview,
+}: Props) {
   if (!adjustments) {
     return <div className="panel-empty">{emptyLabel}</div>;
   }
@@ -88,8 +121,10 @@ export function AdjustmentsPanel({ adjustments, language, emptyLabel, busy = fal
   const current = adjustments;
   const hslEntries = Object.entries(current.hsl ?? {}) as [HslColor, HslAdjustment][];
   const editable = Boolean(onChange);
+  const visibleNumericControls = numericControls.filter(({ key }) => controlsByGroup[group].includes(key));
+  const showHsl = group === "color" && hslEntries.length > 0;
 
-  function updateValue(key: Exclude<keyof CorrectionAdjustments, "hsl">, value: number) {
+  function updateValue(key: NumericAdjustmentKey, value: number) {
     onChange?.({ ...current, [key]: value });
   }
 
@@ -111,7 +146,7 @@ export function AdjustmentsPanel({ adjustments, language, emptyLabel, busy = fal
 
   return (
     <div className="adjustments">
-      {numericControls.map(({ key, min, max, step }) => (
+      {visibleNumericControls.map(({ key, min, max, step }) => (
         <label className={`adjustment-row${editable ? " editable" : ""}`} key={key}>
           <span>{labels[language][key]}</span>
           <strong>{formatValue(current[key])}</strong>
@@ -138,7 +173,7 @@ export function AdjustmentsPanel({ adjustments, language, emptyLabel, busy = fal
           ) : null}
         </label>
       ))}
-      {hslEntries.length > 0 ? (
+      {showHsl ? (
         <div className="hsl-list">
           <span>HSL</span>
           {hslEntries.map(([color, value]) => (

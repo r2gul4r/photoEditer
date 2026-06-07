@@ -210,7 +210,7 @@ function ensureNodeDeps() {
 }
 
 function ensureBackend() {
-  console.log("[photo] checking backend environment...");
+  console.log("[photo] checking/reusing backend environment...");
   runNodeScript("scripts/setup.mjs");
 }
 

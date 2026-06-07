@@ -197,6 +197,32 @@ export type ReferenceLibraryResponse = {
   items: ReferenceManifest[];
 };
 
+export type StyleReferenceSignal = {
+  style_reference_id: string;
+  count: number;
+  filenames: string[];
+  summary: string;
+  luma_p50: number;
+  luma_std: number;
+  saturation_mean: number;
+  saturation_p50: number;
+  warmth_bias: number;
+  tint_bias: number;
+  shadow_blue_bias: number;
+  highlight_warmth_bias: number;
+  hsl_prior: Partial<
+    Record<
+      "red" | "orange" | "yellow" | "green" | "aqua" | "blue" | "purple" | "magenta",
+      import("@tonepilot/shared").HslAdjustment
+    >
+  >;
+  color_grading: import("@tonepilot/shared").ColorGradingAdjustment;
+};
+
+export type StyleReferenceUploadResponse = {
+  reference: StyleReferenceSignal;
+};
+
 export type RawSupportStatus = {
   available: boolean;
   dependency: "rawpy";

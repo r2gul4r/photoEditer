@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 Write-Host "Starting TonePilot Local backend and desktop."
-Write-Host "First run installs Node and backend dependencies if needed."
+Write-Host "First run installs Node and backend dependencies if needed; later runs reuse them."
 
 $pnpm = Get-Command pnpm.cmd -ErrorAction SilentlyContinue
 
@@ -19,7 +19,7 @@ if (-not (Test-Path "node_modules")) {
   Invoke-ProjectPnpm @("install")
 }
 
-Write-Host "Checking backend Python environment..."
+Write-Host "Checking/reusing backend Python environment..."
 & node "scripts/setup.mjs"
 
 Invoke-ProjectPnpm @("dev")
